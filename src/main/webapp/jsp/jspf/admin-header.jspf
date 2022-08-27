@@ -1,0 +1,45 @@
+<nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark py-3"
+     style="background: var(--bs-gray-100);border-color: var(--bs-gray-100);font-family: 'Noto Sans', sans-serif;color: #0f0f0f;text-align: center;box-shadow: inset 0 0 #ffffff;--bs-dark: #0f0f0f;--bs-dark-rgb: 15,15,15;">
+    <div class="container-fluid">
+        <div id="lang-bar" style="width: 100px;">
+            <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"
+                                     style="color: rgb(255,255,255);width: 100px;  text-decoration: none;"><fmt:message
+                    key="label.language"/></a>
+                <div class="dropdown-menu dropdown-menu-start dropdown-menu-dark" style="background: #303030;"><a
+                        class="dropdown-item" href="?cookieLocale=uk" style="color: rgb(255,255,255);"><img
+                        src="assets/img/uk.png" alt="UA"
+                        style="width: 32px;"><fmt:message key="label.ukr"/></a><a class="dropdown-item" href="?cookieLocale=en"
+                                     style="color: rgb(255,255,255);"><img
+                        src="assets/img/en_GB.png" alt="EN" style="width: 32px;"><fmt:message key="label.eng"/></a></div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <ul class="nav nav-pills" role="tablist" style="width: 625px;">
+                    <li class="nav-item" role="presentation"><a class="nav-link
+                                                    <c:out value="${type == '1' ? 'active': ''}"/>" role="tab"
+                                                                href="DisplayFaculty"
+                                                                style="color: rgb(255,255,255);margin: 0;"
+                    ><fmt:message
+                            key="label.manage_faculty"/></a>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link <c:out value="${type == '2' ? 'active': ''}"/>" role="tab"
+                                                                href="DisplayApplicants"
+                                                                style="color: rgb(255,255,255);"><fmt:message
+                            key="label.manage_applicants"/></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link <c:out value="${type == '3' ? 'active': ''}"/>" role="tab"
+                                                                href="Statement" style="color: rgb(255,255,255);"
+                    ><fmt:message key="label.manage_statement"/></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link <c:out value="${type == '4' ? 'active': ''}"/>" role="tab"
+                                                                href="Enrollment" style="color: rgb(255,255,255);"
+                    ><fmt:message key="label.enrollment"/></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-none d-md-block"><a class="btn btn-outline-primary" role="button" data-bss-hover-animate="pulse"
+                                          href="logout"
+                                          style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;"><fmt:message
+                key="label.logout"/></a>
+        </div>
+    </div>
+</nav>

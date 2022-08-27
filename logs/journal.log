@@ -1,0 +1,63 @@
+[ERROR] 2022-08-27 02:28:30.878 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 02:28:30.886 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 02:28:30.887 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 02:28:30.888 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 02:28:30.891 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 02:28:32.640 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-08-27 10:56:53.546 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:56:53.550 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:56:53.550 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:56:53.551 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:56:53.552 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:58:32.507 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:58:32.511 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:58:32.512 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:58:32.512 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:58:32.513 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 10:58:33.529 [main] MailSender - could not send mail: can't determine local email address
+[ERROR] 2022-08-27 11:15:17.098 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:15:17.103 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:15:17.104 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:15:17.104 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:15:17.105 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 11:15:18.982 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-08-27 11:17:50.666 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:17:50.670 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:17:50.671 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:17:50.672 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:17:50.672 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 11:17:52.072 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-08-27 11:18:02.528 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:18:02.532 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:18:02.533 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:18:02.534 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:18:02.534 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 11:18:04.067 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-08-27 11:18:11.107 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:18:11.111 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:18:11.112 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:18:11.113 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:18:11.114 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 11:18:12.501 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-08-27 11:19:06.682 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:31:20.781 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 11:31:22.388 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-08-27 11:33:56.671 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:50:59.044 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:50:59.289 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:51:52.849 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:51:53.060 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:52:50.644 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 11:54:25.298 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-08-27 12:11:51.178 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[DEBUG] 2022-08-27 12:31:15.044 [main] GradeValidator - could not validate For input string: "f,!,0,50"
+[INFO ] 2022-08-27 14:30:32.885 [main] DirectConnectionBuilder - connection via DirectCB
+[INFO ] 2022-08-27 14:30:33.104 [main] DirectConnectionBuilder - connection via DirectCB
+[ERROR] 2022-08-27 14:31:26.033 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 14:31:26.037 [main] DirectConnectionBuilder - connection via DirectCB
+[ERROR] 2022-08-27 14:31:26.244 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 14:31:26.244 [main] DirectConnectionBuilder - connection via DirectCB
+[ERROR] 2022-08-27 14:42:45.345 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 14:42:45.348 [main] PoolConnectionBuilder - connection via PoolCB
+[ERROR] 2022-08-27 14:43:18.090 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-27 14:43:18.093 [main] PoolConnectionBuilder - connection via PoolCB

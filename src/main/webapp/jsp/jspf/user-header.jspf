@@ -1,0 +1,42 @@
+<nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark py-3"
+     style="background: var(--bs-gray-100);border-color: var(--bs-gray-100);font-family: 'Noto Sans', sans-serif;color: #0f0f0f;text-align: center;box-shadow: inset 0 0 #ffffff;--bs-dark: #0f0f0f;--bs-dark-rgb: 15,15,15;">
+    <div class="container-fluid">
+        <div id="lang-bar" style="width: 100px;">
+            <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"
+                                     style="color: rgb(255,255,255);width: 100px;  text-decoration: none;"><fmt:message
+                    key="label.language"/></a>
+                <div class="dropdown-menu dropdown-menu-start dropdown-menu-dark" style="background: #303030;"><a
+                        class="dropdown-item" href="?cookieLocale=uk" style="color: rgb(255,255,255);"><img
+                        src="assets/img/uk.png" alt="UA" style="width: 32px;"><fmt:message key="label.ukr"/></a><a class="dropdown-item"
+                                                                                               href="?cookieLocale=en"
+                                                                                               style="color: rgb(255,255,255);"><img
+                        src="assets/img/en_GB.png" alt="EN"
+                        style="width: 32px;"><fmt:message key="label.eng"/></a></div>
+            </div>
+        </div>
+        <div style="padding-left: 20px;"><a class="btn btn-dark border rounded-circle" role="button"
+                                            href="user-index.jsp"><em class="icon-home"></em></a></div>
+        <ul class="navbar-nav flex-nowrap ms-auto">
+            <div class="d-none d-sm-block topbar-divider">
+            </div>
+            <c:if test="${not empty user_name}">
+                <li class="nav-item dropdown no-arrow">
+                    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false"
+                                                               data-bs-toggle="dropdown" href="#"><span
+                            class="d-none d-lg-inline me-2 text-gray-600 small">${sessionScope.user_name}</span><em
+                            class="fas fa-user"></em></a>
+                        <div class="dropdown-menu dropdown-menu-dark shadow dropdown-menu-end animated--grow-in"><a
+                                class="dropdown-item" href="Userinfo"><em
+                                class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></em><fmt:message
+                                key="text.profile"/></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="logout"><em
+                                    class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></em><fmt:message
+                                    key="label.logout"/></a>
+                        </div>
+                    </div>
+                </li>
+            </c:if>
+        </ul>
+    </div>
+</nav>

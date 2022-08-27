@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="basePath">logs</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <RollingFile name="fileLogger" fileName="${basePath}/journal.log"
+                     filePattern="${basePath}/journal-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+        <Logger name="org.epam.splb" level="debug" additivity="false">
+            <AppenderRef ref="LogToConsole"/>
+        </Logger>
+
+        <Logger name="com.epam.splb" level="debug" additivity="false">
+            <appender-ref ref="fileLogger" level="debug"/>
+        </Logger>
+        <Root level="debug" additivity="false">
+            <appender-ref ref="fileLogger" level="debug"/>
+            <AppenderRef ref="LogToConsole" level="debug"/>
+        </Root>
+    </Loggers>
+</Configuration>

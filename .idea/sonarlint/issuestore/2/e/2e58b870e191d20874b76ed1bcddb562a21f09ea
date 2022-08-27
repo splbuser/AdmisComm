@@ -1,0 +1,67 @@
+
+Y
+java:S1854("7Remove this useless assignment to local variable "srv".(ÒõÈúøÿÿÿÿ8üåáû­0
+J
+java:S1481("(Remove this unused "srv" local variable.(ÒõÈúøÿÿÿÿ8ıåáû­0
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(ôÁ‰Ê8Ú‘¶ø­0
+]	java:S125)"<This block of commented-out lines of code should be removed.(¾ë›øÿÿÿÿ8¥´µø­0
+]	java:S1255"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8¦´µø­0
+X	java:S125["<This block of commented-out lines of code should be removed.(ïêœª8¦´µø­0
+]	java:S125_"<This block of commented-out lines of code should be removed.(—úß¯ÿÿÿÿÿ8¦´µø­0
+X	java:S125b"<This block of commented-out lines of code should be removed.(È£ŸŒ8¦´µø­0
+W	java:S125g"<This block of commented-out lines of code should be removed.(ÚúC8¦´µø­0
+]	java:S125k"<This block of commented-out lines of code should be removed.(«•£ùÿÿÿÿ8¦´µø­0
+]	java:S125m"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8¦´µø­0
+]	java:S125t"<This block of commented-out lines of code should be removed.(É—Ôœşÿÿÿÿ8¦´µø­0
+^	java:S125ƒ"<This block of commented-out lines of code should be removed.(…¤ú‡şÿÿÿÿ8¦´µø­0
+^	java:S125‹"<This block of commented-out lines of code should be removed.(£á¢ğúÿÿÿÿ8¦´µø­0
+^	java:S125š"<This block of commented-out lines of code should be removed.(’é×ôúÿÿÿÿ8¦´µø­0
+X	java:S125¯"<This block of commented-out lines of code should be removed.(–Î„8¦´µø­0
+Y	java:S125Ë"<This block of commented-out lines of code should be removed.(µÚõç8¦´µø­0
+Y	java:S125Ñ"<This block of commented-out lines of code should be removed.(§üøÉ8¦´µø­0
+^	java:S125Ş"<This block of commented-out lines of code should be removed.(¨ûÎşÿÿÿÿ8¦´µø­0
+^	java:S125â"<This block of commented-out lines of code should be removed.(üÅÁßûÿÿÿÿ8¦´µø­0
+Y
+java:S1128"7Remove this unused import 'com.splb.model.dao.UserDAO'.(İô‘êşÿÿÿÿ8å¤âû­0
+n
+java:S1128"LRemove this unused import 'com.splb.model.dao.connection.ConnectionBuilder'.(©ıúïùÿÿÿÿ8å¤âû­0
+m
+java:S1128"PRemove this unused import 'com.splb.model.dao.connection.PoolConnectionBuilder'.(®Ğä¬8å¤âû­0
+c
+java:S1128"FRemove this unused import 'com.splb.model.dao.exception.DAOException'.(º€îÅ8å¤âû­0
+j
+java:S1128"MRemove this unused import 'com.splb.model.dao.exception.FacultyDAOException'.(ìÕ·Û8å¤âû­0
+q
+java:S1128"ORemove this unused import 'com.splb.model.dao.exception.StatementDAOException'.(ê‰ğœûÿÿÿÿ8å¤âû­0
+g
+java:S1128	"JRemove this unused import 'com.splb.model.dao.exception.UserDAOException'.(œŸïÉ8å¤âû­0
+^
+java:S1128"<Remove this unused import 'com.splb.model.entity.Applicant'.(„ƒŞüÿÿÿÿÿ8å¤âû­0
+a
+java:S1128"?Remove this unused import 'com.splb.model.entity.EnrollStatus'.(³‡òÇøÿÿÿÿ8å¤âû­0
+\
+java:S1128":Remove this unused import 'com.splb.model.entity.Faculty'.(ÅÿëÖøÿÿÿÿ8å¤âû­0
+Y
+java:S1128"<Remove this unused import 'com.splb.model.entity.Statement'.(ş¥ß8å¤âû­0
+i
+java:S1128"GRemove this unused import 'com.splb.service.sorting.SortStatementImpl'.(éãü¼úÿÿÿÿ8å¤âû­0
+c
+java:S1128"ARemove this unused import 'com.splb.service.utils.DataValidator'.(óäñËúÿÿÿÿ8å¤âû­0
+i
+java:S1128"GRemove this unused import 'com.splb.service.utils.notifier.MailSender'.(©ÉíÃøÿÿÿÿ8å¤âû­0
+g
+java:S1128"ERemove this unused import 'com.splb.service.utils.notifier.MailText'.(ã™«Æşÿÿÿÿ8å¤âû­0
+e
+java:S1128"CRemove this unused import 'com.splb.service.utils.notifier.Sender'.(Œá™Áÿÿÿÿÿ8å¤âû­0
+M
+java:S1128"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8æ¤âû­0
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8æ¤âû­0
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8æ¤âû­0
+N
+java:S1128"1Remove this unused import 'java.util.Comparator'.(î¹ó¹8æ¤âû­0
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8æ¤âû­0
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8æ¤âû­0
