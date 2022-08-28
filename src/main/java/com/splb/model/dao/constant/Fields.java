@@ -43,6 +43,10 @@ public abstract class Fields {
     public static final String SUBJ_ONE = "subjOne";
     public static final String SUBJ_TWO = "subjTwo";
 
+    public static final String SITE_KEY ="6Lc9jLUhAAAAADD3kaZmCDm2jArFWMExCcUJZoBh";
+    public static final String SECRET_KEY ="6Lc9jLUhAAAAAIlUAaps19E2SHaOH6Xa3pLXlvWf";
+    public static final String SITE_VERIFY_URL = //
+            "https://www.google.com/recaptcha/api/siteverify";
 
     private Fields() {
         throw new IllegalStateException("Utility class");

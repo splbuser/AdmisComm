@@ -137,8 +137,8 @@
 
     <jsp-config>
         <taglib>
-            <taglib-uri>letscodeTags</taglib-uri>
-            <taglib-location>/WEB-INF/custom-tag.tld</taglib-location>
+            <taglib-uri>mytags</taglib-uri>
+            <taglib-location>/WEB-INF/mytags.tld</taglib-location>
         </taglib>
     </jsp-config>
 

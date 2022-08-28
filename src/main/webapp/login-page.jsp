@@ -25,35 +25,15 @@
 
 <%@include file="jsp/jspf/user-header.jspf" %>
 
-
-<%--<nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark py-3"--%>
-<%--     style="background: var(--bs-gray-100);border-color: var(--bs-gray-100);font-family: 'Noto Sans', sans-serif;color: #0f0f0f;text-align: center;box-shadow: inset 0px 0px #ffffff;--bs-dark: #0f0f0f;--bs-dark-rgb: 15,15,15;">--%>
-<%--    <div class="container-fluid">--%>
-<%--        <div id="lang-bar" style="width: 100px;">--%>
-<%--            <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"--%>
-<%--                                     style="color: rgb(255,255,255);width: 100px;   text-decoration: none;">Language</a>--%>
-<%--                <div class="dropdown-menu dropdown-menu-start dropdown-menu-dark" style="background: #303030;"><a--%>
-<%--                        class="dropdown-item" href="#" style="color: rgb(255,255,255);"><img src="assets/img/uk.png"--%>
-<%--                                                                                             style="width: 32px;">&nbsp;--%>
-<%--                    Українська</a><a class="dropdown-item" href="#" style="color: rgb(255,255,255);"><img--%>
-<%--                        src="assets/img/en_GB.png" style="width: 32px;">&nbsp;English</a></div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <div class="d-none d-md-block"><a class="btn btn-success" role="button" data-bss-hover-animate="pulse"--%>
-<%--                                          href="index.jsp"--%>
-<%--                                          style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;border-radius: 12px;">Home</a>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</nav>--%>
-
 <section class="position-relative py-4 py-xl-5" style="width: 1200px;height: 643px;">
     <section class="position-relative py-4 py-xl-5">
         <div class="container-fluid text-center">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
                     <h2 style="color: var(--bs-light);"><fmt:message key="label.login"/></h2>
-<%--                    <jsp:useBean id="message" scope="session" class="java.lang.String"/>--%>
-                    <p class="font-monospace text-danger" style="font-family: 'Noto Sans', sans-serif;">${sessionScope.message}</p>
+                    <%--                    <jsp:useBean id="message" scope="session" class="java.lang.String"/>--%>
+                    <p class="font-monospace text-danger"
+                       style="font-family: 'Noto Sans', sans-serif;">${sessionScope.message}</p>
                 </div>
             </div>
             <div class="row d-flex justify-content-center" style="margin: 1px;height: 400px;width: 1200px;">
@@ -76,11 +56,15 @@
                                                          placeholder="Password" style="border-radius: 8px;" required=""
                                                          minlength="1"></div>
                                 <div class="mb-3">
+                                    <div class="g-recaptcha" data-theme="dark"
+                                         data-sitekey="6Lc9jLUhAAAAADD3kaZmCDm2jArFWMExCcUJZoBh"></div>
                                     <button class="btn btn-primary d-block w-100" type="submit"
                                             style="background: #8dc641;border-radius: 8px;" data-bs-target="Login">Login
                                     </button>
                                 </div>
-                                <p class="text-muted">Forgot your password?</p>
+
+                            </form>
+<%--                            <p class="text-muted">Forgot your password?</p>--%>
                             </form>
                         </div>
                     </div>
@@ -95,6 +79,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="assets/js/Table.js"></script>
 <script src="assets/js/theme.js"></script>
+<script src='https://www.google.com/recaptcha/api.js?hl=${cookie['lang'].value}'></script>
+
 </body>
 
 </html>

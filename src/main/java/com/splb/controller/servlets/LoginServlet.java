@@ -3,11 +3,11 @@ package com.splb.controller.servlets;
 import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
-import com.splb.model.dao.implementation.ApplicantResultDAOImpl;
 import com.splb.model.entity.Applicant;
 import com.splb.service.ApplicantResultService;
 import com.splb.service.ApplicantService;
 import com.splb.service.utils.PassCrypt;
+import com.splb.service.utils.VerifyReCaptcha;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,7 +24,6 @@ public class LoginServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(LoginServlet.class);
 
-
     @Override
     public void init() throws ServletException {
     }
@@ -39,7 +38,7 @@ public class LoginServlet extends HttpServlet {
         String userName = req.getParameter(Fields.APPLICANT_NAME);
         String pass = req.getParameter(Fields.APPLICANT_PASSWORD);
 
-
+        boolean validCaptcha = false;
         try {
 
             /* Checking whether the details of user are null or not */
@@ -52,38 +51,46 @@ public class LoginServlet extends HttpServlet {
                         httpSession.setAttribute(Messages.MESSAGE, Messages.ADMINISTRATOR_BLOCKED_YOU);
                         resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
                     } else {
-                        /* Storing the login details in session */
-                        int id = user.getId();
+                        String gRecaptchaResponse = req.getParameter("g-recaptcha-response");
+                        log.info("gRecaptchaResponse={}", gRecaptchaResponse);
+                        validCaptcha = VerifyReCaptcha.verify(gRecaptchaResponse);
+                        if (validCaptcha) {
+                            /* Storing the login details in session */
+                            int id = user.getId();
 
-                        httpSession.setAttribute("user", user);
-                        httpSession.setAttribute("id", id);
-                        httpSession.setAttribute("user_name", user.getUserName());
-                        httpSession.setAttribute("resultCheck", asrv.checkSub(id));
-                        httpSession.setAttribute("hellouser", user.getFirstName() + " " + user.getLastName());
+                            httpSession.setAttribute("user", user);
+                            httpSession.setAttribute("id", id);
+                            httpSession.setAttribute("user_name", user.getUserName());
+                            httpSession.setAttribute("resultCheck", asrv.checkSub(id));
+                            httpSession.setAttribute("hellouser", String.format("%s %s",
+                                    user.getFirstName(), user.getLastName()));
 
-                        if (user.isAdminStatus()) {
-                            httpSession.setAttribute("role", "ADMIN"); // set user role
-                            resp.sendRedirect(req.getContextPath() + Pages.FACULTY_TABLE);
+                            if (user.isAdminStatus()) {
+                                httpSession.setAttribute("role", "ADMIN"); // set user role
+                                resp.sendRedirect(req.getContextPath() + Pages.FACULTY_TABLE);
+                            } else {
+                                httpSession.setAttribute("role", "USER"); // set user role
+                                resp.sendRedirect(req.getContextPath() + Pages.USER_INDEX);
+                            }
+                            // delete message after success login
+                            if (httpSession.getAttribute(Messages.MESSAGE) != null) {
+                                httpSession.removeAttribute(Messages.MESSAGE);
+                            }
+                            log.info("{} log in", userName);
                         } else {
-                            httpSession.setAttribute("role", "USER"); // set user role
-                            resp.sendRedirect(req.getContextPath() + Pages.USER_INDEX);
+                            httpSession.setAttribute(Messages.MESSAGE, Messages.WRONG_CAPTCHA);
+                            resp.sendRedirect(req.getContextPath() + Pages.LOGIN);
                         }
-                        // delete message after success login
-                        if (httpSession.getAttribute(Messages.MESSAGE) != null) {
-                            httpSession.removeAttribute(Messages.MESSAGE);
-                        }
-                        log.info("{} log in", userName);
                     }
-
                 } else {
                     //If wrong credentials are entered
                     httpSession.setAttribute(Messages.MESSAGE, Messages.WRONG_CREDENTIAL);
-                    resp.sendRedirect(req.getContextPath() + "Login");
+                    resp.sendRedirect(req.getContextPath() +Pages.LOGIN);
                 }
             } else {
                 /* If username or password is empty or null */
                 httpSession.setAttribute("credential", Messages.NULL);
-                resp.sendRedirect(req.getContextPath() + "Login");
+                resp.sendRedirect(req.getContextPath() + Pages.LOGIN);
 
             }
         } catch (Exception e) {
@@ -94,7 +101,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher(Pages.LOGIN)
+        getServletContext().getRequestDispatcher(Pages.LOGIN_PAGE)
                 .forward(req, resp);
     }
 }

@@ -38,8 +38,8 @@ public class TestClass {
 
         UserDAOImpl userDAO = UserDAOImpl.getInstance();
         ApplicantService srv = new ApplicantService();
-//        FacultyDAOImpl facultyDAO;
-//        facultyDAO = FacultyDAOImpl.getInstance();
+        FacultyDAOImpl facultyDAO;
+        facultyDAO = FacultyDAOImpl.getInstance();
 //        StatementDAOImpl statementDAO;
 //        statementDAO = StatementDAOImpl.getInstance();
 //        ApplicantResultDAOImpl applicantResultDAO;
@@ -47,7 +47,8 @@ public class TestClass {
 //        EnrollmentDAOImpl enrollmentDAO;
 //        enrollmentDAO = EnrollmentDAOImpl.getInstance();
 
-        System.out.println(userDAO.getApplicantById(10));
+//        System.out.println(userDAO.getApplicantById(10));
+        System.out.println(facultyDAO.deleteFacultyByID(2));
 
 
 //        try {
@@ -270,5 +271,6 @@ public class TestClass {
 //            ex.printStackTrace();
 //        }
 //    }
+
 
 }

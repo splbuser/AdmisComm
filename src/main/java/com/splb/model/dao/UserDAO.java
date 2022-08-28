@@ -26,7 +26,7 @@ public interface UserDAO {
     boolean unblockUserById(int userId) throws UserDAOException;
 
     boolean isBlockedUserCheck(int userId) throws UserDAOException;
-
+    // метод возвращает список факултетов по id, куда зарегистриовался аппликат
     List<Faculty> getApplicantsFacultyList(int id) throws UserDAOException;
 
     int[] getApplicantsFacultyResult (int userId, int facultyID) throws UserDAOException;

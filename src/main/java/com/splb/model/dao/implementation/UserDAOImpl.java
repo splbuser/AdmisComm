@@ -224,7 +224,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
         return false;
     }
 
-    // метод возвращает список факултетов по id, куда зарегистриовался аппликат
+
     @Override
     public List<Faculty> getApplicantsFacultyList(int id) throws UserDAOException {
         List<Faculty> list = new ArrayList<>();
