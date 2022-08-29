@@ -10,7 +10,7 @@ import java.util.Properties;
 public class MailConfig {
 
     public static final String USER = "username";
-    public static final String PASSWORD = "private";
+    public static final String PASSWORD = "private.hash";
     public static final String HOST = "mail.smtp.host";
     public static final String PORT = "mail.smtp.port";
     public static final String AUTH = "mail.smtp.auth";

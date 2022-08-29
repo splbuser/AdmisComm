@@ -1,729 +1,247 @@
-[ERROR] 2022-08-28 21:45:32.637 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 21:46:42.364 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 21:46:42.637 [main] UserDAOImpl - Access denied for user 'root'@'localhost' (using password: YES)
-[ERROR] 2022-08-28 21:46:57.629 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 21:46:57.905 [main] UserDAOImpl - Access denied for user 'root'@'localhost' (using password: YES)
-[ERROR] 2022-08-28 21:47:33.815 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 21:47:34.082 [main] UserDAOImpl - Access denied for user 'root'@'localhost' (using password: YES)
-[ERROR] 2022-08-28 21:48:05.559 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 21:48:05.856 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 21:53:45.371 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 21:53:45.376 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 21:53:45.671 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 21:53:45.671 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:16:13.057 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:16:13.074 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:16:13.368 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:16:13.388 [main] UserDAOImpl - Column 'user_name' cannot be null
-[ERROR] 2022-08-28 22:19:49.978 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:19:49.995 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:19:50.278 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:22:25.321 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:22:25.337 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:22:44.287 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:22:44.305 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:22:44.600 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:25:16.390 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:25:16.406 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:25:16.703 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:25:16.719 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:26:54.358 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:26:54.375 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:26:54.664 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:27:58.136 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:27:58.153 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:27:58.441 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:29:47.663 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:29:47.679 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:30:38.965 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:30:38.980 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:30:39.268 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:30:39.283 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:32:37.950 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 22:32:37.966 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:32:37.967 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.257 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.274 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.287 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.305 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.316 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.328 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.340 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.353 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.364 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:32:38.376 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:33:16.125 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 22:33:16.142 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:33:16.143 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.426 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.442 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.457 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.476 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.488 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.501 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.513 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.523 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.534 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.545 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.557 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.566 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.576 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.586 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.595 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:16.605 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:33:55.732 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:33:55.747 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:33:56.044 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:33:56.044 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.060 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.079 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.091 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.102 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.113 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.124 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.135 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.146 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.155 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.165 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.175 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.184 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.193 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.202 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.211 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.220 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.231 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.240 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.248 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.258 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:33:56.267 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:34:39.581 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:34:39.599 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:39.878 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:39.898 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:34:39.926 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:34:39.926 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:39.940 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:39.951 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:39.964 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:39.975 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:39.987 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:39.998 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.007 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.018 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.027 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.037 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.047 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.058 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.068 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.078 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.087 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.096 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.106 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.116 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.125 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.135 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:34:40.143 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:37:20.267 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:37:20.283 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:37:20.587 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:37:20.588 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:37:20.605 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:37:20.618 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:37:20.638 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:37:20.650 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:39:24.075 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:39:24.093 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.390 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.409 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.437 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:39:24.452 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:39:24.452 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.465 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.477 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.488 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.498 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:39:24.511 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:39:24.512 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.522 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.532 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.542 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.551 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.561 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.570 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.580 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.589 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.598 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.607 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.616 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.625 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.633 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.642 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.652 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.662 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.671 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.679 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.688 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.698 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:39:24.706 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:40:31.342 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:40:31.359 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:40:31.646 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:40:31.647 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:40:31.664 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:40:31.678 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:40:31.697 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:40:31.709 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:40:31.720 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:44:36.649 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:44:36.664 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:44:36.954 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:44:36.954 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:44:36.973 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:44:36.986 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:44:37.005 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:44:37.016 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:44:37.028 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:47:10.229 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:47:10.245 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:47:10.534 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:47:10.552 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:47:10.566 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:47:10.567 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:48:05.842 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:48:05.859 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:48:06.155 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:48:06.174 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:48:06.189 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:48:06.190 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:48:06.211 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:48:06.223 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:48:06.235 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:49:58.165 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:49:58.183 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:49:58.466 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:49:58.483 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:49:58.498 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:49:58.517 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:49:58.533 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:52:19.198 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:52:19.215 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:52:19.500 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:52:19.500 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:52:19.517 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:52:19.533 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:52:19.552 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:52:19.565 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:52:19.577 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:52:19.589 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:56:12.687 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:56:12.704 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:56:22.551 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:56:22.569 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:58:22.256 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:58:22.275 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 22:58:22.576 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 22:59:51.639 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 22:59:51.655 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:01:18.014 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:01:18.028 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.332 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.348 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.367 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.381 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.395 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.413 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.437 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.450 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.462 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:01:18.484 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:01:18.484 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.509 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.521 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.534 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.544 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.554 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:01:18.568 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:01:18.568 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.578 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.588 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.598 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.609 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.620 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.632 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.645 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.654 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.664 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.674 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.689 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.698 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.706 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.715 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.723 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.731 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.740 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.749 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.756 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.765 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.773 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.783 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.791 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.801 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.808 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.817 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.826 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:01:18.840 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:01:18.840 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.851 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.858 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.865 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.873 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.880 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.887 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.895 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:01:18.902 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:03:20.124 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:03:20.139 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.430 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.444 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.460 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.483 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.496 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.513 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.526 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.537 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.549 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:03:20.565 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:03:20.565 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.576 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.586 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.595 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.605 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.616 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:03:20.630 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:03:20.630 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.640 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.649 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.658 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.666 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.675 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.683 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.693 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.702 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.710 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.720 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.729 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.737 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.745 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.753 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.762 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.771 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.780 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.792 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.802 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.810 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.818 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.828 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.835 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.844 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.851 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.859 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.868 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:03:20.880 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:03:20.881 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.889 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.897 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.903 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.910 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.917 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.925 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.933 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:03:20.940 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:16:33.267 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:16:33.278 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.306 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.326 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.342 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.360 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.373 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.396 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.409 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.421 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.434 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:16:33.444 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:16:33.445 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.454 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.464 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.473 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.481 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.492 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:16:33.503 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:16:33.503 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.513 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.522 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.531 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.540 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.548 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.556 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.564 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.572 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.580 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.588 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.595 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.603 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.611 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.618 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.625 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.634 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.643 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.651 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.659 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.668 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.676 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.686 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.694 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.705 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.713 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.728 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.736 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:16:33.745 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:16:33.746 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.753 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.761 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.768 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.775 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.782 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.789 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.798 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:16:33.804 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:17:29.256 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:17:29.267 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.294 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.307 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.321 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.345 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.358 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.372 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.384 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.395 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.407 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:17:29.422 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:17:29.423 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.433 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.442 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.452 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.462 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.473 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:17:29.487 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:17:29.487 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.497 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.508 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.518 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.527 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.537 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.546 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.554 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.563 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.572 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.580 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.589 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.597 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.606 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.614 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.622 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.630 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.639 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.652 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.659 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.671 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.679 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.689 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.696 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.706 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.713 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.721 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.729 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:17:29.742 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:17:29.743 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.750 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.757 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.764 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.771 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.778 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.786 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.794 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:17:29.800 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:31:30.117 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:31:30.127 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:31:30.152 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:31:30.172 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-08-28 23:33:21.115 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:33:21.126 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:33:21.154 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-08-28 23:33:43.516 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:33:43.527 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:33:43.552 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:33:43.572 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-08-28 23:36:26.348 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:36:26.359 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:36:26.387 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:36:26.401 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:36:26.429 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:40:01.932 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:40:01.942 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:40:39.983 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:40:39.994 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:40:40.033 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:40:40.054 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-08-28 23:41:14.483 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:41:14.493 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:41:14.521 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-08-28 23:41:25.555 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:41:25.575 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:41:25.605 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:41:25.626 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:41:25.645 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:41:25.660 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:41:25.676 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:41:25.694 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:41:25.696 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:41:25.709 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-08-28 23:41:39.796 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:41:39.807 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:41:39.833 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-08-28 23:42:51.598 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:42:51.608 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:42:51.631 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:42:51.661 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:46:05.346 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:46:05.356 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:46:05.385 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:46:46.449 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:46:46.460 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:46:46.488 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:47:04.871 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:47:04.881 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:04.909 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:04.949 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:04.961 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:04.973 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:04.990 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:05.004 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:05.019 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:47:05.040 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty 1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:47:05.042 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:05.056 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:47:05.067 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:48:39.638 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:48:39.648 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:48:39.675 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:48:39.696 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:48:58.348 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:48:58.359 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:48:58.388 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:48:58.403 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:50:26.153 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:50:26.163 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:50:26.191 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:50:26.231 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:50:26.245 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:50:26.259 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:50:26.274 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:50:26.293 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty 1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:50:26.295 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:50:26.310 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:50:26.320 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:51:20.231 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:51:20.241 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:51:20.269 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:51:20.290 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:51:20.313 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:51:20.326 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:51:20.338 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:51:20.370 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:51:20.382 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:51:20.396 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:51:20.414 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty 1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:51:20.416 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:51:20.427 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty 2' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-08-28 23:53:31.705 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:53:31.714 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.743 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.764 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.778 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.790 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.802 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.819 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.830 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.840 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.861 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.872 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.883 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.893 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.904 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.914 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.925 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.934 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.944 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.953 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.962 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.970 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.980 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.988 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:31.996 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.005 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.014 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.023 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.041 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.052 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.060 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.069 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.082 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.094 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:53:32.108 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty 1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:53:32.108 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.116 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.124 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.137 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.145 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.154 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.162 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.170 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.177 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.185 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.196 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.203 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.210 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.217 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.224 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.231 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.244 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.251 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.258 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:32.265 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:53:36.569 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:53:36.580 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.609 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.637 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.649 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.660 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.671 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.690 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.702 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.714 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.724 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.735 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.745 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.754 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.764 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.775 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.784 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.793 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.802 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.812 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.822 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.831 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.841 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.850 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.858 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.866 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.874 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.882 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.890 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.899 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.925 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:53:36.946 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty 1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:53:36.947 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.955 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.963 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.975 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.983 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:36.993 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.002 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.010 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.018 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.027 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.037 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.045 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.053 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.061 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.068 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.075 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.087 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.095 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.103 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:53:37.110 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:54:21.282 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:54:21.293 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.321 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.360 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.372 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.387 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.403 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:54:21.422 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty 1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:54:21.424 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.437 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.447 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.460 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.470 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.480 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.493 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.503 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:21.512 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:54:26.533 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:54:26.544 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.574 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.614 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.627 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.640 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.670 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:54:26.690 [main] FacultyDAOImpl - Duplicate entry 'Test Faculty 1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:54:26.692 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.706 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.717 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.730 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.739 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.749 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.762 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.771 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:54:26.781 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:55:03.573 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:55:03.583 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.617 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.650 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.663 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.678 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.694 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:55:03.713 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:55:03.716 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.729 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.739 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.751 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.762 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.771 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.785 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.795 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:55:03.804 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:57:12.947 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 23:57:12.953 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:57:12.954 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:57:13.237 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:57:18.468 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-28 23:57:18.474 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:57:18.475 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:58:06.346 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-28 23:58:06.357 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.386 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.425 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.437 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.459 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.476 [main] DirectConnectionBuilder - connection via DirectCB
-[ERROR] 2022-08-28 23:58:06.496 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-08-28 23:58:06.499 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.512 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.521 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.533 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.542 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.553 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.566 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.576 [main] DirectConnectionBuilder - connection via DirectCB
-[INFO ] 2022-08-28 23:58:06.586 [main] DirectConnectionBuilder - connection via DirectCB
+[ERROR] 2022-08-30 00:01:15.051 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:01:15.172 [main] DirectConnectionBuilder - connection via DirectCB#2 @Test
+[INFO ] 2022-08-30 00:01:15.463 [main] DBInit - false
+[INFO ] 2022-08-30 00:01:15.471 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:01:15.498 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:01:15.521 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:01:15.521 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:01:15.576 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:02:53.898 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:02:54.008 [main] DirectConnectionBuilder - connection via DirectCB#2 @Test
+[INFO ] 2022-08-30 00:02:54.292 [main] DBInit - false
+[INFO ] 2022-08-30 00:02:54.299 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:02:54.325 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:02:54.348 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:02:54.348 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:02:54.371 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:07:13.797 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:07:13.917 [main] DirectConnectionBuilder - connection via DirectCB#2 @Test
+[INFO ] 2022-08-30 00:07:14.212 [main] DBInit - false
+[INFO ] 2022-08-30 00:07:14.220 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:07:14.245 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:07:14.305 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:07:51.006 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:07:51.119 [main] DirectConnectionBuilder - connection via DirectCB#2 @Test
+[INFO ] 2022-08-30 00:07:51.399 [main] DBInit - false
+[INFO ] 2022-08-30 00:07:51.406 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:07:51.432 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:07:51.464 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:08:13.152 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:08:13.268 [main] DirectConnectionBuilder - connection via DirectCB#2 @Test
+[INFO ] 2022-08-30 00:08:13.547 [main] DBInit - false
+[INFO ] 2022-08-30 00:08:13.555 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.584 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:08:13.607 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:08:13.608 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.624 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.639 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.651 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.662 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.674 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.685 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.695 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.708 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.717 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.727 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.739 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.747 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.757 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.769 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.778 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.787 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.798 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.807 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.816 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.827 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.835 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.844 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.856 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.865 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:08:13.880 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:08.702 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:08.817 [main] DirectConnectionBuilder - connection via DirectCB#2 @Test
+[INFO ] 2022-08-30 00:15:09.093 [main] DBInit - false
+[INFO ] 2022-08-30 00:15:09.100 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:09.139 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:25.180 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:25.191 [main] DirectConnectionBuilder - connection via DirectCB#2 @Test
+[INFO ] 2022-08-30 00:15:25.471 [main] DBInit - false
+[INFO ] 2022-08-30 00:15:25.479 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.508 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.529 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.543 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.561 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.574 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.589 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.601 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.611 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.623 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:25.634 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:25.634 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.646 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.655 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.665 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.675 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.685 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.696 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.708 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.718 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.728 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.739 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.747 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.757 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.767 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.776 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.784 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.795 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.803 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.811 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.821 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.829 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.836 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.846 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.854 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.863 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.873 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.881 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.889 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.899 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.907 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.915 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.929 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.936 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:25.947 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:25.947 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.955 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.963 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.970 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.978 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.985 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:25.992 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.000 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.007 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.014 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.021 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.027 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.033 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.039 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.045 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.053 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.059 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.067 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.073 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.080 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.088 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.095 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.103 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.110 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.119 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.125 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.132 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.148 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:26.157 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:26.157 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.168 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.174 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.180 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.186 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.193 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.199 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.206 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.213 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.220 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.229 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.238 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:26.246 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:58.725 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:58.736 [main] DirectConnectionBuilder - connection via DirectCB#2 @Test
+[INFO ] 2022-08-30 00:15:59.012 [main] DBInit - false
+[INFO ] 2022-08-30 00:15:59.020 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.047 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.070 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.082 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.098 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.112 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.130 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.142 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.155 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.166 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.176 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.187 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:59.198 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:59.198 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.208 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.217 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.226 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.234 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.244 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.254 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.263 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.271 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.280 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.289 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.297 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.305 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.314 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.321 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.330 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.338 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.347 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.354 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.362 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.369 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.377 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.385 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.393 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.401 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.409 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.416 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.424 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.432 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.440 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.448 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.456 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.463 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:59.473 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:59.473 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.484 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.493 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.500 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.507 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.515 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.523 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.530 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.537 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.544 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.551 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.557 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.563 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.569 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.575 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.582 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.589 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.596 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.603 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.609 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.617 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.623 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.632 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.638 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.647 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.654 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.661 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.669 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-08-30 00:15:59.677 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-08-30 00:15:59.677 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.684 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.690 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.697 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.703 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.714 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.725 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.732 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.739 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.746 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.755 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.762 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[INFO ] 2022-08-30 00:15:59.771 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test

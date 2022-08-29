@@ -14,23 +14,16 @@ public class DBInit {
 
     private static final Logger log = LogManager.getLogger(DBInit.class);
 
-    public static void startUp() throws Exception {
-        URL url1 = UserDAOImplTest.class.getClassLoader()
-                .getResource("adm_comm_db.sql");
-        URL url2 = UserDAOImplTest.class.getClassLoader()
-                .getResource("adm_comm_data.sql");
+    public static void startUp(Class<?> tClass) throws Exception {
+        URL url1 = tClass.getClassLoader()
+                .getResource("test_db.sql");
 
         List<String> str1 = Files.readAllLines(Paths.get(url1.toURI()));
         String sql1 = String.join("", str1);
-
-        List<String> str2 = Files.readAllLines(Paths.get(url2.toURI()));
-        String sql2 = String.join("", str2);
-
         try (Connection con = new DirectConnectionBuilder().getConnection();
-             Statement stmt = con.createStatement();
+             Statement stmt = con.createStatement()
         ) {
-            stmt.execute(sql1);
-            stmt.execute(sql2);
+            log.info(stmt.execute(sql1));
         }
     }
 }

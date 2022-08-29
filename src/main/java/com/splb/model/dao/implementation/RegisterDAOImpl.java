@@ -20,7 +20,6 @@ public class RegisterDAOImpl extends AbstractDAO implements RegisterDAO {
 
     private RegisterDAOImpl() {
         setConnectionBuilder(new PoolConnectionBuilder());
-//        setConnectionBuilder(new DirectConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 

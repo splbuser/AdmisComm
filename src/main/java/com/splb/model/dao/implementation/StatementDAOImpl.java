@@ -22,7 +22,6 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
 
     private StatementDAOImpl() {
         setConnectionBuilder(new PoolConnectionBuilder());
-//        setConnectionBuilder(new DirectConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 

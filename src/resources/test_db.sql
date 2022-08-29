@@ -12,15 +12,15 @@ SET @OLD_SQL_MODE = @@SQL_MODE, SQL_MODE =
 -- -----------------------------------------------------
 -- Schema AdmissionsCommittee
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `AdmissionsCommittee` DEFAULT CHARACTER SET utf8;
-USE `AdmissionsCommittee`;
+CREATE SCHEMA IF NOT EXISTS AdmissionsCommitteeTest DEFAULT CHARACTER SET utf8;
+USE AdmissionsCommitteeTest;
 
 -- -----------------------------------------------------
 -- Table `AdmissionsCommittee`.`faculty`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `AdmissionsCommittee`.`faculty`;
+DROP TABLE IF EXISTS AdmissionsCommitteeTest.`faculty`;
 
-CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`faculty`
+CREATE TABLE IF NOT EXISTS AdmissionsCommitteeTest.`faculty`
 (
     `id`             INT          NOT NULL AUTO_INCREMENT,
     `name`           VARCHAR(255) NOT NULL,
@@ -37,9 +37,9 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`faculty`
 -- -----------------------------------------------------
 -- Table `AdmissionsCommittee`.`applicant`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `AdmissionsCommittee`.`applicant`;
+DROP TABLE IF EXISTS AdmissionsCommitteeTest.`applicant`;
 
-CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant`
+CREATE TABLE IF NOT EXISTS AdmissionsCommitteeTest.`applicant`
 (
     `id`                      INT          NOT NULL AUTO_INCREMENT,
     `user_name`               VARCHAR(24)  NOT NULL,
@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant`
 -- -----------------------------------------------------
 -- Table `AdmissionsCommittee`.`applicant_has_faculty`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `AdmissionsCommittee`.`applicant_has_faculty`;
+DROP TABLE IF EXISTS AdmissionsCommitteeTest.`applicant_has_faculty`;
 
-CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant_has_faculty`
+CREATE TABLE IF NOT EXISTS AdmissionsCommitteeTest.`applicant_has_faculty`
 (
     `applicant_id`       INT NOT NULL,
     `faculty_id`         INT NOT NULL,
@@ -76,12 +76,12 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant_has_faculty`
     INDEX `fk_applicant_has_faculty_applicant_idx` (`applicant_id` ASC) VISIBLE,
     CONSTRAINT `fk_applicant_has_faculty_applicant`
         FOREIGN KEY (`applicant_id`)
-            REFERENCES `AdmissionsCommittee`.`applicant` (`id`)
+            REFERENCES AdmissionsCommitteeTest.`applicant` (`id`)
             ON DELETE CASCADE
             ON UPDATE NO ACTION,
     CONSTRAINT `fk_applicant_has_faculty_faculty1`
         FOREIGN KEY (`faculty_id`)
-            REFERENCES `AdmissionsCommittee`.`faculty` (`id`)
+            REFERENCES AdmissionsCommitteeTest.`faculty` (`id`)
             ON DELETE CASCADE
             ON UPDATE NO ACTION
 );
@@ -90,9 +90,9 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant_has_faculty`
 -- -----------------------------------------------------
 -- Table `AdmissionsCommittee`.`applicant_results`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `AdmissionsCommittee`.`applicant_results`;
+DROP TABLE IF EXISTS AdmissionsCommitteeTest.`applicant_results`;
 
-CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant_results`
+CREATE TABLE IF NOT EXISTS AdmissionsCommitteeTest.`applicant_results`
 (
     `applicant_id` INT          NOT NULL,
     `algebra`      INT UNSIGNED NULL,
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant_results`
     INDEX `fk_applicant_results_applicant1_idx` (`applicant_id` ASC) VISIBLE,
     CONSTRAINT `fk_applicant_results_applicant1`
         FOREIGN KEY (`applicant_id`)
-            REFERENCES `AdmissionsCommittee`.`applicant` (`id`)
+            REFERENCES AdmissionsCommitteeTest.`applicant` (`id`)
             ON DELETE CASCADE
             ON UPDATE NO ACTION
 );
@@ -114,9 +114,9 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant_results`
 -- -----------------------------------------------------
 -- Table `AdmissionsCommittee`.`statement_app`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `AdmissionsCommittee`.`statement_app`;
+DROP TABLE IF EXISTS AdmissionsCommitteeTest.`statement_app`;
 
-CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`statement_app`
+CREATE TABLE IF NOT EXISTS AdmissionsCommitteeTest.`statement_app`
 (
     `faculty__id`  INT NOT NULL,
     `applicant_id` INT NOT NULL,
@@ -125,12 +125,12 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`statement_app`
     INDEX `fk_statement_app_faculty1_idx` (`faculty__id` ASC) VISIBLE,
     CONSTRAINT `fk_statement_app_applicant1`
         FOREIGN KEY (`applicant_id`)
-            REFERENCES `AdmissionsCommittee`.`applicant` (`id`)
+            REFERENCES AdmissionsCommitteeTest.`applicant` (`id`)
             ON DELETE CASCADE
             ON UPDATE NO ACTION,
     CONSTRAINT `fk_statement_app_faculty1`
         FOREIGN KEY (`faculty__id`)
-            REFERENCES `AdmissionsCommittee`.`faculty` (`id`)
+            REFERENCES AdmissionsCommitteeTest.`faculty` (`id`)
             ON DELETE CASCADE
             ON UPDATE NO ACTION
 );
@@ -139,9 +139,9 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`statement_app`
 -- -----------------------------------------------------
 -- Table `AdmissionsCommittee`.`statement`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `AdmissionsCommittee`.`enrollment`;
+DROP TABLE IF EXISTS AdmissionsCommitteeTest.`enrollment`;
 
-CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`enrollment`
+CREATE TABLE IF NOT EXISTS AdmissionsCommitteeTest.`enrollment`
 (
     `faculty_id`   INT         NOT NULL,
     `applicant_id` INT         NOT NULL,
@@ -150,12 +150,12 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`enrollment`
     INDEX `fk_enrollment_applicant1_idx` (`applicant_id` ASC) VISIBLE,
     CONSTRAINT `fk_enrollment_faculty1`
         FOREIGN KEY (`faculty_id`)
-            REFERENCES `AdmissionsCommittee`.`faculty` (`id`)
+            REFERENCES AdmissionsCommitteeTest.`faculty` (`id`)
             ON DELETE CASCADE
             ON UPDATE NO ACTION,
     CONSTRAINT `fk_enrollment_applicant1`
         FOREIGN KEY (`applicant_id`)
-            REFERENCES `AdmissionsCommittee`.`applicant` (`id`)
+            REFERENCES AdmissionsCommitteeTest.`applicant` (`id`)
             ON DELETE CASCADE
             ON UPDATE NO ACTION
 );
@@ -249,7 +249,7 @@ VALUES (DEFAULT, 'viper369', 'MTIzNjk', DEFAULT, 'Андреано', 'Адрио
 INSERT INTO applicant_results
 VALUES (13, 3, 3, 8, 3, 8, 7);
 INSERT INTO applicant
-VALUES (DEFAULT, 'Kriger', 'MTIzNjk', DEFAULT, 'Шульц', 'Кригер', 'borbur4yt15@gmail.com', 'Баден-Баден', 'Вестфалия',
+VALUES (DEFAULT, 'Kriger', 'MTIzNjk', DEFAULT, 'Вольфганг II', 'Кригер', 'borbur4yt15@gmail.com', 'Баден-Баден', 'Вестфалия',
         'Секретно', DEFAULT, DEFAULT, DEFAULT);
 
 -- -----------------------------------------------------
@@ -320,31 +320,13 @@ VALUES (13, 2, 8, 8);
 INSERT INTO applicant_has_faculty
 VALUES (13, 3, 9, 11);
 
--- INSERT INTO enrollment
--- VALUES (1, 1, 0);
--- INSERT INTO enrollment
--- VALUES (2, 2, 1);
--- INSERT INTO enrollment
--- VALUES (3, 3, 2);
--- INSERT INTO enrollment
--- VALUES (4, 4, 1);
--- INSERT INTO enrollment
--- VALUES (5, 5, 0);
-
--- -----------------------------------------------------
--- Show tables
--- -----------------------------------------------------
-SELECT *
-FROM applicant;
-SELECT *
-FROM faculty;
-SELECT *
-FROM applicant_results;
-SELECT *
-FROM applicant_has_faculty
-ORDER BY applicant_id;
-SELECT *
-FROM statement_app;
-SELECT *
-FROM enrollment
-ORDER BY faculty_id;
+INSERT INTO enrollment
+VALUES (1, 1, 0);
+INSERT INTO enrollment
+VALUES (2, 2, 1);
+INSERT INTO enrollment
+VALUES (3, 3, 2);
+INSERT INTO enrollment
+VALUES (4, 4, 1);
+INSERT INTO enrollment
+VALUES (5, 5, 0);

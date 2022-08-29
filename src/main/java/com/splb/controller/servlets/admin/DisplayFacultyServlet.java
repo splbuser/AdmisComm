@@ -40,9 +40,10 @@ public class DisplayFacultyServlet extends HttpServlet {
         List<Faculty> faculty = new ArrayList<>();
         Faculty getFaculty = null;
 
-                /* получаем сортированый список согласно требуемыым параметрам
-        сперва проверяем реквест, замет сессию. все пришедшее с реквеста кидаем
-        в сессию чтобы при следующем запросе оставаля порядок сортировки
+        /* We get a sorted list according to required parameters,
+         * first we check request, then session. Everything that
+         * comes from the request is thrown into the session, so
+         * that the next query will keep the sorting order.
          */
 
 
@@ -51,17 +52,15 @@ public class DisplayFacultyServlet extends HttpServlet {
                 if (srv.checkByName(search)) {
                     getFaculty = srv.getByName(search);
                     faculty.add(getFaculty);
-                    log.info("Case 1:");
 
                 } else {
                     faculty = srv.getList();
-                    log.info("Case 2:");
                 }
                 request.setAttribute("faculty", faculty);
                 request.getRequestDispatcher(Pages.MANAGE_FACULTY)
                         .forward(request, response);
             } catch (FacultyServiceException e) {
-                log.error("could not find faculty: {}", e.getMessage());
+                log.error(e.getMessage());
             }
         } else {
             try {
@@ -70,14 +69,12 @@ public class DisplayFacultyServlet extends HttpServlet {
                     sortBy = (String) session.getAttribute(Fields.SORT_BY);
                     if (type == null || sortBy == null) {
                         faculty = srv.getList();
-                        log.info("Case 3:");
                     } else {
                         SortFacultyImpl sf = new SortFacultyImpl();
                         faculty = sf.getSortedList(
                                 type,
                                 sortBy,
                                 srv.getList());
-                        log.info("Case 4:");
                     }
                 } else {
                     SortFacultyImpl sf = new SortFacultyImpl();
@@ -87,14 +84,12 @@ public class DisplayFacultyServlet extends HttpServlet {
                             srv.getList());
                     session.setAttribute(Fields.TYPE, type);
                     session.setAttribute(Fields.SORT_BY, sortBy);
-                    log.info("Case 5:");
                 }
             } catch (Exception e) {
                 log.error(e.getMessage());
                 request.getRequestDispatcher(Pages.ERROR)
                         .forward(request, response);
             }
-            log.info("Case FINAL: ");
             request.setAttribute("faculty", faculty);
             request.getRequestDispatcher(Pages.MANAGE_FACULTY)
                     .forward(request, response);

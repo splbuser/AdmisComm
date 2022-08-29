@@ -156,18 +156,18 @@
                             <td>${applicants.educationalInstitution}</td>
                             <td>
                                 <c:set value="${applicants.blockStatus}" var="block"/>
-                                <c:out value="${block == true ? 'blocked': ' '}"/>
+                                <c:out value="${block == true ? 'X': ' '}"/>
                             </td>
                             <td>
                                 <div style="text-align: center;">
 
                                     <form method="post" action='<c:url value="${'/blockbusting'}" />'
                                           style="display:inline;">
-
                                         <input type="hidden" name="id" value="${applicants.id}">
                                         <input type="hidden" name="status" value="${applicants.blockStatus}">
-                                        <input type="submit"
-                                               value="<c:out value="${block == true ? 'Unblock': 'Block'}"/>">
+                                        <c:if test="${not block}"> <input type="submit" value="<fmt:message key="label.block"/>"></c:if>
+                                        <c:if test="${block}"> <input type="submit" value="<fmt:message key="label.unblock"/>"></c:if>
+
                                     </form>
                                 </div>
                             </td>

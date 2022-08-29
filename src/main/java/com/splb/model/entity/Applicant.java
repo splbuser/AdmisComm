@@ -19,6 +19,7 @@ public class Applicant implements Comparable<Applicant> {
     private int enrollStatus;
     private ApplicantResult applicantResult;
     private int result;
+    private String uploaded;
     private List<Faculty> list;
 
     public Applicant() {
@@ -164,6 +165,14 @@ public class Applicant implements Comparable<Applicant> {
 
     public void setResult(int result) {
         this.result = result;
+    }
+
+    public String getUploaded() {
+        return uploaded;
+    }
+
+    public void setUploaded(String uploaded) {
+        this.uploaded = uploaded;
     }
 
     @Override

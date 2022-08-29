@@ -3,7 +3,6 @@ package com.splb.controller.servlets.applicant;
 import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
-import com.splb.model.dao.implementation.FacultyDAOImpl;
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
 import com.splb.service.FacultyService;

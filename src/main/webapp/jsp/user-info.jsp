@@ -70,13 +70,27 @@
                                 ${currentUser.educationalInstitution}</p>
                         </div>
                     </div>
+                    <%--                    <input id="ajaxfile" type="file"/> <br/>--%>
+                    <%--                    <button onclick="uploadFile()"> Upload </button>--%>
+                    <form method="post" action="upload" enctype="multipart/form-data">
+                        <c:if test="${sessionScope.user.uploaded == null}">
+                            <input type="file" name="file"/>
+                            <input type="submit" value="<fmt:message key="label.upload"/>"/>
+                        </c:if>
+                        <c:if test="${sessionScope.user.uploaded != null}">
+                            <p style="color: aqua"><a href="/AdmissionsCommittee/images/${sessionScope.user.uploaded}"
+                                                      style="text-decoration: none">
+                                <fmt:message key="label.upload_suc"/></a></p>
+                        </c:if>
+                    </form>
                 </div>
             </div>
             <c:if test="${resultCheck}">
                 <div class="card" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1200"
                      style="background: #303030;color: rgb(255,255,255);border-radius: 32px;margin-top: 20px;">
                     <div class="card-body p-4">
-                        <h5 class="justify-content-xl-center align-items-xl-center card-title"><fmt:message key="label.grades"/></h5>
+                        <h5 class="justify-content-xl-center align-items-xl-center card-title"><fmt:message
+                                key="label.grades"/></h5>
                         <div class="row">
                             <div class="col-6">
                                 <p><fmt:message key="subject.algebra"/></p>
@@ -131,25 +145,26 @@
                                    style="border-radius: 8px;background: #404040;">${result.worldHistory}</p>
                             </div>
                         </div>
-                        <h5 class="justify-content-xl-center align-items-xl-center card-title"><fmt:message key="label.you_reg_for"/></h5>
+                        <h5 class="justify-content-xl-center align-items-xl-center card-title"><fmt:message
+                                key="label.you_reg_for"/></h5>
                         <c:forEach var="faculties" items="${faculties}">
-                        <p class="card-text">${faculties.name}</p>
-<%--                        <div class="row">--%>
-<%--                            <div class="col-4 text-center">--%>
-<%--                                <p>statement.faculty.subjOne</p>--%>
-<%--                            </div>--%>
-<%--                            <div class="col-2">--%>
-<%--                                <p class="text-white-50 justify-content-xl-center"--%>
-<%--                                   style="border-radius: 8px;background: #404040;">statement.firstSubject</p>--%>
-<%--                            </div>--%>
-<%--                            <div class="col-4">--%>
-<%--                                <p>statement.faculty.subjTwo</p>--%>
-<%--                            </div>--%>
-<%--                            <div class="col-2">--%>
-<%--                                <p class="text-white-50"--%>
-<%--                                   style="border-radius: 8px;background: #404040;">statement.secondSubject</p>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+                            <p class="card-text">${faculties.name}</p>
+                            <%--                        <div class="row">--%>
+                            <%--                            <div class="col-4 text-center">--%>
+                            <%--                                <p>statement.faculty.subjOne</p>--%>
+                            <%--                            </div>--%>
+                            <%--                            <div class="col-2">--%>
+                            <%--                                <p class="text-white-50 justify-content-xl-center"--%>
+                            <%--                                   style="border-radius: 8px;background: #404040;">statement.firstSubject</p>--%>
+                            <%--                            </div>--%>
+                            <%--                            <div class="col-4">--%>
+                            <%--                                <p>statement.faculty.subjTwo</p>--%>
+                            <%--                            </div>--%>
+                            <%--                            <div class="col-2">--%>
+                            <%--                                <p class="text-white-50"--%>
+                            <%--                                   style="border-radius: 8px;background: #404040;">statement.secondSubject</p>--%>
+                            <%--                            </div>--%>
+                            <%--                        </div>--%>
                         </c:forEach>
                     </div>
                 </div>
@@ -161,8 +176,8 @@
                         key="label.statement"/></h5>
                 <p class="card-text">
                     <c:if test="${requestScope.empty_list_msg != null}">
-                        <fmt:message key="text.sorry_no_avail" />
-                        </c:if>
+                        <fmt:message key="text.sorry_no_avail"/>
+                    </c:if>
                 </p>
                 <c:forEach var="statement" items="${statement}">
                     <p class="card-text">${statement.faculty.name}</p>
@@ -187,7 +202,7 @@
                     <fmt:message key="label.enrollment"/></h5>
                 <div class="row">
                     <c:if test="${requestScope.empty_enroll != null}">
-                        <fmt:message key="text.sorry_no_enroll" />
+                        <fmt:message key="text.sorry_no_enroll"/>
                     </c:if>
                     <div class="col-6 text-center">
                         <p>${enrollment.faculty.name}</p>
@@ -208,6 +223,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="assets/js/Table.js"></script>
 <script src="assets/js/theme.js"></script>
+<%--<script>--%>
+<%--    async function uploadFile() {--%>
+<%--        let formData = new FormData();--%>
+<%--        formData.append("file", ajaxfile.files[0]);--%>
+<%--        await fetch('upload', {--%>
+<%--            method: "POST",--%>
+<%--            body: formData--%>
+<%--        });--%>
+<%--        alert('The file upload with Ajax and Java was a success!');--%>
+<%--    }--%>
+<%--</script>--%>
 </body>
 
 </html>

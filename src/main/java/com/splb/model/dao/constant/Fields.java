@@ -13,6 +13,7 @@ public abstract class Fields {
     public static final String APPLICANT_REGION = "region";
     public static final String APPLICANT_EDUC_INST = "educational_institution";
     public static final String APPLICANT_BLOCK_STATUS = "block_status";
+    public static final String APPLICANT_UPLOAD_STATUS = "upload_status";
 
 
     public static final String FACULTY_NAME = "name";

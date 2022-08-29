@@ -100,7 +100,7 @@
                     <tr>
                         <th><fmt:message key="label.faculty"/></th>
                         <th><fmt:message key="label.applicant"/></th>
-                        <th>Status</th>
+                        <th><fmt:message key="label.stat"/></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -115,9 +115,9 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td><strong>Faculty</strong></td>
-                        <td><strong>Applicant<br></strong></td>
-                        <td><strong>Status<br></strong></td>
+                        <td><strong><fmt:message key="label.faculty"/></strong></td>
+                        <td><strong><fmt:message key="label.applicant"/><br></strong></td>
+                        <td><strong><fmt:message key="label.stat"/><br></strong></td>
                     </tr>
                     </tfoot>
                 </table>

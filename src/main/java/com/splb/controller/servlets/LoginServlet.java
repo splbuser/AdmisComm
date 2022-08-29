@@ -7,7 +7,7 @@ import com.splb.model.entity.Applicant;
 import com.splb.service.ApplicantResultService;
 import com.splb.service.ApplicantService;
 import com.splb.service.utils.PassCrypt;
-import com.splb.service.utils.VerifyReCaptcha;
+import com.splb.service.utils.CaptchaVerification;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
                     } else {
                         String gRecaptchaResponse = req.getParameter("g-recaptcha-response");
                         log.info("gRecaptchaResponse={}", gRecaptchaResponse);
-                        validCaptcha = VerifyReCaptcha.verify(gRecaptchaResponse);
+                        validCaptcha = CaptchaVerification.verify(gRecaptchaResponse);
                         if (validCaptcha) {
                             /* Storing the login details in session */
                             int id = user.getId();

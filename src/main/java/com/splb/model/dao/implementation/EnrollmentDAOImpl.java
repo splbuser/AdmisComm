@@ -29,7 +29,6 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
 
     private EnrollmentDAOImpl() {
         setConnectionBuilder(new PoolConnectionBuilder());
-//        setConnectionBuilder(new DirectConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 

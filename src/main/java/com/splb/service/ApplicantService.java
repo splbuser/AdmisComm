@@ -1,12 +1,10 @@
 package com.splb.service;
 
 import com.splb.model.dao.UserDAO;
-import com.splb.model.dao.exception.FacultyDAOException;
 import com.splb.model.dao.exception.UserDAOException;
 import com.splb.model.dao.implementation.UserDAOImpl;
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
-import com.splb.service.exceptions.FacultyServiceException;
 import com.splb.service.exceptions.UserServiceException;
 import com.splb.service.utils.notifier.MailSender;
 import com.splb.service.utils.notifier.MailText;
@@ -38,6 +36,23 @@ public class ApplicantService extends Service {
         }
     }
 
+    public boolean check(String name) throws UserServiceException {
+        try {
+            return dao.checkApplicant(name);
+        } catch (UserDAOException e) {
+            log.error(e.getMessage());
+            throw new UserServiceException(e.getMessage());
+        }
+    }
+
+    public  List<Applicant> search(String name) throws UserServiceException {
+        try {
+            return dao.getApplicantForSearch(name);
+        } catch (UserDAOException e) {
+            log.error(e.getMessage());
+            throw new UserServiceException(e.getMessage());
+        }
+    }
 
     public Applicant login(String username, String password) throws UserServiceException {
         try {
@@ -60,6 +75,15 @@ public class ApplicantService extends Service {
     public boolean unblock(int userId) throws UserServiceException {
         try {
             return dao.unblockUserById(userId);
+        } catch (UserDAOException e) {
+            log.error(e.getMessage());
+            throw new UserServiceException(e.getMessage());
+        }
+    }
+
+    public boolean upload(int userId, String filename) throws UserServiceException{
+        try {
+            return dao.upload(userId, filename);
         } catch (UserDAOException e) {
             log.error(e.getMessage());
             throw new UserServiceException(e.getMessage());
@@ -91,6 +115,10 @@ public class ApplicantService extends Service {
             log.error(e.getMessage());
             throw new UserServiceException(e.getMessage());
         }
+    }
+
+    public int getPage(int limit, int listLength) {
+       return  (int) Math.ceil(listLength * 1.0 / limit);
     }
 
     public void notifyUsers() throws UserServiceException {

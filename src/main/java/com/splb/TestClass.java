@@ -15,6 +15,7 @@ import com.splb.model.entity.Statement;
 import com.splb.service.ApplicantService;
 import com.splb.service.sorting.SortStatementImpl;
 import com.splb.service.utils.DataValidator;
+import com.splb.service.utils.PassCrypt;
 import com.splb.service.utils.notifier.MailSender;
 import com.splb.service.utils.notifier.MailText;
 import com.splb.service.utils.notifier.Sender;
@@ -36,10 +37,10 @@ public class TestClass {
 
     public static void main(String[] args) throws Exception {
 
-        UserDAOImpl userDAO = UserDAOImpl.getInstance();
-        ApplicantService srv = new ApplicantService();
-        FacultyDAOImpl facultyDAO;
-        facultyDAO = FacultyDAOImpl.getInstance();
+//        UserDAOImpl userDAO = UserDAOImpl.getInstance();
+//        ApplicantService srv = new ApplicantService();
+//        FacultyDAOImpl facultyDAO;
+//        facultyDAO = FacultyDAOImpl.getInstance();
 //        StatementDAOImpl statementDAO;
 //        statementDAO = StatementDAOImpl.getInstance();
 //        ApplicantResultDAOImpl applicantResultDAO;
@@ -48,7 +49,7 @@ public class TestClass {
 //        enrollmentDAO = EnrollmentDAOImpl.getInstance();
 
 //        System.out.println(userDAO.getApplicantById(10));
-        System.out.println(facultyDAO.deleteFacultyByID(2));
+//        System.out.println(facultyDAO.deleteFacultyByID(2));
 
 
 //        try {
@@ -220,6 +221,12 @@ public class TestClass {
 //            throw new RuntimeException(e);
 //        }
 
+        String encoded = PassCrypt.encodeWithoutPadding("kgarydzjckpjjztq".getBytes());
+        System.out.println(encoded);
+
+        String decoded = new String(PassCrypt.decode(encoded));
+        System.out.println(decoded.equals("kgarydzjckpjjztq"));
+
 //        StatementDAO statementDAO = StatementDAO.getInstance();
 //        System.out.println(statementDAO.addUserToFaculty(1, 2));
     }
@@ -271,6 +278,8 @@ public class TestClass {
 //            ex.printStackTrace();
 //        }
 //    }
+
+
 
 
 }

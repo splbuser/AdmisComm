@@ -1,25 +1,34 @@
 package com.splb.model.dao.implementation;
 
 import com.splb.model.dao.UserDAO;
+import com.splb.model.dao.exception.FacultyDAOException;
 import com.splb.model.dao.exception.UserDAOException;
 import com.splb.model.entity.Applicant;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 
 class UserDAOImplTest {
 
-    UserDAO dao = UserDAOImpl.getInstance();
+    public static final String USER_NAME = "User123";
+    public static final String PASSWORD = "password";
+    final static UserDAO dao = UserDAOImpl.getInstance();
 
     @BeforeAll
     static void setUp() throws Exception {
-        DBInit.startUp();
+        DBInit.startUp(UserDAOImplTest.class);
+    }
+
+    @AfterAll
+    static void tearDown() throws UserDAOException {
+        dao.delete(USER_NAME);
     }
 
     @Test
     void addUserTest() throws UserDAOException {
 
-        Applicant applicant = new Applicant(1, "User123", "password", "FirstName",
+        Applicant applicant = new Applicant(1, USER_NAME, PASSWORD, "FirstName",
                 "LastName", "any@mail.com", "City", "Region", "HighSchool");
         Assert.assertTrue(dao.addApplicant(applicant));
         Assert.assertFalse(dao.addApplicant(applicant));
@@ -27,13 +36,13 @@ class UserDAOImplTest {
 
     @Test
     void getUserTest() throws UserDAOException {
-        Assert.assertNotNull(dao.getUser("User123", "password"));
+        Assert.assertNotNull(dao.getUser(USER_NAME, PASSWORD));
         Assert.assertNull(dao.getUser("User", "pass"));
     }
 
     @Test
     void findApplicantByNameTest() throws UserDAOException {
-        Assert.assertTrue(dao.findApplicantByName("User123"));
+        Assert.assertTrue(dao.findApplicantByName(USER_NAME));
         Assert.assertTrue(dao.findApplicantByName("aramayo"));
         Assert.assertFalse(dao.findApplicantByName("cuscu"));
     }
@@ -89,6 +98,25 @@ class UserDAOImplTest {
 
     @Test
     void getLengthTest() throws UserDAOException {
-       Assert.assertEquals(dao.getLength(), 15);
+        Assert.assertEquals(dao.getLength(), 15);
     }
+
+    @Test
+    void deleteUserTest() throws UserDAOException {
+        Assert.assertTrue(dao.delete(USER_NAME));
+        Assert.assertEquals(dao.getApplicantForSearch(USER_NAME).size(),0);
+        Assert.assertFalse(dao.delete(USER_NAME));
+    }
+
+    @Test
+    void uploadTest() throws UserDAOException {
+        String uploadImage = "user_image.jpg";
+        for (int i = 2; i <= 10; i++) {
+            dao.upload(i, uploadImage);
+            Applicant applicant = dao.getApplicantById(i);
+            Assert.assertEquals(applicant.getUploaded(), uploadImage);
+        }
+
+    }
+
 }

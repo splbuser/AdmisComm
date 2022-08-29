@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Objects.nonNull;
+
 public class DisplayApplicantsServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(DisplayApplicantsServlet.class);
@@ -34,9 +36,11 @@ public class DisplayApplicantsServlet extends HttpServlet {
         ApplicantService srv = new ApplicantService();
         HttpSession session = request.getSession();
         List<Applicant> applicants = new ArrayList<>();
+        String search = request.getParameter(Fields.SEARCH);
         int listLength = 0;
         int page = 1;
         int limit = 10;
+        int noOfPages = 1;
 
         try {
             listLength = srv.length();
@@ -59,31 +63,50 @@ public class DisplayApplicantsServlet extends HttpServlet {
         String type = request.getParameter(Fields.TYPE);
         String sortBy = request.getParameter(Fields.SORT_BY);
 
+        if (nonNull(search) && !search.isEmpty()) {
+            try {
+                if (srv.check(search)) {
+                    applicants = srv.search(search);
+                } else {
+                    applicants = srv.getAll(limit, (page - 1) * limit);
+                }
+                noOfPages = srv.getPage(limit, listLength);
 
-        try {
-            if (type == null || sortBy == null) {
-                applicants = srv.getAll(limit, (page - 1) * limit);
-            } else {
-                SortApplicantImpl sf = new SortApplicantImpl();
-                applicants = sf.getSortedList(
-                        type, sortBy,
-                        srv.getAll(limit, (page - 1) * limit));
+                request.setAttribute("applicants", applicants);
+                request.setAttribute("listLength", listLength);
+                request.setAttribute("noOfPages", noOfPages);
+                request.setAttribute("currentPage", page);
+                request.getRequestDispatcher(Pages.MANAGE_USERS)
+                        .forward(request, response);
+            } catch (UserServiceException e) {
+                log.error(e.getMessage());
             }
-        } catch (UserServiceException e) {
-            log.error("could not get Applicants list: {}", e.getMessage());
-            getServletContext().getRequestDispatcher(Pages.ERROR)
+        } else {
+            try {
+                if (type == null || sortBy == null) {
+                    applicants = srv.getAll(limit, (page - 1) * limit);
+                } else {
+                    SortApplicantImpl sf = new SortApplicantImpl();
+                    applicants = sf.getSortedList(
+                            type, sortBy,
+                            srv.getAll(limit, (page - 1) * limit));
+                }
+            } catch (UserServiceException e) {
+                log.error(e.getMessage());
+                getServletContext().getRequestDispatcher(Pages.ERROR)
+                        .forward(request, response);
+            }
+
+            noOfPages = srv.getPage(limit, listLength);
+
+            request.setAttribute("applicants", applicants);
+            request.setAttribute("listLength", listLength);
+            request.setAttribute("noOfPages", noOfPages);
+            request.setAttribute("currentPage", page);
+
+            request.getRequestDispatcher(Pages.MANAGE_USERS)
                     .forward(request, response);
         }
-
-        int noOfPages = (int) Math.ceil(listLength * 1.0 / limit);
-
-        request.setAttribute("applicants", applicants);
-        request.setAttribute("listLength", listLength);
-        request.setAttribute("noOfPages", noOfPages);
-        request.setAttribute("currentPage", page);
-
-        request.getRequestDispatcher(Pages.MANAGE_USERS)
-                .forward(request, response);
     }
 
 
@@ -94,6 +117,6 @@ public class DisplayApplicantsServlet extends HttpServlet {
         int limit = Integer.parseInt(req.getParameter(Fields.LIMIT));
         HttpSession session = req.getSession();
         session.setAttribute(Fields.LIMIT, limit);
-        resp.sendRedirect(req.getContextPath() + "/DisplayApplicants");
+        resp.sendRedirect(req.getContextPath() + Pages.APPLICANT_TABLE);
     }
 }

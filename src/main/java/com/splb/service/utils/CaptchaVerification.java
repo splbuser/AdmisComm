@@ -14,11 +14,17 @@ import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.net.ssl.HttpsURLConnection;
 
-public class VerifyReCaptcha {
+public class CaptchaVerification {
 
-    private static final Logger log = LogManager.getLogger(VerifyReCaptcha.class);
+    private static final Logger log = LogManager.getLogger(CaptchaVerification.class);
+    public static final String POST = "POST";
+    public static final String USER_AGENT = "User-Agent";
+    public static final String UA_NAME = "Mozilla/5.0";
+    public static final String ACCEPT_LANGUAGE = "Accept-Language";
+    public static final String LANG = "en-US,en;q=0.5";
+    public static final String SUCCESS = "success";
 
-    private VerifyReCaptcha() {
+    private CaptchaVerification() {
     }
     public static boolean verify(String gRecaptchaResponse) throws IOException {
         if (gRecaptchaResponse == null || gRecaptchaResponse.length() == 0) {
@@ -29,12 +35,12 @@ public class VerifyReCaptcha {
 
             HttpsURLConnection conn = (HttpsURLConnection) verifyUrl.openConnection();
 
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("User-Agent", "Mozilla/5.0");
-            conn.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+            conn.setRequestMethod(POST);
+            conn.setRequestProperty(USER_AGENT, UA_NAME);
+            conn.setRequestProperty(ACCEPT_LANGUAGE, LANG);
 
-            String postParams = "secret=" + Fields.SECRET_KEY
-                    + "&response=" + gRecaptchaResponse;
+            String postParams = String.format("secret=%s&response=%s",
+                    Fields.SECRET_KEY, gRecaptchaResponse);
 
             conn.setDoOutput(true);
 
@@ -45,7 +51,7 @@ public class VerifyReCaptcha {
             outStream.close();
 
             int responseCode = conn.getResponseCode();
-            log.info("responseCode ==> {}", responseCode);
+            log.info("responseCode: {}", responseCode);
 
             InputStream is = conn.getInputStream();
 
@@ -53,7 +59,7 @@ public class VerifyReCaptcha {
             JsonObject jsonObject = jsonReader.readObject();
             jsonReader.close();
             log.info("Response: {}", jsonObject);
-            return jsonObject.getBoolean("success");
+            return jsonObject.getBoolean(SUCCESS);
         } catch (Exception e) {
             log.error(e.getMessage());
             throw new IOException(e.getMessage());

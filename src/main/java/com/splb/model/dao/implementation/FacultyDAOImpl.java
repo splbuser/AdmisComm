@@ -22,7 +22,6 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
 
     private FacultyDAOImpl() {
         setConnectionBuilder(new PoolConnectionBuilder());
-//        setConnectionBuilder(new DirectConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 

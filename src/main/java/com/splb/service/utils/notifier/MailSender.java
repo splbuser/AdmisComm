@@ -1,5 +1,6 @@
 package com.splb.service.utils.notifier;
 
+import com.splb.service.utils.PassCrypt;
 import com.splb.service.utils.notifier.exception.MailSenderException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,7 +38,8 @@ public class MailSender implements Sender {
         String tls;
         try {
             username = MailConfig.getProperty(MailConfig.USER);
-            password = MailConfig.getProperty(MailConfig.PASSWORD);
+            String passwordHash = MailConfig.getProperty(MailConfig.PASSWORD);
+            password = new String(PassCrypt.decode(passwordHash));
             host = MailConfig.getProperty(MailConfig.HOST);
             port = MailConfig.getProperty(MailConfig.PORT);
             auth = MailConfig.getProperty(MailConfig.AUTH);

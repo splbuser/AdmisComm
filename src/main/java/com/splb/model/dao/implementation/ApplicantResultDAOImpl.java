@@ -21,7 +21,6 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
 
     private ApplicantResultDAOImpl() {
         setConnectionBuilder(new PoolConnectionBuilder());
-//        setConnectionBuilder(new DirectConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 
@@ -46,14 +45,11 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
             ps.setInt(i++, applicantResult.getEnglish());
             ps.setInt(i++, applicantResult.getLiterature());
             ps.setInt(i++, applicantResult.getWorldHistory());
-
-            ps.executeUpdate();
-            return true;
+            return ps.executeUpdate() == 1;
         } catch (SQLException e) {
             log.error(e.getMessage());
             throw new ApplicantResultDAOException("could not add Applicant's result: " + e.getMessage());
         }
-
     }
 
     @Override
