@@ -1,85 +1,23 @@
 package com.splb.service;
 
-import com.splb.model.dao.EnrollmentDAO;
-import com.splb.model.dao.StatementDAO;
 import com.splb.model.dao.exception.DAOException;
 import com.splb.model.dao.exception.StatementDAOException;
-import com.splb.model.dao.implementation.EnrollmentDAOImpl;
-import com.splb.model.dao.implementation.FacultyDAOImpl;
-import com.splb.model.dao.implementation.StatementDAOImpl;
-import com.splb.model.dao.implementation.UserDAOImpl;
+
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
 import com.splb.model.entity.Statement;
 import com.splb.model.entity.StatementResult;
 import com.splb.service.exceptions.StatementServiceException;
-import com.splb.service.sorting.SortStatementImpl;
 
 import java.util.List;
 
 public class StatementService extends Service {
 
-    StatementDAO dao = StatementDAOImpl.getInstance();
-    EnrollmentDAO edao = EnrollmentDAOImpl.getInstance();
 
-    public void finalizeStatement() throws StatementServiceException {
-
-        SortStatementImpl list = new SortStatementImpl();
-
-        try {
-            List<Statement> statementList =
-                    list.getSortedList("byTotalScore", "DSC", dao.getStatementList());
-            Applicant applicant;
-            Faculty faculty;
-            UserDAOImpl udao = UserDAOImpl.getInstance();
-            FacultyDAOImpl fdao = FacultyDAOImpl.getInstance();
-            FacultyDAOImpl facultyDAO = FacultyDAOImpl.getInstance();
-
-            for (Statement s : statementList
-            ) {
-                applicant = udao.getApplicantById(s.getApplicant().getId());
-                faculty = fdao.getFacultyById(s.getFaculty().getId());
-
-                int userId = applicant.getId();
-                int facultyId = faculty.getId();
-                int budget = faculty.getBudgetPlaces();
-                int total = faculty.getTotalPlaces();
-
-                if (budget > 0) {
-                    if (applicant.getEnrollStatus() == 0) {
-                        edao.add(facultyId, userId, 2);
-
-                        log.info("{} applicant added to {} faculty for BUDGET", s.getApplicant().getLastName(),
-                                s.getFaculty().getName());
-                        budget--;
-                        total--;
-                        faculty.setBudgetPlaces(budget);
-                        faculty.setTotalPlaces(total);
-                        facultyDAO.updateFaculty(faculty);
-                    }
-                } else if (budget == 0 && total > 0) {
-                    if (applicant.getEnrollStatus() == 0) {
-                        edao.add(facultyId, userId, 1);
-
-                        log.info("{} applicant added to {} faculty for CONTRACT",
-                                s.getApplicant().getLastName(), s.getFaculty().getName());
-                        total--;
-                        faculty.setTotalPlaces(total);
-                        facultyDAO.updateFaculty(faculty);
-                    }
-                } else if (budget == 0 && total == 0) {
-                    applicant.setEnrollStatus(0);
-                }
-            }
-        } catch (DAOException e) {
-            log.error(e.getMessage());
-            throw new StatementServiceException(e.getMessage());
-        }
-    }
 
     public boolean add(int facultyId, int userId) throws StatementServiceException {
         try {
-            return dao.addUserToFaculty(facultyId, userId);
+            return sdao.addUserToFaculty(facultyId, userId);
         } catch (StatementDAOException e) {
             log.error(e.getMessage());
             throw new StatementServiceException(e.getMessage());
@@ -88,7 +26,7 @@ public class StatementService extends Service {
 
     public boolean remove(int facultyId, int userId) throws StatementServiceException {
         try {
-            return dao.removeUserFromFaculty(facultyId, userId);
+            return sdao.removeUserFromFaculty(facultyId, userId);
         } catch (StatementDAOException e) {
             log.error(e.getMessage());
             throw new StatementServiceException(e.getMessage());
@@ -97,7 +35,7 @@ public class StatementService extends Service {
 
     public boolean check(int facultyId, int userId) throws StatementServiceException {
         try {
-            return dao.checkUserFaculty(facultyId, userId);
+            return sdao.checkUserFaculty(facultyId, userId);
         } catch (StatementDAOException e) {
             log.error(e.getMessage());
             throw new StatementServiceException(e.getMessage());
@@ -106,18 +44,86 @@ public class StatementService extends Service {
 
     public List<StatementResult> get(int id) throws StatementServiceException {
         try {
-            return dao.getStatementResult(id);
+            return sdao.getStatementResult(id);
         } catch (StatementDAOException e) {
             log.error(e.getMessage());
             throw new StatementServiceException(e.getMessage());
         }
     }
 
-
     public List<Statement> getList() throws StatementServiceException {
         try {
-            return dao.getStatementList();
+            return sdao.getStatementList();
         } catch (StatementDAOException e) {
+            log.error(e.getMessage());
+            throw new StatementServiceException(e.getMessage());
+        }
+    }
+
+    public List<Faculty> getApplicantsList(int applicantId) throws StatementServiceException {
+        try {
+            return sdao.getFacultyFromStatementForApplicant(applicantId);
+        } catch (StatementDAOException e) {
+            log.error(e.getMessage());
+            throw new StatementServiceException(e.getMessage());
+        }
+    }
+
+    public void finalizeStatement() throws StatementServiceException, StatementDAOException {
+
+        List<Statement> statementList = sdao.getStatementList();
+        Applicant applicant;
+
+        try {
+            for (Statement s : statementList
+            ) {
+                int userId = s.getApplicant().getId();
+                applicant = udao.getApplicantById(userId);
+
+                List<Faculty> faculties = getApplicantsList(userId);
+
+                for (Faculty f : faculties
+                ) {
+                    int facultyId = f.getId();
+                    int status = udao.getApplicantById(userId).getEnrollStatus();
+                    int budget = fdao.getFacultyById(facultyId).getBudgetPlaces();
+                    int total = fdao.getFacultyById(facultyId).getTotalPlaces();
+
+                    if (budget > 0 && status == 4) {
+                        applicant.setEnrollStatus(2);
+                        udao.updateEnrollStatus(applicant);
+
+                        edao.add(facultyId, userId, 2);
+
+                        log.info("{} applicant added to {} faculty for BUDGET",
+                                applicant.getLastName(), s.getFaculty().getName());
+
+                        budget--;
+                        total--;
+                        f.setBudgetPlaces(budget);
+                        f.setTotalPlaces(total);
+                        fdao.updateFaculty(f);
+
+                    } else if (budget == 0 && total > 0 && status == 4) {
+
+                        applicant.setEnrollStatus(1);
+                        udao.updateEnrollStatus(applicant);
+                        edao.add(facultyId, userId, 1);
+
+                        log.info("{} applicant added to {} faculty for CONTRACT",
+                                s.getApplicant().getLastName(), s.getFaculty().getName());
+                        total--;
+                        f.setTotalPlaces(total);
+                        fdao.updateFaculty(f);
+
+                    } else if (budget == 0 && total == 0 && status == 4) {
+                        log.info("{} applicant no enrolled", s.getApplicant().getLastName());
+                        applicant.setEnrollStatus(0);
+                        udao.updateEnrollStatus(applicant);
+                    }
+                }
+            }
+        } catch (DAOException e) {
             log.error(e.getMessage());
             throw new StatementServiceException(e.getMessage());
         }

@@ -1,8 +1,6 @@
 package com.splb.service;
 
-import com.splb.model.dao.ApplicantResultDAO;
 import com.splb.model.dao.exception.ApplicantResultDAOException;
-import com.splb.model.dao.implementation.ApplicantResultDAOImpl;
 import com.splb.model.entity.ApplicantResult;
 import com.splb.service.exceptions.ApplicantResultServiceException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,12 +8,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class ApplicantResultService extends Service {
 
-    ApplicantResultDAO dao = ApplicantResultDAOImpl.getInstance();
-
     public boolean insert(ApplicantResult applicantResult)
             throws ApplicantResultServiceException {
         try {
-            return dao.insert(applicantResult);
+            return adao.insert(applicantResult);
         } catch (ApplicantResultDAOException e) {
             log.error(e.getMessage());
             throw new ApplicantResultServiceException(e.getMessage());
@@ -25,7 +21,7 @@ public class ApplicantResultService extends Service {
     public boolean addFResult(HttpServletRequest req, HttpServletResponse resp,
                               int userId, int subjOne, int subjTwo, int facultyId) throws ApplicantResultServiceException {
         try {
-            return dao.addFacultySubjectResult(req, resp, userId, subjOne, subjTwo, facultyId);
+            return adao.addFacultySubjectResult(req, resp, userId, subjOne, subjTwo, facultyId);
         } catch (ApplicantResultDAOException e) {
             log.error(e.getMessage());
             throw new ApplicantResultServiceException(e.getMessage());
@@ -34,7 +30,7 @@ public class ApplicantResultService extends Service {
 
     public ApplicantResult get(int id) throws ApplicantResultServiceException {
         try {
-            return dao.getApplicantResult(id);
+            return adao.getApplicantResult(id);
         } catch (ApplicantResultDAOException e) {
             log.error(e.getMessage());
             throw new ApplicantResultServiceException(e.getMessage());
@@ -44,7 +40,7 @@ public class ApplicantResultService extends Service {
     public boolean checkSub(int id)
             throws ApplicantResultServiceException {
         try {
-            return dao.isSubmittedResult(id);
+            return adao.isSubmittedResult(id);
         } catch (ApplicantResultDAOException e) {
             log.error(e.getMessage());
             throw new ApplicantResultServiceException(e.getMessage());

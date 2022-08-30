@@ -1,8 +1,7 @@
 package com.splb.service;
 
 import com.splb.model.dao.*;
-//import com.splb.model.dao.factory.DAOFactory;
-//import com.splb.model.dao.factory.DAOType;
+import com.splb.model.dao.implementation.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,22 +9,19 @@ import org.apache.logging.log4j.Logger;
 public abstract class Service {
 
     protected Logger log;
-
-//    ApplicantResultDAO applicantResultDAO;
-//    EnrollmentDAO enrollmentDao;
-//    RegisterDAO registerDAO;
-//    FacultyDAO facultyDao;
-//    StatementDAO statementDAO;
-//    UserDAO userDao;
+    UserDAO udao;
+    FacultyDAO fdao;
+    StatementDAO sdao;
+    EnrollmentDAO edao;
+    ApplicantResultDAO adao;
 
     {
+        udao = UserDAOImpl.getInstance();
+        fdao = FacultyDAOImpl.getInstance();
+        sdao = StatementDAOImpl.getInstance();
+        edao = EnrollmentDAOImpl.getInstance();
+        adao = ApplicantResultDAOImpl.getInstance();
         log = LogManager.getLogger(getClass().getName());
-//        applicantResultDAO = (ApplicantResultDAO) DAOFactory.getDao(DAOType.RESULT_DAO);
-//        enrollmentDao = (EnrollmentDAO) DAOFactory.getDao(DAOType.ENROLLMENT_DAO);
-//        registerDAO = (RegisterDAO) DAOFactory.getDao(DAOType.REGISTER_DAO);
-//        facultyDao = (FacultyDAO) DAOFactory.getDao(DAOType.FACULTY_DAO);
-//        statementDAO = (StatementDAO) DAOFactory.getDao(DAOType.STATEMENT_DAO);
-//        userDao = (UserDAO) DAOFactory.getDao(DAOType.USER_DAO);
     }
 
 }

@@ -3,15 +3,11 @@ package com.splb.model.dao.implementation;
 import com.splb.model.dao.AbstractDAO;
 import com.splb.model.dao.ApplicantResultDAO;
 import com.splb.model.dao.EnrollmentDAO;
-import com.splb.model.dao.RegisterDAO;
-import com.splb.model.dao.connection.DirectConnectionBuilder;
 import com.splb.model.dao.connection.PoolConnectionBuilder;
 import com.splb.model.dao.constant.SQLQuery;
 import com.splb.model.dao.exception.*;
-import com.splb.model.entity.EnrollStatus;
 import com.splb.model.entity.Enrollment;
 import com.splb.model.entity.Faculty;
-import com.splb.service.ApplicantService;
 import org.apache.logging.log4j.LogManager;
 
 import java.sql.Connection;
@@ -51,9 +47,9 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
                 ps.setInt(2, applicantId);
                 ps.setInt(3, status);
                 if (ps.executeUpdate() == 1) {
+                    log.info("Enroll table changed for appl id:{}", applicantId);
                     deleteApplicant(conn, applicantId);
                     changeEnrollStatus(conn, applicantId, status);
-                    decreaseFacultyPlaces(conn, facultyId);
                     dao.deleteResults(conn, applicantId);
                     conn.commit();
                     return true;

@@ -86,14 +86,11 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
             ps.setInt(1, userId);
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
-            if (resultSet.next()) {
-                return true;
-            }
+            return resultSet.next();
         } catch (SQLException e) {
             log.error(e.getMessage());
             throw new ApplicantResultDAOException("could not add check submission of Applicant's result: " + e.getMessage());
         }
-        return false;
     }
 
     @Override
@@ -108,8 +105,7 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
             ps.setInt(i++, facultyId);
             ps.setInt(i++, subjOne);
             ps.setInt(i++, subjTwo);
-            ps.executeUpdate();
-            return true;
+            return ps.executeUpdate() == 1;
         } catch (SQLException e) {
             log.error(e.getMessage());
             throw new ApplicantResultDAOException("could not add result for faculty's subject: " + e.getMessage());

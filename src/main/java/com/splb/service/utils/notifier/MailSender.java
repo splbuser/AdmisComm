@@ -16,9 +16,14 @@ import java.util.Properties;
 public class MailSender implements Sender {
 
     private static final Logger log = LogManager.getLogger(MailSender.class);
+    public static final String SMTP_HOST = "mail.smtp.host";
+    public static final String SMTP_PORT = "mail.smtp.port";
+    public static final String SMTP_AUTH = "mail.smtp.auth";
+    public static final String SMTP_STARTTLS_ENABLE = "mail.smtp.starttls.enable";
+    public static final String FROM_FORM = "committee@gmail.com";
+    public static final String MSG_TYPE = "text/html; charset=utf-8";
     private String username;
     private String password;
-
     private final String recipient;
     private final String subj;
     private final String msg;
@@ -50,10 +55,10 @@ public class MailSender implements Sender {
         }
 
         Properties prop = new Properties();
-        prop.put("mail.smtp.host", host);
-        prop.put("mail.smtp.port", port);
-        prop.put("mail.smtp.auth", auth);
-        prop.put("mail.smtp.starttls.enable", tls);
+        prop.put(SMTP_HOST, host);
+        prop.put(SMTP_PORT, port);
+        prop.put(SMTP_AUTH, auth);
+        prop.put(SMTP_STARTTLS_ENABLE, tls);
 
         Session session = Session.getInstance(prop, new Authenticator() {
             @Override
@@ -65,13 +70,13 @@ public class MailSender implements Sender {
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("committee@gmail.com"));
+            message.setFrom(new InternetAddress(FROM_FORM));
             message.setRecipients(
                     Message.RecipientType.TO, InternetAddress.parse(recipient));
             message.setSubject(subj);
 
             MimeBodyPart mimeBodyPart = new MimeBodyPart();
-            mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
+            mimeBodyPart.setContent(msg, MSG_TYPE);
 
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(mimeBodyPart);

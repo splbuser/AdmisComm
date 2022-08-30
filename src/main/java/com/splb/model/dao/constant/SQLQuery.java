@@ -14,17 +14,17 @@ public abstract class SQLQuery {
     public static final String GET_APP_FOR_FACULTY = "SELECT * FROM applicant_has_faculty where faculty_id =? ";
     public static final String FIND_USER_IN_STATEMENT = "SELECT * FROM statement_app WHERE faculty__id = ? AND applicant_id = ?";
     public static final String GET_RESULT_FOR_APPLICANT = "SELECT * FROM applicant_results where applicant_id = ?";
-    public static final String GET_STATEMENT_LIST = "SELECT * FROM statement_app order by faculty__id";
+    public static final String GET_STATEMENT_LIST = "SELECT * FROM statement_app order by total_score DESC";
     public static final String GET_APPL_FROM_STMNT_BT_FCLTY = "SELECT * FROM statement_app WHERE faculty__id = ?";
     public static final String SELECT_FROM_STATEMENT_APP = "SELECT * FROM statement_app WHERE applicant_id = ?";
-     public static final String CREATE_USER = "INSERT INTO  applicant (id, user_name, password, admin_status, first_name, last_name, email, city, region, educational_institution, block_status) VALUES (DEFAULT, ?, ?, DEFAULT, ?, ?, ?, ?, ?, ?, DEFAULT)";
-
+    public static final String CREATE_USER = "INSERT INTO  applicant (id, user_name, password, admin_status, first_name, last_name, email, city, region, educational_institution, block_status) VALUES (DEFAULT, ?, ?, DEFAULT, ?, ?, ?, ?, ?, ?, DEFAULT)";
     public static final String CREATE_FACULTY = "INSERT INTO faculty  (id, name, budget_places, total_places, first_subject, second_subject) VALUES (DEFAULT, ?, ?, ?, ?, ?)";
     public static final String INSERT_RESULT = "INSERT INTO applicant_results VALUES (?, ?, ?, ?, ?, ?, ?)";
-    public static final String ADD_USER_TO_STATEMENT = "INSERT INTO statement_app VALUES (?, ?)";
+    public static final String ADD_USER_TO_STATEMENT = "INSERT INTO statement_app VALUES (?, ?, ?)";
     public static final String REGISTER_FOR_SINGLE_FACULTY = "INSERT INTO applicant_has_faculty VALUES (?, ?, ?, ?)";
     public static final String UPDATE_FACULTY = "UPDATE faculty SET name = ?, budget_places = ?, total_places = ?, first_subject = ?, second_subject = ? WHERE id = ?";
     public static final String BLOCK_USER_BY_ID = "UPDATE applicant SET block_status = ? WHERE id = ?";
+    public static final String UPD_USER_ENROLL_STATUS = "UPDATE applicant SET enroll_status = ? WHERE id = ?";
     public static final String DELETE_FACULTY_BY_ID = "DELETE from faculty WHERE id = ?";
     public static final String REMOVE_USER_FROM_STATEMENT = "DELETE from statement_app WHERE faculty__id = ? AND applicant_id = ?;";
     public static final String APPLICANT_HAS_FACULTY = "SELECT * FROM applicant_has_faculty WHERE applicant_id = ?";
@@ -36,7 +36,7 @@ public abstract class SQLQuery {
     public static final String DELETE_APPL_FROM_STATEMENT = "DELETE FROM statement_app WHERE applicant_id=?";
     public static final String DELETE_FACULTY_FROM_STATEMENT = "DELETE FROM statement_app WHERE faculty__id=?";
     public static final String GET_ENROLLMENT = "SELECT * FROM enrollment";
-    //--
+    public static final String GET_NOT_ENROLLMENT = "SELECT * FROM applicant WHERE enroll_status=0";
     public static final String CHANGE_ENROLL_STATUS = "UPDATE applicant SET enroll_status = ? WHERE id = ?";
     public static final String GET_APPL_ENROLL_STATUS = "SELECT * FROM enrollment WHERE applicant_id = ?";
     public static final String DELETE_APPL_FACULTY_REGS = "DELETE FROM applicant_has_faculty WHERE applicant_id=?";

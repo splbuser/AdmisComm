@@ -2,6 +2,7 @@ package com.splb.controller.servlets.admin;
 
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
+import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Enrollment;
 import com.splb.service.ApplicantService;
 import com.splb.service.EnrollmentService;
@@ -35,6 +36,7 @@ public class DisplayEnrollmentServlet extends HttpServlet {
         String sortBy = request.getParameter(Fields.SORT_BY);
         String notify = request.getParameter(Fields.ACTION);
         List<Enrollment> enrollment = new ArrayList<>();
+        List<Applicant> notEnroll = null;
         EnrollmentService srv = new EnrollmentService();
         ApplicantService asrv = new ApplicantService();
 
@@ -71,7 +73,15 @@ public class DisplayEnrollmentServlet extends HttpServlet {
             getServletContext().getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
+        try {
+            notEnroll = asrv.getNotEnroll();
+        } catch (UserServiceException e) {
+            log.error(e.getMessage());
+            getServletContext().getRequestDispatcher(Pages.ERROR)
+                    .forward(request, response);
+        }
         request.setAttribute("enrollment", enrollment);
+        request.setAttribute("not_enroll", notEnroll);
         request.getRequestDispatcher(Pages.ENROLLMENT_PAGE)
                 .forward(request, response);
     }

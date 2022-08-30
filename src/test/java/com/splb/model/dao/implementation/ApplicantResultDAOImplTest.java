@@ -60,14 +60,17 @@ class ApplicantResultDAOImplTest {
 
     @Test
     void isSubmittedResultTest() throws ApplicantResultDAOException {
-        Assert.assertTrue(dao.isSubmittedResult(2));
-        Assert.assertTrue(dao.isSubmittedResult(4));
+        for (int i = 2; i <= 7; i++) {
+            Assert.assertTrue(dao.isSubmittedResult(2));
+        }
     }
 
     @Test
     void deleteResultsTest() throws UserDAOException, SQLException, ApplicantResultDAOException {
-        int id = udao.getUser(USERNAME, PASSWORD).getId();
-        Assert.assertTrue(dao.deleteResults(new DirectConnectionBuilder().getConnection(), id));
+        for (int i = 7; i <= 13; i++) {
+            Assert.assertTrue(dao.deleteResults
+                    (new DirectConnectionBuilder().getConnection(), i));
+        }
     }
 
 }

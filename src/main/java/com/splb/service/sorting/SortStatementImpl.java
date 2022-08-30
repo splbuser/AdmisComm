@@ -22,7 +22,7 @@ public class SortStatementImpl implements Sort<Statement> {
             case "byFaculty":
                 Comparator<Statement> byFaculty =
                         Comparator.comparing((Statement s) -> s.getFaculty().getName())
-                                .thenComparing(Statement::getTotalScore);
+                                .thenComparing(Statement::getTotalScore).reversed();
                 if (type.equals("ASC")) {
                     list.sort(byFaculty);
                 } else {

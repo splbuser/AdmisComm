@@ -8,6 +8,8 @@ import com.splb.model.dao.constant.SQLQuery;
 import com.splb.model.dao.exception.*;
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
+import com.splb.service.sorting.Sort;
+import com.splb.service.sorting.SortFacultyImpl;
 import org.apache.logging.log4j.LogManager;
 
 import java.sql.*;
@@ -66,6 +68,21 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             log.error(e.getMessage());
             throw new UserDAOException("could not add new applicant: " + e.getMessage());
         }
+    }
+
+    @Override
+    public boolean updateEnrollStatus(Applicant applicant) throws UserDAOException {
+        try (Connection conn = getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQLQuery.UPD_USER_ENROLL_STATUS)
+        ) {
+            ps.setInt(1, applicant.getEnrollStatus());
+            ps.setInt(2, applicant.getId());
+            return ps.executeUpdate() == 1;
+        } catch (SQLException e) {
+            log.error(e.getMessage());
+            throw new UserDAOException("could not update enroll status: " + e.getMessage());
+        }
+
     }
 
     @Override
@@ -225,6 +242,23 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
+    public List<Applicant> getNotEnrollApplicants() throws UserDAOException {
+        List<Applicant> list = new ArrayList<>();
+        try (Connection conn = getConnection();
+             Statement s = conn.createStatement()) {
+            ResultSet rs = s.executeQuery(SQLQuery.GET_NOT_ENROLLMENT);
+            while (rs.next()) {
+                Applicant a = getApplicantById(rs.getInt(Fields.ID));
+                list.add(a);
+            }
+        } catch (SQLException e) {
+            log.error(e.getMessage());
+            throw new UserDAOException("could not get list: " + e.getMessage());
+        }
+        return list;
+    }
+
+    @Override
     public boolean blockUserById(int userId) throws UserDAOException {
 
         if (!isBlockedUserCheck(userId)) {
@@ -297,6 +331,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     @Override
     public List<Faculty> getApplicantsFacultyList(int id) throws UserDAOException {
         List<Faculty> list = new ArrayList<>();
+        SortFacultyImpl sortedList = new SortFacultyImpl();
 
         try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(SQLQuery.APPLICANT_HAS_FACULTY)) {
@@ -311,7 +346,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             log.error(e.getMessage());
             throw new UserDAOException("could not get list: " + e.getMessage());
         }
-        return list;
+        return sortedList.getSortedList("DSC", "byBudget", list);
     }
 
     @Override

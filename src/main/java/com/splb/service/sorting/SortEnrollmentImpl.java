@@ -1,7 +1,6 @@
 package com.splb.service.sorting;
 
 import com.splb.model.entity.Enrollment;
-import com.splb.model.entity.Statement;
 
 import java.util.Comparator;
 import java.util.List;

@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant`
     `region`                  VARCHAR(32)  NOT NULL,
     `educational_institution` VARCHAR(64)  NOT NULL,
     `block_status`            BOOLEAN      NULL DEFAULT 0,
-    `enroll_status`           TINYINT      NULL DEFAULT 0,
-    `upload_status`           VARCHAR(128)  NULL,
+    `enroll_status`           TINYINT      NULL DEFAULT 4,
+    `upload_status`           VARCHAR(128) NULL,
     PRIMARY KEY (`id`),
     UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
     UNIQUE INDEX `user-name_UNIQUE` (`user_name` ASC) VISIBLE
@@ -120,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`statement_app`
 (
     `faculty__id`  INT NOT NULL,
     `applicant_id` INT NOT NULL,
+    `total_score`  INT NOT NULL,
     PRIMARY KEY (`faculty__id`, `applicant_id`),
     INDEX `fk_statement_app_applicant1_idx` (`applicant_id` ASC) VISIBLE,
     INDEX `fk_statement_app_faculty1_idx` (`faculty__id` ASC) VISIBLE,
@@ -171,15 +172,15 @@ SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
 -- Staffing faculty
 -- -----------------------------------------------------
 INSERT INTO faculty
-VALUES (DEFAULT, 'Biology', 3, 10, 'Botanic', 'Sociology');
+VALUES (DEFAULT, 'Biology', 1, 2, 'Botanic', 'Sociology');
 INSERT INTO faculty
-VALUES (DEFAULT, 'Physics', 2, 10, 'Math', 'Physics');
+VALUES (DEFAULT, 'Physics', 1, 2, 'Math', 'Physics');
 INSERT INTO faculty
-VALUES (DEFAULT, 'Engineering', 3, 10, 'Geometry', 'Physics');
+VALUES (DEFAULT, 'Engineering', 1, 2, 'Geometry', 'Physics');
 INSERT INTO faculty
-VALUES (DEFAULT, 'Computer Science', 2, 10, 'Computer science', 'Math');
+VALUES (DEFAULT, 'Computer Science', 1, 2, 'Computer science', 'Math');
 INSERT INTO faculty
-VALUES (DEFAULT, 'Economics', 2, 10, 'Economics', 'Math');
+VALUES (DEFAULT, 'Economics', 1, 2, 'Economics', 'Math');
 
 -- -----------------------------------------------------
 -- Staffing applicants  `user_name` `password` `admin_status` `first_name` `last_name` `email` 

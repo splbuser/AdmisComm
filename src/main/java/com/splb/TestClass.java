@@ -23,11 +23,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
+import javax.swing.text.html.parser.Entity;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class TestClass {
@@ -41,8 +40,17 @@ public class TestClass {
 //        ApplicantService srv = new ApplicantService();
 //        FacultyDAOImpl facultyDAO;
 //        facultyDAO = FacultyDAOImpl.getInstance();
-//        StatementDAOImpl statementDAO;
-//        statementDAO = StatementDAOImpl.getInstance();
+        StatementDAOImpl statementDAO;
+        statementDAO = StatementDAOImpl.getInstance();
+
+        Map<Faculty, TreeSet<Applicant>> finalizeList = statementDAO.getFinalizeList();
+
+//        finalizeList.forEach((key, value) -> System.out.println(key + ":" + value));
+        finalizeList.forEach((key, value) -> System.out.println("Key ==> " + key + ": val size ==> " + value.size()));
+
+//        System.out.println(statementDAO.getFinalizeList());
+
+
 //        ApplicantResultDAOImpl applicantResultDAO;
 //        applicantResultDAO = ApplicantResultDAOImpl.getInstance();
 //        EnrollmentDAOImpl enrollmentDAO;
@@ -85,8 +93,8 @@ public class TestClass {
 //           log.error(e.getMessage());
 //        }
 //**************************************************************************************
-//        Sender s = new MailSender("therealant@gmail.com", MailText.ENROLL_SUBJ,
-//                String.format((MailText.ENROLL_BODY), "contract", "Serious") );
+//        Sender s = new MailSender("therealant@gmail.com", MailText.ENROLL_SUBJ.getText(),
+//                String.format((MailText.ENROLL_BODY.getText()), "contract", "Serious") );
 //        s.send();
 //**************************************************************************************
 
@@ -221,11 +229,11 @@ public class TestClass {
 //            throw new RuntimeException(e);
 //        }
 
-        String encoded = PassCrypt.encodeWithoutPadding("kgarydzjckpjjztq".getBytes());
-        System.out.println(encoded);
-
-        String decoded = new String(PassCrypt.decode(encoded));
-        System.out.println(decoded.equals("kgarydzjckpjjztq"));
+//        String encoded = PassCrypt.encodeWithoutPadding("kgarydzjckpjjztq".getBytes());
+//        System.out.println(encoded);
+//
+//        String decoded = new String(PassCrypt.decode(encoded));
+//        System.out.println(decoded.equals("kgarydzjckpjjztq"));
 
 //        StatementDAO statementDAO = StatementDAO.getInstance();
 //        System.out.println(statementDAO.addUserToFaculty(1, 2));

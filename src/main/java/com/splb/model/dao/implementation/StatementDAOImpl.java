@@ -1,6 +1,8 @@
 package com.splb.model.dao.implementation;
 
 import com.splb.model.dao.AbstractDAO;
+import com.splb.model.dao.ApplicantResultDAO;
+import com.splb.model.dao.FacultyDAO;
 import com.splb.model.dao.StatementDAO;
 import com.splb.model.dao.connection.DirectConnectionBuilder;
 import com.splb.model.dao.connection.PoolConnectionBuilder;
@@ -11,6 +13,8 @@ import com.splb.model.entity.Applicant;
 import com.splb.model.entity.ApplicantResult;
 import com.splb.model.entity.Faculty;
 import com.splb.model.entity.StatementResult;
+import com.splb.service.sorting.Sort;
+import com.splb.service.sorting.SortFacultyImpl;
 import org.apache.logging.log4j.LogManager;
 
 import java.sql.*;
@@ -34,14 +38,22 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
 
     @Override
     public boolean addUserToFaculty(int facultyId, int userId) throws StatementDAOException {
+        ApplicantResultDAO adao = ApplicantResultDAOImpl.getInstance();
+        FacultyDAO fdao = FacultyDAOImpl.getInstance();
+
+
         try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.ADD_USER_TO_STATEMENT);
+             PreparedStatement ps = conn.prepareStatement(SQLQuery.ADD_USER_TO_STATEMENT)
         ) {
+            int certificate = adao.getApplicantResult(userId).sum();
+            int facultyResult = fdao.getSum(userId, facultyId);
+
             ps.setInt(1, facultyId);
             ps.setInt(2, userId);
-            ps.executeUpdate();
-            return true;
-        } catch (SQLException e) {
+            ps.setInt(3, certificate + facultyResult);
+
+            return ps.executeUpdate() == 1;
+        } catch (SQLException | DAOException e) {
             log.error(e.getMessage());
             throw new StatementDAOException("could not add user to faculty: " + e.getMessage());
         }
@@ -55,8 +67,7 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
         ) {
             ps.setInt(1, facultyId);
             ps.setInt(2, userId);
-            ps.executeUpdate();
-            return true;
+            return ps.executeUpdate() == 1;
         } catch (SQLException e) {
             log.error(e.getMessage());
             throw new StatementDAOException("could not remove user from faculty: " + e.getMessage());
@@ -85,11 +96,12 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
     public List<com.splb.model.entity.Statement> getStatementList() throws StatementDAOException {
 
         List<com.splb.model.entity.Statement> list = new ArrayList<>();
+
         FacultyDAOImpl fdao = FacultyDAOImpl.getInstance();
-        ApplicantResultDAOImpl adao = ApplicantResultDAOImpl.getInstance();
         UserDAOImpl udao = UserDAOImpl.getInstance();
         Faculty faculty;
         Applicant applicant;
+        int totalScore;
 
         try (Connection connection = getConnection();
              Statement st = connection.createStatement();
@@ -98,12 +110,11 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
             while (rs.next()) {
                 faculty = fdao.getFacultyById((rs.getInt(Fields.FACULTY__ID)));
                 applicant = udao.getApplicantById((rs.getInt(Fields.APPLICANT_ID)));
-                int certificate = adao.getApplicantResult((rs.getInt(Fields.APPLICANT_ID))).sum();
-                int facultyResult = fdao.getSum((rs.getInt(Fields.APPLICANT_ID)), (rs.getInt(Fields.FACULTY__ID)));
+                totalScore = rs.getInt("total_score");
 
                 if (!applicant.isBlockStatus()) {
                     com.splb.model.entity.Statement statement = new
-                            com.splb.model.entity.Statement(faculty, applicant, certificate + facultyResult);
+                            com.splb.model.entity.Statement(faculty, applicant, totalScore);
                     list.add(statement);
                 }
             }
@@ -113,7 +124,39 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
         }
     }
 
-    // Метод вернет список апликантов по заданому id факультата, чьи результаты были добавлены в стейтмент
+    public Map<Faculty, TreeSet<Applicant>> getFinalizeList() throws StatementDAOException {
+        FacultyDAO fdao = FacultyDAOImpl.getInstance();
+
+        try (Connection connection = getConnection();
+             Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery(SQLQuery.GET_STATEMENT_LIST);
+
+            Map<Faculty, TreeSet<Applicant>> applicants = new HashMap<>();
+            Faculty faculty;
+            Applicant applicant;
+            while (resultSet.next()) {
+                faculty = new Faculty();
+                faculty.setId(resultSet.getInt(Fields.FACULTY__ID));
+                faculty.setTotalPlaces(fdao.getFacultyById(resultSet.getInt(Fields.FACULTY__ID)).getTotalPlaces());
+
+                applicant = new Applicant();
+                applicant.setId(resultSet.getInt(Fields.APPLICANT_ID));
+
+                if (applicants.containsKey(faculty)) {
+                    applicants.get(faculty).add(applicant);
+                } else {
+                    applicants.put(faculty, new TreeSet<>());
+                    applicants.get(faculty).add(applicant);
+                }
+            }
+            return applicants;
+        } catch (SQLException | FacultyDAOException e) {
+            log.error(e.getMessage());
+            throw new StatementDAOException("could not get current enrollment applicants: " + e.getMessage());
+        }
+    }
+
+
     @Override
     public List<Applicant> getFacultysApplicantsFromStatement(int facultyId) throws StatementDAOException {
         List<Applicant> list = new ArrayList<>();
@@ -133,11 +176,11 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
         return list;
     }
 
-    // возвращает для applicant список факультетов из Statement
     @Override
     public List<Faculty> getFacultyFromStatementForApplicant(int applicantId) throws StatementDAOException {
-
         List<Faculty> list = new ArrayList<>();
+        SortFacultyImpl sortedList = new SortFacultyImpl();
+
         try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(SQLQuery.SELECT_FROM_STATEMENT_APP);
 
@@ -151,10 +194,9 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
             log.error(e.getMessage());
             throw new StatementDAOException("could not get applicant's faculty list: " + e.getMessage());
         }
-        return list;
+        return sortedList.getSortedList("DSC", "byBudget", list);
     }
 
-    // метод вернет список результатов аппликнта, которые добавленые в стейтмент
     @Override
     public List<StatementResult> getStatementResult(int userid) throws StatementDAOException {
         List<StatementResult> list = new ArrayList<>();

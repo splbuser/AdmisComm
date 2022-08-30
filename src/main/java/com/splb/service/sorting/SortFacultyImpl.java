@@ -19,9 +19,11 @@ public class SortFacultyImpl implements Sort<Faculty> {
                 break;
             case "byBudget":
                 if (type.equals("ASC")) {
-                    list.sort(Comparator.comparing(Faculty::getBudgetPlaces));
+                    list.sort(Comparator.comparing(Faculty::getBudgetPlaces)
+                            .thenComparing(Faculty::getTotalPlaces));
                 } else {
-                    list.sort(Comparator.comparing(Faculty::getBudgetPlaces).reversed());
+                    list.sort(Comparator.comparing(Faculty::getBudgetPlaces)
+                            .thenComparing(Faculty::getTotalPlaces).reversed());
                 }
                 break;
             case "byTotal":

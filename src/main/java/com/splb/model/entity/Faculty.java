@@ -1,6 +1,7 @@
 package com.splb.model.entity;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Faculty implements Comparable<Faculty> {
 
@@ -95,20 +96,32 @@ public class Faculty implements Comparable<Faculty> {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || this.getClass() != obj.getClass()) return false;
-        Faculty other = (Faculty) obj;
-        return name.equals(other.name)
-                && budgetPlaces == (other.budgetPlaces)
-                && totalPlaces == (other.totalPlaces)
-                && subjOne.equals(other.subjOne)
-                && subjTwo.equals(other.subjTwo);
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Faculty faculty = (Faculty) o;
+        if (id != faculty.id) {
+            return false;
+        }
+        if (totalPlaces != faculty.totalPlaces) {
+            return false;
+        }
+        if (budgetPlaces != faculty.budgetPlaces) {
+            return false;
+        }
+        return Objects.equals(name, faculty.name);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + totalPlaces + budgetPlaces;
+        return result;
     }
 
     @Override

@@ -2,9 +2,7 @@ package com.splb.controller.servlets.admin;
 
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
-import com.splb.model.dao.implementation.FacultyDAOImpl;
 
-import com.splb.model.dao.implementation.StatementDAOImpl;
 import com.splb.model.entity.Applicant;
 import com.splb.service.FacultyService;
 import com.splb.service.StatementService;
@@ -17,6 +15,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.List;
+
+import static java.util.Objects.nonNull;
 
 /**
  * Pressing "Watch list" on faculty table shows applicants, registered for current faculty.
@@ -65,5 +65,20 @@ public class FacultyApplicationListServlet extends HttpServlet {
                     .getRequestDispatcher(Pages.ERROR)
                     .forward(req, resp);
         }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        StatementService srv = new StatementService();
+        String action = req.getParameter(Fields.ACTION);
+        try {
+            if (nonNull(action) && action.equals("addall")) {
+//                srv.dellEmAll();
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            resp.sendRedirect(req.getContextPath() + Pages.ERROR);
+        }
+        resp.sendRedirect(req.getContextPath() + Pages.ENROLLMENT);
     }
 }

@@ -3,7 +3,6 @@ package com.splb.model.dao;
 import com.splb.model.dao.exception.StatementDAOException;
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
-import com.splb.model.entity.Statement;
 import com.splb.model.entity.StatementResult;
 
 import java.util.List;
@@ -46,12 +45,36 @@ public interface StatementDAO {
      */
     List<com.splb.model.entity.Statement> getStatementList () throws StatementDAOException;
 
-//    Map<String, List<String>> getStatement() throws StatementDAOException;
+    /**
+     * returns list for finalization
+     * @return
+     * @throws StatementDAOException
+     */
 
+    Map<Faculty, TreeSet<Applicant>> getFinalizeList() throws StatementDAOException;
+
+    /**
+     * The method will return a list of applicants by the given faculty id, whose results have been added to the statement
+     * @param facultyId
+     * @return List<Applicant>
+     * @throws StatementDAOException
+     */
     List<Applicant> getFacultysApplicantsFromStatement(int facultyId) throws StatementDAOException;
 
+    /**
+     * method returns for applicants a list of faculties from Statement
+     * @param applicantId
+     * @return List<Faculty>
+     * @throws StatementDAOException
+     */
     List<Faculty> getFacultyFromStatementForApplicant(int applicantId) throws StatementDAOException;
 
+    /**
+     * method returns the list of results of the applicant that were added to the statement
+     * @param userid
+     * @return List<StatementResult>
+     * @throws StatementDAOException
+     */
     List<StatementResult> getStatementResult(int userid) throws StatementDAOException;
 
 }

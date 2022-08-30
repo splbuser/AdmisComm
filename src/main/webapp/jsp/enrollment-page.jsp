@@ -122,6 +122,27 @@
                     </tfoot>
                 </table>
             </div>
+            <%--additinal--%>
+            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                <table class="table my-0" id="dataTable2">
+                    <thead>
+                    <tr>
+                        <th><fmt:message key="label.applicant"/></th>
+                        <th><fmt:message key="label.stat"/></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <jsp:useBean id="not_enroll" scope="request" type="java.util.List"/>
+                    <c:forEach var="applicant" items="${not_enroll}">
+                        <tr>
+                            <td>${applicant.lastName} ${applicant.firstName}</td>
+                            <td><c:if test="${applicant.enrollStatus == 0}"><fmt:message key="label.no_enroll"/></c:if></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+            <%--additinal--%>
             <div class="row">
                 <div class="col-md-6 align-self-center">
                     <div></div>

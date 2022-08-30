@@ -2,11 +2,7 @@ package com.splb.controller.servlets;
 
 import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
-import com.splb.model.dao.connection.PoolConnectionBuilder;
 import com.splb.model.dao.constant.Fields;
-import com.splb.model.dao.exception.DAOException;
-import com.splb.model.dao.exception.RegisterDAOException;
-import com.splb.model.dao.implementation.RegisterDAOImpl;
 import com.splb.model.entity.Applicant;
 import com.splb.service.ApplicantService;
 import com.splb.service.exceptions.ServiceException;
@@ -24,7 +20,6 @@ import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.mail.MessagingException;
 import java.io.IOException;
 
 public class RegisterServlet extends HttpServlet {
@@ -78,7 +73,7 @@ public class RegisterServlet extends HttpServlet {
                 insertResult = srv.add(applicant);
                 if (insertResult) {
                     httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_SUCCESSFUL);
-                    Sender s = new MailSender(email, MailText.REG_SUBJ, MailText.REG_BODY);
+                    Sender s = new MailSender(email,  MailText.REG_SUBJ.getText(), MailText.REG_BODY.getText());
                     s.send();
                     resp.sendRedirect("Login");
                 }

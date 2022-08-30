@@ -26,7 +26,6 @@ public class GradeValidatorTest {
 
     @Test
     public void testValidateGradesNegative() {
-
         assertFalse(GradeValidator.validateGrades(invalidGrades));
     }
 
