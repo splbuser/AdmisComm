@@ -1,6 +1,8 @@
 package com.splb.model.entity;
 
-public class ApplicantResult {
+import java.io.IOException;
+
+public class ApplicantResult extends Entity  {
 
     private int userId;
     private int algebra;
@@ -36,9 +38,7 @@ public class ApplicantResult {
     }
 
     public void setAlgebra(int algebra) {
-        if (algebra >= 1 && algebra <= 12) {
-            this.algebra = algebra;
-        } else System.out.println("Wrong mark for algebra!");
+        this.algebra = algebra;
     }
 
     public int getBiology() {
@@ -46,9 +46,7 @@ public class ApplicantResult {
     }
 
     public void setBiology(int biology) {
-        if (biology >= 1 && biology <= 12) {
-            this.biology = biology;
-        } else System.out.println("Wrong mark for biology!");
+       this.biology = biology;
     }
 
     public int getChemistry() {
@@ -56,9 +54,7 @@ public class ApplicantResult {
     }
 
     public void setChemistry(int chemistry) {
-        if (chemistry >= 1 && chemistry <= 12) {
-            this.chemistry = chemistry;
-        } else System.out.println("Wrong mark for chemistry!");
+        this.chemistry = chemistry;
     }
 
     public int getEnglish() {
@@ -66,9 +62,7 @@ public class ApplicantResult {
     }
 
     public void setEnglish(int english) {
-        if (english >= 1 && english <= 12) {
-            this.english = english;
-        } else System.out.println("Wrong mark for english!");
+       this.english = english;
     }
 
     public int getLiterature() {
@@ -76,9 +70,7 @@ public class ApplicantResult {
     }
 
     public void setLiterature(int literature) {
-        if (literature >= 1 && literature <= 12) {
-            this.literature = literature;
-        } else System.out.println("Wrong mark for literature!");
+        this.literature = literature;
     }
 
     public int getWorldHistory() {
@@ -86,13 +78,12 @@ public class ApplicantResult {
     }
 
     public void setWorldHistory(int worldHistory) {
-        if (worldHistory >= 1 && worldHistory <= 12) {
-            this.worldHistory = worldHistory;
-        } else System.out.println("Wrong mark for worldHistory!");
+        this.worldHistory=worldHistory;
     }
 
-    public int sum() {
-        return algebra + biology + chemistry + english + literature + worldHistory;
+    @Override
+    public void close() throws IOException {
+
     }
 
     @Override
@@ -106,5 +97,4 @@ public class ApplicantResult {
                 ", WH=" + worldHistory +
                 "}\n";
     }
-
 }

@@ -1,8 +1,9 @@
 package com.splb.model.entity;
 
+import java.io.IOException;
 import java.util.List;
 
-public class Statement implements Comparable<Statement> {
+public class Statement extends Entity  implements Comparable<Statement> {
 
     private Faculty faculty;
     private List<Applicant> applicants;
@@ -61,16 +62,21 @@ public class Statement implements Comparable<Statement> {
     }
 
     @Override
+    public void close() throws IOException {
+
+    }
+
+    @Override
+    public int compareTo(Statement o) {
+        return 0;
+    }
+
+    @Override
     public String toString() {
         return "Statement{" +
                 "faculty=" + faculty +
                 ", applicant=" + applicant +
                 ", totalScore=" + totalScore +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Statement o) {
-        return 0;
     }
 }

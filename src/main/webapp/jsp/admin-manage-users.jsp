@@ -87,13 +87,13 @@
                                     <button class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown"
                                             type="button"
                                             style="background: rgba(255,255,255,0);color: rgb(255,255,255);border-style: none;">
-                                        <fmt:message key="label.educ_inst"/>
+                                        <fmt:message key="label.enroll_status"/>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-dark"
                                          style="border-radius: 8px;min-width: 60px;"><a class="dropdown-item"
-                                                                                        href="?type=ASC&sortBy=byEdIn"><fmt:message
+                                                                                        href="?type=ASC&sortBy=byStatus"><fmt:message
                                             key="label.sort_up"/></a><a
-                                            class="dropdown-item" href="?type=DSC&sortBy=byEdIn"><fmt:message
+                                            class="dropdown-item" href="?type=DSC&sortBy=byStatus"><fmt:message
                                             key="label.sort_down"/></a></div>
                                 </div>
                             </div>
@@ -139,6 +139,7 @@
                         <th><fmt:message key="label.city"/></th>
                         <th><fmt:message key="label.region"/></th>
                         <th><fmt:message key="label.educ_inst"/></th>
+                       <th <%-- onclick="sortTable(0)"--%>><fmt:message key="label.enroll_status"/></th>
                         <th><fmt:message key="label.block_status"/></th>
                         <th><fmt:message key="label.manage"/></th>
                     </tr>
@@ -155,6 +156,16 @@
                             <td>${applicants.region}</td>
                             <td>${applicants.educationalInstitution}</td>
                             <td>
+                                <c:if test="${applicants.enrollStatus == 0}"><fmt:message
+                                        key="label.no_enroll"/></c:if>
+                                <c:if test="${applicants.enrollStatus == 1}"><fmt:message
+                                        key="label.contr_enroll"/></c:if>
+                                <c:if test="${applicants.enrollStatus == 2}"><fmt:message
+                                        key="label.budget_enroll"/></c:if>
+                                <c:if test="${applicants.enrollStatus == 3}"><fmt:message
+                                        key="label.no_partic"/></c:if>
+                            </td>
+                            <td>
                                 <c:set value="${applicants.blockStatus}" var="block"/>
                                 <c:out value="${block == true ? 'X': ' '}"/>
                             </td>
@@ -165,8 +176,10 @@
                                           style="display:inline;">
                                         <input type="hidden" name="id" value="${applicants.id}">
                                         <input type="hidden" name="status" value="${applicants.blockStatus}">
-                                        <c:if test="${not block}"> <input type="submit" value="<fmt:message key="label.block"/>"></c:if>
-                                        <c:if test="${block}"> <input type="submit" value="<fmt:message key="label.unblock"/>"></c:if>
+                                        <c:if test="${not block}"> <input type="submit"
+                                                                          value="<fmt:message key="label.block"/>"></c:if>
+                                        <c:if test="${block}"> <input type="submit"
+                                                                      value="<fmt:message key="label.unblock"/>"></c:if>
 
                                     </form>
                                 </div>
@@ -183,6 +196,7 @@
                         <th><strong><fmt:message key="label.city"/></strong></th>
                         <th><strong><fmt:message key="label.region"/></strong></th>
                         <th><strong><fmt:message key="label.educ_inst"/></strong></th>
+                        <th>Enroll status</th>
                         <th><strong><fmt:message key="label.block_status"/></strong></th>
                         <th><strong><fmt:message key="label.manage"/></strong></th>
                     </tr>
@@ -222,6 +236,7 @@
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
 <script src="assets/js/Table.js"></script>
+<script src="assets/js/sort.js"></script>
 </body>
 
 </html>

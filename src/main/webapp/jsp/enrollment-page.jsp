@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
@@ -8,7 +8,6 @@
 
 <!DOCTYPE html>
 <html lang="${cookie['lang'].value}">
-
 
 <head>
     <meta charset="utf-8">
@@ -29,7 +28,7 @@
     <h3 class="text-light mb-4" style="font-family: 'Noto Sans', sans-serif;text-align: center;"><fmt:message
             key="label.enrollment"/></h3>
     <div class="card shadow" style="background: rgb(99,99,99);border-radius: 20px;">
-        <form method="get">
+        <form method="post">
             <div class="card-header py-3">
                 <button class="btn btn-primary" type="submit" style="border-radius: 8px;"><fmt:message
                         key="button.notify"/></button>
@@ -100,7 +99,7 @@
                     <tr>
                         <th><fmt:message key="label.faculty"/></th>
                         <th><fmt:message key="label.applicant"/></th>
-                        <th><fmt:message key="label.stat"/></th>
+                        <th><fmt:message key="label.enroll_status"/></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -109,7 +108,12 @@
                         <tr>
                             <td>${enrollment.faculty.name}</td>
                             <td>${enrollment.applicant.lastName} ${enrollment.applicant.firstName}</td>
-                            <td>${enrollment.status}</td>
+                            <td>
+                                <c:if test="${enrollment.applicant.enrollStatus == 1}"><fmt:message
+                                        key="label.contr_enroll"/></c:if>
+                                <c:if test="${enrollment.applicant.enrollStatus == 2}"><fmt:message
+                                        key="label.budget_enroll"/></c:if>
+                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -117,7 +121,7 @@
                     <tr>
                         <td><strong><fmt:message key="label.faculty"/></strong></td>
                         <td><strong><fmt:message key="label.applicant"/><br></strong></td>
-                        <td><strong><fmt:message key="label.stat"/><br></strong></td>
+                        <td><strong><fmt:message key="label.enroll_status"/><br></strong></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -136,7 +140,8 @@
                     <c:forEach var="applicant" items="${not_enroll}">
                         <tr>
                             <td>${applicant.lastName} ${applicant.firstName}</td>
-                            <td><c:if test="${applicant.enrollStatus == 0}"><fmt:message key="label.no_enroll"/></c:if></td>
+                            <td><c:if test="${applicant.enrollStatus == 0}"><fmt:message
+                                    key="label.no_enroll"/></c:if></td>
                         </tr>
                     </c:forEach>
                     </tbody>

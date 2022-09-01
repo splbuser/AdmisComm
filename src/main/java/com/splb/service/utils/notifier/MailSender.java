@@ -1,7 +1,7 @@
 package com.splb.service.utils.notifier;
 
 import com.splb.service.utils.PassCrypt;
-import com.splb.service.utils.notifier.exception.MailSenderException;
+import com.splb.service.utils.notifier.exception.SenderException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,12 +35,13 @@ public class MailSender implements Sender {
     }
 
     @Override
-    public void send() throws MailSenderException {
+    public void send() throws SenderException {
 
         String host;
         String port;
         String auth;
         String tls;
+
         try {
             username = MailConfig.getProperty(MailConfig.USER);
             String passwordHash = MailConfig.getProperty(MailConfig.PASSWORD);
@@ -51,7 +52,7 @@ public class MailSender implements Sender {
             tls = MailConfig.getProperty(MailConfig.TLS);
         } catch (IOException e) {
             log.error(e.getMessage());
-            throw new MailSenderException(e.getMessage());
+            throw new SenderException(e.getMessage());
         }
 
         Properties prop = new Properties();
@@ -88,7 +89,7 @@ public class MailSender implements Sender {
 
         } catch (MessagingException e) {
             log.error("could not send mail: {}", e.getMessage());
-            throw new MailSenderException(e.getMessage());
+            throw new SenderException(e.getMessage());
         }
     }
 }

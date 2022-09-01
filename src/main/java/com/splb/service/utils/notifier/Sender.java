@@ -1,8 +1,9 @@
 package com.splb.service.utils.notifier;
 
-import com.splb.service.utils.notifier.exception.MailSenderException;
+import com.splb.service.utils.notifier.exception.SenderException;
 
+@FunctionalInterface
 public interface Sender {
-   void send() throws MailSenderException;
+    void send() throws SenderException;
 
 }

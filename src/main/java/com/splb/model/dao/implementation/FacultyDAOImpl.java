@@ -235,8 +235,8 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
             ps.setInt(1, userId);
             ps.setInt(2, facultyId);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                sum = rs.getInt(3) + rs.getInt(4);
+            if (rs.next()) {
+                sum = rs.getInt(Fields.TOTAL_SCORE);
             }
         } catch (SQLException e) {
             log.error(e.getMessage());

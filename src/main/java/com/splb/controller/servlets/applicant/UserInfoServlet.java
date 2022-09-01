@@ -3,17 +3,11 @@ package com.splb.controller.servlets.applicant;
 import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
-import com.splb.model.dao.exception.DAOException;
-import com.splb.model.dao.implementation.ApplicantResultDAOImpl;
-import com.splb.model.dao.implementation.EnrollmentDAOImpl;
-import com.splb.model.dao.implementation.StatementDAOImpl;
-import com.splb.model.dao.implementation.UserDAOImpl;
 import com.splb.model.entity.*;
 import com.splb.service.ApplicantResultService;
 import com.splb.service.ApplicantService;
 import com.splb.service.EnrollmentService;
 import com.splb.service.StatementService;
-import com.splb.service.exceptions.EnrollmentServiceException;
 import com.splb.service.exceptions.ServiceException;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -31,17 +25,12 @@ public class UserInfoServlet extends HttpServlet {
 
 
     @Override
-    public void init() throws ServletException {
-
-    }
-
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
         Integer id = (Integer) session.getAttribute(Fields.ID);
-        Applicant currentUser = new Applicant();
-        ApplicantResult result = new ApplicantResult();
+        Applicant currentUser = null;
+        ApplicantResult result = null;
         List<StatementResult> statement = null;
         List<Faculty> faculties = null;
         Enrollment enrollment = null;

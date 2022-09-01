@@ -7,7 +7,7 @@ import com.splb.service.exceptions.UserServiceException;
 import com.splb.service.utils.notifier.MailSender;
 import com.splb.service.utils.notifier.MailText;
 import com.splb.service.utils.notifier.Sender;
-import com.splb.service.utils.notifier.exception.MailSenderException;
+import com.splb.service.utils.notifier.exception.SenderException;
 
 import java.util.List;
 
@@ -142,7 +142,7 @@ public class ApplicantService extends Service {
                                         MailText.NO_ENROLL_BODY.getText());
                 s.send();
             }
-        } catch (UserDAOException | MailSenderException e) {
+        } catch (UserDAOException | SenderException e) {
             log.error(e.getMessage());
             throw new UserServiceException("could not notify users" + e.getMessage());
         }

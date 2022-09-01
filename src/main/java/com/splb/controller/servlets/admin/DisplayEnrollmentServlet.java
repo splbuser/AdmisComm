@@ -8,7 +8,6 @@ import com.splb.service.ApplicantService;
 import com.splb.service.EnrollmentService;
 import com.splb.service.exceptions.EnrollmentServiceException;
 import com.splb.service.exceptions.UserServiceException;
-import com.splb.service.sorting.SortEnrollmentImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import org.apache.logging.log4j.LogManager;
@@ -24,9 +23,6 @@ public class DisplayEnrollmentServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(DisplayEnrollmentServlet.class);
 
-    @Override
-    public void init() throws ServletException {
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,41 +30,13 @@ public class DisplayEnrollmentServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String type = request.getParameter(Fields.TYPE);
         String sortBy = request.getParameter(Fields.SORT_BY);
-        String notify = request.getParameter(Fields.ACTION);
         List<Enrollment> enrollment = new ArrayList<>();
         List<Applicant> notEnroll = null;
         EnrollmentService srv = new EnrollmentService();
         ApplicantService asrv = new ApplicantService();
-
         try {
-            if (type == null || sortBy == null) {
-                type = (String) session.getAttribute(Fields.TYPE);
-                sortBy = (String) session.getAttribute(Fields.SORT_BY);
-                if (type == null || sortBy == null) {
-
-                    enrollment = srv.getList();
-                } else {
-                    SortEnrollmentImpl se = new SortEnrollmentImpl();
-                    enrollment = se.getSortedList(
-                            type,
-                            sortBy,
-                            srv.getList());
-                }
-            } else {
-                SortEnrollmentImpl se = new SortEnrollmentImpl();
-                enrollment = se.getSortedList(
-                        type,
-                        sortBy,
-                        srv.getList());
-                session.setAttribute(Fields.TYPE, type);
-                session.setAttribute(Fields.SORT_BY, sortBy);
-            }
-
-            if (nonNull(notify) && notify.equals("notify")) {
-                asrv.notifyUsers();
-            }
-
-        } catch (EnrollmentServiceException | UserServiceException e) {
+            enrollment = srv.getEnrollmentsForRequest(session, type, sortBy);
+        } catch (EnrollmentServiceException e) {
             log.error(e.getMessage());
             getServletContext().getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
@@ -86,4 +54,19 @@ public class DisplayEnrollmentServlet extends HttpServlet {
                 .forward(request, response);
     }
 
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String notify = req.getParameter(Fields.ACTION);
+        ApplicantService asrv = new ApplicantService();
+        try {
+            if (nonNull(notify) && notify.equals("notify")) {
+                asrv.notifyUsers();
+            }
+        } catch (UserServiceException e) {
+            log.error(e.getMessage());
+            resp.sendRedirect(req.getContextPath() + Pages.ERROR);
+        }
+        resp.sendRedirect(req.getContextPath() + Pages.ENROLLMENT);
+    }
 }

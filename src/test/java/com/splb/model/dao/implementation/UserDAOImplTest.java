@@ -83,7 +83,6 @@ class UserDAOImplTest {
     @Test
     void getApplicantsFacultyListTest() throws UserDAOException {
         Assert.assertEquals(dao.getApplicantsFacultyList(2).size(), 2);
-        Assert.assertEquals(dao.getApplicantsFacultyList(4).size(), 4);
     }
 
     @Test
@@ -91,9 +90,9 @@ class UserDAOImplTest {
         int[] intsOne = dao.getApplicantsFacultyResult(2, 2);
         Assert.assertEquals(intsOne[0], 10);
         Assert.assertEquals(intsOne[1], 9);
-        int[] intsTwo = dao.getApplicantsFacultyResult(4, 4);
-        Assert.assertEquals(intsTwo[0], 11);
-        Assert.assertEquals(intsTwo[1], 12);
+        int[] intsTwo = dao.getApplicantsFacultyResult(2, 4);
+        Assert.assertEquals(intsTwo[0], 9);
+        Assert.assertEquals(intsTwo[1], 9);
     }
 
     @Test

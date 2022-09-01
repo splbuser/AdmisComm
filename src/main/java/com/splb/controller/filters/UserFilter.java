@@ -14,7 +14,6 @@ import java.io.IOException;
 import static java.util.Objects.nonNull;
 
 @WebFilter(urlPatterns = {"/DisplayFaculty", "/DisplayApplicants", "/Statement", "/Enrollment"})
-
 public class UserFilter implements Filter {
     private static final Logger log = LogManager.getLogger(UserFilter.class);
 

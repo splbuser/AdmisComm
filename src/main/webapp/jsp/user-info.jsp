@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib uri="/WEB-INF/mytags.tld" prefix="m" %>
 <%@ page isELIgnored="false" %>
 
 <jsp:useBean id="currentUser" scope="request" type="com.splb.model.entity.Applicant"/>
@@ -209,9 +208,24 @@
                     </div>
                     <div class="col-4">
                         <p class="text-info justify-content-xl-center"
-                           style="border-radius: 8px;background: #404040;">${enrollment.status}</p>
+                           style="border-radius: 8px;background: #404040;">
+                            <c:if test="${currentUser.enrollStatus == 0}">
+                                <fmt:message
+                                        key="label.no_enroll"/>
+                            </c:if>
+                            <c:if test="${currentUser.enrollStatus == 1}">
+                                <fmt:message
+                                        key="label.contr_enroll"/>
+                            </c:if>
+                            <c:if test="${currentUser.enrollStatus == 2}">
+                                <fmt:message
+                                        key="label.budget_enroll"/>
+                            </c:if>
+                            <c:if test="${currentUser.enrollStatus == 3}">
+                                <fmt:message
+                                        key="label.no_partic"/>
+                            </c:if>
                     </div>
-
                 </div>
             </div>
         </div>

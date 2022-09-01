@@ -1,9 +1,10 @@
 package com.splb.model.entity;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-public class Faculty implements Comparable<Faculty> {
+public class Faculty extends Entity implements Comparable<Faculty> {
 
     private int id;
     private String name;
@@ -125,6 +126,17 @@ public class Faculty implements Comparable<Faculty> {
     }
 
     @Override
+    public int compareTo(Faculty o) {
+        return o.totalPlaces != totalPlaces ?
+                Integer.compare(o.totalPlaces, totalPlaces) : Integer.compare(budgetPlaces, o.budgetPlaces);
+    }
+
+    @Override
+    public void close() throws IOException {
+
+    }
+
+    @Override
     public String toString() {
         return "Faculty{" +
                 "id=" + id +
@@ -134,11 +146,5 @@ public class Faculty implements Comparable<Faculty> {
                 ", subjOne='" + subjOne + '\'' +
                 ", subjTwo='" + subjTwo + '\'' +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Faculty o) {
-        return o.totalPlaces != totalPlaces ?
-                Integer.compare(o.totalPlaces, totalPlaces) : Integer.compare(budgetPlaces, o.budgetPlaces);
     }
 }

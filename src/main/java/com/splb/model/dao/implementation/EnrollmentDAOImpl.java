@@ -70,37 +70,6 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
         }
     }
 
-    @Override
-    public void decreaseFacultyPlaces(Connection conn, int facultyId) throws EnrollmentDAOException {
-        try {
-            Faculty faculty = FacultyDAOImpl.getInstance().getFacultyById(facultyId);
-            int budgetPlaces = faculty.getBudgetPlaces();
-            int totalPlaces = faculty.getTotalPlaces();
-            if (budgetPlaces > 0 && totalPlaces > 0) {
-                budgetPlaces--;
-                totalPlaces--;
-            }
-            if (budgetPlaces == 0 && totalPlaces > 0) {
-                totalPlaces--;
-            }
-            if (budgetPlaces == 0 && totalPlaces == 0) {
-                deleteFaculty(conn, facultyId);
-            }
-            try (PreparedStatement ps = conn
-                    .prepareStatement(SQLQuery.DECR_FACULTY_PLCS)) {
-                ps.setInt(1, budgetPlaces);
-                ps.setInt(2, totalPlaces);
-                ps.setInt(3, facultyId);
-                if (ps.executeUpdate() == 1) {
-                    log.info("Faculty {} updated: new budget {}, total {}", faculty.getName(), budgetPlaces, totalPlaces);
-                }
-            }
-        } catch (SQLException | FacultyDAOException e) {
-            log.error(e.getMessage());
-            throw new EnrollmentDAOException("could not decrease vacant faculty places: {}" + e.getMessage());
-        }
-    }
-
 
     // метод удалет аппликанта из стейтмента
     @Override

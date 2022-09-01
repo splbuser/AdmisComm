@@ -45,12 +45,11 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
         try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(SQLQuery.ADD_USER_TO_STATEMENT)
         ) {
-            int certificate = adao.getApplicantResult(userId).sum();
-            int facultyResult = fdao.getSum(userId, facultyId);
+            int totalScore = adao.getResultSum(userId) + fdao.getSum(userId, facultyId);
 
             ps.setInt(1, facultyId);
             ps.setInt(2, userId);
-            ps.setInt(3, certificate + facultyResult);
+            ps.setInt(3, totalScore);
 
             return ps.executeUpdate() == 1;
         } catch (SQLException | DAOException e) {
@@ -110,9 +109,9 @@ public class StatementDAOImpl extends AbstractDAO implements StatementDAO {
             while (rs.next()) {
                 faculty = fdao.getFacultyById((rs.getInt(Fields.FACULTY__ID)));
                 applicant = udao.getApplicantById((rs.getInt(Fields.APPLICANT_ID)));
-                totalScore = rs.getInt("total_score");
+                totalScore = rs.getInt(Fields.TOTAL_SCORE);
 
-                if (!applicant.isBlockStatus()) {
+                if (!applicant.isBlockStatus() && applicant.getEnrollStatus() == 3) {
                     com.splb.model.entity.Statement statement = new
                             com.splb.model.entity.Statement(faculty, applicant, totalScore);
                     list.add(statement);

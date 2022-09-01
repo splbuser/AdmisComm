@@ -1,7 +1,9 @@
 package com.splb.model.entity;
 
 
-public class Enrollment implements Comparable<Enrollment>{
+import java.io.IOException;
+
+public class Enrollment extends Entity  implements Comparable<Enrollment>{
 
     private Faculty faculty;
     private Applicant applicant;
@@ -41,19 +43,15 @@ public class Enrollment implements Comparable<Enrollment>{
     }
 
     @Override
-    public String toString() {
-        return "Enrollment{" +
-                "faculty=" + faculty +
-                ", applicant=" + applicant +
-                ", status=" + status +
-                '}';
-    }
-
-    @Override
     public int compareTo(Enrollment e) {
         return e.applicant.getEnrollStatus() != applicant.getEnrollStatus() ?
                 Integer.compare(e.applicant.getEnrollStatus(), applicant.getEnrollStatus()) :
                 Integer.compare(e.faculty.getName().charAt(0), faculty.getName().charAt(0));
+
+    }
+
+    @Override
+    public void close() throws IOException {
 
     }
 
@@ -65,5 +63,14 @@ public class Enrollment implements Comparable<Enrollment>{
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Enrollment{" +
+                "faculty=" + faculty +
+                ", applicant=" + applicant +
+                ", status=" + status +
+                '}';
     }
 }

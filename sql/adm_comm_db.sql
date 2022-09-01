@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `AdmissionsCommittee`.`applicant`
     `region`                  VARCHAR(32)  NOT NULL,
     `educational_institution` VARCHAR(64)  NOT NULL,
     `block_status`            BOOLEAN      NULL DEFAULT 0,
-    `enroll_status`           TINYINT      NULL DEFAULT 4,
+    `enroll_status`           TINYINT      NULL DEFAULT 3,
     `upload_status`           VARCHAR(128) NULL,
     PRIMARY KEY (`id`),
     UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,

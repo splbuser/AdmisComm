@@ -1,10 +1,11 @@
-<%@page language="java" import="java.util.*" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
 
 <fmt:setLocale value="${cookie['lang'].value}"/>
 <fmt:setBundle basename="message"/>
+
 <!DOCTYPE html>
 <html lang="${cookie['lang'].value}">
 
@@ -28,11 +29,14 @@
         style="font-family: 'Noto Sans', sans-serif;text-align: center;color: rgb(255,255,255);"><fmt:message
             key="test.app_reg_for"/> ${faculty_name} <fmt:message key="label.faculty"/></h3>
     <div class="card shadow" style="background: rgb(99,99,99);border-radius: 20px;">
-        <div class="card-header py-3">
-            <button class="btn btn-primary" type="submit" style="border-radius: 8px;"><fmt:message key="label.add_all"/></button>
-            <input type="hidden" name="faculty_id" value="${requestScope.faculty_id}">
-            <input type="hidden" name="action" value="addall">
-        </div>
+        <form method="post">
+            <div class="card-header py-3">
+                <button class="btn btn-primary" type="submit" style="border-radius: 8px;"><fmt:message
+                        key="label.add_all"/></button>
+                <input type="hidden" name="faculty_id" value="${requestScope.faculty_id}">
+                <input type="hidden" name="action" value="addall">
+            </div>
+        </form>
         <div class="card-body" style="background: #888888;">
             <div class="row">
                 <div class="col-md-6">
@@ -50,7 +54,7 @@
                         <th><fmt:message key="label.email"/></th>
                         <th><fmt:message key="label.city"/></th>
                         <th><fmt:message key="label.region"/></th>
-                        <th><fmt:message key="label.educ_inst"/></th>
+                        <th><fmt:message key="label.enroll_status"/></th>
                         <th><fmt:message key="label.appl_status"/></th>
                         <th><fmt:message key="label.manage"/></th>
                     </tr>
@@ -66,7 +70,16 @@
                             <td><i class="typcn typcn-mail"></i>${applicants.email}</td>
                             <td>${applicants.city}</td>
                             <td>${applicants.region}</td>
-                            <td>${applicants.educationalInstitution}</td>
+                            <td>
+                                <c:if test="${applicants.enrollStatus == 0}"><fmt:message
+                                        key="label.no_enroll"/></c:if>
+                                <c:if test="${applicants.enrollStatus == 1}"><fmt:message
+                                        key="label.contr_enroll"/></c:if>
+                                <c:if test="${applicants.enrollStatus == 2}"><fmt:message
+                                        key="label.budget_enroll"/></c:if>
+                                <c:if test="${applicants.enrollStatus == 4}"><fmt:message
+                                        key="label.no_partic"/></c:if>
+                            </td>
                             <td>
                                 <c:set value="${applicants.statementStatus}" var="added"/>
                                 <c:out value="${added == true ? 'OK': ' '}"/>
@@ -96,7 +109,7 @@
                         <th><strong><fmt:message key="label.email"/></strong></th>
                         <th><strong><fmt:message key="label.city"/></strong></th>
                         <th><strong><fmt:message key="label.region"/></strong></th>
-                        <th><strong><fmt:message key="label.educ_inst"/></strong></th>
+                        <th><fmt:message key="label.enroll_status"/></th>
                         <th><strong><fmt:message key="label.appl_status"/></strong></th>
                         <th><strong><fmt:message key="label.manage"/></strong></th>
                     </tr>

@@ -15,4 +15,5 @@ public abstract class Messages {
     public static final String INVALID_GRADE = "Invalid grade {}";
     public static final String NO_NEW_REGISTRATIONS_AVAILABLE = "No new registrations available!";
     public static final Object WRONG_CAPTCHA = "Captcha invalid!";
+    public static final String CREDENTIAL = "credential";
 }

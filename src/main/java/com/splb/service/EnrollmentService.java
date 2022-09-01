@@ -1,23 +1,24 @@
 package com.splb.service;
 
+import com.splb.model.dao.constant.Fields;
 import com.splb.model.dao.exception.EnrollmentDAOException;
-import com.splb.model.entity.Applicant;
 import com.splb.model.entity.EnrollStatus;
 import com.splb.model.entity.Enrollment;
-import com.splb.model.entity.Faculty;
 import com.splb.service.exceptions.EnrollmentServiceException;
+import com.splb.service.sorting.SortEnrollmentImpl;
+import jakarta.servlet.http.HttpSession;
 
 import java.util.*;
 
 public class EnrollmentService extends Service {
 
-
-    public static EnrollStatus getStatus(int i) {
-        if (i == 0) {
-            return EnrollStatus.NO_ENROLLED;
+    public Enrollment get(int id) throws EnrollmentServiceException {
+        try {
+            return edao.getApplicantEnrollStatus(id);
+        } catch (EnrollmentDAOException e) {
+            log.error(e.getMessage());
+            throw new EnrollmentServiceException(e.getMessage());
         }
-        return i == 1 ?
-                EnrollStatus.CONTRACT : EnrollStatus.BUDGET;
     }
 
     public List<Enrollment> getList() throws EnrollmentServiceException {
@@ -29,33 +30,42 @@ public class EnrollmentService extends Service {
         }
     }
 
-    public Enrollment get(int id) throws EnrollmentServiceException{
-        try {
-            return edao.getApplicantEnrollStatus(id);
-        } catch (EnrollmentDAOException e) {
-            log.error(e.getMessage());
-            throw new EnrollmentServiceException(e.getMessage());
-        }
+    public static EnrollStatus getStatus(int i) {
+        return switch (i) {
+            case 0 -> EnrollStatus.NO_ENROLLED;
+            case 1 -> EnrollStatus.CONTRACT;
+            case 2 -> EnrollStatus.BUDGET;
+            case 3 -> EnrollStatus.NO_PARTICIPATE;
+            default -> null;
+        };
     }
 
-    List<Integer> calculateEnrolledApplicantsId(Map<Faculty, TreeSet<Applicant>> applicants) {
-        List<Integer> enrolledIdList = new ArrayList<>();
-        Set<Faculty> faculties = applicants.keySet();
-        int count;
+    public List<Enrollment> getEnrollmentsForRequest(HttpSession session, String type, String sortBy)
+            throws EnrollmentServiceException {
 
-        for (Faculty faculty : faculties) {
-            count = 0;
+        List<Enrollment> enrollment;
+        if (type == null || sortBy == null) {
+            type = (String) session.getAttribute(Fields.TYPE);
+            sortBy = (String) session.getAttribute(Fields.SORT_BY);
+            if (type == null || sortBy == null) {
 
-            Set<Applicant> currentFacultyApplicants = applicants.get(faculty);
-            Iterator<Applicant> iterator = currentFacultyApplicants.iterator();
-
-            while (iterator.hasNext()) {
-                enrolledIdList.add(iterator.next().getId());
-                if (++count == faculty.getTotalPlaces()) {
-                    break;
-                }
+                enrollment = getList();
+            } else {
+                SortEnrollmentImpl se = new SortEnrollmentImpl();
+                enrollment = se.getSortedList(
+                        type,
+                        sortBy,
+                        getList());
             }
+        } else {
+            SortEnrollmentImpl se = new SortEnrollmentImpl();
+            enrollment = se.getSortedList(
+                    type,
+                    sortBy,
+                    getList());
+            session.setAttribute(Fields.TYPE, type);
+            session.setAttribute(Fields.SORT_BY, sortBy);
         }
-        return enrolledIdList;
+        return enrollment;
     }
 }

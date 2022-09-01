@@ -22,10 +22,6 @@ public class StatementServlet extends HttpServlet {
     private static final Logger log = LogManager.getLogger(StatementServlet.class);
 
     @Override
-    public void init() throws ServletException {
-    }
-
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         StatementService srv = new StatementService();
@@ -71,7 +67,7 @@ public class StatementServlet extends HttpServlet {
         StatementService srv = new StatementService();
         String action = req.getParameter(Fields.ACTION);
         try {
-            if (nonNull(action) && action.equals("finalize")) {
+            if (nonNull(action) && action.equals(Fields.FINALIZE)) {
                 srv.finalizeStatement();
             }
         } catch (Exception e) {

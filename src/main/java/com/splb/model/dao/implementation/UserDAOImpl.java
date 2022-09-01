@@ -8,7 +8,6 @@ import com.splb.model.dao.constant.SQLQuery;
 import com.splb.model.dao.exception.*;
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
-import com.splb.service.sorting.Sort;
 import com.splb.service.sorting.SortFacultyImpl;
 import org.apache.logging.log4j.LogManager;
 
@@ -97,7 +96,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             while (rs.next()) {
                 user = new Applicant();
                 user.setId(rs.getInt(Fields.ID));
-                user.setUserName(rs.getString(Fields.APPLICANT_NAME));
+                user.setUserName(rs.getString(Fields.APPLICANT_USER_NAME));
                 user.setBlockStatus(rs.getBoolean(Fields.APPLICANT_BLOCK_STATUS));
                 user.setAdminStatus(rs.getBoolean(Fields.APPLICANT_ADMIN_STATUS));
                 user.setFirstName(rs.getString(Fields.APPLICANT_FIRST_NAME));
@@ -155,7 +154,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             while (rs.next()) {
                 Applicant applicant = new Applicant();
                 applicant.setId(rs.getInt(Fields.ID));
-                applicant.setUserName(rs.getString(Fields.APPLICANT_NAME));
+                applicant.setUserName(rs.getString(Fields.APPLICANT_USER_NAME));
                 applicant.setFirstName(rs.getString(Fields.APPLICANT_FIRST_NAME));
                 applicant.setLastName(rs.getString(Fields.APPLICANT_LAST_NAME));
                 applicant.setEmail(rs.getString(Fields.APPLICANT_EMAIL));
@@ -163,7 +162,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
                 applicant.setRegion(rs.getString(Fields.APPLICANT_REGION));
                 applicant.setEducationalInstitution(rs.getString(Fields.APPLICANT_EDUC_INST));
                 applicant.setBlockStatus(rs.getBoolean(Fields.APPLICANT_BLOCK_STATUS));
-                applicant.setResult(dao.getApplicantResult(rs.getInt(Fields.ID)).sum());
+                applicant.setEnrollStatus(rs.getInt(Fields.APPLICANT_ENROLL_STATUS));
+                applicant.setUploaded(rs.getString(Fields.APPLICANT_UPLOAD_STATUS));
+                applicant.setResult(dao.getResultSum(rs.getInt(Fields.ID)));
 
                 applicants.add(applicant);
             }
@@ -185,17 +186,17 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 applicant = new Applicant();
-                applicant.setId(rs.getInt(1));
-                applicant.setUserName(rs.getString(2));
-                applicant.setAdminStatus(rs.getBoolean(4));
-                applicant.setFirstName(rs.getString(5));
-                applicant.setLastName(rs.getString(6));
-                applicant.setEmail(rs.getString(7));
-                applicant.setCity(rs.getString(8));
-                applicant.setRegion(rs.getString(9));
-                applicant.setEducationalInstitution(rs.getString(10));
-                applicant.setBlockStatus(rs.getBoolean(11));
-                applicant.setEnrollStatus(rs.getInt(12));
+                applicant.setId(rs.getInt(Fields.ID));
+                applicant.setUserName(rs.getString(Fields.APPLICANT_USER_NAME));
+                applicant.setAdminStatus(rs.getBoolean(Fields.APPLICANT_ADMIN_STATUS));
+                applicant.setFirstName(rs.getString(Fields.APPLICANT_FIRST_NAME));
+                applicant.setLastName(rs.getString(Fields.APPLICANT_LAST_NAME));
+                applicant.setEmail(rs.getString(Fields.APPLICANT_EMAIL));
+                applicant.setCity(rs.getString(Fields.APPLICANT_CITY));
+                applicant.setRegion(rs.getString(Fields.APPLICANT_REGION));
+                applicant.setEducationalInstitution(rs.getString(Fields.APPLICANT_EDUC_INST));
+                applicant.setBlockStatus(rs.getBoolean(Fields.APPLICANT_BLOCK_STATUS));
+                applicant.setEnrollStatus(rs.getInt(Fields.APPLICANT_ENROLL_STATUS));
                 applicant.setUploaded(rs.getString(Fields.APPLICANT_UPLOAD_STATUS));
                 applicant.setList(StatementDAOImpl.getInstance()
                         .getFacultyFromStatementForApplicant(rs.getInt(1)));

@@ -1,247 +1,237 @@
-[ERROR] 2022-08-30 18:17:39.582 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:17:39.585 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 18:19:00.074 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:19:00.078 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 18:20:10.101 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:20:10.106 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 18:20:10.319 [main] StatementDAOImpl - Column 'faculty_id' not found.
-[ERROR] 2022-08-30 18:20:45.332 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:20:45.335 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:20:45.540 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.541 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.541 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.541 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.541 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.541 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.541 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.541 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.542 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.542 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.542 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.542 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.542 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.542 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.542 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:20:45.542 [main] StatementDAOImpl - null
-[ERROR] 2022-08-30 18:21:24.105 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:21:24.109 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:21:24.320 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.320 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.321 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:21:24.322 [main] StatementDAOImpl - null
-[ERROR] 2022-08-30 18:22:52.059 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:22:52.062 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:22:52.272 [main] StatementDAOImpl - ResultSet : com.mysql.cj.jdbc.result.ResultSetImpl@11eadcba
-[INFO ] 2022-08-30 18:22:52.272 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - ResultSet : com.mysql.cj.jdbc.result.ResultSetImpl@11eadcba
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - ResultSet : com.mysql.cj.jdbc.result.ResultSetImpl@11eadcba
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - ResultSet : com.mysql.cj.jdbc.result.ResultSetImpl@11eadcba
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - ResultSet : com.mysql.cj.jdbc.result.ResultSetImpl@11eadcba
-[INFO ] 2022-08-30 18:22:52.273 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - ResultSet : com.mysql.cj.jdbc.result.ResultSetImpl@11eadcba
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - ResultSet : com.mysql.cj.jdbc.result.ResultSetImpl@11eadcba
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - ResultSet : com.mysql.cj.jdbc.result.ResultSetImpl@11eadcba
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:22:52.274 [main] StatementDAOImpl - null
-[ERROR] 2022-08-30 18:23:15.279 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:23:15.283 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:23:15.513 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:23:15.513 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - ResultSet : 6
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - ResultSet : 3
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - ResultSet : 6
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.514 [main] StatementDAOImpl - ResultSet : 3
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 10
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 11
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 3
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 11
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 13
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 3
-[INFO ] 2022-08-30 18:23:15.515 [main] StatementDAOImpl - ResultSet : 13
-[INFO ] 2022-08-30 18:23:15.516 [main] StatementDAOImpl - null
-[INFO ] 2022-08-30 18:23:15.516 [main] StatementDAOImpl - null
-[ERROR] 2022-08-30 18:26:22.097 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:26:22.100 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:26:22.303 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:26:22.304 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:26:22.304 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:26:22.304 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - ResultSet : 6
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - 6
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - ResultSet : 3
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - ResultSet : 6
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - 6
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - ResultSet : 3
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - ResultSet : 10
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - 10
-[INFO ] 2022-08-30 18:26:22.305 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - ResultSet : 11
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - 11
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - ResultSet : 3
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - ResultSet : 11
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - 11
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - ResultSet : 2
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - ResultSet : 13
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - 13
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - ResultSet : 3
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - ResultSet : 13
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:26:22.306 [main] StatementDAOImpl - 13
-[ERROR] 2022-08-30 18:33:56.924 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 18:33:56.929 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:33:56.929 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.135 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:33:57.135 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.149 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:33:57.149 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:33:57.149 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.158 [main] StatementDAOImpl - 6
-[INFO ] 2022-08-30 18:33:57.159 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:33:57.159 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.169 [main] StatementDAOImpl - 6
-[INFO ] 2022-08-30 18:33:57.169 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:33:57.169 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.177 [main] StatementDAOImpl - 10
-[INFO ] 2022-08-30 18:33:57.177 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:33:57.177 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.188 [main] StatementDAOImpl - 11
-[INFO ] 2022-08-30 18:33:57.188 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:33:57.188 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.196 [main] StatementDAOImpl - 11
-[INFO ] 2022-08-30 18:33:57.196 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:33:57.196 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.203 [main] StatementDAOImpl - 13
-[INFO ] 2022-08-30 18:33:57.203 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:33:57.204 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:33:57.210 [main] StatementDAOImpl - 13
-[ERROR] 2022-08-30 18:38:47.719 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 18:38:47.723 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:38:47.723 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:47.931 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:38:47.932 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:47.947 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:38:47.947 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:38:47.948 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:47.957 [main] StatementDAOImpl - 6
-[INFO ] 2022-08-30 18:38:47.957 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:38:47.957 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:47.967 [main] StatementDAOImpl - 6
-[INFO ] 2022-08-30 18:38:47.967 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:38:47.967 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:47.975 [main] StatementDAOImpl - 10
-[INFO ] 2022-08-30 18:38:47.976 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:38:47.976 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:47.988 [main] StatementDAOImpl - 11
-[INFO ] 2022-08-30 18:38:47.988 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:38:47.988 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:47.997 [main] StatementDAOImpl - 11
-[INFO ] 2022-08-30 18:38:47.997 [main] StatementDAOImpl - 2
-[INFO ] 2022-08-30 18:38:47.997 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:48.005 [main] StatementDAOImpl - 13
-[INFO ] 2022-08-30 18:38:48.006 [main] StatementDAOImpl - 3
-[INFO ] 2022-08-30 18:38:48.006 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:38:48.013 [main] StatementDAOImpl - 13
-[ERROR] 2022-08-30 18:39:39.337 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 18:39:39.340 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:39:39.341 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:39:39.545 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:39:39.560 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:39:39.569 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:39:39.578 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:39:39.587 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:39:39.599 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:39:39.608 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:39:39.616 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 18:40:59.326 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 18:40:59.329 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:40:59.329 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:40:59.542 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:40:59.557 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:40:59.569 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:40:59.578 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:40:59.586 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:40:59.598 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:40:59.607 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:40:59.615 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 18:41:52.165 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 18:41:52.168 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 18:41:52.169 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:41:52.381 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:41:52.397 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:41:52.407 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:41:52.416 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:41:52.426 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:41:52.439 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:41:52.449 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 18:41:52.457 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 19:34:42.748 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 19:34:42.752 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 19:34:42.753 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:34:42.962 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:34:42.981 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 19:36:12.261 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 19:36:12.264 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 19:36:12.264 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:36:12.475 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:36:12.492 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:36:12.503 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:36:12.513 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:36:12.522 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:36:12.534 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:36:12.543 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[INFO ] 2022-08-30 19:36:12.550 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 21:04:40.586 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 21:04:40.591 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 21:04:40.592 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
-[ERROR] 2022-08-30 21:04:40.922 [main] StatementDAOImpl - Access denied for user 'root'@'localhost' (using password: YES)
-[ERROR] 2022-08-30 21:05:54.241 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-08-30 21:05:54.246 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-08-30 21:05:54.247 [main] DirectConnectionBuilder - connection via DirectCB#1 @Test
+[ERROR] 2022-09-01 11:03:27.714 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 11:03:27.798 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 11:03:27.809 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 11:03:28.146 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-01 11:03:28.290 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 11:03:28.372 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-01 11:03:28.490 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-09-01 11:03:28.530 [main] EnrollmentDAOImpl - Enroll table changed for appl id:8
+[INFO ] 2022-09-01 11:03:28.540 [main] EnrollmentDAOImpl - Enroll table changed for appl id:7
+[INFO ] 2022-09-01 11:03:28.550 [main] EnrollmentDAOImpl - Enroll table changed for appl id:6
+[INFO ] 2022-09-01 11:03:28.558 [main] EnrollmentDAOImpl - Enroll table changed for appl id:5
+[INFO ] 2022-09-01 11:03:28.567 [main] EnrollmentDAOImpl - Enroll table changed for appl id:4
+[INFO ] 2022-09-01 11:03:28.575 [main] EnrollmentDAOImpl - Enroll table changed for appl id:3
+[ERROR] 2022-09-01 11:03:28.901 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:28.919 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:28.933 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:28.948 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:28.963 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:28.979 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:28.992 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.004 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.017 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.029 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.042 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.055 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.067 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.082 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.098 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.115 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.132 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.147 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.160 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:03:29.173 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:31.130 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 11:04:31.205 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 11:04:31.215 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 11:04:31.554 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-01 11:04:31.692 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 11:04:31.780 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-01 11:04:31.861 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-09-01 11:04:31.900 [main] EnrollmentDAOImpl - Enroll table changed for appl id:8
+[INFO ] 2022-09-01 11:04:31.907 [main] EnrollmentDAOImpl - Enroll table changed for appl id:7
+[INFO ] 2022-09-01 11:04:31.915 [main] EnrollmentDAOImpl - Enroll table changed for appl id:6
+[INFO ] 2022-09-01 11:04:31.923 [main] EnrollmentDAOImpl - Enroll table changed for appl id:5
+[INFO ] 2022-09-01 11:04:31.931 [main] EnrollmentDAOImpl - Enroll table changed for appl id:4
+[INFO ] 2022-09-01 11:04:31.939 [main] EnrollmentDAOImpl - Enroll table changed for appl id:3
+[ERROR] 2022-09-01 11:04:32.276 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.289 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.302 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.318 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.333 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.353 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.367 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.379 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.391 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.406 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.421 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.436 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.449 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.460 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.472 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.487 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.502 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.516 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.530 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 11:04:32.544 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 13:24:48.254 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 13:24:48.258 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:02:35.529 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:02:35.618 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:02:35.627 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:02:35.957 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-01 17:02:36.092 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:02:36.179 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.257 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-09-01 17:02:36.296 [main] EnrollmentDAOImpl - Enroll table changed for appl id:8
+[INFO ] 2022-09-01 17:02:36.305 [main] EnrollmentDAOImpl - Enroll table changed for appl id:7
+[INFO ] 2022-09-01 17:02:36.314 [main] EnrollmentDAOImpl - Enroll table changed for appl id:6
+[INFO ] 2022-09-01 17:02:36.322 [main] EnrollmentDAOImpl - Enroll table changed for appl id:5
+[INFO ] 2022-09-01 17:02:36.332 [main] EnrollmentDAOImpl - Enroll table changed for appl id:4
+[INFO ] 2022-09-01 17:02:36.341 [main] EnrollmentDAOImpl - Enroll table changed for appl id:3
+[ERROR] 2022-09-01 17:02:36.682 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.698 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.711 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.727 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.745 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.763 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.776 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.790 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.802 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.814 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.827 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.837 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.850 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.860 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.875 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.887 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.902 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.915 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.926 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:02:36.940 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:20.396 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:03:20.470 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:03:20.478 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:03:20.806 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-01 17:03:20.938 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:03:21.016 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.118 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-09-01 17:03:21.155 [main] EnrollmentDAOImpl - Enroll table changed for appl id:8
+[INFO ] 2022-09-01 17:03:21.165 [main] EnrollmentDAOImpl - Enroll table changed for appl id:7
+[INFO ] 2022-09-01 17:03:21.173 [main] EnrollmentDAOImpl - Enroll table changed for appl id:6
+[INFO ] 2022-09-01 17:03:21.182 [main] EnrollmentDAOImpl - Enroll table changed for appl id:5
+[INFO ] 2022-09-01 17:03:21.193 [main] EnrollmentDAOImpl - Enroll table changed for appl id:4
+[INFO ] 2022-09-01 17:03:21.201 [main] EnrollmentDAOImpl - Enroll table changed for appl id:3
+[ERROR] 2022-09-01 17:03:21.552 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.568 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.581 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.595 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.609 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.623 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.639 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.653 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.665 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.675 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.689 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.704 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.715 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.726 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.737 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.749 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.762 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.777 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.790 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:03:21.802 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-01 17:03:26.691 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-09-01 17:10:14.612 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:10:14.689 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:10:14.700 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:10:15.027 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-01 17:10:15.160 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 17:10:15.237 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.351 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-09-01 17:10:15.389 [main] EnrollmentDAOImpl - Enroll table changed for appl id:8
+[INFO ] 2022-09-01 17:10:15.396 [main] EnrollmentDAOImpl - Enroll table changed for appl id:7
+[INFO ] 2022-09-01 17:10:15.405 [main] EnrollmentDAOImpl - Enroll table changed for appl id:6
+[INFO ] 2022-09-01 17:10:15.413 [main] EnrollmentDAOImpl - Enroll table changed for appl id:5
+[INFO ] 2022-09-01 17:10:15.421 [main] EnrollmentDAOImpl - Enroll table changed for appl id:4
+[INFO ] 2022-09-01 17:10:15.429 [main] EnrollmentDAOImpl - Enroll table changed for appl id:3
+[ERROR] 2022-09-01 17:10:15.761 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.775 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.788 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.802 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.816 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.831 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.847 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.861 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.873 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.885 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.899 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.911 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.922 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.933 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.944 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.957 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.969 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:15.985 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:16.000 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 17:10:16.013 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-01 17:10:19.678 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-09-01 18:40:00.244 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 18:40:00.352 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 18:40:00.363 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 18:40:00.805 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-01 18:40:00.991 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 18:40:01.101 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.235 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-09-01 18:40:01.293 [main] EnrollmentDAOImpl - Enroll table changed for appl id:8
+[INFO ] 2022-09-01 18:40:01.304 [main] EnrollmentDAOImpl - Enroll table changed for appl id:7
+[INFO ] 2022-09-01 18:40:01.315 [main] EnrollmentDAOImpl - Enroll table changed for appl id:6
+[INFO ] 2022-09-01 18:40:01.325 [main] EnrollmentDAOImpl - Enroll table changed for appl id:5
+[INFO ] 2022-09-01 18:40:01.336 [main] EnrollmentDAOImpl - Enroll table changed for appl id:4
+[INFO ] 2022-09-01 18:40:01.347 [main] EnrollmentDAOImpl - Enroll table changed for appl id:3
+[ERROR] 2022-09-01 18:40:01.799 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.819 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.837 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.858 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.879 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.899 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.919 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.939 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.958 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.977 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:01.996 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.016 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.032 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.049 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.066 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.083 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.100 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.118 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.137 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 18:40:02.155 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-01 18:40:05.637 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-09-01 19:57:12.079 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 19:57:12.184 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 19:57:12.195 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 19:57:12.654 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-01 19:57:12.853 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[ERROR] 2022-09-01 19:57:12.961 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.094 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[INFO ] 2022-09-01 19:57:13.139 [main] EnrollmentDAOImpl - Enroll table changed for appl id:8
+[INFO ] 2022-09-01 19:57:13.150 [main] EnrollmentDAOImpl - Enroll table changed for appl id:7
+[INFO ] 2022-09-01 19:57:13.166 [main] EnrollmentDAOImpl - Enroll table changed for appl id:6
+[INFO ] 2022-09-01 19:57:13.177 [main] EnrollmentDAOImpl - Enroll table changed for appl id:5
+[INFO ] 2022-09-01 19:57:13.187 [main] EnrollmentDAOImpl - Enroll table changed for appl id:4
+[INFO ] 2022-09-01 19:57:13.199 [main] EnrollmentDAOImpl - Enroll table changed for appl id:3
+[ERROR] 2022-09-01 19:57:13.650 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.669 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.689 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.710 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.730 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.750 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.769 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.787 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.805 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.823 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.842 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.860 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.879 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.894 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.909 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.925 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.941 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.957 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.974 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-01 19:57:13.989 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-01 19:57:17.082 [main] MailSender - e-mail sent to therealant@gmail.com

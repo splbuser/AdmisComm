@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS AdmissionsCommitteeTest.`applicant`
     `educational_institution` VARCHAR(64)  NOT NULL,
     `block_status`            BOOLEAN      NULL DEFAULT 0,
     `enroll_status`           TINYINT      NULL DEFAULT 0,
-    `upload_status`           VARCHAR(128)  NULL,
+    `upload_status`           VARCHAR(128) NULL,
     PRIMARY KEY (`id`),
     UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
     UNIQUE INDEX `user-name_UNIQUE` (`user_name` ASC) VISIBLE
@@ -120,6 +120,7 @@ CREATE TABLE IF NOT EXISTS AdmissionsCommitteeTest.`statement_app`
 (
     `faculty__id`  INT NOT NULL,
     `applicant_id` INT NOT NULL,
+    `total_score`  INT NOT NULL,
     PRIMARY KEY (`faculty__id`, `applicant_id`),
     INDEX `fk_statement_app_applicant1_idx` (`applicant_id` ASC) VISIBLE,
     INDEX `fk_statement_app_faculty1_idx` (`faculty__id` ASC) VISIBLE,
@@ -249,7 +250,8 @@ VALUES (DEFAULT, 'viper369', 'MTIzNjk', DEFAULT, 'Андреано', 'Адрио
 INSERT INTO applicant_results
 VALUES (13, 3, 3, 8, 3, 8, 7);
 INSERT INTO applicant
-VALUES (DEFAULT, 'Kriger', 'MTIzNjk', DEFAULT, 'Вольфганг II', 'Кригер', 'borbur4yt15@gmail.com', 'Баден-Баден', 'Вестфалия',
+VALUES (DEFAULT, 'Kriger', 'MTIzNjk', DEFAULT, 'Вольфганг II', 'Кригер', 'borbur4yt15@gmail.com', 'Баден-Баден',
+        'Вестфалия',
         'Секретно', DEFAULT, DEFAULT, DEFAULT);
 
 -- -----------------------------------------------------

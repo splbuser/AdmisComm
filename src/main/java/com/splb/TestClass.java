@@ -1,21 +1,8 @@
 package com.splb;
 
-import com.splb.model.dao.UserDAO;
-import com.splb.model.dao.connection.ConnectionBuilder;
-import com.splb.model.dao.connection.PoolConnectionBuilder;
-import com.splb.model.dao.exception.DAOException;
-import com.splb.model.dao.exception.FacultyDAOException;
-import com.splb.model.dao.exception.StatementDAOException;
-import com.splb.model.dao.exception.UserDAOException;
 import com.splb.model.dao.implementation.*;
 import com.splb.model.entity.Applicant;
-import com.splb.model.entity.EnrollStatus;
 import com.splb.model.entity.Faculty;
-import com.splb.model.entity.Statement;
-import com.splb.service.ApplicantService;
-import com.splb.service.sorting.SortStatementImpl;
-import com.splb.service.utils.DataValidator;
-import com.splb.service.utils.PassCrypt;
 import com.splb.service.utils.notifier.MailSender;
 import com.splb.service.utils.notifier.MailText;
 import com.splb.service.utils.notifier.Sender;
@@ -23,11 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-import javax.swing.text.html.parser.Entity;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class TestClass {
 
@@ -46,7 +29,11 @@ public class TestClass {
         Map<Faculty, TreeSet<Applicant>> finalizeList = statementDAO.getFinalizeList();
 
 //        finalizeList.forEach((key, value) -> System.out.println(key + ":" + value));
-        finalizeList.forEach((key, value) -> System.out.println("Key ==> " + key + ": val size ==> " + value.size()));
+//        finalizeList.forEach((key, value) -> System.out.println("Key ==> " + key + ": val size ==> " + value.size()));
+
+//        Sender s = () -> s.send("@", "1", "2");
+
+
 
 //        System.out.println(statementDAO.getFinalizeList());
 
@@ -286,8 +273,6 @@ public class TestClass {
 //            ex.printStackTrace();
 //        }
 //    }
-
-
 
 
 }
