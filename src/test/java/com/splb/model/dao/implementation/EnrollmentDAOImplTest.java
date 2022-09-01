@@ -24,12 +24,13 @@ class EnrollmentDAOImplTest {
         Assert.assertEquals (fdao.getFacultyById(2).getBudgetPlaces(), 2);
         Assert.assertEquals (fdao.getFacultyById(3).getTotalPlaces(), 10);
         Assert.assertEquals (fdao.getFacultyById(3).getBudgetPlaces(), 3);
-        Assert.assertTrue(dao.add(1, 1, 0));
-        Assert.assertTrue(dao.add(1, 2, 1));
-        Assert.assertTrue(dao.add(1, 3, 2));
-        Assert.assertTrue(dao.add(2, 4, 0));
-        Assert.assertTrue(dao.add(2, 5, 1));
-        Assert.assertTrue(dao.add(2, 6, 2));
+
+        Assert.assertTrue(dao.add(1, 8, 0));
+        Assert.assertTrue(dao.add(1, 7, 1));
+        Assert.assertTrue(dao.add(1, 6, 2));
+        Assert.assertTrue(dao.add(2, 5, 0));
+        Assert.assertTrue(dao.add(2, 4, 1));
+        Assert.assertTrue(dao.add(2, 3, 2));
 
     }
 }

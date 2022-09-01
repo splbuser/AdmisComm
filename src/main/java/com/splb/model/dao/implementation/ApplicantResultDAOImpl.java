@@ -79,6 +79,25 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
     }
 
     @Override
+    public int getResultSum(int userId) throws ApplicantResultDAOException {
+        int sum = 0;
+        try (Connection conn = getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_APPL_SUM)
+        ) {
+            ps.setInt(1, userId);
+            ps.execute();
+            ResultSet resultSet = ps.getResultSet();
+            while (resultSet.next()) {
+                sum = resultSet.getInt("sum");
+            }
+        } catch (SQLException e) {
+            log.error(e.getMessage());
+            throw new ApplicantResultDAOException("could not get required sum: " + e.getMessage());
+        }
+        return sum;
+    }
+
+    @Override
     public boolean isSubmittedResult(int userId) throws ApplicantResultDAOException {
         try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_RESULT_FOR_APPLICANT);

@@ -1,7 +1,9 @@
 package com.splb.model.entity;
 
 
-public class StatementResult {
+import java.io.IOException;
+
+public class StatementResult extends Entity  {
 
     private Applicant applicant;
     private Faculty faculty;
@@ -58,5 +60,10 @@ public class StatementResult {
 
     public void setTotal(int total) {
         this.total = total;
+    }
+
+    @Override
+    public void close() throws IOException {
+
     }
 }

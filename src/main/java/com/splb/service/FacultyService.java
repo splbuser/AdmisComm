@@ -47,6 +47,12 @@ public class FacultyService extends Service {
         return applicants;
     }
 
+    /**
+     * method add new faculty to made by admin
+     * @param faculty
+     * @return
+     * @throws FacultyServiceException
+     */
     public boolean add(Faculty faculty) throws FacultyServiceException {
         try {
             return fdao.addFaculty(faculty);
@@ -56,6 +62,12 @@ public class FacultyService extends Service {
         }
     }
 
+    /**
+     * method delete faculty
+     * @param id
+     * @return
+     * @throws FacultyServiceException
+     */
     public boolean delete(int id) throws FacultyServiceException {
         try {
             return fdao.deleteFacultyByID(id);
@@ -65,6 +77,12 @@ public class FacultyService extends Service {
         }
     }
 
+    /**
+     * method returns faculty by its name if it exists
+     * @param name
+     * @return
+     * @throws FacultyServiceException
+     */
     public Faculty getByName(String name) throws FacultyServiceException{
         try {
             return fdao.getFacultyByName(name);
@@ -74,6 +92,12 @@ public class FacultyService extends Service {
         }
     }
 
+    /**
+     * method returns faculty by its id if it exists
+     * @param id
+     * @return
+     * @throws FacultyServiceException
+     */
     public Faculty getById(int id) throws FacultyServiceException{
         try {
             return fdao.getFacultyById(id);
@@ -84,6 +108,12 @@ public class FacultyService extends Service {
     }
 
 
+    /**
+     * method check if exists faculty with required name
+     * @param name
+     * @return
+     * @throws FacultyServiceException
+     */
     public boolean checkByName(String name) throws FacultyServiceException{
         try {
             return fdao.checkFacultyByName(name);
@@ -93,15 +123,12 @@ public class FacultyService extends Service {
         }
     }
 
-    public boolean checkById(int id) throws FacultyServiceException{
-        try {
-            return fdao.checkFacultyById(id);
-        } catch (FacultyDAOException e) {
-            log.error(e.getMessage());
-            throw new FacultyServiceException(e.getMessage());
-        }
-    }
-
+    /**
+     * method updates faculty info
+     * @param faculty
+     * @return
+     * @throws FacultyServiceException
+     */
     public boolean update(Faculty faculty) throws FacultyServiceException{
         try {
             return fdao.updateFaculty(faculty);
@@ -111,6 +138,11 @@ public class FacultyService extends Service {
         }
     }
 
+    /**
+     * method returns current faculty list
+     * @return
+     * @throws FacultyServiceException
+     */
 
     public List<Faculty> getList() throws FacultyServiceException{
         try {

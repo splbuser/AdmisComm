@@ -23,7 +23,7 @@ public class DBInit {
         try (Connection con = new DirectConnectionBuilder().getConnection();
              Statement stmt = con.createStatement()
         ) {
-            log.info(stmt.execute(sql1));
+            stmt.execute(sql1);
         }
     }
 }

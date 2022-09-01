@@ -3,7 +3,7 @@ package com.splb.model.dao.constant;
 public abstract class Fields {
 
     public static final String ID = "id";
-    public static final String APPLICANT_NAME = "user_name";
+    public static final String APPLICANT_USER_NAME = "user_name";
     public static final String APPLICANT_PASSWORD = "password";
     public static final String APPLICANT_ADMIN_STATUS = "admin_status";
     public static final String APPLICANT_FIRST_NAME = "first_name";
@@ -13,6 +13,7 @@ public abstract class Fields {
     public static final String APPLICANT_REGION = "region";
     public static final String APPLICANT_EDUC_INST = "educational_institution";
     public static final String APPLICANT_BLOCK_STATUS = "block_status";
+    public static final String APPLICANT_ENROLL_STATUS = "enroll_status";
     public static final String APPLICANT_UPLOAD_STATUS = "upload_status";
 
 
@@ -48,6 +49,12 @@ public abstract class Fields {
     public static final String SECRET_KEY ="6Lc9jLUhAAAAAIlUAaps19E2SHaOH6Xa3pLXlvWf";
     public static final String SITE_VERIFY_URL = //
             "https://www.google.com/recaptcha/api/siteverify";
+    public static final String TOTAL_SCORE = "total_score";
+    public static final String FINALIZE = "finalize";
+    public static final String ADDALL = "addall";
+    public static final String WATCHLIST_ID = "/watchlist?id=";
+    public static final String LOCALE = "cookieLocale";
+    public static final String ASC = "ASC";
 
     private Fields() {
         throw new IllegalStateException("Utility class");

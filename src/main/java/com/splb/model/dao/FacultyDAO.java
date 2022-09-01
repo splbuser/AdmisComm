@@ -1,7 +1,5 @@
 package com.splb.model.dao;
 
-import com.splb.model.dao.exception.DBException;
-
 import com.splb.model.dao.exception.FacultyDAOException;
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
@@ -22,6 +20,7 @@ public interface FacultyDAO {
     List<Applicant> getApplicantsForFaculty(int facultyId) throws FacultyDAOException;
 
     Faculty getFacultyById(int facultyId) throws FacultyDAOException;
+
     Faculty getFacultyByName(String name) throws FacultyDAOException;
 
     boolean updateFaculty(Faculty faculty) throws FacultyDAOException;

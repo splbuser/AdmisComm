@@ -1,5 +1,6 @@
 package com.splb.controller.filters;
 
+import com.splb.controller.pages.Pages;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -26,7 +27,7 @@ public class AllUserFilter implements Filter {
 
         if (session == null || session.getAttribute("user") == null) {
             log.info("No logged-in user detected, so redirect to login page");
-            response.sendRedirect(((HttpServletRequest) req).getContextPath() + "/Login");
+            response.sendRedirect(((HttpServletRequest) req).getContextPath() + Pages.LOGIN);
         } else {
             chain.doFilter(req, res); // Logged-in user found, so just continue request.
         }

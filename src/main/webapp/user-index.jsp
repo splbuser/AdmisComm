@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib uri="/WEB-INF/mytags.tld" prefix="m" %>
+<%--<%@ taglib prefix="mytest" uri="http://www.tomcat-demo.com/testing"%>--%>
 <%@ page isELIgnored="false" %>
 
 <fmt:setLocale value="${cookie['lang'].value}"/>
@@ -25,7 +25,16 @@
 <body style="background: #212121;">
 
 <%@include file="jsp/jspf/user-header.jspf" %>
-<%--<m:today/>--%>
+
+<%--<table>--%>
+<%--    <tr>--%>
+<%--        <td><mytest:img url="tools.gif" /></td>--%>
+<%--        <td><mytest:img url="tools.gif" showBorder="true" /></td>--%>
+<%--        <td><mytest:img url="world.gif" showUrl="true" /></td>--%>
+<%--        <td><mytest:img url="world.gif" showUrl="true" showBorder="true" /></td>--%>
+<%--    </tr>--%>
+<%--</table>--%>
+
 <div class="container py-4 py-xl-5" style="font-family: 'Noto Sans', sans-serif;margin-top: 50px;">
     <div class="row mb-5">
         <div class="col-md-8 col-xl-6 text-center mx-auto">

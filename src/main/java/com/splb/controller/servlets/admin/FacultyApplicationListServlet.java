@@ -26,39 +26,30 @@ public class FacultyApplicationListServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(FacultyApplicationListServlet.class);
 
-
-    @Override
-    public void init() throws ServletException {
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         FacultyService fsrv = new FacultyService();
         StatementService ssrv = new StatementService();
         try {
-            /* получаем ID факултета, для формирования списка зарегистрированых апликантов*/
-            int id = Integer.parseInt(req.getParameter(Fields.ID));
 
-            /* формируем список апликантов*/
+            /* get faculty id to generate applicants list */
+
+            int id = Integer.parseInt(req.getParameter(Fields.ID));
             List<Applicant> applicantList = FacultyService
                     .getApplicantsForStatement(id);
             String facultyName = fsrv.getById(id).getName();
 
-            /* цикл добавляет стейтментстатус аппликанта на расчитаный для данного факультета. значение из бд не учитвается*/
             for (Applicant a : applicantList
             ) {
-                a.setStatementStatus(ssrv
-                        .check(id, Math.toIntExact(a.getId())));
+                a.setStatementStatus(ssrv.check(id, Math.toIntExact(a.getId())));
             }
-
             req.setAttribute("applicants", applicantList);
             req.setAttribute("faculty_id", id);
             req.setAttribute("faculty_name", facultyName);
             getServletContext()
                     .getRequestDispatcher(Pages.MANAGE_APPLICANTS)
                     .forward(req, resp);
-
         } catch (Exception e) {
             log.error(e.getMessage());
             getServletContext()
@@ -71,14 +62,15 @@ public class FacultyApplicationListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         StatementService srv = new StatementService();
         String action = req.getParameter(Fields.ACTION);
+        String facultyId = req.getParameter(Fields.FACULTY_ID);
         try {
-            if (nonNull(action) && action.equals("addall")) {
-//                srv.dellEmAll();
+            if (nonNull(action) && nonNull(facultyId) && action.equals(Fields.ADDALL)) {
+                srv.addEmAll(Integer.parseInt(facultyId));
             }
         } catch (Exception e) {
             log.error(e.getMessage());
             resp.sendRedirect(req.getContextPath() + Pages.ERROR);
         }
-        resp.sendRedirect(req.getContextPath() + Pages.ENROLLMENT);
+        resp.sendRedirect(req.getContextPath() + Fields.WATCHLIST_ID + facultyId);
     }
 }

@@ -20,11 +20,6 @@ import static java.util.Objects.nonNull;
 public class FacultyRegServlet extends HttpServlet {
     private static final Logger log = LogManager.getLogger(FacultyRegServlet.class);
 
-
-    @Override
-    public void init() throws ServletException {
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Applicant currentUser = new Applicant();

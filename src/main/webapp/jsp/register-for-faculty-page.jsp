@@ -1,11 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib uri="/WEB-INF/mytags.tld" prefix="m" %>
 <%@ page isELIgnored="false" %>
 
-<%--<jsp:useBean id="user_name" scope="session" class="java.lang.String"/>--%>
-<%--<jsp:useBean id="message" scope="request" class="java.lang.String"/>--%>
 <jsp:useBean id="faculty" scope="request" type="java.util.List"/>
 
 <fmt:setLocale value="${cookie['lang'].value}"/>

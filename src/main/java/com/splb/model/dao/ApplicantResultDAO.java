@@ -26,6 +26,14 @@ public interface ApplicantResultDAO {
     ApplicantResult getApplicantResult(int userId) throws ApplicantResultDAOException;
 
     /**
+     * get sum of all subjects result
+     * @param userId
+     * @return
+     * @throws ApplicantResultDAOException
+     */
+    int getResultSum(int userId) throws ApplicantResultDAOException;
+
+    /**
      *
      * @param userId
      * @return returns true if Applicant's result were submitted to statement and false whether hot
@@ -33,7 +41,7 @@ public interface ApplicantResultDAO {
      */
     boolean isSubmittedResult(int userId) throws ApplicantResultDAOException;
 
-    /**\
+    /**
      * method for adding Applicant's result while his registration on specific faculty
      * @param req
      * @param resp

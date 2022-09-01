@@ -22,11 +22,6 @@ public class DeleteFacultyServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(DeleteFacultyServlet.class);
 
-
-    @Override
-    public void init() throws ServletException {
-    }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

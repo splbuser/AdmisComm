@@ -25,10 +25,6 @@ public class EnterResultServlet extends HttpServlet {
 
 
     @Override
-    public void init() throws ServletException {
-    }
-
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         ApplicantResultService srv = new ApplicantResultService();

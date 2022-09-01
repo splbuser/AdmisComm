@@ -12,13 +12,13 @@ import java.sql.SQLException;
  */
 public class DirectConnectionBuilder implements ConnectionBuilder {
     private final Logger log = LogManager.getLogger(DirectConnectionBuilder.class);
-    public static final String URI_ALT = "jdbc:mysql://localhost:3306/admissionscommittee";
+    public static final String URI_ALT = "jdbc:mysql://localhost:3306/admissionscommitteetest";
     public static final String USER = "root";
     public static final String PASSWORD = "128500";
 
     @Override
     public Connection getConnection() throws SQLException {
-        log.info("connection via DirectCB#1 @Test");
+//        log.info("connection via DirectCB#1 @Test");
         return DriverManager.getConnection(URI_ALT, USER, PASSWORD);
     }
 }

@@ -9,9 +9,16 @@ import java.util.List;
 
 public interface EnrollmentDAO {
 
+    /**
+     * add user into enrollment table with current enroll status
+     * @param facultyId
+     * @param applicantId
+     * @param status
+     * @return
+     * @throws EnrollmentDAOException
+     */
     boolean add(int facultyId, int applicantId, int status) throws EnrollmentDAOException;
 
-    void decreaseFacultyPlaces(Connection conn, int facultyId) throws EnrollmentDAOException;
 
     void deleteApplicant(Connection conn, int applicantId) throws EnrollmentDAOException;
 

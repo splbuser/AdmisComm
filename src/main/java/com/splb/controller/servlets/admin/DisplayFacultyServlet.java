@@ -25,10 +25,6 @@ public class DisplayFacultyServlet extends HttpServlet {
     private static final Logger log = LogManager.getLogger(DisplayFacultyServlet.class);
 
     @Override
-    public void init() throws ServletException {
-    }
-
-    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -46,7 +42,6 @@ public class DisplayFacultyServlet extends HttpServlet {
          * that the next query will keep the sorting order.
          */
 
-
         if (nonNull(search) && !search.isEmpty()) {
             try {
                 if (srv.checkByName(search)) {
@@ -56,11 +51,10 @@ public class DisplayFacultyServlet extends HttpServlet {
                 } else {
                     faculty = srv.getList();
                 }
-                request.setAttribute("faculty", faculty);
-                request.getRequestDispatcher(Pages.MANAGE_FACULTY)
-                        .forward(request, response);
             } catch (FacultyServiceException e) {
                 log.error(e.getMessage());
+                request.getRequestDispatcher(Pages.ERROR)
+                        .forward(request, response);
             }
         } else {
             try {
@@ -90,9 +84,9 @@ public class DisplayFacultyServlet extends HttpServlet {
                 request.getRequestDispatcher(Pages.ERROR)
                         .forward(request, response);
             }
-            request.setAttribute("faculty", faculty);
-            request.getRequestDispatcher(Pages.MANAGE_FACULTY)
-                    .forward(request, response);
         }
+        request.setAttribute("faculty", faculty);
+        request.getRequestDispatcher(Pages.MANAGE_FACULTY)
+                .forward(request, response);
     }
 }

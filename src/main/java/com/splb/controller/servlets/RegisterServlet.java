@@ -11,7 +11,7 @@ import com.splb.service.utils.PassCrypt;
 import com.splb.service.utils.DataValidator;
 import com.splb.service.utils.notifier.MailText;
 import com.splb.service.utils.notifier.Sender;
-import com.splb.service.utils.notifier.exception.MailSenderException;
+import com.splb.service.utils.notifier.exception.SenderException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
 
         ApplicantService srv = new ApplicantService();
         /* Geta input data from register form */
-        String userName = req.getParameter(Fields.APPLICANT_NAME);
+        String userName = req.getParameter(Fields.APPLICANT_USER_NAME);
         String password = req.getParameter(Fields.APPLICANT_PASSWORD);
         String rePassword = req.getParameter(Fields.PASSWORD_REPEAT);
         String email = req.getParameter(Fields.APPLICANT_EMAIL);
@@ -77,7 +77,7 @@ public class RegisterServlet extends HttpServlet {
                     s.send();
                     resp.sendRedirect("Login");
                 }
-            } catch (ServiceException | MailSenderException e) {
+            } catch (ServiceException | SenderException e) {
                 log.error("Error while registration {}", e.getMessage());
                 httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_FAIL);
                 resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);

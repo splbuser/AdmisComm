@@ -18,17 +18,12 @@ public class BlockUserServlet extends HttpServlet {
 
 
     @Override
-    public void init() throws ServletException {
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ApplicantService srv = new ApplicantService();
         try {
             int id = Integer.parseInt(request.getParameter(Fields.ID));
             boolean blockStatus = Boolean.parseBoolean(request.getParameter("status"));
-
             if (blockStatus) {
                 srv.unblock(id);
             } else {

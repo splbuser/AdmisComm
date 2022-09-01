@@ -1,8 +1,9 @@
 package com.splb.model.entity;
 
+import java.io.IOException;
 import java.util.List;
 
-public class Applicant implements Comparable<Applicant> {
+public class Applicant extends Entity implements Comparable<Applicant> {
 
     private int id;
     private String userName;
@@ -189,6 +190,11 @@ public class Applicant implements Comparable<Applicant> {
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    @Override
+    public void close() throws IOException {
+
     }
 
     @Override

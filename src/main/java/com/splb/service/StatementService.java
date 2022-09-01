@@ -14,11 +14,26 @@ import java.util.List;
 public class StatementService extends Service {
 
 
-
     public boolean add(int facultyId, int userId) throws StatementServiceException {
         try {
             return sdao.addUserToFaculty(facultyId, userId);
         } catch (StatementDAOException e) {
+            log.error(e.getMessage());
+            throw new StatementServiceException(e.getMessage());
+        }
+    }
+
+    public void addEmAll(int facultyId) throws StatementServiceException {
+        try {
+            List<Applicant> list = fdao.getApplicantsForFaculty(facultyId);
+            for (Applicant a : list
+            ) {
+                int userId = a.getId();
+                if (!sdao.checkUserFaculty(facultyId, userId)) {
+                    sdao.addUserToFaculty(facultyId, userId);
+                }
+            }
+        } catch (DAOException e) {
             log.error(e.getMessage());
             throw new StatementServiceException(e.getMessage());
         }
@@ -69,10 +84,16 @@ public class StatementService extends Service {
         }
     }
 
-    public void finalizeStatement() throws StatementServiceException, StatementDAOException {
-
-        List<Statement> statementList = sdao.getStatementList();
+    public void finalizeStatement() throws StatementServiceException {
+        List<Statement> statementList;
         Applicant applicant;
+
+        try {
+            statementList = sdao.getStatementList();
+        } catch (StatementDAOException e) {
+            log.error(e.getMessage());
+            throw new StatementServiceException(e.getMessage());
+        }
 
         try {
             for (Statement s : statementList
@@ -89,7 +110,7 @@ public class StatementService extends Service {
                     int budget = fdao.getFacultyById(facultyId).getBudgetPlaces();
                     int total = fdao.getFacultyById(facultyId).getTotalPlaces();
 
-                    if (budget > 0 && status == 4) {
+                    if (budget > 0 && status == 3) {
                         applicant.setEnrollStatus(2);
                         udao.updateEnrollStatus(applicant);
 
@@ -104,7 +125,7 @@ public class StatementService extends Service {
                         f.setTotalPlaces(total);
                         fdao.updateFaculty(f);
 
-                    } else if (budget == 0 && total > 0 && status == 4) {
+                    } else if (budget == 0 && total > 0 && status == 3) {
 
                         applicant.setEnrollStatus(1);
                         udao.updateEnrollStatus(applicant);
@@ -116,7 +137,7 @@ public class StatementService extends Service {
                         f.setTotalPlaces(total);
                         fdao.updateFaculty(f);
 
-                    } else if (budget == 0 && total == 0 && status == 4) {
+                    } else if (budget == 0 && total == 0 && status == 3) {
                         log.info("{} applicant no enrolled", s.getApplicant().getLastName());
                         applicant.setEnrollStatus(0);
                         udao.updateEnrollStatus(applicant);
@@ -128,5 +149,4 @@ public class StatementService extends Service {
             throw new StatementServiceException(e.getMessage());
         }
     }
-
 }

@@ -24,9 +24,6 @@ public class LoginServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(LoginServlet.class);
 
-    @Override
-    public void init() throws ServletException {
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,18 +32,15 @@ public class LoginServlet extends HttpServlet {
         ApplicantResultService asrv = new ApplicantResultService();
 
         HttpSession httpSession = req.getSession();
-        String userName = req.getParameter(Fields.APPLICANT_NAME);
+        String userName = req.getParameter(Fields.APPLICANT_USER_NAME);
         String pass = req.getParameter(Fields.APPLICANT_PASSWORD);
 
         boolean validCaptcha = false;
         try {
-
-            /* Checking whether the details of user are null or not */
             if (nonNull(userName) && nonNull(pass)) {
                 String password = PassCrypt.encodeWithoutPadding(pass.getBytes());
                 Applicant user = srv.login(userName, password);
                 if (nonNull(user)) {
-                    /* Checking if user blocked */
                     if (user.isBlockStatus()) {
                         httpSession.setAttribute(Messages.MESSAGE, Messages.ADMINISTRATOR_BLOCKED_YOU);
                         resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
@@ -55,16 +49,13 @@ public class LoginServlet extends HttpServlet {
                         log.info("gRecaptchaResponse={}", gRecaptchaResponse);
                         validCaptcha = CaptchaVerification.verify(gRecaptchaResponse);
                         if (validCaptcha) {
-                            /* Storing the login details in session */
                             int id = user.getId();
-
                             httpSession.setAttribute("user", user);
                             httpSession.setAttribute("id", id);
                             httpSession.setAttribute("user_name", user.getUserName());
                             httpSession.setAttribute("resultCheck", asrv.checkSub(id));
                             httpSession.setAttribute("hellouser", String.format("%s %s",
                                     user.getFirstName(), user.getLastName()));
-
                             if (user.isAdminStatus()) {
                                 httpSession.setAttribute("role", "ADMIN"); // set user role
                                 resp.sendRedirect(req.getContextPath() + Pages.FACULTY_TABLE);
@@ -72,8 +63,7 @@ public class LoginServlet extends HttpServlet {
                                 httpSession.setAttribute("role", "USER"); // set user role
                                 resp.sendRedirect(req.getContextPath() + Pages.USER_INDEX);
                             }
-                            // delete message after success login
-                            if (httpSession.getAttribute(Messages.MESSAGE) != null) {
+                            if (nonNull(httpSession.getAttribute(Messages.MESSAGE))) {
                                 httpSession.removeAttribute(Messages.MESSAGE);
                             }
                             log.info("{} log in", userName);
@@ -83,15 +73,12 @@ public class LoginServlet extends HttpServlet {
                         }
                     }
                 } else {
-                    //If wrong credentials are entered
                     httpSession.setAttribute(Messages.MESSAGE, Messages.WRONG_CREDENTIAL);
-                    resp.sendRedirect(req.getContextPath() +Pages.LOGIN);
+                    resp.sendRedirect(req.getContextPath() + Pages.LOGIN);
                 }
             } else {
-                /* If username or password is empty or null */
-                httpSession.setAttribute("credential", Messages.NULL);
+                httpSession.setAttribute(Messages.CREDENTIAL, Messages.NULL);
                 resp.sendRedirect(req.getContextPath() + Pages.LOGIN);
-
             }
         } catch (Exception e) {
             log.error("Login error: {}", e.getMessage());

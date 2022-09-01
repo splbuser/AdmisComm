@@ -26,16 +26,13 @@ public class DisplayApplicantsServlet extends HttpServlet {
 
 
     @Override
-    public void init() throws ServletException {
-    }
-
-    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         ApplicantService srv = new ApplicantService();
-        HttpSession session = request.getSession();
         List<Applicant> applicants = new ArrayList<>();
+
+        HttpSession session = request.getSession();
         String search = request.getParameter(Fields.SEARCH);
         int listLength = 0;
         int page = 1;
@@ -80,6 +77,8 @@ public class DisplayApplicantsServlet extends HttpServlet {
                         .forward(request, response);
             } catch (UserServiceException e) {
                 log.error(e.getMessage());
+                getServletContext().getRequestDispatcher(Pages.ERROR)
+                        .forward(request, response);
             }
         } else {
             try {

@@ -17,23 +17,19 @@ import java.io.IOException;
 
 
 /**
- * В методе doGet сервлет получает параметр id и по нему извлекает из базы данных соответствующий
- * объект. Если объект найден, то он передается на страницу faculty-edit.jsp. Здесь определена форма,
- * которая выводит редактируемые данные в поля формы. И по нажатию на кнопку данные уходят обратно
- * сервлету EditServlet. Если объект не найден или произошла какая-нибудь ошибка, то возвращается
- * страница error-page.jsp. В методе doPost получаем отправленные данные и через метод update()
- * передаем их в базу данных.
+ *  In doGet method, the servlet receives the id parameter and uses it to retrieve the
+ *  corresponding object from the database. If the object is found, it's transferred to
+ *  the faculty-edit.jsp page. A form is defined here, which displays editable data in
+ *  form fields. When the button is pressed, the data goes back to the EditServlet servlet.
+ *  If the object is not found or some error occurred, the page error-page.jsp is returned.
+ *  In the doPost method, we receive the sent data and transfer it to the database through
+ *  the update() method.
  */
 
 public class EditFacultyServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(EditFacultyServlet.class);
 
-
-    @Override
-    public void init() throws ServletException {
-
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
