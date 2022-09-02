@@ -7,7 +7,8 @@ public enum MailText {
     ENROLL_SUBJ("Enrollment committed"),
     ENROLL_BODY("Hello. We are pleased to inform you that following the results of enrollment, " +
             "your results helped you get a %s place at the %s faculty."),
-    NO_ENROLL_BODY("Hello. Unfortunately, your results were not enough to be enrolled in any faculty.");
+    NO_ENROLL_BODY("Hello. Unfortunately, your results were not enough to be enrolled in any faculty."),
+    DEFAULT("Hello. You were registered in the admissions committee system, but you never made your choice.");
 
     private final String text;
 

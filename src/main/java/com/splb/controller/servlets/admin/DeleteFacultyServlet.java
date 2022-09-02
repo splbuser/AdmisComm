@@ -1,6 +1,5 @@
 package com.splb.controller.servlets.admin;
 
-
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.service.FacultyService;
@@ -14,12 +13,12 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 
 /**
- * Сервлет получает id удаляемого объекта и через метод deleteFacultyById(id) производит удаление.
- * После успешного удаления идет переадресация на DisplayFaculty.
+ * The servlet receives the id of the deleted object and deletes it  using
+ * the deleteFacultyById(id) method. After successful removal, redirection
+ * is made to DisplayFaculty.
  */
 
 public class DeleteFacultyServlet extends HttpServlet {
-
     private static final Logger log = LogManager.getLogger(DeleteFacultyServlet.class);
 
     @Override

@@ -1,8 +1,9 @@
 package com.splb.model.entity;
 
 import java.io.IOException;
+import java.util.Objects;
 
-public class ApplicantResult extends Entity  {
+public class ApplicantResult extends Entity {
 
     private int userId;
     private int algebra;
@@ -46,7 +47,7 @@ public class ApplicantResult extends Entity  {
     }
 
     public void setBiology(int biology) {
-       this.biology = biology;
+        this.biology = biology;
     }
 
     public int getChemistry() {
@@ -62,7 +63,7 @@ public class ApplicantResult extends Entity  {
     }
 
     public void setEnglish(int english) {
-       this.english = english;
+        this.english = english;
     }
 
     public int getLiterature() {
@@ -78,12 +79,25 @@ public class ApplicantResult extends Entity  {
     }
 
     public void setWorldHistory(int worldHistory) {
-        this.worldHistory=worldHistory;
+        this.worldHistory = worldHistory;
     }
 
     @Override
     public void close() throws IOException {
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ApplicantResult result = (ApplicantResult) o;
+        return userId == result.userId && algebra == result.algebra && biology == result.biology && chemistry == result.chemistry
+                && english == result.english && literature == result.literature && worldHistory == result.worldHistory;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, algebra, biology, chemistry, english, literature, worldHistory);
     }
 
     @Override

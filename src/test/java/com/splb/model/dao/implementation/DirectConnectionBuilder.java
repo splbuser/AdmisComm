@@ -16,7 +16,7 @@ public class DirectConnectionBuilder implements ConnectionBuilder {
 
     @Override
     public Connection getConnection() throws SQLException {
-//        log.info("connection via DirectCB#2 @Test");
+        log.info("connection via DirectCB@Test");
         return DriverManager.getConnection(URI_ALT, USER, PASSWORD);
     }
 }

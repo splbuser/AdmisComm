@@ -1,10 +1,8 @@
 package com.splb.model.entity;
 
-
 import java.io.IOException;
 
-public class Enrollment extends Entity  implements Comparable<Enrollment>{
-
+public class Enrollment extends Entity implements Comparable<Enrollment> {
     private Faculty faculty;
     private Applicant applicant;
     private EnrollStatus status;
@@ -47,12 +45,10 @@ public class Enrollment extends Entity  implements Comparable<Enrollment>{
         return e.applicant.getEnrollStatus() != applicant.getEnrollStatus() ?
                 Integer.compare(e.applicant.getEnrollStatus(), applicant.getEnrollStatus()) :
                 Integer.compare(e.faculty.getName().charAt(0), faculty.getName().charAt(0));
-
     }
 
     @Override
     public void close() throws IOException {
-
     }
 
     @Override

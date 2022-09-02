@@ -27,7 +27,6 @@ public class DisplayFacultyServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         HttpSession session = request.getSession();
         String type = request.getParameter(Fields.TYPE);
         String sortBy = request.getParameter(Fields.SORT_BY);
@@ -35,7 +34,6 @@ public class DisplayFacultyServlet extends HttpServlet {
         FacultyService srv = new FacultyService();
         List<Faculty> faculty = new ArrayList<>();
         Faculty getFaculty = null;
-
         /* We get a sorted list according to required parameters,
          * first we check request, then session. Everything that
          * comes from the request is thrown into the session, so

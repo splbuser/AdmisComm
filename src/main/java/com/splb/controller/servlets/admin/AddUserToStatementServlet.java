@@ -16,7 +16,6 @@ import java.text.MessageFormat;
 public class AddUserToStatementServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(AddUserToStatementServlet.class);
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,5 +37,4 @@ public class AddUserToStatementServlet extends HttpServlet {
 
         }
     }
-
 }

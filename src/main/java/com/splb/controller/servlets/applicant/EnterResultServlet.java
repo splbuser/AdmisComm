@@ -23,14 +23,11 @@ public class EnterResultServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(EnterResultServlet.class);
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         ApplicantResultService srv = new ApplicantResultService();
         HttpSession session = req.getSession();
-
-        if (            GradeValidator.validateGrades(new String[]
+        if (GradeValidator.validateGrades(new String[]
                 {
                         req.getParameter(Fields.RESULT_ALGEBRA),
                         req.getParameter(Fields.RESULT_BIOLOGY),
@@ -47,11 +44,7 @@ public class EnterResultServlet extends HttpServlet {
             int eng = Integer.parseInt(req.getParameter(Fields.RESULT_ENGLISH));
             int lit = Integer.parseInt(req.getParameter(Fields.RESULT_LITERATURE));
             int his = Integer.parseInt(req.getParameter(Fields.RESULT_HISTORY));
-
-
-            ApplicantResult applicantResult = new ApplicantResult(id,
-                    alg, bio, che, eng, lit, his);
-
+            ApplicantResult applicantResult = new ApplicantResult(id, alg, bio, che, eng, lit, his);
             try {
                 if (srv.insert(applicantResult)) {
                     session.setAttribute(Messages.MESSAGE, Messages.BEEN_APPLIED);
@@ -73,10 +66,8 @@ public class EnterResultServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         getServletContext().getRequestDispatcher(Pages.ENTER_RESULT)
                 .forward(req, resp);
 
     }
 }
-

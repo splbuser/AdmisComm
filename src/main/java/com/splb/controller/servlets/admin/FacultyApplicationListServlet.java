@@ -32,14 +32,9 @@ public class FacultyApplicationListServlet extends HttpServlet {
         FacultyService fsrv = new FacultyService();
         StatementService ssrv = new StatementService();
         try {
-
-            /* get faculty id to generate applicants list */
-
             int id = Integer.parseInt(req.getParameter(Fields.ID));
-            List<Applicant> applicantList = FacultyService
-                    .getApplicantsForStatement(id);
+            List<Applicant> applicantList = fsrv.getApplicantsForStatement(id);
             String facultyName = fsrv.getById(id).getName();
-
             for (Applicant a : applicantList
             ) {
                 a.setStatementStatus(ssrv.check(id, Math.toIntExact(a.getId())));

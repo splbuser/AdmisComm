@@ -23,13 +23,11 @@ public class StatementServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         StatementService srv = new StatementService();
         HttpSession session = request.getSession();
         String type = request.getParameter(Fields.TYPE);
         String sortBy = request.getParameter(Fields.SORT_BY);
         List<com.splb.model.entity.Statement> list = new ArrayList<>();
-
         try {
             if (type == null || sortBy == null) {
                 type = (String) session.getAttribute(Fields.TYPE);
@@ -38,17 +36,11 @@ public class StatementServlet extends HttpServlet {
                     list = srv.getList();
                 } else {
                     SortStatementImpl ss = new SortStatementImpl();
-                    list = ss.getSortedList(
-                            type,
-                            sortBy,
-                            srv.getList());
+                    list = ss.getSortedList(type, sortBy, srv.getList());
                 }
             } else {
                 SortStatementImpl ss = new SortStatementImpl();
-                list = ss.getSortedList(
-                        type,
-                        sortBy,
-                        srv.getList());
+                list = ss.getSortedList(type, sortBy, srv.getList());
                 session.setAttribute(Fields.TYPE, type);
                 session.setAttribute(Fields.SORT_BY, sortBy);
             }

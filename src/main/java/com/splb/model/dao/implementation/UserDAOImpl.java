@@ -2,7 +2,6 @@ package com.splb.model.dao.implementation;
 
 import com.splb.model.dao.AbstractDAO;
 import com.splb.model.dao.UserDAO;
-import com.splb.model.dao.connection.PoolConnectionBuilder;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.dao.constant.SQLQuery;
 import com.splb.model.dao.exception.*;
@@ -21,7 +20,6 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     private static UserDAOImpl userDAOImpl = null;
 
     private UserDAOImpl() {
-        setConnectionBuilder(new PoolConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 
@@ -34,12 +32,11 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
 
 
     @Override
-    public boolean addApplicant(Applicant applicant) throws UserDAOException {
-        if (findApplicantByName(applicant.getUserName())) {
+    public boolean addApplicant(Applicant applicant, Connection con) throws UserDAOException {
+        if (findApplicantByName(applicant.getUserName(), con)) {
             return false;
         }
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.CREATE_USER)) {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.CREATE_USER)) {
             int i = 1;
             ps.setString(i++, applicant.getUserName());
             ps.setString(i++, applicant.getPassword());
@@ -58,9 +55,8 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public boolean delete(String userName) throws UserDAOException {
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.DELETE_USER)) {
+    public boolean delete(String userName, Connection con) throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.DELETE_USER)) {
             ps.setString(1, userName);
             return ps.executeUpdate() == 1;
         } catch (SQLException e) {
@@ -70,9 +66,8 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public boolean updateEnrollStatus(Applicant applicant) throws UserDAOException {
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.UPD_USER_ENROLL_STATUS)
+    public boolean updateEnrollStatus(Applicant applicant, Connection con) throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.UPD_USER_ENROLL_STATUS)
         ) {
             ps.setInt(1, applicant.getEnrollStatus());
             ps.setInt(2, applicant.getId());
@@ -81,14 +76,12 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             log.error(e.getMessage());
             throw new UserDAOException("could not update enroll status: " + e.getMessage());
         }
-
     }
 
     @Override
-    public Applicant getUser(String username, String password) throws UserDAOException {
+    public Applicant getUser(String username, String password, Connection con) throws UserDAOException {
         Applicant user = null;
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.GET_USER_BY_LOGIN);
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.GET_USER_BY_LOGIN);
         ) {
             ps.setString(1, username);
             ps.setString(2, password);
@@ -111,10 +104,8 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public boolean findApplicantByName(String login) throws UserDAOException {
-
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_APPLICANT_BY_USERNAME)
+    public boolean findApplicantByName(String login, Connection con) throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_APPLICANT_BY_USERNAME)
         ) {
             ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
@@ -126,9 +117,8 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public boolean checkApplicant(String name) throws UserDAOException {
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.SEARCH_APPLICANT);
+    public boolean checkApplicant(String name, Connection con) throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.SEARCH_APPLICANT);
         ) {
             ps.setString(1, name);
             ps.setString(2, name);
@@ -142,11 +132,10 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public List<Applicant> findAllApplicants(int limit, int offset) throws UserDAOException {
+    public List<Applicant> findAllApplicants(int limit, int offset, Connection con) throws UserDAOException {
         List<Applicant> applicants = new ArrayList<>();
         ApplicantResultDAOImpl dao = ApplicantResultDAOImpl.getInstance();
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_ALL_APPLICANTS);
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_ALL_APPLICANTS);
         ) {
             ps.setInt(1, limit);
             ps.setInt(2, offset);
@@ -164,8 +153,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
                 applicant.setBlockStatus(rs.getBoolean(Fields.APPLICANT_BLOCK_STATUS));
                 applicant.setEnrollStatus(rs.getInt(Fields.APPLICANT_ENROLL_STATUS));
                 applicant.setUploaded(rs.getString(Fields.APPLICANT_UPLOAD_STATUS));
-                applicant.setResult(dao.getResultSum(rs.getInt(Fields.ID)));
-
+                applicant.setScore(dao.getResultSum(rs.getInt(Fields.ID), con));
                 applicants.add(applicant);
             }
         } catch (SQLException | ApplicantResultDAOException e) {
@@ -176,11 +164,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public Applicant getApplicantById(int applicantId) throws UserDAOException {
+    public Applicant getApplicantById(int applicantId, Connection con) throws UserDAOException {
         Applicant applicant = null;
-        try (
-                Connection conn = getConnection();
-                PreparedStatement ps = conn.prepareStatement(SQLQuery.FIND_APPLICANT_BT_ID)
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_APPLICANT_BT_ID)
         ) {
             ps.setInt(1, applicantId);
             ResultSet rs = ps.executeQuery();
@@ -199,7 +185,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
                 applicant.setEnrollStatus(rs.getInt(Fields.APPLICANT_ENROLL_STATUS));
                 applicant.setUploaded(rs.getString(Fields.APPLICANT_UPLOAD_STATUS));
                 applicant.setList(StatementDAOImpl.getInstance()
-                        .getFacultyFromStatementForApplicant(rs.getInt(1)));
+                        .getFacultyFromStatementForApplicant(rs.getInt(1), con));
             }
         } catch (SQLException | StatementDAOException e) {
             log.error(e.getMessage());
@@ -209,11 +195,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public List<Applicant> getApplicantForSearch(String name) throws UserDAOException {
+    public List<Applicant> getApplicantForSearch(String name, Connection con) throws UserDAOException {
         List<Applicant> getApplicant = new ArrayList<>();
-
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.SEARCH_APPLICANT);
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.SEARCH_APPLICANT);
         ) {
             ps.setString(1, name);
             ps.setString(2, name);
@@ -243,13 +227,12 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public List<Applicant> getNotEnrollApplicants() throws UserDAOException {
+    public List<Applicant> getNotEnrollApplicants(Connection con) throws UserDAOException {
         List<Applicant> list = new ArrayList<>();
-        try (Connection conn = getConnection();
-             Statement s = conn.createStatement()) {
+        try (Statement s = con.createStatement()) {
             ResultSet rs = s.executeQuery(SQLQuery.GET_NOT_ENROLLMENT);
             while (rs.next()) {
-                Applicant a = getApplicantById(rs.getInt(Fields.ID));
+                Applicant a = getApplicantById(rs.getInt(Fields.ID), con);
                 list.add(a);
             }
         } catch (SQLException e) {
@@ -260,11 +243,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public boolean blockUserById(int userId) throws UserDAOException {
-
-        if (!isBlockedUserCheck(userId)) {
-            try (Connection conn = getConnection();
-                 PreparedStatement ps = conn.prepareStatement(SQLQuery.BLOCK_USER_BY_ID)
+    public boolean blockUserById(int userId, Connection con) throws UserDAOException {
+        if (!isBlockedUserCheck(userId, con)) {
+            try (PreparedStatement ps = con.prepareStatement(SQLQuery.BLOCK_USER_BY_ID)
             ) {
                 ps.setInt(1, 1);
                 ps.setInt(2, userId);
@@ -279,10 +260,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public boolean unblockUserById(int userId) throws UserDAOException {
-        if (isBlockedUserCheck(userId)) {
-            try (Connection conn = getConnection();
-                 PreparedStatement ps = conn.prepareStatement(SQLQuery.BLOCK_USER_BY_ID)
+    public boolean unblockUserById(int userId, Connection con) throws UserDAOException {
+        if (isBlockedUserCheck(userId, con)) {
+            try (PreparedStatement ps = con.prepareStatement(SQLQuery.BLOCK_USER_BY_ID)
             ) {
                 ps.setInt(1, 0);
                 ps.setInt(2, userId);
@@ -297,9 +277,8 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public boolean isBlockedUserCheck(int userId) throws UserDAOException {
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.BLOCK_CHECK_USER)
+    public boolean isBlockedUserCheck(int userId, Connection con) throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.BLOCK_CHECK_USER)
         ) {
             ps.setInt(1, userId);
             ResultSet resultSet = ps.executeQuery();
@@ -315,9 +294,8 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public boolean upload(int userId, String filename) throws UserDAOException {
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.APP_UPLOADED)
+    public boolean upload(int userId, String filename, Connection con) throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.APP_UPLOADED)
         ) {
             ps.setString(1, filename);
             ps.setInt(2, userId);
@@ -330,17 +308,15 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
 
 
     @Override
-    public List<Faculty> getApplicantsFacultyList(int id) throws UserDAOException {
+    public List<Faculty> getApplicantsFacultyList(int id, Connection con) throws UserDAOException {
         List<Faculty> list = new ArrayList<>();
         SortFacultyImpl sortedList = new SortFacultyImpl();
-
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.APPLICANT_HAS_FACULTY)) {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.APPLICANT_HAS_FACULTY)) {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Faculty faculty = FacultyDAOImpl.getInstance()
-                        .getFacultyById(rs.getInt(2));
+                        .getFacultyById(rs.getInt(2), con);
                 list.add(faculty);
             }
         } catch (SQLException | FacultyDAOException e) {
@@ -351,11 +327,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
-    public int[] getApplicantsFacultyResult(int userId, int facultyID) throws UserDAOException {
+    public int[] getApplicantsFacultyResult(int userId, int facultyID, Connection con) throws UserDAOException {
         int[] list = new int[2];
-
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_APPL_FACULTY_RES)) {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.GET_APPL_FACULTY_RES)) {
             ps.setInt(1, userId);
             ps.setInt(2, facultyID);
             ResultSet rs = ps.executeQuery();
@@ -369,14 +343,12 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             throw new UserDAOException("could not get applicant's result: " + e.getMessage());
         }
         return list;
-
     }
 
     @Override
-    public int getLength() throws UserDAOException {
+    public int getLength(Connection con) throws UserDAOException {
         int length = 0;
-        try (Connection con = getConnection();
-             Statement st = con.createStatement();
+        try (Statement st = con.createStatement();
         ) {
             ResultSet rs = st.executeQuery(SQLQuery.SELECT_FROM_APPLICANT);
             while (rs.next()) {

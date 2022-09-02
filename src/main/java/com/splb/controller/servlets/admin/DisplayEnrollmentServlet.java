@@ -23,10 +23,8 @@ public class DisplayEnrollmentServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(DisplayEnrollmentServlet.class);
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         HttpSession session = request.getSession();
         String type = request.getParameter(Fields.TYPE);
         String sortBy = request.getParameter(Fields.SORT_BY);
@@ -53,7 +51,6 @@ public class DisplayEnrollmentServlet extends HttpServlet {
         request.getRequestDispatcher(Pages.ENROLLMENT_PAGE)
                 .forward(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

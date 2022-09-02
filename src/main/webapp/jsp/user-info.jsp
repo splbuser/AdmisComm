@@ -237,17 +237,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="assets/js/Table.js"></script>
 <script src="assets/js/theme.js"></script>
-<%--<script>--%>
-<%--    async function uploadFile() {--%>
-<%--        let formData = new FormData();--%>
-<%--        formData.append("file", ajaxfile.files[0]);--%>
-<%--        await fetch('upload', {--%>
-<%--            method: "POST",--%>
-<%--            body: formData--%>
-<%--        });--%>
-<%--        alert('The file upload with Ajax and Java was a success!');--%>
-<%--    }--%>
-<%--</script>--%>
 </body>
 
 </html>

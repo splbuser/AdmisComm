@@ -26,16 +26,9 @@ public class RegisterServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(RegisterServlet.class);
 
-
-    @Override
-    public void init() throws ServletException {
-    }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         ApplicantService srv = new ApplicantService();
-        /* Geta input data from register form */
         String userName = req.getParameter(Fields.APPLICANT_USER_NAME);
         String password = req.getParameter(Fields.APPLICANT_PASSWORD);
         String rePassword = req.getParameter(Fields.PASSWORD_REPEAT);
@@ -45,35 +38,26 @@ public class RegisterServlet extends HttpServlet {
         String city = req.getParameter(Fields.APPLICANT_CITY);
         String region = req.getParameter(Fields.APPLICANT_REGION);
         String educationalInstitution = req.getParameter(Fields.APPLICANT_EDUC_INST);
-
-        /* Create session */
         HttpSession httpSession = req.getSession();
-
-        /* input data validation */
-        if (
-                DataValidator.validateUserName(userName) ||
-                        DataValidator.validatePassword(password) ||
-                        DataValidator.validateRePassword(password, rePassword) ||
-                        DataValidator.validateEmail(email) ||
-                        DataValidator.validateName(firstName) ||
-                        DataValidator.validateName(lastName) ||
-                        DataValidator.validateName(city) ||
-                        DataValidator.validateName(region) ||
-                        DataValidator.validateName(educationalInstitution)
+        if (DataValidator.validateUserName(userName) ||
+                DataValidator.validatePassword(password) ||
+                DataValidator.validateRePassword(password, rePassword) ||
+                DataValidator.validateEmail(email) ||
+                DataValidator.validateName(firstName) ||
+                DataValidator.validateName(lastName) ||
+                DataValidator.validateName(city) ||
+                DataValidator.validateName(region) ||
+                DataValidator.validateName(educationalInstitution)
         ) {
-            /* send password for encoding */
             String encodedPass = PassCrypt.encodeWithoutPadding(password.getBytes());
-
             Applicant applicant = new Applicant(0, userName, encodedPass, firstName, lastName,
                     email, city, region, educationalInstitution);
-
             boolean insertResult = false;
-
             try {
                 insertResult = srv.add(applicant);
                 if (insertResult) {
                     httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_SUCCESSFUL);
-                    Sender s = new MailSender(email,  MailText.REG_SUBJ.getText(), MailText.REG_BODY.getText());
+                    Sender s = new MailSender(email, MailText.REG_SUBJ.getText(), MailText.REG_BODY.getText());
                     s.send();
                     resp.sendRedirect("Login");
                 }
@@ -82,13 +66,11 @@ public class RegisterServlet extends HttpServlet {
                 httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_FAIL);
                 resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
             }
-
         } else {
             log.info(Messages.VALIDATION_FAIL);
             httpSession.setAttribute(Messages.MESSAGE, Messages.VALIDATION_FAIL);
             resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
         }
-
     }
 
     @Override

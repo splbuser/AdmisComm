@@ -4,6 +4,7 @@ import com.splb.model.dao.exception.UserDAOException;
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
 
+import java.sql.Connection;
 import java.util.List;
 
 
@@ -15,7 +16,7 @@ public interface UserDAO {
      * @return
      * @throws UserDAOException
      */
-    boolean addApplicant(Applicant applicant) throws UserDAOException;
+    boolean addApplicant(Applicant applicant, Connection con) throws UserDAOException;
 
     /**
      * delete applicant by username
@@ -23,7 +24,7 @@ public interface UserDAO {
      * @return
      * @throws UserDAOException
      */
-    boolean delete(String userName) throws UserDAOException;
+    boolean delete(String userName, Connection con) throws UserDAOException;
 
     /**
      * update applicant's enroll status after statement finalization
@@ -31,7 +32,7 @@ public interface UserDAO {
      * @return
      * @throws UserDAOException
      */
-    boolean updateEnrollStatus(Applicant applicant) throws UserDAOException;
+    boolean updateEnrollStatus(Applicant applicant, Connection con) throws UserDAOException;
 
 
     /**
@@ -40,7 +41,7 @@ public interface UserDAO {
      * @return
      * @throws UserDAOException
      */
-    boolean findApplicantByName(String login) throws UserDAOException;
+    boolean findApplicantByName(String login, Connection con) throws UserDAOException;
 
     /**
      * check if such applicant exists in database
@@ -48,7 +49,7 @@ public interface UserDAO {
      * @return
      * @throws UserDAOException
      */
-    boolean checkApplicant(String name) throws UserDAOException;
+    boolean checkApplicant(String name, Connection con) throws UserDAOException;
 
 
     /**
@@ -58,7 +59,7 @@ public interface UserDAO {
      * @return
      * @throws UserDAOException
      */
-    List<Applicant> findAllApplicants(int limit, int offset) throws UserDAOException;
+    List<Applicant> findAllApplicants(int limit, int offset, Connection con) throws UserDAOException;
 
     /**
      * returns user after login
@@ -67,21 +68,21 @@ public interface UserDAO {
      * @return
      * @throws UserDAOException
      */
-    Applicant getUser(String username, String password) throws UserDAOException;
+    Applicant getUser(String username, String password, Connection con) throws UserDAOException;
 
-    Applicant getApplicantById(int applicantId) throws UserDAOException;
+    Applicant getApplicantById(int applicantId, Connection con) throws UserDAOException;
 
-    List<Applicant> getApplicantForSearch(String name) throws UserDAOException;
+    List<Applicant> getApplicantForSearch(String name, Connection con) throws UserDAOException;
 
-    List<Applicant> getNotEnrollApplicants() throws UserDAOException;
+    List<Applicant> getNotEnrollApplicants(Connection con) throws UserDAOException;
 
-    boolean blockUserById(int userId) throws UserDAOException;
+    boolean blockUserById(int userId, Connection con) throws UserDAOException;
 
-    boolean unblockUserById(int userId) throws UserDAOException;
+    boolean unblockUserById(int userId, Connection con) throws UserDAOException;
 
-    boolean isBlockedUserCheck(int userId) throws UserDAOException;
+    boolean isBlockedUserCheck(int userId, Connection con) throws UserDAOException;
 
-    boolean upload(int userId, String filename) throws UserDAOException;
+    boolean upload(int userId, String filename, Connection con) throws UserDAOException;
 
     /**
      * method returns sorted list of faculties where the applicant registered
@@ -90,10 +91,10 @@ public interface UserDAO {
      * @return List<Faculty>
      * @throws UserDAOException
      */
-    List<Faculty> getApplicantsFacultyList(int id) throws UserDAOException;
+    List<Faculty> getApplicantsFacultyList(int id, Connection con) throws UserDAOException;
 
-    int[] getApplicantsFacultyResult(int userId, int facultyID) throws UserDAOException;
+    int[] getApplicantsFacultyResult(int userId, int facultyID, Connection con) throws UserDAOException;
 
-    int getLength() throws UserDAOException;
+    int getLength(Connection con) throws UserDAOException;
 
 }

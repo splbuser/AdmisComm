@@ -21,20 +21,14 @@ import java.io.IOException;
 import static java.util.Objects.nonNull;
 
 public class LoginServlet extends HttpServlet {
-
     private static final Logger log = LogManager.getLogger(LoginServlet.class);
-
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         ApplicantService srv = new ApplicantService();
         ApplicantResultService asrv = new ApplicantResultService();
-
         HttpSession httpSession = req.getSession();
         String userName = req.getParameter(Fields.APPLICANT_USER_NAME);
         String pass = req.getParameter(Fields.APPLICANT_PASSWORD);
-
         boolean validCaptcha = false;
         try {
             if (nonNull(userName) && nonNull(pass)) {

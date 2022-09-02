@@ -17,17 +17,48 @@ public interface EnrollmentDAO {
      * @return
      * @throws EnrollmentDAOException
      */
-    boolean add(int facultyId, int applicantId, int status) throws EnrollmentDAOException;
+    boolean add(int facultyId, int applicantId, int status, Connection con) throws EnrollmentDAOException;
 
+    /**
+     * delete applicant from statement after finalization
+     * @param con
+     * @param applicantId
+     * @throws EnrollmentDAOException
+     */
+    void deleteApplicant(Connection con, int applicantId) throws EnrollmentDAOException;
 
-    void deleteApplicant(Connection conn, int applicantId) throws EnrollmentDAOException;
+    /**
+     * delete faculty from statement after no more capacity left
+     * @param con
+     * @param facultyId
+     * @throws EnrollmentDAOException
+     */
+    void deleteFaculty(Connection con, int facultyId) throws EnrollmentDAOException;
 
-    void deleteFaculty(Connection conn, int facultyId) throws EnrollmentDAOException;
+    /**
+     * method returns list of enrollment
+     * @param con
+     * @return
+     * @throws EnrollmentDAOException
+     */
+    List<Enrollment> getEnrollment(Connection con) throws EnrollmentDAOException;
 
-    List<Enrollment> getEnrollment() throws EnrollmentDAOException;
+    /**
+     * method change applicant's enroll status according finalization
+     * @param con
+     * @param applicantID
+     * @param status
+     * @throws EnrollmentDAOException
+     */
+    void changeEnrollStatus(Connection con, int applicantID, int status) throws EnrollmentDAOException;
 
-    void changeEnrollStatus(Connection conn, int applicantID, int status) throws EnrollmentDAOException;
-
-    Enrollment getApplicantEnrollStatus(int userID) throws EnrollmentDAOException;
+    /**
+     * method returns current applicant's enroll status
+     * @param userID
+     * @param con
+     * @return
+     * @throws EnrollmentDAOException
+     */
+    Enrollment getApplicantEnrollStatus(int userID, Connection con) throws EnrollmentDAOException;
 
 }

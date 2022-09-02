@@ -1,7 +1,6 @@
 package com.splb.controller.servlets.admin;
 
 import com.splb.controller.pages.Pages;
-import com.splb.model.dao.implementation.FacultyDAOImpl;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Faculty;
 import com.splb.service.FacultyService;
@@ -14,7 +13,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-
 
 /**
  *  In doGet method, the servlet receives the id parameter and uses it to retrieve the
@@ -30,19 +28,16 @@ public class EditFacultyServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(EditFacultyServlet.class);
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         FacultyService srv = new FacultyService();
-        Faculty faculty = null;
-        int id = 0;
-
+        Faculty faculty;
+        int id;
         try {
             if (Integer.parseInt(request.getParameter(Fields.ID)) != 0) {
                 id = Integer.parseInt(request.getParameter(Fields.ID));
                 faculty = srv.getById(id);
-
                 request.setAttribute("faculty", faculty);
                 getServletContext()
                         .getRequestDispatcher(Pages.EDIT_FACULTY)
@@ -64,17 +59,14 @@ public class EditFacultyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         FacultyService srv = new FacultyService();
-        Faculty faculty = null;
-
+        Faculty faculty;
         try {
-
             int id = Integer.parseInt(request.getParameter(Fields.ID));
             String name = request.getParameter(Fields.FACULTY_NAME);
             int tp = Integer.parseInt(request.getParameter(Fields.FACULTY_TOTAL_PLACES));
             int bp = Integer.parseInt(request.getParameter(Fields.FACULTY_BUDGET_PLACES));
             String so = request.getParameter(Fields.SUBJECT_ONE);
             String st = request.getParameter(Fields.SUBJECT_TWO);
-
             if (
                     id > 0 &&
                             FacultyDataValidator.validateName(name) &&
@@ -94,7 +86,6 @@ public class EditFacultyServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + Pages.ERROR);
                 log.error("Wrong input data");
             }
-
         } catch (Exception e) {
             log.error(e.getMessage());
             getServletContext().getRequestDispatcher(Pages.ERROR)

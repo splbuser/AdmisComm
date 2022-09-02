@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * setup connection and pool configuration at /META-INF/context.xml
+ * setup connection and pool configuration at context.xml
  */
 
 public class PoolConnectionBuilder implements ConnectionBuilder {
@@ -31,10 +31,6 @@ public class PoolConnectionBuilder implements ConnectionBuilder {
 
     @Override
     public Connection getConnection() throws SQLException {
-        if (this.dataSource == null) {
-            return new DirectConnectionBuilder().getConnection();
-        } else {
             return dataSource.getConnection();
-        }
     }
 }

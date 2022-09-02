@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 
+import java.sql.Connection;
 import java.util.List;
 
 class FacultyDAOImplTest {
@@ -28,73 +29,72 @@ class FacultyDAOImplTest {
     public static final String RENAMED = "RenamedField";
     public static final String BIOLOGY = "Biology";
     public static final String ENGINEERING = "Engineering";
+    static Connection con;
 
     @BeforeAll
     static void setUp() throws Exception {
-        DBInit.startUp(FacultyDAOImplTest.class);
+        con = new DirectConnectionBuilder().getConnection();
     }
 
     @AfterAll
     static void tearDown() throws FacultyDAOException {
         FacultyDAO dao = FacultyDAOImpl.getInstance();
-        dao.deleteFacultyByID(dao.getFacultyByName(NAME_ONE).getId());
-        dao.deleteFacultyByID(dao.getFacultyByName(NAME_TWO).getId());
-        dao.deleteFacultyByID(dao.getFacultyByName(NAME_THREE).getId());
-        dao.deleteFacultyByID(dao.getFacultyByName(NAME_FIVE).getId());
+        dao.deleteFacultyByID(dao.getFacultyByName(NAME_ONE, con).getId(), con);
+        dao.deleteFacultyByID(dao.getFacultyByName(NAME_TWO, con).getId(), con);
+        dao.deleteFacultyByID(dao.getFacultyByName(NAME_THREE, con).getId(), con);
+        dao.deleteFacultyByID(dao.getFacultyByName(NAME_FIVE, con).getId(), con);
     }
 
     @Test
     void addFacultyTest() throws FacultyDAOException {
         Faculty faculty = new Faculty(NAME_ONE, 3, 6, SUBJ_ONE, SUBJ_TWO);
-        Assert.assertTrue(dao.addFaculty(faculty));
+        Assert.assertTrue(dao.addFaculty(faculty, con));
         Assert.assertThrows(FacultyDAOException.class,
-                () -> {
-                    dao.addFaculty(faculty);
-                });
+                () -> dao.addFaculty(faculty, con));
     }
 
     @Test
     void deleteFacultyByID() throws FacultyDAOException {
         Faculty faculty = new Faculty(NAME_FOUR, 3, 6, SUBJ_ONE, SUBJ_TWO);
-        dao.addFaculty(faculty);
-        int id = dao.getFacultyByName(NAME_FOUR).getId();
-        Assert.assertTrue(dao.deleteFacultyByID(id));
-        Assert.assertFalse(dao.deleteFacultyByID(id));
+        dao.addFaculty(faculty, con);
+        int id = dao.getFacultyByName(NAME_FOUR, con).getId();
+        Assert.assertTrue(dao.deleteFacultyByID(id, con));
+        Assert.assertFalse(dao.deleteFacultyByID(id, con));
     }
 
     @Test
     void checkFacultyByName() throws FacultyDAOException {
         Faculty faculty = new Faculty(NAME_TWO, 3, 6, SUBJ_ONE, SUBJ_TWO);
-        dao.addFaculty(faculty);
-        Assert.assertTrue(dao.checkFacultyByName(NAME_ONE));
-        Assert.assertFalse(dao.checkFacultyByName(SUBJ_ONE));
+        dao.addFaculty(faculty, con);
+        Assert.assertTrue(dao.checkFacultyByName(NAME_ONE, con));
+        Assert.assertFalse(dao.checkFacultyByName(SUBJ_ONE, con));
     }
 
     @Test
     void checkFacultyById() throws FacultyDAOException {
         Faculty faculty = new Faculty(NAME_THREE, 3, 6, SUBJ_ONE, SUBJ_TWO);
-        dao.addFaculty(faculty);
-        int idTrue = dao.getFacultyByName(NAME_THREE).getId();
+        dao.addFaculty(faculty, con);
+        int idTrue = dao.getFacultyByName(NAME_THREE, con).getId();
         int idFalse = 333;
-        Assert.assertTrue(dao.checkFacultyById(idTrue));
-        Assert.assertFalse(dao.checkFacultyById(idFalse));
+        Assert.assertTrue(dao.checkFacultyById(idTrue, con));
+        Assert.assertFalse(dao.checkFacultyById(idFalse, con));
     }
 
     @Test
     void getFacultyList() throws FacultyDAOException {
-        Assert.assertEquals(dao.getFacultyList().size(), 6);
+        Assert.assertEquals(dao.getFacultyList( con).size(), 6);
         Faculty faculty = new Faculty(NAME_FOUR, 3, 6, SUBJ_ONE, SUBJ_TWO);
-        dao.addFaculty(faculty);
-        Assert.assertEquals(dao.getFacultyList().size(), 7);
-        int id = dao.getFacultyByName(NAME_FOUR).getId();
-        dao.deleteFacultyByID(id);
-        Assert.assertEquals(dao.getFacultyList().size(), 6);
+        dao.addFaculty(faculty, con);
+        Assert.assertEquals(dao.getFacultyList( con).size(), 7);
+        int id = dao.getFacultyByName(NAME_FOUR, con).getId();
+        dao.deleteFacultyByID(id, con);
+        Assert.assertEquals(dao.getFacultyList( con).size(), 6);
     }
 
     @Test
     void getApplicantsForFaculty() throws FacultyDAOException {
-        List<Applicant> list1 = dao.getApplicantsForFaculty(4);
-        List<Applicant> list2 = dao.getApplicantsForFaculty(5);
+        List<Applicant> list1 = dao.getApplicantsForFaculty(4, con);
+        List<Applicant> list2 = dao.getApplicantsForFaculty(5, con);
         Assert.assertEquals(list1.size(), 8);
         Assert.assertEquals(list2.size(), 6);
 
@@ -102,32 +102,32 @@ class FacultyDAOImplTest {
 
     @Test
     void getFacultyById() throws FacultyDAOException {
-        Assert.assertEquals(dao.getFacultyById(1).getName(), BIOLOGY);
-        Assert.assertEquals(dao.getFacultyById(3).getName(), ENGINEERING);
+        Assert.assertEquals(dao.getFacultyById(1, con).getName(), BIOLOGY);
+        Assert.assertEquals(dao.getFacultyById(3, con).getName(), ENGINEERING);
     }
 
     @Test
     void getFacultyByName() throws FacultyDAOException {
-        Assert.assertEquals(dao.getFacultyByName(BIOLOGY).getName(), BIOLOGY);
-        Assert.assertEquals(dao.getFacultyByName(ENGINEERING).getName(), ENGINEERING);
+        Assert.assertEquals(dao.getFacultyByName(BIOLOGY, con).getName(), BIOLOGY);
+        Assert.assertEquals(dao.getFacultyByName(ENGINEERING, con).getName(), ENGINEERING);
         Faculty faculty = new Faculty(NAME_FIVE, 3, 6, SUBJ_ONE, SUBJ_TWO);
-        Assert.assertTrue(dao.addFaculty(faculty));
-        Assert.assertEquals(dao.getFacultyByName(NAME_FIVE).getName(), NAME_FIVE);
+        Assert.assertTrue(dao.addFaculty(faculty, con));
+        Assert.assertEquals(dao.getFacultyByName(NAME_FIVE, con).getName(), NAME_FIVE);
     }
 
     @Test
     void updateFaculty() throws FacultyDAOException {
-        Faculty faculty = dao.getFacultyById(2);
+        Faculty faculty = dao.getFacultyById(2, con);
         faculty.setName(RENAMED);
         faculty.setSubjOne(RENAMED);
-        dao.updateFaculty(faculty);
-        Assert.assertEquals(dao.getFacultyByName(RENAMED).getName(), RENAMED);
-        Assert.assertEquals(dao.getFacultyByName(RENAMED).getSubjOne(), RENAMED);
+        dao.updateFaculty(faculty, con);
+        Assert.assertEquals(dao.getFacultyByName(RENAMED, con).getName(), RENAMED);
+        Assert.assertEquals(dao.getFacultyByName(RENAMED, con).getSubjOne(), RENAMED);
     }
 
     @Test
     void getSum() throws FacultyDAOException {
-        Assert.assertEquals(dao.getSum(2, 2), 19);
-        Assert.assertEquals(dao.getSum(4, 4), 23);
+        Assert.assertEquals(dao.getSum(2, 2, con), 19);
+        Assert.assertEquals(dao.getSum(4, 4, con), 23);
     }
 }

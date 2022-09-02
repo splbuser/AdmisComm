@@ -26,20 +26,15 @@ import static java.util.Objects.nonNull;
  * successful addition, it redirects to the DisplayFaculty servlet..
  */
 
-
 public class CreateFacultyServlet extends HttpServlet {
-
     private static final Logger log = LogManager.getLogger(CreateFacultyServlet.class);
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         getServletContext().getRequestDispatcher(Pages.FACULTY_CREATE)
                 .forward(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -47,13 +42,11 @@ public class CreateFacultyServlet extends HttpServlet {
         FacultyService srv = new FacultyService();
         Faculty faculty = null;
         try {
-
             String name = request.getParameter("name");
             int budgetPlaces = Integer.parseInt(request.getParameter(Fields.FACULTY_BUDGET_PLACES));
             int totalPlaces = Integer.parseInt(request.getParameter(Fields.FACULTY_TOTAL_PLACES));
             String subjectOne = request.getParameter(Fields.SUBJECT_ONE);
             String subjectTwo = request.getParameter(Fields.SUBJECT_TWO);
-
             if (
                     FacultyDataValidator.validateName(name) &&
                             FacultyDataValidator.validateCapacity(budgetPlaces, totalPlaces) &&
@@ -62,7 +55,6 @@ public class CreateFacultyServlet extends HttpServlet {
             ) {
                 faculty = new Faculty(name, budgetPlaces, totalPlaces, subjectOne, subjectTwo);
             }
-
             if (nonNull(faculty)) {
                 srv.add(faculty);
                 response.sendRedirect(request.getContextPath() + Pages.FACULTY_TABLE);
