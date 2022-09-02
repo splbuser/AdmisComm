@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
-<%@ taglib uri="WEB_INF/mytags.tld" prefix="m" %>
 
 <jsp:useBean id="user_name" scope="session" class="java.lang.String"/>
 
@@ -29,13 +28,13 @@
 
 <body style="background: #212121;">
 <%@include file="jsp/jspf/user-header.jspf" %>
-<%--Current Date and Time is: <m:today/>--%>
 <section class="py-4 py-xl-5">
     <div class="container">
         <div class="text-center p-4 p-lg-5" style="font-family: 'Noto Sans', sans-serif;"><i
                 class="material-icons fs-1 text-danger border rounded-circle border-4 border-warning">error</i>
             <p class="font-monospace fs-2 fw-light text-danger mb-2"><fmt:message key="test.error"/></p>
-            <h5 class="font-monospace text-info mb-4"> ${sessionScope.message}</h5>
+            <h5 class="font-monospace text-info mb-4"> ${sessionScope.message}
+            Number of online user(s): ${sessionScope.SESSION-COUNTER}</h5>
         </div>
     </div>
 </section>

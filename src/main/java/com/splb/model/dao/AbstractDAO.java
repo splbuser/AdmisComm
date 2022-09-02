@@ -8,15 +8,15 @@ import java.sql.SQLException;
 
 public abstract class AbstractDAO {
 
-    protected ConnectionBuilder connectionBuilder;
+//    protected ConnectionBuilder connectionBuilder;
     protected Logger log;
 
-    public void setConnectionBuilder(ConnectionBuilder connectionBuilder) {
-        this.connectionBuilder = connectionBuilder;
-    }
-
-    protected Connection getConnection() throws SQLException {
-        return connectionBuilder.getConnection();
-    }
+//    public void setConnectionBuilder(ConnectionBuilder connectionBuilder) {
+//        this.connectionBuilder = connectionBuilder;
+//    }
+//
+//    protected Connection getConnection() throws SQLException {
+//        return connectionBuilder.getConnection();
+//    }
 
 }

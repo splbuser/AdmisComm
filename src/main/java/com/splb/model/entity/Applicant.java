@@ -19,7 +19,7 @@ public class Applicant extends Entity implements Comparable<Applicant> {
     private boolean statementStatus;
     private int enrollStatus;
     private ApplicantResult applicantResult;
-    private int result;
+    private int score;
     private String uploaded;
     private List<Faculty> list;
 
@@ -160,12 +160,12 @@ public class Applicant extends Entity implements Comparable<Applicant> {
         this.list = list;
     }
 
-    public int getResult() {
-        return result;
+    public int getScore() {
+        return score;
     }
 
-    public void setResult(int result) {
-        this.result = result;
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public String getUploaded() {
@@ -178,23 +178,34 @@ public class Applicant extends Entity implements Comparable<Applicant> {
 
     @Override
     public int compareTo(Applicant a) {
-        return a.result != result ?
-                Integer.compare(a.result, result) : Integer.compare(id, a.id);
+        return a.score != score ?
+                Integer.compare(a.score, score) : Integer.compare(id, a.id);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Applicant applicant = (Applicant) o;
+        return id == applicant.id;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = super.hashCode();
+        result = 31 * result + id;
+        return result;
     }
 
     @Override
     public void close() throws IOException {
-
     }
 
     @Override
@@ -213,6 +224,6 @@ public class Applicant extends Entity implements Comparable<Applicant> {
                 ", block_status=" + blockStatus + "\n" +
                 ", statement_status=" + statementStatus + "\n" +
                 ", enroll_status=" + enrollStatus + "\n" +
-                ", result=" + result + "\n";
+                ", result=" + score + "\n";
     }
 }

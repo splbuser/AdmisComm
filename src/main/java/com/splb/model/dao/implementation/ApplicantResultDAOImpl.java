@@ -2,7 +2,6 @@ package com.splb.model.dao.implementation;
 
 import com.splb.model.dao.AbstractDAO;
 import com.splb.model.dao.ApplicantResultDAO;
-import com.splb.model.dao.connection.PoolConnectionBuilder;
 import com.splb.model.dao.constant.SQLQuery;
 import com.splb.model.dao.exception.ApplicantResultDAOException;
 import com.splb.model.entity.ApplicantResult;
@@ -20,7 +19,6 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
     private static ApplicantResultDAOImpl applicantResultDAOImpl = null;
 
     private ApplicantResultDAOImpl() {
-        setConnectionBuilder(new PoolConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 
@@ -32,10 +30,8 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
     }
 
     @Override
-    public boolean insert(ApplicantResult applicantResult) throws ApplicantResultDAOException {
-
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.INSERT_RESULT)
+    public boolean insert(ApplicantResult applicantResult, Connection con) throws ApplicantResultDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.INSERT_RESULT)
         ) {
             int i = 1;
             ps.setInt(i++, applicantResult.getUserId());
@@ -53,11 +49,9 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
     }
 
     @Override
-    public ApplicantResult getApplicantResult(int userId) throws ApplicantResultDAOException {
+    public ApplicantResult getApplicantResult(int userId, Connection con) throws ApplicantResultDAOException {
         ApplicantResult ar = new ApplicantResult();
-
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_RESULT_FOR_APPLICANT)
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.GET_RESULT_FOR_APPLICANT)
         ) {
             ps.setInt(1, userId);
             ps.execute();
@@ -79,10 +73,9 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
     }
 
     @Override
-    public int getResultSum(int userId) throws ApplicantResultDAOException {
+    public int getResultSum(int userId, Connection con) throws ApplicantResultDAOException {
         int sum = 0;
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_APPL_SUM)
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.GET_APPL_SUM)
         ) {
             ps.setInt(1, userId);
             ps.execute();
@@ -98,9 +91,8 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
     }
 
     @Override
-    public boolean isSubmittedResult(int userId) throws ApplicantResultDAOException {
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_RESULT_FOR_APPLICANT);
+    public boolean isSubmittedResult(int userId, Connection con) throws ApplicantResultDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.GET_RESULT_FOR_APPLICANT);
         ) {
             ps.setInt(1, userId);
             ps.execute();
@@ -113,12 +105,10 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
     }
 
     @Override
-    public boolean addFacultySubjectResult(HttpServletRequest req, HttpServletResponse resp,
-                                           int userId, int subjOne, int subjTwo, int facultyId) throws ApplicantResultDAOException {
-
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.
-                     prepareStatement(SQLQuery.REGISTER_FOR_SINGLE_FACULTY)) {
+    public boolean addFacultySubjectResult(int userId, int subjOne, int subjTwo, int facultyId, Connection con)
+            throws ApplicantResultDAOException {
+        try (PreparedStatement ps = con.
+                prepareStatement(SQLQuery.REGISTER_FOR_SINGLE_FACULTY)) {
             int i = 1;
             ps.setInt(i++, userId);
             ps.setInt(i++, facultyId);
@@ -129,7 +119,6 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
             log.error(e.getMessage());
             throw new ApplicantResultDAOException("could not add result for faculty's subject: " + e.getMessage());
         }
-
     }
 
     @Override
@@ -143,5 +132,4 @@ public class ApplicantResultDAOImpl extends AbstractDAO implements ApplicantResu
             throw new ApplicantResultDAOException("could not delete results: " + e.getMessage());
         }
     }
-
 }

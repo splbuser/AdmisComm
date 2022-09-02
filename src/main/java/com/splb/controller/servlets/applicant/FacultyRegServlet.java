@@ -19,16 +19,13 @@ import static java.util.Objects.nonNull;
 
 public class FacultyRegServlet extends HttpServlet {
     private static final Logger log = LogManager.getLogger(FacultyRegServlet.class);
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Applicant currentUser = new Applicant();
         FacultyService srv = new FacultyService();
         List<Faculty> faculties;
-
         HttpSession session = request.getSession();
         Integer id = (Integer) session.getAttribute(Fields.ID); // user id
-
         if (nonNull(id)) {
             try {
                 faculties = srv.getListForRegister(id);
@@ -38,7 +35,6 @@ public class FacultyRegServlet extends HttpServlet {
                 }
                 request.setAttribute("currentUser", currentUser);
                 request.setAttribute("faculty", faculties);
-
                 getServletContext().getRequestDispatcher(Pages.REGISTER_FOR_FACULTY)
                         .forward(request, response);
             } catch (FacultyServiceException e) {
@@ -58,13 +54,10 @@ public class FacultyRegServlet extends HttpServlet {
         try {
             int id = Integer.parseInt(request.getParameter(Fields.ID));
             srv.getById(id);
-
             response.sendRedirect(request.getContextPath() + Pages.REGISTER_FOR_FACULTY_SRV);
         } catch (Exception e) {
             log.error(e.getMessage());
             response.sendRedirect(request.getContextPath() + Pages.ERROR);
         }
-
     }
-
 }

@@ -64,6 +64,5 @@ public class StatementResult extends Entity  {
 
     @Override
     public void close() throws IOException {
-
     }
 }

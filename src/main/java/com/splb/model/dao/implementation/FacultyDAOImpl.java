@@ -2,8 +2,7 @@ package com.splb.model.dao.implementation;
 
 import com.splb.model.dao.AbstractDAO;
 import com.splb.model.dao.FacultyDAO;
-import com.splb.model.dao.connection.DirectConnectionBuilder;
-import com.splb.model.dao.connection.PoolConnectionBuilder;
+import com.splb.model.dao.UserDAO;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.dao.constant.SQLQuery;
 import com.splb.model.dao.exception.FacultyDAOException;
@@ -21,7 +20,6 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
     private static FacultyDAOImpl facultyDAOImpl = null;
 
     private FacultyDAOImpl() {
-        setConnectionBuilder(new PoolConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 
@@ -33,10 +31,8 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
     }
 
     @Override
-    public boolean addFaculty(Faculty faculty) throws FacultyDAOException {
-
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.CREATE_FACULTY);
+    public boolean addFaculty(Faculty faculty, Connection con) throws FacultyDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.CREATE_FACULTY);
         ) {
             ps.setString(1, faculty.getName());
             ps.setInt(2, faculty.getBudgetPlaces());
@@ -53,13 +49,11 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
 
 
     @Override
-    public boolean deleteFacultyByID(int id) throws FacultyDAOException {
-        if (!checkFacultyById(id)) {
+    public boolean deleteFacultyByID(int id, Connection con) throws FacultyDAOException {
+        if (!checkFacultyById(id, con)) {
             return false;
         } else {
-            try (
-                    Connection con = getConnection();
-                    PreparedStatement ps = con.prepareStatement(SQLQuery.DELETE_FACULTY_BY_ID);
+            try (PreparedStatement ps = con.prepareStatement(SQLQuery.DELETE_FACULTY_BY_ID);
             ) {
                 ps.setInt(1, id);
                 ps.execute();
@@ -72,9 +66,8 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
     }
 
     @Override
-    public boolean checkFacultyByName(String name) throws FacultyDAOException {
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_FACULTY_BY_NAME);
+    public boolean checkFacultyByName(String name, Connection con) throws FacultyDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_FACULTY_BY_NAME);
         ) {
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
@@ -86,10 +79,8 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
     }
 
     @Override
-    public boolean checkFacultyById(int id) throws FacultyDAOException {
-
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_FACULTY_BY_ID);
+    public boolean checkFacultyById(int id, Connection con) throws FacultyDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_FACULTY_BY_ID);
         ) {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
@@ -101,13 +92,10 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
     }
 
     @Override
-    public List<Faculty> getFacultyList() throws FacultyDAOException {
-
+    public List<Faculty> getFacultyList(Connection con) throws FacultyDAOException {
         List<Faculty> faculties = new ArrayList<>();
-        try (
-                Connection con = getConnection();
-                Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery(SQLQuery.FIND_ALL_FACULTY);
+        try (Statement st = con.createStatement();
+             ResultSet rs = st.executeQuery(SQLQuery.FIND_ALL_FACULTY);
         ) {
             while (rs.next()) {
                 Faculty faculty = new Faculty();
@@ -129,19 +117,15 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
 
     // метод возвращает список аппликантов, рарегестировах на данный факультет
     @Override
-    public List<Applicant> getApplicantsForFaculty(int facultyId) throws FacultyDAOException {
+    public List<Applicant> getApplicantsForFaculty(int facultyId, Connection con) throws FacultyDAOException {
         List<Applicant> applicants = new ArrayList<>();
-
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_APP_FOR_FACULTY);
+        UserDAO udao = UserDAOImpl.getInstance();
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.GET_APP_FOR_FACULTY);
         ) {
             ps.setInt(1, facultyId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                applicants.add(
-                        UserDAOImpl.getInstance()
-                                .getApplicantById(
-                                        rs.getInt(1)));
+                applicants.add(udao.getApplicantById(rs.getInt(1), con));
             }
         } catch (SQLException | UserDAOException e) {
             log.error(e.getMessage());
@@ -151,11 +135,9 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
     }
 
     @Override
-    public Faculty getFacultyById(int facultyId) throws FacultyDAOException {
+    public Faculty getFacultyById(int facultyId, Connection con) throws FacultyDAOException {
         Faculty faculty = new Faculty();
-        try (
-                Connection conn = getConnection();
-                PreparedStatement ps = conn.prepareStatement(SQLQuery.FIND_FACULTY_BY_ID);
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_FACULTY_BY_ID);
         ) {
             ps.setInt(1, facultyId);
             ResultSet rs = ps.executeQuery();
@@ -175,11 +157,9 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
     }
 
     @Override
-    public Faculty getFacultyByName(String name) throws FacultyDAOException {
+    public Faculty getFacultyByName(String name, Connection con) throws FacultyDAOException {
         Faculty faculty = new Faculty();
-        try (
-                Connection conn = getConnection();
-                PreparedStatement ps = conn.prepareStatement(SQLQuery.FIND_FACULTY_BY_NAME);
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.FIND_FACULTY_BY_NAME);
         ) {
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
@@ -199,27 +179,17 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
     }
 
     @Override
-    public boolean updateFaculty(Faculty faculty) throws FacultyDAOException {
-        try (Connection conn = getConnection()) {
-            conn.setAutoCommit(false);
-            try (PreparedStatement ps = conn.prepareStatement(SQLQuery.UPDATE_FACULTY);
-            ) {
-                ps.setString(1, faculty.getName());
-                ps.setInt(2, faculty.getBudgetPlaces());
-                ps.setInt(3, faculty.getTotalPlaces());
-                ps.setString(4, faculty.getSubjOne());
-                ps.setString(5, faculty.getSubjTwo());
-                ps.setInt(6, Math.toIntExact(faculty.getId()));
-                ps.executeUpdate();
-                conn.commit();
-                return true;
-            } catch (SQLException e) {
-                log.error(e.getMessage());
-                throw new FacultyDAOException(e.getMessage());
-            } finally {
-                conn.rollback();
-                conn.setAutoCommit(true);
-            }
+    public boolean updateFaculty(Faculty faculty, Connection con) throws FacultyDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.UPDATE_FACULTY)
+        ) {
+            ps.setString(1, faculty.getName());
+            ps.setInt(2, faculty.getBudgetPlaces());
+            ps.setInt(3, faculty.getTotalPlaces());
+            ps.setString(4, faculty.getSubjOne());
+            ps.setString(5, faculty.getSubjTwo());
+            ps.setInt(6, Math.toIntExact(faculty.getId()));
+            ps.executeUpdate();
+            return true;
         } catch (SQLException e) {
             log.error(e.getMessage());
             throw new FacultyDAOException("could not update faculty: " + e.getMessage());
@@ -228,10 +198,9 @@ public class FacultyDAOImpl extends AbstractDAO implements FacultyDAO {
 
     // метод возвращает сумму оценок для данного аппликанта на данном факультете
     @Override
-    public int getSum(int userId, int facultyId) throws FacultyDAOException {
+    public int getSum(int userId, int facultyId, Connection con) throws FacultyDAOException {
         int sum = 0;
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_RESUL_SUM)) {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.GET_RESUL_SUM)) {
             ps.setInt(1, userId);
             ps.setInt(2, facultyId);
             ResultSet rs = ps.executeQuery();

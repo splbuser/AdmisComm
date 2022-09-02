@@ -11,40 +11,39 @@ public interface ApplicantResultDAO {
 
     /**
      * method add new Applicant's result for specific user
+     *
      * @param applicantResult
      * @return returns true if resets were added and false whether hot
      * @throws ApplicantResultDAOException
      */
-    boolean insert(ApplicantResult applicantResult) throws ApplicantResultDAOException;
+    boolean insert(ApplicantResult applicantResult, Connection con) throws ApplicantResultDAOException;
 
     /**
-     *
      * @param userId
      * @return returns for specific user his Applicant's result by user ID
      * @throws ApplicantResultDAOException
      */
-    ApplicantResult getApplicantResult(int userId) throws ApplicantResultDAOException;
+    ApplicantResult getApplicantResult(int userId, Connection con) throws ApplicantResultDAOException;
 
     /**
      * get sum of all subjects result
+     *
      * @param userId
      * @return
      * @throws ApplicantResultDAOException
      */
-    int getResultSum(int userId) throws ApplicantResultDAOException;
+    int getResultSum(int userId, Connection con) throws ApplicantResultDAOException;
 
     /**
-     *
      * @param userId
      * @return returns true if Applicant's result were submitted to statement and false whether hot
      * @throws ApplicantResultDAOException
      */
-    boolean isSubmittedResult(int userId) throws ApplicantResultDAOException;
+    boolean isSubmittedResult(int userId, Connection con) throws ApplicantResultDAOException;
 
     /**
      * method for adding Applicant's result while his registration on specific faculty
-     * @param req
-     * @param resp
+     *
      * @param userId
      * @param subjOne
      * @param subjTwo
@@ -52,13 +51,13 @@ public interface ApplicantResultDAO {
      * @return returns true if results were successfully added and 0 whether hot
      * @throws ApplicantResultDAOException
      */
-    boolean addFacultySubjectResult(HttpServletRequest req,
-                                HttpServletResponse resp,
-                                int userId, int subjOne, int subjTwo,
-                                int facultyId) throws ApplicantResultDAOException;
+    boolean addFacultySubjectResult(int userId, int subjOne, int subjTwo,
+                                    int facultyId, Connection con)
+            throws ApplicantResultDAOException;
 
     /**
      * method delete users results after enrollment finalization
+     *
      * @param conn
      * @param userId
      * @return

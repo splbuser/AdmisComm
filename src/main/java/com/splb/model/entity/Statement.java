@@ -3,7 +3,7 @@ package com.splb.model.entity;
 import java.io.IOException;
 import java.util.List;
 
-public class Statement extends Entity  implements Comparable<Statement> {
+public class Statement extends Entity implements Comparable<Statement> {
 
     private Faculty faculty;
     private List<Applicant> applicants;
@@ -66,9 +66,10 @@ public class Statement extends Entity  implements Comparable<Statement> {
 
     }
 
-    @Override
-    public int compareTo(Statement o) {
-        return 0;
+    public int compareTo(Statement a) {
+        return a.totalScore != totalScore ?
+                Integer.compare(a.totalScore, totalScore) :
+                Integer.compare(faculty.getBudgetPlaces(), a.faculty.getBudgetPlaces());
     }
 
     @Override

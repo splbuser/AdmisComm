@@ -55,6 +55,9 @@ public abstract class Fields {
     public static final String WATCHLIST_ID = "/watchlist?id=";
     public static final String LOCALE = "cookieLocale";
     public static final String ASC = "ASC";
+    public static final String FACULTY = "faculty";
+    public static final String BUDGET = "budget";
+    public static final String CONTRACT = "contract";
 
     private Fields() {
         throw new IllegalStateException("Utility class");

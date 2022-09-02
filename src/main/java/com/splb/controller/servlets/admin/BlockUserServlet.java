@@ -16,7 +16,6 @@ public class BlockUserServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(BlockUserServlet.class);
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,5 +34,4 @@ public class BlockUserServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + Pages.ERROR);
         }
     }
-
 }

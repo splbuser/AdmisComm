@@ -11,7 +11,6 @@ import jakarta.servlet.http.*;
 
 import java.io.*;
 
-
 @WebServlet(name = "FileUploadServlet", urlPatterns = {"/upload"})
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024,
@@ -26,18 +25,14 @@ public class FileUploadServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         ApplicantService srv = new ApplicantService();
-
         HttpSession session = request.getSession();
         Applicant user = (Applicant) session.getAttribute("user");
         String username = user.getUserName();
         int id = user.getId();
-
         String uploadPath = getServletContext().getRealPath("") + UPLOAD_DIRECTORY;
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) uploadDir.mkdir();
-
         Part filePart = request.getPart("file");
         String extension = filePart.getSubmittedFileName()
                 .substring(filePart.getSubmittedFileName().length() - 4);
@@ -51,6 +46,5 @@ public class FileUploadServlet extends HttpServlet {
             response.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
         }
         response.sendRedirect(getServletContext().getContextPath() + "/Userinfo");
-
     }
 }

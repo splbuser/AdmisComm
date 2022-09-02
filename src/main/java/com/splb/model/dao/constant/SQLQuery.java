@@ -44,7 +44,6 @@ public abstract class SQLQuery {
     public static final String DELETE_APPL_FROM_STATEMENT = "DELETE FROM statement_app WHERE applicant_id=?";
     public static final String DELETE_FACULTY_FROM_STATEMENT = "DELETE FROM statement_app WHERE faculty__id=?";
     public static final String GET_ENROLLMENT = "SELECT * FROM enrollment";
-
     public static final String GET_APPL_ENROLL_STATUS = "SELECT * FROM enrollment WHERE applicant_id = ?";
 
 

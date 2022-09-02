@@ -3,11 +3,9 @@ package com.splb.model.dao.implementation;
 import com.splb.model.dao.AbstractDAO;
 import com.splb.model.dao.ApplicantResultDAO;
 import com.splb.model.dao.EnrollmentDAO;
-import com.splb.model.dao.connection.PoolConnectionBuilder;
 import com.splb.model.dao.constant.SQLQuery;
 import com.splb.model.dao.exception.*;
 import com.splb.model.entity.Enrollment;
-import com.splb.model.entity.Faculty;
 import org.apache.logging.log4j.LogManager;
 
 import java.sql.Connection;
@@ -24,7 +22,6 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
     private static EnrollmentDAOImpl enrollmentDAOImpl = null;
 
     private EnrollmentDAOImpl() {
-        setConnectionBuilder(new PoolConnectionBuilder());
         log = LogManager.getLogger(getClass().getName());
     }
 
@@ -35,46 +32,31 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
         return enrollmentDAOImpl;
     }
 
-    // метод добавляет в енроллмент на факультет аплликанта, уаляя его из стейтмента и результаты регистрации на факультет
     @Override
-    public boolean add(int facultyId, int applicantId, int status) throws EnrollmentDAOException {
+    public boolean add(int facultyId, int applicantId, int status, Connection con) throws EnrollmentDAOException {
         ApplicantResultDAO dao = ApplicantResultDAOImpl.getInstance();
-        try (Connection conn = getConnection()) {
-            conn.setAutoCommit(false);
-            try (PreparedStatement ps = conn.
-                    prepareStatement(SQLQuery.ADD_APPL_INTO_ENROLLMET)) {
-                ps.setInt(1, facultyId);
-                ps.setInt(2, applicantId);
-                ps.setInt(3, status);
-                if (ps.executeUpdate() == 1) {
-                    log.info("Enroll table changed for appl id:{}", applicantId);
-                    deleteApplicant(conn, applicantId);
-                    changeEnrollStatus(conn, applicantId, status);
-                    dao.deleteResults(conn, applicantId);
-                    conn.commit();
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch (SQLException | ApplicantResultDAOException e) {
-                log.error(e.getMessage());
-                throw new EnrollmentDAOException(e.getMessage());
-            } finally {
-                conn.rollback();
-                conn.setAutoCommit(true);
+        try (PreparedStatement ps = con.
+                prepareStatement(SQLQuery.ADD_APPL_INTO_ENROLLMET)) {
+            ps.setInt(1, facultyId);
+            ps.setInt(2, applicantId);
+            ps.setInt(3, status);
+            if (ps.executeUpdate() == 1) {
+                deleteApplicant(con, applicantId);
+                changeEnrollStatus(con, applicantId, status);
+                dao.deleteResults(con, applicantId);
+                return true;
+            } else {
+                return false;
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ApplicantResultDAOException e) {
             log.error(e.getMessage());
             throw new EnrollmentDAOException("could not add applicant to enrollment: " + e.getMessage());
-
         }
     }
 
-
-    // метод удалет аппликанта из стейтмента
     @Override
-    public void deleteApplicant(Connection conn, int applicantId) throws EnrollmentDAOException {
-        try (PreparedStatement ps = conn
+    public void deleteApplicant(Connection con, int applicantId) throws EnrollmentDAOException {
+        try (PreparedStatement ps = con
                 .prepareStatement(SQLQuery.DELETE_APPL_FROM_STATEMENT)) {
             ps.setInt(1, applicantId);
             ps.executeUpdate();
@@ -84,10 +66,9 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
         }
     }
 
-    // метод удалет факультет из стейтмента, когда кончаются свободные места
     @Override
-    public void deleteFaculty(Connection conn, int facultyId) throws EnrollmentDAOException {
-        try (PreparedStatement ps = conn
+    public void deleteFaculty(Connection con, int facultyId) throws EnrollmentDAOException {
+        try (PreparedStatement ps = con
                 .prepareStatement(SQLQuery.DELETE_FACULTY_FROM_STATEMENT)) {
             ps.setInt(1, facultyId);
             ps.executeUpdate();
@@ -98,21 +79,19 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
     }
 
     @Override
-    public List<Enrollment> getEnrollment() throws EnrollmentDAOException {
+    public List<Enrollment> getEnrollment(Connection con) throws EnrollmentDAOException {
         List<Enrollment> list = new ArrayList<>();
         FacultyDAOImpl fdao = FacultyDAOImpl.getInstance();
         UserDAOImpl udao = UserDAOImpl.getInstance();
-
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn
-                     .prepareStatement(SQLQuery.GET_ENROLLMENT)) {
+        try (PreparedStatement ps = con
+                .prepareStatement(SQLQuery.GET_ENROLLMENT)) {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Enrollment e = new Enrollment();
-                e.setFaculty(fdao.getFacultyById(rs.getInt(1)));
-                e.setApplicant(udao.getApplicantById(rs.getInt(2)));
-                e.setStatus(getStatus(rs.getInt(3)));
-                list.add(e);
+                Enrollment en = new Enrollment();
+                en.setFaculty(fdao.getFacultyById(rs.getInt(1), con));
+                en.setApplicant(udao.getApplicantById(rs.getInt(2), con));
+                en.setStatus(getStatus(rs.getInt(3)));
+                list.add(en);
             }
         } catch (SQLException | DAOException e) {
             log.error(e.getMessage());
@@ -122,8 +101,8 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
     }
 
     @Override
-    public void changeEnrollStatus(Connection conn, int applicantID, int status) throws EnrollmentDAOException {
-        try (PreparedStatement ps = conn.prepareStatement(SQLQuery.CHANGE_ENROLL_STATUS)) {
+    public void changeEnrollStatus(Connection con, int applicantID, int status) throws EnrollmentDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.CHANGE_ENROLL_STATUS)) {
             ps.setInt(1, status);
             ps.setInt(2, applicantID);
             ps.executeUpdate();
@@ -134,17 +113,16 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
     }
 
     @Override
-    public Enrollment getApplicantEnrollStatus(int userID) throws EnrollmentDAOException {
+    public Enrollment getApplicantEnrollStatus(int userID, Connection con) throws EnrollmentDAOException {
         Enrollment enrollment = new Enrollment();
         UserDAOImpl userDAO = UserDAOImpl.getInstance();
         FacultyDAOImpl facultyDAO = FacultyDAOImpl.getInstance();
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(SQLQuery.GET_APPL_ENROLL_STATUS)) {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.GET_APPL_ENROLL_STATUS)) {
             ps.setInt(1, userID);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                enrollment.setApplicant(userDAO.getApplicantById(rs.getInt(2)));
-                enrollment.setFaculty(facultyDAO.getFacultyById(rs.getInt(1)));
+                enrollment.setApplicant(userDAO.getApplicantById(rs.getInt(2), con));
+                enrollment.setFaculty(facultyDAO.getFacultyById(rs.getInt(1), con));
                 enrollment.setStatus(getStatus(rs.getInt(3)));
             }
         } catch (SQLException | DAOException e) {
