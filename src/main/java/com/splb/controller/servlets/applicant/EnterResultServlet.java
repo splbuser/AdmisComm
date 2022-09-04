@@ -66,8 +66,14 @@ public class EnterResultServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher(Pages.ENTER_RESULT)
-                .forward(req, resp);
-
+        HttpSession session = req.getSession();
+        boolean check = (Boolean) session.getAttribute(Fields.RESULT_CHECK);
+        if (!check) {
+            getServletContext().getRequestDispatcher(Pages.ENTER_RESULT)
+                    .forward(req, resp);
+        } else {
+            getServletContext().getRequestDispatcher(Pages.USER_INDEX)
+                    .forward(req, resp);
+        }
     }
 }

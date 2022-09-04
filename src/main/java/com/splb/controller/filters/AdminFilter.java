@@ -11,13 +11,11 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
+import static java.util.Objects.nonNull;
 
-@WebFilter(urlPatterns = {"/DisplayFaculty", "/DisplayApplicants", "/Statement", "/Enrollment",
-        "/create", "/delete", "/edit", "/watchlist", "/blockbusting", "/logout", "/finalize",
-        "/Reristerforthisfaculty", "/Userinfo", "/addresult", "/Submitresult", "/Reristerforfaculty", "/user-index.jsp"})
-
-public class AllUserFilter implements Filter {
-    private static final Logger log = LogManager.getLogger(AllUserFilter.class);
+@WebFilter(urlPatterns = {"/Reristerforfaculty", "/Submitresult"})
+public class AdminFilter implements Filter {
+    private static final Logger log = LogManager.getLogger(AdminFilter.class);
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
@@ -25,9 +23,13 @@ public class AllUserFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpSession session = request.getSession(false);
 
-        if (session == null || session.getAttribute("user") == null) {
-            log.info("No logged-in user detected, so redirect to login page");
-            response.sendRedirect(((HttpServletRequest) req).getContextPath() + Pages.LOGIN);
+        if (nonNull(session) && nonNull(session.getAttribute("role"))) {
+            if (session.getAttribute("role").equals("ADMIN")) {
+                log.info("ADMIN should not submit results");
+                response.sendRedirect(request.getContextPath() + Pages.ERROR);
+            } else if (session.getAttribute("role").equals("USER")) {
+                chain.doFilter(req, res);
+            }
         } else {
             chain.doFilter(req, res);
         }

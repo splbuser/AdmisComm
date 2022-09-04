@@ -111,33 +111,34 @@ public class StatementService extends Service {
                     int userId = s.getApplicant().getId();
                     applicant = udao.getApplicantById(userId, con);
                     List<Faculty> faculties = getApplicantsList(userId);
+                    int counter = 0;
                     for (Faculty f : faculties
                     ) {
+                        counter++;
                         int facultyId = f.getId();
                         int status = udao.getApplicantById(userId, con).getEnrollStatus();
                         int budget = fdao.getFacultyById(facultyId, con).getBudgetPlaces();
                         int total = fdao.getFacultyById(facultyId, con).getTotalPlaces();
-                        if (budget > 0 && status == 3) {
+                        if (budget > 0 && total > 0 && status == 3) {
                             applicant.setEnrollStatus(2);
                             udao.updateEnrollStatus(applicant, con);
                             edao.add(facultyId, userId, 2, con);
-                            log.info("{} applicant added to {} faculty for BUDGET",
+                            log.info("{} added to {} faculty for BUDGET",
                                     applicant.getLastName(), s.getFaculty().getName());
-                            budget--;
-                            total--;
-                            f.setBudgetPlaces(budget);
-                            f.setTotalPlaces(total);
+                            f.setBudgetPlaces(--budget);
+                            f.setTotalPlaces(--total);
                             fdao.updateFaculty(f, con);
                         } else if (budget == 0 && total > 0 && status == 3) {
                             applicant.setEnrollStatus(1);
                             udao.updateEnrollStatus(applicant, con);
                             edao.add(facultyId, userId, 1, con);
-                            log.info("{} applicant added to {} faculty for CONTRACT",
+                            log.info("{} added to {} faculty for CONTRACT",
                                     s.getApplicant().getLastName(), s.getFaculty().getName());
-                            total--;
-                            f.setTotalPlaces(total);
+                            f.setTotalPlaces(--total);
+                            f.setBudgetPlaces(0);
                             fdao.updateFaculty(f, con);
-                        } else if (budget == 0 && total == 0 && status == 3) {
+                        } else if (budget == 0 && total == 0 && status == 3
+                        && counter == faculties.size()) {
                             log.info("{} applicant no enrolled", s.getApplicant().getLastName());
                             applicant.setEnrollStatus(0);
                             udao.updateEnrollStatus(applicant, con);

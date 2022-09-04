@@ -335,7 +335,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                list[0] = rs.getInt("first_subj_result");
+                list[0] = rs.getInt(Fields.FIRST_SUBJ_RESULT);
                 list[1] = rs.getInt("second_subj_result");
             }
         } catch (SQLException e) {

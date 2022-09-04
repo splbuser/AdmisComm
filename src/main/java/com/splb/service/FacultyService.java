@@ -25,7 +25,6 @@ public class FacultyService extends Service {
 
     /**
      * Method takes Applicant's id, and returns list of faculty on which applicant did not register
-     *
      * @param id
      * @return
      * @throws FacultyServiceException

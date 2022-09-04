@@ -1,5 +1,6 @@
 package com.splb.controller.servlets.admin;
 
+import com.itextpdf.text.DocumentException;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Applicant;
@@ -8,12 +9,17 @@ import com.splb.service.ApplicantService;
 import com.splb.service.EnrollmentService;
 import com.splb.service.exceptions.EnrollmentServiceException;
 import com.splb.service.exceptions.UserServiceException;
+import com.splb.service.sorting.Sort;
+import com.splb.service.sorting.SortEnrollmentImpl;
+import com.splb.service.utils.filecreator.FileCreate;
+import com.splb.service.utils.filecreator.PDFReportCreate;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,11 +62,15 @@ public class DisplayEnrollmentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String notify = req.getParameter(Fields.ACTION);
         ApplicantService asrv = new ApplicantService();
+        EnrollmentService esrv = new EnrollmentService();
         try {
             if (nonNull(notify) && notify.equals("notify")) {
                 asrv.notifyUsers();
             }
-        } catch (UserServiceException e) {
+            if (nonNull(notify) && notify.equals("getPDF")) {
+                esrv.getReport(resp);
+            }
+        } catch (UserServiceException | EnrollmentServiceException e) {
             log.error(e.getMessage());
             resp.sendRedirect(req.getContextPath() + Pages.ERROR);
         }

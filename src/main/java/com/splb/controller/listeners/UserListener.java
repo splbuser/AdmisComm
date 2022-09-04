@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class UserListener implements HttpSessionListener {
 
     private static final Logger log = LogManager.getLogger(UserListener.class);
-    public static final String COUNTER = "SESSION-COUNTER";
+    public static final String COUNTER = "user_counter";
     private final List<String> sessions = new ArrayList<>();
 
     @Override
@@ -23,14 +23,14 @@ public class UserListener implements HttpSessionListener {
         log.info("SessionCounter_Created");
         HttpSession session = event.getSession();
         sessions.add(session.getId());
-        session.setAttribute(COUNTER, this);
+        session.setAttribute(COUNTER, getActiveSessionNumber());
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent event) {
         HttpSession session = event.getSession();
         sessions.remove(session.getId());
-        session.setAttribute(COUNTER, this);
+        session.setAttribute(COUNTER, getActiveSessionNumber());
     }
 
     public int getActiveSessionNumber() {

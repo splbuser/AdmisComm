@@ -16,7 +16,7 @@ public class SortEnrollmentImpl implements Sort<Enrollment> {
     public List<Enrollment> getSortedList(String type, String sortBy, List<Enrollment> list) {
         switch (sortBy) {
             case LAST_NAME:
-                Comparator<Enrollment> byLastName = Comparator.comparing((Enrollment s) -> s.getApplicant().getLastName());
+                Comparator<Enrollment> byLastName = Comparator.comparing((Enrollment e) -> e.getApplicant().getLastName());
                 if (type.equals(Fields.ASC)) {
                     list.sort(byLastName);
                 } else {
@@ -24,7 +24,8 @@ public class SortEnrollmentImpl implements Sort<Enrollment> {
                 }
                 break;
             case FACULTY:
-                Comparator<Enrollment> byFaculty = Comparator.comparing((Enrollment s) -> s.getFaculty().getName());
+                Comparator<Enrollment> byFaculty = Comparator.comparing((Enrollment e) -> e.getFaculty().getName())
+                        .thenComparing(Comparator.comparing(Enrollment::getStatus).reversed());
                 if (type.equals(Fields.ASC)) {
                     list.sort(byFaculty);
                 } else {
@@ -32,11 +33,11 @@ public class SortEnrollmentImpl implements Sort<Enrollment> {
                 }
                 break;
             case STATUS:
-                Comparator<Enrollment> byTotalScore = Comparator.comparing(Enrollment::getStatus);
+                Comparator<Enrollment> byStatus = Comparator.comparing(Enrollment::getStatus);
                 if (type.equals(Fields.ASC)) {
-                    list.sort(byTotalScore);
+                    list.sort(byStatus);
                 } else {
-                    list.sort(byTotalScore.reversed());
+                    list.sort(byStatus.reversed());
                 }
                 break;
             default:
