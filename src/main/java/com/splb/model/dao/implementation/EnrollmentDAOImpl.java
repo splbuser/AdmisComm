@@ -42,7 +42,6 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
             ps.setInt(3, status);
             if (ps.executeUpdate() == 1) {
                 deleteApplicant(con, applicantId);
-                changeEnrollStatus(con, applicantId, status);
                 dao.deleteResults(con, applicantId);
                 return true;
             } else {

@@ -28,13 +28,21 @@
     <h3 class="text-light mb-4" style="font-family: 'Noto Sans', sans-serif;text-align: center;"><fmt:message
             key="label.enrollment"/></h3>
     <div class="card shadow" style="background: rgb(99,99,99);border-radius: 20px;">
+<%--        <form method="post">--%>
+<%--            <div class="card-header py-3">--%>
+<%--                <button class="btn btn-primary" type="submit" style="border-radius: 8px;"><fmt:message--%>
+<%--                        key="button.notify"/></button>--%>
+<%--                <input type="hidden" name="action" value="notify">--%>
+<%--            </div>--%>
+<%--        </form>--%>
         <form method="post">
             <div class="card-header py-3">
                 <button class="btn btn-primary" type="submit" style="border-radius: 8px;"><fmt:message
-                        key="button.notify"/></button>
-                <input type="hidden" name="action" value="notify">
+                        key="button.get_PDF"/></button>
+                <input type="hidden" name="action" value="getPDF">
             </div>
         </form>
+
         <div class="card-body" style="background: #888888;">
             <div class="row">
                 <div class="col-md-6 text-nowrap">

@@ -103,22 +103,8 @@
         </div>
     </div>
 </div>
-<%--<div class="container-fluid" style="height: 50px;">--%>
-<%--    <div class="row" style="height: 50px;">--%>
-<%--        <div class="col" style="margin-left: 0;">--%>
-<%--            <div class="btn-toolbar d-xl-flex justify-content-xl-center align-items-xl-center" data-aos="fade">--%>
-<%--                <div class="btn-group" role="group"><a class="btn btn-primary" role="button" href="DisplayFaculty">Faculty--%>
-<%--                    table</a><a class="btn btn-primary" role="button" style="background: var(--bs-teal);"--%>
-<%--                                href="DisplayApplicants">Applicants tabler</a><a class="btn btn-primary" role="button"--%>
-<%--                                                                                 href="Statement">Statement</a><a--%>
-<%--                        class="btn btn-primary" role="button" style="background: var(--bs-teal);" href="Enrollment">Enrollment</a><a--%>
-<%--                        class="btn btn-primary" role="button" href="Reristerforfaculty">Register for faculty</a><a--%>
-<%--                        class="btn btn-primary" role="button" style="background: var(--bs-teal);" href="Userinfo">User--%>
-<%--                    info</a></div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</div>--%>
+
+<%@include file="jsp/jspf/footer.jsp" %>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>

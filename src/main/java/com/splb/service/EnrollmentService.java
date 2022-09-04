@@ -1,5 +1,6 @@
 package com.splb.service;
 
+import com.splb.model.dao.connection.DirectConnectionBuilder;
 import com.splb.model.dao.connection.PoolConnectionBuilder;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.dao.exception.EnrollmentDAOException;
@@ -8,8 +9,12 @@ import com.splb.model.entity.Enrollment;
 import com.splb.service.exceptions.EnrollmentServiceException;
 import com.splb.service.sorting.Sort;
 import com.splb.service.sorting.SortEnrollmentImpl;
+import com.splb.service.utils.filecreator.PDFReportCreate;
+import com.splb.service.utils.filecreator.exceptions.FileCreateException;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
@@ -18,6 +23,10 @@ public class EnrollmentService extends Service {
 
     public EnrollmentService() {
         setConnectionBuilder(new PoolConnectionBuilder());
+    }
+
+    public EnrollmentService(DirectConnectionBuilder connectionBuilder) {
+        this.connectionBuilder = connectionBuilder;
     }
 
     public Enrollment get(int id) throws EnrollmentServiceException {
@@ -66,5 +75,19 @@ public class EnrollmentService extends Service {
             session.setAttribute(Fields.SORT_BY, sortBy);
         }
         return enrollment;
+    }
+
+    public void getReport(HttpServletResponse response) throws EnrollmentServiceException {
+        Sort<Enrollment> sorter = new SortEnrollmentImpl();
+        List<Enrollment> list = sorter.getSortedList("ASC", "byFaculty", getList());
+        PDFReportCreate report = new PDFReportCreate();
+        report.setList(list);
+        report.setResponse(response);
+        try {
+            report.createFile();
+        } catch (FileCreateException e) {
+            log.error(e.getMessage());
+            throw new EnrollmentServiceException(e.getMessage());
+        }
     }
 }
