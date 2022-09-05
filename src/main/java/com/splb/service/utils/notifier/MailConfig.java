@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * utility class for getting e-mail config properties from mail.properties
+ */
 public class MailConfig {
 
     public static final String USER = "username";

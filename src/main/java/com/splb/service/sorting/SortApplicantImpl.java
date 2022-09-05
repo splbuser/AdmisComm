@@ -6,6 +6,9 @@ import com.splb.model.entity.Applicant;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * for sorting Applicant list by some category
+ */
 public class SortApplicantImpl implements Sort<Applicant> {
 
     public static final String LAST_NAME = "byLastName";

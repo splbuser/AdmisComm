@@ -9,12 +9,13 @@ import com.splb.model.entity.Enrollment;
 import com.splb.service.exceptions.EnrollmentServiceException;
 import com.splb.service.sorting.Sort;
 import com.splb.service.sorting.SortEnrollmentImpl;
-import com.splb.service.utils.filecreator.PDFReportCreate;
+import com.splb.service.utils.filecreator.FileCreate;
 import com.splb.service.utils.filecreator.exceptions.FileCreateException;
+import com.splb.service.utils.filecreator.factory.FileFactory;
+import com.splb.service.utils.filecreator.factory.FileType;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
@@ -77,14 +78,20 @@ public class EnrollmentService extends Service {
         return enrollment;
     }
 
-    public void getReport(HttpServletResponse response) throws EnrollmentServiceException {
+    /**
+     *method generates a report whose format depends on the query
+     * @param response
+     * @param fileType
+     * @throws EnrollmentServiceException
+     */
+    public void getReport(HttpServletResponse response, FileType fileType) throws EnrollmentServiceException {
         Sort<Enrollment> sorter = new SortEnrollmentImpl();
         List<Enrollment> list = sorter.getSortedList("ASC", "byFaculty", getList());
-        PDFReportCreate report = new PDFReportCreate();
-        report.setList(list);
-        report.setResponse(response);
+        FileCreate getReport = FileFactory.getFileCreate(fileType);
+        getReport.setList(list);
+        getReport.setResponse(response);
         try {
-            report.createFile();
+            getReport.createFile();
         } catch (FileCreateException e) {
             log.error(e.getMessage());
             throw new EnrollmentServiceException(e.getMessage());

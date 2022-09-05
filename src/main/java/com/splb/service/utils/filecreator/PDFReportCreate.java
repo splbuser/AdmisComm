@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * class for generating PDF-report of enrollment results
+ */
 public class PDFReportCreate implements FileCreate {
 
     private static final Logger log = LogManager.getLogger(PDFReportCreate.class);
@@ -65,7 +68,6 @@ public class PDFReportCreate implements FileCreate {
     }
 
     private void addRows(PdfPTable table) {
-
         list.forEach(el -> {
             String title1 = el.getFaculty().getName();
             String title2 = String.format("%s %s", el.getApplicant().getLastName(),

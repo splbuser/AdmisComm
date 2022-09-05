@@ -5,6 +5,9 @@ import java.util.regex.Pattern;
 
 import static java.util.Objects.nonNull;
 
+/**
+ * utility class for verification input data from registration form
+ */
 public class DataValidator {
 
     private static final String NAME_REGEX = "[A-Z][a-z]{1,20}";

@@ -51,7 +51,7 @@ class FacultyServiceTest {
     @Test
     void getByNameTest() throws FacultyServiceException {
         Faculty faculty1 = srv.getByName(BIOLOGY);
-        Faculty faculty2 = srv.getByName(RENAMED_FIELD);
+        Faculty faculty2 = srv.getByName("Physics");
         Faculty faculty3 = srv.getByName(ENGINEERING);
         Assert.assertEquals(faculty1.getId(), 1);
         Assert.assertEquals(faculty2.getId(), 2);
@@ -64,7 +64,7 @@ class FacultyServiceTest {
         Faculty faculty2 = srv.getById(2);
         Faculty faculty3 = srv.getById(3);
         Assert.assertEquals(faculty1.getName(), BIOLOGY);
-        Assert.assertEquals(faculty2.getName(), RENAMED_FIELD);
+        Assert.assertEquals(faculty2.getName(), "Physics");
         Assert.assertEquals(faculty3.getName(), ENGINEERING);
     }
 

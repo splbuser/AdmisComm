@@ -1,6 +1,5 @@
 package com.splb.controller.servlets.admin;
 
-import com.itextpdf.text.DocumentException;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Applicant;
@@ -9,17 +8,13 @@ import com.splb.service.ApplicantService;
 import com.splb.service.EnrollmentService;
 import com.splb.service.exceptions.EnrollmentServiceException;
 import com.splb.service.exceptions.UserServiceException;
-import com.splb.service.sorting.Sort;
-import com.splb.service.sorting.SortEnrollmentImpl;
-import com.splb.service.utils.filecreator.FileCreate;
-import com.splb.service.utils.filecreator.PDFReportCreate;
+import com.splb.service.utils.filecreator.factory.FileType;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +63,10 @@ public class DisplayEnrollmentServlet extends HttpServlet {
                 asrv.notifyUsers();
             }
             if (nonNull(notify) && notify.equals("getPDF")) {
-                esrv.getReport(resp);
+                esrv.getReport(resp, FileType.CREATE_PDF);
+            }
+            if (nonNull(notify) && notify.equals("getDOC")) {
+                esrv.getReport(resp, FileType.CRETE_DOC);
             }
         } catch (UserServiceException | EnrollmentServiceException e) {
             log.error(e.getMessage());

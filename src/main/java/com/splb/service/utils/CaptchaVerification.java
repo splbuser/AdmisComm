@@ -14,6 +14,9 @@ import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.net.ssl.HttpsURLConnection;
 
+/**
+ * utility class for Google captcha verification for login
+ */
 public class CaptchaVerification {
 
     private static final Logger log = LogManager.getLogger(CaptchaVerification.class);

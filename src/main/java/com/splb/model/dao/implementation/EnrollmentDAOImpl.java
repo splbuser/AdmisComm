@@ -100,18 +100,6 @@ public class EnrollmentDAOImpl extends AbstractDAO implements EnrollmentDAO {
     }
 
     @Override
-    public void changeEnrollStatus(Connection con, int applicantID, int status) throws EnrollmentDAOException {
-        try (PreparedStatement ps = con.prepareStatement(SQLQuery.CHANGE_ENROLL_STATUS)) {
-            ps.setInt(1, status);
-            ps.setInt(2, applicantID);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            log.error(e.getMessage());
-            throw new EnrollmentDAOException("could not change enroll status: " + e.getMessage());
-        }
-    }
-
-    @Override
     public Enrollment getApplicantEnrollStatus(int userID, Connection con) throws EnrollmentDAOException {
         Enrollment enrollment = new Enrollment();
         UserDAOImpl userDAO = UserDAOImpl.getInstance();

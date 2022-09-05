@@ -11,6 +11,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * listener for current on-line user counter
+ */
 @WebListener
 public class UserListener implements HttpSessionListener {
 

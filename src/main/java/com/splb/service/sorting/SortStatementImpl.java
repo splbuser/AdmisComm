@@ -6,6 +6,9 @@ import com.splb.model.entity.Statement;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * for sorting Statement list by some category
+ */
 public class SortStatementImpl implements Sort<Statement> {
 
     public static final String LAST_NAME = "byLastName";

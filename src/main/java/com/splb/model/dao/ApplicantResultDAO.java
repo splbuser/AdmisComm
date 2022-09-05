@@ -2,8 +2,6 @@ package com.splb.model.dao;
 
 import com.splb.model.dao.exception.ApplicantResultDAOException;
 import com.splb.model.entity.ApplicantResult;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 import java.sql.Connection;
 
@@ -27,7 +25,6 @@ public interface ApplicantResultDAO {
 
     /**
      * get sum of all subjects result
-     *
      * @param userId
      * @return
      * @throws ApplicantResultDAOException
@@ -43,7 +40,6 @@ public interface ApplicantResultDAO {
 
     /**
      * method for adding Applicant's result while his registration on specific faculty
-     *
      * @param userId
      * @param subjOne
      * @param subjTwo
@@ -57,7 +53,6 @@ public interface ApplicantResultDAO {
 
     /**
      * method delete users results after enrollment finalization
-     *
      * @param conn
      * @param userId
      * @return

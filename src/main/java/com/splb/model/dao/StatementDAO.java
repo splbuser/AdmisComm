@@ -7,12 +7,10 @@ import com.splb.model.entity.StatementResult;
 
 import java.sql.Connection;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
 
 public interface StatementDAO {
     /**
-     * add user's faculty result to statement
+     * adds the result of the applicant's registration to the faculty
      * @param facultyId
      * @param userId
      * @return return true if user was added
@@ -22,7 +20,7 @@ public interface StatementDAO {
     boolean addUserToFaculty(int facultyId, int userId, Connection con) throws StatementDAOException;
 
     /**
-     * remove user's faculty result from statement
+     * remove applicants result from statement
      * @param facultyId
      * @param userId
      * @return return true if user was removed
@@ -31,7 +29,7 @@ public interface StatementDAO {
     boolean removeUserFromFaculty(int facultyId, int userId, Connection con) throws StatementDAOException;
 
     /**
-     *  method check if user's faculty result was added to statement before
+     * checks the applicant's registration for the faculty in question
      * @param facultyId
      * @param userId
      * @return return true if result was added
@@ -40,14 +38,14 @@ public interface StatementDAO {
     boolean checkUserFaculty(int facultyId, int userId, Connection con) throws StatementDAOException;
 
     /**
-     * method for getting Statement list with added applicants result
+     * returns the list of results of the applicant that were added to the statement
      * @return list<Statement>
      * @throws StatementDAOException
      */
     List<com.splb.model.entity.Statement> getStatementList (Connection con) throws StatementDAOException;
 
     /**
-     * The method will return a list of applicants by the given faculty id, whose results have been added to the statement
+     * returns list of applicants by the given faculty id, whose results have been added to the statement
      * @param facultyId
      * @return List<Applicant>
      * @throws StatementDAOException
@@ -55,7 +53,7 @@ public interface StatementDAO {
     List<Applicant> getFacultysApplicantsFromStatement(int facultyId, Connection con) throws StatementDAOException;
 
     /**
-     * method returns for applicants a list of faculties from Statement
+     * returns for applicants a list of faculties from Statement
      * @param applicantId
      * @return List<Faculty>
      * @throws StatementDAOException

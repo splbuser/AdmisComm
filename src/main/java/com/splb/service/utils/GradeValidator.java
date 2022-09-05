@@ -4,6 +4,9 @@ import com.splb.controller.pages.Messages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * utility class for verification input grades data
+ */
 public class GradeValidator {
 
     private static final Logger log = LogManager.getLogger(GradeValidator.class);

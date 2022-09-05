@@ -26,7 +26,7 @@ public class FacultyService extends Service {
     /**
      * Method takes Applicant's id, and returns list of faculty on which applicant did not register
      * @param id
-     * @return
+     * @return List<Faculty>
      * @throws FacultyServiceException
      */
     public List<Faculty> getListForRegister(int id) throws FacultyServiceException {
@@ -48,9 +48,8 @@ public class FacultyService extends Service {
 
     /**
      * method removes blocked applicants from the list of registered applicants for a given faculty
-     *
      * @param facultyId
-     * @return
+     * @return List<Applicant>
      * @throws FacultyDAOException
      */
     public List<Applicant> getApplicantsForStatement(int facultyId) throws FacultyServiceException {
@@ -67,9 +66,8 @@ public class FacultyService extends Service {
 
     /**
      * method add new faculty to made by admin
-     *
      * @param faculty
-     * @return
+     * @return true or false
      * @throws FacultyServiceException
      */
     public boolean add(Faculty faculty) throws FacultyServiceException {
@@ -83,9 +81,8 @@ public class FacultyService extends Service {
 
     /**
      * method delete faculty
-     *
      * @param id
-     * @return
+     * @return true or false
      * @throws FacultyServiceException
      */
     public boolean delete(int id) throws FacultyServiceException {
@@ -99,9 +96,8 @@ public class FacultyService extends Service {
 
     /**
      * method returns faculty by its name if it exists
-     *
      * @param name
-     * @return
+     * @return Faculty
      * @throws FacultyServiceException
      */
     public Faculty getByName(String name) throws FacultyServiceException {
@@ -115,9 +111,8 @@ public class FacultyService extends Service {
 
     /**
      * method returns faculty by its id if it exists
-     *
      * @param id
-     * @return
+     * @return Faculty
      * @throws FacultyServiceException
      */
     public Faculty getById(int id) throws FacultyServiceException {
@@ -132,9 +127,8 @@ public class FacultyService extends Service {
 
     /**
      * method check if exists faculty with required name
-     *
      * @param name
-     * @return
+     * @return true or false
      * @throws FacultyServiceException
      */
     public boolean checkByName(String name) throws FacultyServiceException {
@@ -148,9 +142,8 @@ public class FacultyService extends Service {
 
     /**
      * method updates faculty info
-     *
      * @param faculty
-     * @return
+     * @return true or false
      * @throws FacultyServiceException
      */
     public boolean update(Faculty faculty) throws FacultyServiceException {
@@ -164,11 +157,9 @@ public class FacultyService extends Service {
 
     /**
      * method returns current faculty list
-     *
-     * @return
+     * @return List<Faculty>
      * @throws FacultyServiceException
      */
-
     public List<Faculty> getList() throws FacultyServiceException {
         try (Connection con = getConnection()) {
             return fdao.getFacultyList(con);
