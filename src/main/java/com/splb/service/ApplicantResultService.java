@@ -5,8 +5,6 @@ import com.splb.model.dao.connection.PoolConnectionBuilder;
 import com.splb.model.dao.exception.ApplicantResultDAOException;
 import com.splb.model.entity.ApplicantResult;
 import com.splb.service.exceptions.ApplicantResultServiceException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 import java.sql.Connection;
 import java.sql.SQLException;

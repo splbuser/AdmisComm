@@ -1,7 +1,6 @@
 package com.splb.model.dao;
 
 import com.splb.model.dao.exception.EnrollmentDAOException;
-import com.splb.model.entity.EnrollStatus;
 import com.splb.model.entity.Enrollment;
 
 import java.sql.Connection;
@@ -14,7 +13,7 @@ public interface EnrollmentDAO {
      * @param facultyId
      * @param applicantId
      * @param status
-     * @return
+     * @return true if user was added
      * @throws EnrollmentDAOException
      */
     boolean add(int facultyId, int applicantId, int status, Connection con) throws EnrollmentDAOException;
@@ -38,25 +37,16 @@ public interface EnrollmentDAO {
     /**
      * method returns list of enrollment
      * @param con
-     * @return
+     * @return List<Enrollment>
      * @throws EnrollmentDAOException
      */
     List<Enrollment> getEnrollment(Connection con) throws EnrollmentDAOException;
 
     /**
-     * method change applicant's enroll status according finalization
-     * @param con
-     * @param applicantID
-     * @param status
-     * @throws EnrollmentDAOException
-     */
-    void changeEnrollStatus(Connection con, int applicantID, int status) throws EnrollmentDAOException;
-
-    /**
      * method returns current applicant's enroll status
      * @param userID
      * @param con
-     * @return
+     * @return Enrollment
      * @throws EnrollmentDAOException
      */
     Enrollment getApplicantEnrollStatus(int userID, Connection con) throws EnrollmentDAOException;

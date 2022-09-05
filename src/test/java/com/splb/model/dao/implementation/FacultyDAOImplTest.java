@@ -82,13 +82,13 @@ class FacultyDAOImplTest {
 
     @Test
     void getFacultyList() throws FacultyDAOException {
-        Assert.assertEquals(dao.getFacultyList( con).size(), 6);
+        Assert.assertEquals(dao.getFacultyList( con).size(), 7);
         Faculty faculty = new Faculty(NAME_FOUR, 3, 6, SUBJ_ONE, SUBJ_TWO);
         dao.addFaculty(faculty, con);
-        Assert.assertEquals(dao.getFacultyList( con).size(), 7);
+        Assert.assertEquals(dao.getFacultyList( con).size(), 8);
         int id = dao.getFacultyByName(NAME_FOUR, con).getId();
         dao.deleteFacultyByID(id, con);
-        Assert.assertEquals(dao.getFacultyList( con).size(), 6);
+        Assert.assertEquals(dao.getFacultyList( con).size(), 7);
     }
 
     @Test

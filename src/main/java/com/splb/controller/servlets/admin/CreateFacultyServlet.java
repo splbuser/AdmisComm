@@ -23,7 +23,7 @@ import static java.util.Objects.nonNull;
  * the added data in the form of the faculty-create.jsp page. With
  * a post request, the user receives the data submitted via the form
  * and adds it to the database using the addFaculty method. After
- * successful addition, it redirects to the DisplayFaculty servlet..
+ * successful addition, it redirects to the DisplayFaculty servlet.
  */
 
 public class CreateFacultyServlet extends HttpServlet {
@@ -32,7 +32,7 @@ public class CreateFacultyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher(Pages.FACULTY_CREATE)
+                getServletContext().getRequestDispatcher(Pages.FACULTY_CREATE)
                 .forward(request, response);
     }
 

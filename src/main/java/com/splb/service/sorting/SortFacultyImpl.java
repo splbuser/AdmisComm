@@ -6,6 +6,9 @@ import com.splb.model.entity.Faculty;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * for sorting Faculty list by some category
+ */
 public class SortFacultyImpl implements Sort<Faculty> {
 
     public static final String NAME = "byName";

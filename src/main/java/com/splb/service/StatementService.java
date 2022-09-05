@@ -1,5 +1,6 @@
 package com.splb.service;
 
+import com.splb.model.dao.connection.DirectConnectionBuilder;
 import com.splb.model.dao.connection.PoolConnectionBuilder;
 import com.splb.model.dao.exception.DAOException;
 import com.splb.model.dao.exception.StatementDAOException;
@@ -16,10 +17,29 @@ import java.util.List;
 
 public class StatementService extends Service {
 
+    /**
+     * none parametrized constructor for ConnectionPool initialize
+     */
     public StatementService() {
         setConnectionBuilder(new PoolConnectionBuilder());
     }
 
+    /**
+     * parametrized constructor to create DirectConnection for testing
+     * @param connectionBuilder
+     */
+    public StatementService(DirectConnectionBuilder connectionBuilder) {
+        this.connectionBuilder = connectionBuilder;
+    }
+
+    /**
+     * adds the result of the applicant's registration to the faculty
+     *
+     * @param facultyId
+     * @param userId
+     * @return return true if user was added
+     * @throws StatementServiceException
+     */
     public boolean add(int facultyId, int userId) throws StatementServiceException {
         try (Connection con = getConnection()) {
             return sdao.addUserToFaculty(facultyId, userId, con);
@@ -29,6 +49,12 @@ public class StatementService extends Service {
         }
     }
 
+    /**
+     * adds the results of all registered applicants to the faculty
+     *
+     * @param facultyId
+     * @throws StatementServiceException
+     */
     public void addEmAll(int facultyId) throws StatementServiceException {
         try (Connection con = getConnection()) {
             con.setAutoCommit(false);
@@ -54,6 +80,14 @@ public class StatementService extends Service {
         }
     }
 
+    /**
+     * remove applicants result from statement
+     *
+     * @param facultyId
+     * @param userId
+     * @return return true if user was removed
+     * @throws StatementServiceException
+     */
     public boolean remove(int facultyId, int userId) throws StatementServiceException {
         try (Connection con = getConnection()) {
             return sdao.removeUserFromFaculty(facultyId, userId, con);
@@ -63,6 +97,14 @@ public class StatementService extends Service {
         }
     }
 
+    /**
+     * checks the applicant's registration for the faculty in question
+     *
+     * @param facultyId
+     * @param userId
+     * @return return true if result was added
+     * @throws StatementServiceException
+     */
     public boolean check(int facultyId, int userId) throws StatementServiceException {
         try (Connection con = getConnection()) {
             return sdao.checkUserFaculty(facultyId, userId, con);
@@ -72,6 +114,13 @@ public class StatementService extends Service {
         }
     }
 
+    /**
+     * returns the list of results of the applicant that were added to the statement
+     *
+     * @param id
+     * @return List<StatementResult>
+     * @throws StatementServiceException
+     */
     public List<StatementResult> get(int id) throws StatementServiceException {
         try (Connection con = getConnection()) {
             return sdao.getStatementResult(id, con);
@@ -81,6 +130,12 @@ public class StatementService extends Service {
         }
     }
 
+    /**
+     * returns the list of results of the applicant that were added to the statement
+     *
+     * @return List<Statement>
+     * @throws StatementServiceException
+     */
     public List<Statement> getList() throws StatementServiceException {
         try (Connection con = getConnection()) {
             return sdao.getStatementList(con);
@@ -90,6 +145,13 @@ public class StatementService extends Service {
         }
     }
 
+    /**
+     * returns for applicants a list of faculties from Statement
+     *
+     * @param applicantId
+     * @return List<Faculty>
+     * @throws StatementServiceException
+     */
     public List<Faculty> getApplicantsList(int applicantId) throws StatementServiceException {
         try (Connection con = getConnection()) {
             return sdao.getFacultyFromStatementForApplicant(applicantId, con);
@@ -99,6 +161,11 @@ public class StatementService extends Service {
         }
     }
 
+    /**
+     * finalization of statement and calculating users result for enrollment
+     *
+     * @throws StatementServiceException
+     */
     public void finalizeStatement() throws StatementServiceException {
         List<Statement> statementList;
         Applicant applicant;
@@ -138,7 +205,7 @@ public class StatementService extends Service {
                             f.setBudgetPlaces(0);
                             fdao.updateFaculty(f, con);
                         } else if (budget == 0 && total == 0 && status == 3
-                        && counter == faculties.size()) {
+                                && counter == faculties.size()) {
                             log.info("{} applicant no enrolled", s.getApplicant().getLastName());
                             applicant.setEnrollStatus(0);
                             udao.updateEnrollStatus(applicant, con);

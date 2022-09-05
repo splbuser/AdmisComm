@@ -1,6 +1,7 @@
 package com.splb.model.entity;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Enrollment extends Entity implements Comparable<Enrollment> {
     private Faculty faculty;
@@ -52,13 +53,16 @@ public class Enrollment extends Entity implements Comparable<Enrollment> {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Enrollment that = (Enrollment) o;
+        return faculty.equals(that.faculty) && applicant.equals(that.applicant) && status == that.status;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(faculty, applicant, status);
     }
 
     @Override

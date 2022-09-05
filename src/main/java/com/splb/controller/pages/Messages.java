@@ -1,5 +1,8 @@
 package com.splb.controller.pages;
 
+/**
+ * utility class for store messages
+ */
 public abstract class Messages {
 
     public static final String MESSAGE = "message";

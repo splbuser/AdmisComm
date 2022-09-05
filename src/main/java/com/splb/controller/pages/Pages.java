@@ -1,5 +1,9 @@
 package com.splb.controller.pages;
 
+/**
+ * utility class for store pages and links
+ */
+
 public abstract class Pages {
 
     public static final String MANAGE_FACULTY = "/jsp/admin-manage-faculty.jsp";

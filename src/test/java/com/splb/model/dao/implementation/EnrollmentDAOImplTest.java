@@ -55,4 +55,5 @@ class EnrollmentDAOImplTest {
         enrollment = dao.getEnrollment(con);
         Assert.assertEquals(enrollment.size(), 11);
     }
+
 }

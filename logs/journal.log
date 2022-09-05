@@ -1,111 +1,89 @@
-[INFO ] 2022-09-04 15:02:55.979 [main] DirectConnectionBuilder - connection via DirectCB@Test
-[ERROR] 2022-09-04 15:02:56.377 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-09-04 15:02:56.476 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
-[ERROR] 2022-09-04 15:02:56.476 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
-[INFO ] 2022-09-04 15:02:56.613 [main] DirectConnectionBuilder - connection via DirectCB@Test
-[ERROR] 2022-09-04 15:02:56.625 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.655 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
-[INFO ] 2022-09-04 15:02:56.661 [main] DirectConnectionBuilder - connection via DirectCB@Test
-[INFO ] 2022-09-04 15:02:56.703 [main] DirectConnectionBuilder - connection via DirectCB@Test
-[ERROR] 2022-09-04 15:02:56.720 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
-[INFO ] 2022-09-04 15:02:56.765 [main] DirectConnectionBuilder - connection via DirectCB@Test
-[ERROR] 2022-09-04 15:02:56.837 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.837 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.838 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.839 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.840 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.841 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.841 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.842 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.843 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.844 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.845 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.845 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.846 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.847 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.848 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.848 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.849 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.850 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.851 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.852 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
-[INFO ] 2022-09-04 15:02:56.904 [main] DirectConnectionBuilder - connection via DirectCB@Test
-[ERROR] 2022-09-04 15:02:56.990 [main] ApplicantResultDAOImpl - Duplicate entry '14' for key 'applicant_results.PRIMARY'
-[ERROR] 2022-09-04 15:02:56.990 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '14' for key 'applicant_results.PRIMARY'
-[ERROR] 2022-09-04 15:02:57.016 [main] ApplicantResultDAOImpl - Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
-[ERROR] 2022-09-04 15:02:57.017 [main] ApplicantResultService - could not add result for faculty's subject: Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
-[DEBUG] 2022-09-04 15:07:09.754 [main] GradeValidator - could not validate For input string: "f,!,0,50"
-[ERROR] 2022-09-04 15:38:11.739 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[INFO ] 2022-09-04 16:36:31.476 [main] PDFReportCreate - uk
-[INFO ] 2022-09-04 16:44:14.822 [main] PDFReportCreate - uk
-[INFO ] 2022-09-04 16:45:38.183 [main] PDFReportCreate - uk
-[INFO ] 2022-09-04 16:45:38.185 [main] PDFReportCreate - Факультет
-[INFO ] 2022-09-04 16:46:27.511 [main] PDFReportCreate - uk
-[INFO ] 2022-09-04 16:46:27.514 [main] PDFReportCreate - Факультет
-[INFO ] 2022-09-04 16:46:32.787 [main] PDFReportCreate - uk
-[INFO ] 2022-09-04 16:46:32.789 [main] PDFReportCreate - Факультет
-[INFO ] 2022-09-04 19:13:44.559 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:13:44.560 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:13:44.560 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:13:44.560 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:13:44.561 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:15:45.928 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:15:45.930 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:15:45.930 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:15:45.930 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:15:45.930 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:16:07.529 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:16:07.530 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:16:07.530 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:16:07.530 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:16:07.531 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:19:17.115 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:19:17.116 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:19:17.117 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:19:17.117 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:19:17.117 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:19:40.378 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:19:40.380 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:19:40.380 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:19:40.380 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:19:40.380 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:26:55.385 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:26:55.387 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:26:55.387 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:26:55.387 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:26:55.387 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:29:20.344 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:29:20.346 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:29:20.346 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:29:20.346 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:29:20.346 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:33:43.761 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:33:43.763 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:33:43.763 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:33:43.763 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:33:43.763 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:34:31.579 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:34:31.581 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:34:31.581 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:34:31.581 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:34:31.581 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:36:35.602 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:36:35.604 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:36:35.604 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:36:35.604 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:36:35.604 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[INFO ] 2022-09-04 19:37:49.254 [main] PDFReportCreate - Biology not available NO_ENROLLED
-[INFO ] 2022-09-04 19:37:49.255 [main] PDFReportCreate - Physics Deninio CONTRACT
-[INFO ] 2022-09-04 19:37:49.255 [main] PDFReportCreate - Engineering Delfy BUDGET
-[INFO ] 2022-09-04 19:37:49.256 [main] PDFReportCreate - Computer Science Chee CONTRACT
-[INFO ] 2022-09-04 19:37:49.256 [main] PDFReportCreate - Economics Norton NO_ENROLLED
-[ERROR] 2022-09-04 23:08:18.279 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-09-04 23:08:18.284 [main] EditFacultyServlet - Cannot parse null string
-[ERROR] 2022-09-04 23:11:20.190 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-09-04 23:11:20.209 [main] EditFacultyServlet - Cannot invoke "javax.sql.DataSource.getConnection()" because "this.dataSource" is null
-[ERROR] 2022-09-04 23:12:29.297 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-09-04 23:12:29.303 [main] EditFacultyServlet - Cannot invoke "javax.sql.DataSource.getConnection()" because "this.dataSource" is null
-[ERROR] 2022-09-04 23:13:08.820 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-09-04 23:14:11.965 [main] EditFacultyServlet - Cannot invoke "javax.sql.DataSource.getConnection()" because "this.dataSource" is null
-[ERROR] 2022-09-04 23:15:50.651 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[ERROR] 2022-09-04 23:18:33.906 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[DEBUG] 2022-09-05 21:54:36.553 [main] ZipPackage - Save core properties part
+[DEBUG] 2022-09-05 21:54:36.557 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 21:54:36.613 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 21:54:36.617 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 21:54:36.619 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 21:54:36.627 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 21:54:36.628 [main] ZipPackage - Save part 'word/settings.xml'
+[INFO ] 2022-09-05 21:54:36.635 [main] DOCReportCreate - create_table.docx written successfully
+[DEBUG] 2022-09-05 21:54:36.635 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 21:54:36.636 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 21:54:36.637 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 21:54:36.637 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 21:54:36.638 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 21:54:36.639 [main] ZipPackage - Save part 'word/settings.xml'
+[DEBUG] 2022-09-05 21:57:32.800 [main] ZipPackage - Save core properties part
+[DEBUG] 2022-09-05 21:57:32.802 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 21:57:32.850 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 21:57:32.854 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 21:57:32.855 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 21:57:32.861 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 21:57:32.862 [main] ZipPackage - Save part 'word/settings.xml'
+[INFO ] 2022-09-05 21:57:32.869 [main] DOCReportCreate - create_table.docx written successfully
+[DEBUG] 2022-09-05 21:57:32.870 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 21:57:32.871 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 21:57:32.871 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 21:57:32.872 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 21:57:32.872 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 21:57:32.874 [main] ZipPackage - Save part 'word/settings.xml'
+[DEBUG] 2022-09-05 22:16:48.982 [main] ZipPackage - Save core properties part
+[DEBUG] 2022-09-05 22:16:48.983 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 22:16:49.034 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 22:16:49.037 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 22:16:49.039 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 22:16:49.046 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 22:16:49.047 [main] ZipPackage - Save part 'word/settings.xml'
+[DEBUG] 2022-09-05 22:16:49.047 [main] ZipPackage - Save part 'word/styles.xml'
+[DEBUG] 2022-09-05 22:16:49.052 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 22:16:49.053 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 22:16:49.054 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 22:16:49.054 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 22:16:49.055 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 22:16:49.056 [main] ZipPackage - Save part 'word/settings.xml'
+[DEBUG] 2022-09-05 22:16:49.056 [main] ZipPackage - Save part 'word/styles.xml'
+[INFO ] 2022-09-05 22:16:49.058 [main] DOCReportCreate - create_table.docx written successfully
+[DEBUG] 2022-09-05 22:18:32.134 [main] ZipPackage - Save core properties part
+[DEBUG] 2022-09-05 22:18:32.136 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 22:18:32.186 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 22:18:32.189 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 22:18:32.191 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 22:18:32.198 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 22:18:32.199 [main] ZipPackage - Save part 'word/settings.xml'
+[DEBUG] 2022-09-05 22:18:32.199 [main] ZipPackage - Save part 'word/styles.xml'
+[DEBUG] 2022-09-05 22:18:32.206 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 22:18:32.206 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 22:18:32.207 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 22:18:32.207 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 22:18:32.208 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 22:18:32.209 [main] ZipPackage - Save part 'word/settings.xml'
+[DEBUG] 2022-09-05 22:18:32.209 [main] ZipPackage - Save part 'word/styles.xml'
+[INFO ] 2022-09-05 22:18:32.211 [main] DOCReportCreate - create_table.docx written successfully
+[ERROR] 2022-09-05 22:32:11.308 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+[DEBUG] 2022-09-05 22:32:33.625 [main] ZipPackage - Save core properties part
+[DEBUG] 2022-09-05 22:32:33.627 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 22:32:33.670 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 22:32:33.673 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 22:32:33.675 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 22:32:33.682 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 22:32:33.683 [main] ZipPackage - Save part 'word/settings.xml'
+[INFO ] 2022-09-05 22:32:33.689 [main] DOCReportCreate - create_table.docx written successfully
+[DEBUG] 2022-09-05 22:32:33.690 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 22:32:33.691 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 22:32:33.691 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 22:32:33.692 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 22:32:33.692 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 22:32:33.693 [main] ZipPackage - Save part 'word/settings.xml'
+[DEBUG] 2022-09-05 22:33:13.855 [main] ZipPackage - Save core properties part
+[DEBUG] 2022-09-05 22:33:13.857 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 22:33:13.897 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 22:33:13.900 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 22:33:13.901 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 22:33:13.907 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 22:33:13.908 [main] ZipPackage - Save part 'word/settings.xml'
+[INFO ] 2022-09-05 22:33:13.914 [main] DOCReportCreate - create_table.docx written successfully
+[DEBUG] 2022-09-05 22:33:13.915 [main] ZipPackage - Save content types part
+[DEBUG] 2022-09-05 22:33:13.916 [main] ZipPackage - Save package relationships
+[DEBUG] 2022-09-05 22:33:13.916 [main] ZipPackage - Save part 'docProps/app.xml'
+[DEBUG] 2022-09-05 22:33:13.917 [main] ZipPackage - Save part 'docProps/core.xml'
+[DEBUG] 2022-09-05 22:33:13.918 [main] ZipPackage - Save part 'word/document.xml'
+[DEBUG] 2022-09-05 22:33:13.918 [main] ZipPackage - Save part 'word/settings.xml'

@@ -13,6 +13,10 @@ import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * class for creating and sending e-mail notification
+ */
+
 public class MailSender implements Sender {
 
     private static final Logger log = LogManager.getLogger(MailSender.class);
@@ -36,12 +40,10 @@ public class MailSender implements Sender {
 
     @Override
     public void send() throws SenderException {
-
         String host;
         String port;
         String auth;
         String tls;
-
         try {
             username = MailConfig.getProperty(MailConfig.USER);
             String passwordHash = MailConfig.getProperty(MailConfig.PASSWORD);
@@ -54,39 +56,30 @@ public class MailSender implements Sender {
             log.error(e.getMessage());
             throw new SenderException(e.getMessage());
         }
-
         Properties prop = new Properties();
         prop.put(SMTP_HOST, host);
         prop.put(SMTP_PORT, port);
         prop.put(SMTP_AUTH, auth);
         prop.put(SMTP_STARTTLS_ENABLE, tls);
-
         Session session = Session.getInstance(prop, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(username, password);
             }
         });
-
         try {
-
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(FROM_FORM));
             message.setRecipients(
                     Message.RecipientType.TO, InternetAddress.parse(recipient));
             message.setSubject(subj);
-
             MimeBodyPart mimeBodyPart = new MimeBodyPart();
             mimeBodyPart.setContent(msg, MSG_TYPE);
-
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(mimeBodyPart);
-
             message.setContent(multipart);
-
             Transport.send(message);
             log.info("e-mail sent to {}", recipient);
-
         } catch (MessagingException e) {
             log.error("could not send mail: {}", e.getMessage());
             throw new SenderException(e.getMessage());

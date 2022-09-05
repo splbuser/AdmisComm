@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class Statement extends Entity implements Comparable<Statement> {
-
     private Faculty faculty;
     private List<Applicant> applicants;
     private Applicant applicant;

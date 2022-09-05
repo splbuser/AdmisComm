@@ -1,5 +1,8 @@
 package com.splb.model.dao.constant;
 
+/**
+ * utility class for store table fields and so on
+ */
 public abstract class Fields {
 
     public static final String ID = "id";

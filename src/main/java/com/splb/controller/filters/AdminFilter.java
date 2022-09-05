@@ -13,6 +13,9 @@ import java.io.IOException;
 
 import static java.util.Objects.nonNull;
 
+/**
+ * filter for admin access
+ */
 @WebFilter(urlPatterns = {"/Reristerforfaculty", "/Submitresult"})
 public class AdminFilter implements Filter {
     private static final Logger log = LogManager.getLogger(AdminFilter.class);

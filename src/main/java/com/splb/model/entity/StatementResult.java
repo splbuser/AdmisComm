@@ -2,8 +2,9 @@ package com.splb.model.entity;
 
 
 import java.io.IOException;
+import java.util.Objects;
 
-public class StatementResult extends Entity  {
+public class StatementResult extends Entity {
 
     private Applicant applicant;
     private Faculty faculty;
@@ -60,6 +61,20 @@ public class StatementResult extends Entity  {
 
     public void setTotal(int total) {
         this.total = total;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StatementResult that = (StatementResult) o;
+        return firstSubject == that.firstSubject && secondSubject == that.secondSubject && total == that.total
+                && applicant.equals(that.applicant) && faculty.equals(that.faculty);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(applicant, faculty, firstSubject, secondSubject, total);
     }
 
     @Override

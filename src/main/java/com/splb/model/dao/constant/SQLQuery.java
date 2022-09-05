@@ -1,5 +1,8 @@
 package com.splb.model.dao.constant;
 
+/**
+ * utility class for store SQL query
+ */
 public abstract class SQLQuery {
 
     public static final String FIND_APPLICANT_BT_ID = "SELECT * FROM applicant WHERE id=?";

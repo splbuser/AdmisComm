@@ -1,5 +1,8 @@
 package com.splb.service.utils;
 
+/**
+ * utility class for verification input data for faculty
+ */
 public class FacultyDataValidator {
     private static final String FACULTY_DATA_PATTERN = "[A-Z][a-z]{1,20}(\\s?[A-Za-z][a-z]{1,20})*";
 

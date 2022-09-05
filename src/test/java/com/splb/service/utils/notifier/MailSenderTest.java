@@ -10,6 +10,6 @@ class MailSenderTest {
     void send() throws SenderException {
         Sender s = new MailSender("therealant@gmail.com", MailText.ENROLL_SUBJ.getText(),
                 String.format((MailText.ENROLL_BODY.getText()), "contract", "Serious"));
-//        s.send();
+        s.send();
     }
 }

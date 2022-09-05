@@ -6,6 +6,9 @@ import com.splb.model.entity.Enrollment;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * for sorting Enrollment list by some category
+ */
 public class SortEnrollmentImpl implements Sort<Enrollment> {
 
     public static final String LAST_NAME = "byLastName";

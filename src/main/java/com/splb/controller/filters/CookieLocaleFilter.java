@@ -11,6 +11,9 @@ import java.io.IOException;
 
 import static java.util.Objects.nonNull;
 
+/**
+ * filter for set locale into cookies
+ */
 @WebFilter(filterName = "CookieLocaleFilter", urlPatterns = {"/*"})
 public class CookieLocaleFilter implements Filter {
 

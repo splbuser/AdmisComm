@@ -1,0 +1,485 @@
+[ERROR] 2022-09-03 00:45:50.182 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:45:50.189 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:46:43.803 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:46:43.807 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:49:35.152 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:49:35.523 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:49:35.621 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:49:35.621 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:49:35.688 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:49:35.700 [main] ApplicantResultDAOImpl - Cannot add or update a child row: a foreign key constraint fails (`admissionscommitteetest`.`applicant_has_faculty`, CONSTRAINT `fk_applicant_has_faculty_faculty1` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`id`) ON DELETE CASCADE)
+[ERROR] 2022-09-03 00:49:35.734 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:49:35.742 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:49:35.788 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:49:35.808 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:49:35.819 [main] StatementDAOImpl - Cannot add or update a child row: a foreign key constraint fails (`admissionscommitteetest`.`statement_app`, CONSTRAINT `fk_statement_app_faculty1` FOREIGN KEY (`faculty__id`) REFERENCES `faculty` (`id`) ON DELETE CASCADE)
+[INFO ] 2022-09-03 00:49:35.828 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:50:06.046 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:06.426 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:50:06.468 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:06.484 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.515 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:50:06.522 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:50:06.534 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:06.552 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:50:06.610 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:06.688 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.689 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.690 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.691 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.691 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.692 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.693 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.694 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.695 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.695 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.696 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.697 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.697 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.698 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.699 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.700 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.701 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.701 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.702 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:06.703 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:50:06.759 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:16.094 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:50:16.101 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:50:51.460 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:51.835 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:50:51.874 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:51.891 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:50:51.921 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:50:51.929 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:50:51.941 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:51.959 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:50:52.027 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:52.099 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.100 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.101 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.102 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.103 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.103 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.104 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.105 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.106 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.107 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.107 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.108 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.109 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.110 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.110 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.111 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.112 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.113 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.114 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:50:52.114 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:50:52.167 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:50:58.560 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:50:58.565 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:51:50.615 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:51:50.974 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:51:51.013 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:51:51.030 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.058 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:51:51.066 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:51:51.078 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:51:51.097 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:51:51.165 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:51:51.295 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.296 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.297 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.298 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.299 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.300 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.300 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.301 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.302 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.303 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.303 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.304 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.305 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.306 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.306 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.307 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.308 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.309 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.309 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:51:51.310 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:51:51.364 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:51:55.704 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:51:55.708 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:52:56.595 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:52:56.959 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:52:56.997 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:52:57.013 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.042 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:52:57.049 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:52:57.060 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:52:57.077 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:52:57.137 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:52:57.222 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.223 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.224 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.224 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.225 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.226 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.227 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.228 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.228 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.229 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.230 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.230 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.231 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.232 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.232 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.233 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.234 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.235 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.236 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:52:57.236 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:52:57.287 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:53:01.879 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:53:01.885 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:53:58.402 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:53:58.769 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:53:58.862 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:53:58.862 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:53:58.937 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:53:58.949 [main] ApplicantResultDAOImpl - Cannot add or update a child row: a foreign key constraint fails (`admissionscommitteetest`.`applicant_has_faculty`, CONSTRAINT `fk_applicant_has_faculty_faculty1` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`id`) ON DELETE CASCADE)
+[ERROR] 2022-09-03 00:53:58.980 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:53:58.989 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:53:59.035 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:53:59.054 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:53:59.066 [main] StatementDAOImpl - Cannot add or update a child row: a foreign key constraint fails (`admissionscommitteetest`.`statement_app`, CONSTRAINT `fk_statement_app_faculty1` FOREIGN KEY (`faculty__id`) REFERENCES `faculty` (`id`) ON DELETE CASCADE)
+[INFO ] 2022-09-03 00:53:59.075 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:54:13.121 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:54:13.509 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:54:13.548 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:54:13.565 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.593 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:54:13.601 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:54:13.613 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:54:13.631 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:54:13.692 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:54:13.768 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.769 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.770 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.771 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.772 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.773 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.773 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.774 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.775 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.776 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.777 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.777 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.778 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.779 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.780 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.781 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.781 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.782 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.783 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:54:13.784 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:54:13.837 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:54:18.255 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:54:18.259 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:56:48.628 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:56:49.007 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:56:49.101 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:56:49.101 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:56:49.128 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:56:49.146 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.177 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:56:49.186 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:56:49.236 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:56:49.255 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:56:49.316 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:56:49.392 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.393 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.394 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.395 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.396 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.397 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.398 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.398 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.399 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.400 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.401 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.401 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.402 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.403 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.403 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.404 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.405 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.406 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.407 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:56:49.408 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:56:49.475 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:57:31.008 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:57:31.379 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:57:31.492 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:57:31.493 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:57:31.519 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:57:31.533 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.565 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:57:31.573 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:57:31.619 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:57:31.636 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:57:31.705 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:57:31.779 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.780 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.781 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.782 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.782 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.783 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.784 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.784 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.785 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.786 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.787 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.788 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.789 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.789 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.790 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.791 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.792 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.792 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.793 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:57:31.793 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:57:31.848 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:58:09.900 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:58:10.266 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:58:10.351 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:58:10.351 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:58:10.372 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:58:10.384 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:58:10.392 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:58:10.400 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:58:10.445 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:58:10.460 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:58:10.493 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:58:10.515 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:58:10.545 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:58:26.526 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:58:26.923 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:58:27.044 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 00:58:27.044 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 00:58:27.069 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:58:27.084 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.114 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 00:58:27.122 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 00:58:27.166 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:58:27.183 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 00:58:27.241 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 00:58:27.315 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.316 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.317 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.318 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.318 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.319 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.320 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.320 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.324 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.325 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.326 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.327 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.327 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.328 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.329 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.329 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.330 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.331 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.331 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 00:58:27.332 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 00:58:27.389 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 01:03:06.879 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:03:07.254 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 01:03:07.352 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 01:03:07.353 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 01:03:07.439 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:03:07.453 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.482 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 01:03:07.490 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 01:03:07.529 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:03:07.544 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 01:03:07.599 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:03:07.671 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.672 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.673 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.674 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.675 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.675 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.676 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.677 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.678 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.678 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.679 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.680 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.680 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.681 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.682 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.683 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.683 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.684 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.685 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:03:07.686 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 01:03:07.737 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 01:07:04.275 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:07:04.642 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 01:07:04.738 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 01:07:04.738 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 01:07:04.874 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:07:04.886 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:07:04.933 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 01:07:04.939 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 01:07:04.976 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:07:04.991 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 01:07:05.044 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:07:05.124 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.125 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.126 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.127 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.127 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.128 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.129 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.129 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.130 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.131 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.132 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.132 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.133 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.134 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.135 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.135 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.136 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.136 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.137 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:07:05.138 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 01:07:05.187 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:12:00.292 [main] ApplicantResultDAOImpl - Duplicate entry '12' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:12:00.297 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '12' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:12:11.144 [main] ApplicantResultDAOImpl - Cannot add or update a child row: a foreign key constraint fails (`admissionscommitteetest`.`applicant_results`, CONSTRAINT `fk_applicant_results_applicant1` FOREIGN KEY (`applicant_id`) REFERENCES `applicant` (`id`) ON DELETE CASCADE)
+[ERROR] 2022-09-03 01:12:11.148 [main] ApplicantResultService - could not add Applicant's result: Cannot add or update a child row: a foreign key constraint fails (`admissionscommitteetest`.`applicant_results`, CONSTRAINT `fk_applicant_results_applicant1` FOREIGN KEY (`applicant_id`) REFERENCES `applicant` (`id`) ON DELETE CASCADE)
+[ERROR] 2022-09-03 01:14:06.570 [main] ApplicantResultDAOImpl - Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:14:06.573 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:14:26.860 [main] ApplicantResultDAOImpl - Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:14:26.864 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:15:55.245 [main] ApplicantResultDAOImpl - Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:15:55.248 [main] ApplicantResultService - could not add result for faculty's subject: Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:16:34.759 [main] ApplicantResultDAOImpl - Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:16:34.762 [main] ApplicantResultService - could not add result for faculty's subject: Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:19:36.354 [main] ApplicantResultDAOImpl - Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:19:36.357 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:19:36.447 [main] ApplicantResultDAOImpl - Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:19:36.447 [main] ApplicantResultService - could not add result for faculty's subject: Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[INFO ] 2022-09-03 01:38:03.898 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:04.276 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 01:38:04.373 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 01:38:04.373 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 01:38:04.511 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:04.524 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.554 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 01:38:04.561 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 01:38:04.608 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:04.623 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 01:38:04.679 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:04.781 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.782 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.782 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.783 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.784 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.785 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.786 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.787 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.788 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.789 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.789 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.790 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.791 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.792 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.793 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.794 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.794 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.795 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.796 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.797 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 01:38:04.852 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:04.937 [main] ApplicantResultDAOImpl - Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.938 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.964 [main] ApplicantResultDAOImpl - Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:38:04.964 [main] ApplicantResultService - could not add result for faculty's subject: Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[INFO ] 2022-09-03 01:38:18.061 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:18.447 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 01:38:18.547 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 01:38:18.548 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 01:38:18.680 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:18.692 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.718 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 01:38:18.724 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 01:38:18.764 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:18.779 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 01:38:18.847 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:18.925 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.926 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.927 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.928 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.928 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.929 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.930 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.930 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.931 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.932 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.932 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.933 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.934 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.934 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.935 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.936 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.937 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.938 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.938 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 01:38:18.939 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 01:38:18.989 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 01:38:19.073 [main] ApplicantResultDAOImpl - Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:38:19.073 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 01:38:19.102 [main] ApplicantResultDAOImpl - Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 01:38:19.102 [main] ApplicantResultService - could not add result for faculty's subject: Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[INFO ] 2022-09-03 22:29:23.353 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 22:29:24.019 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 22:29:24.129 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-03 22:29:24.130 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-03 22:29:24.269 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 22:29:24.283 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.316 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-03 22:29:24.326 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-03 22:29:24.382 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 22:29:24.400 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-03 22:29:24.462 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 22:29:24.537 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.538 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.539 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.540 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.541 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.542 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.543 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.544 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.545 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.546 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.547 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.548 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.549 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.551 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.552 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.552 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.553 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.554 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.555 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.556 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-03 22:29:24.621 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-03 22:29:24.756 [main] ApplicantResultDAOImpl - Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.757 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.785 [main] ApplicantResultDAOImpl - Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-03 22:29:24.785 [main] ApplicantResultService - could not add result for faculty's subject: Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
