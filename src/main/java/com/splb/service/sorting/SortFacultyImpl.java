@@ -11,9 +11,9 @@ import java.util.List;
  */
 public class SortFacultyImpl implements Sort<Faculty> {
 
-    public static final String NAME = "byName";
-    public static final String BUDGET = "byBudget";
-    public static final String TOTAL = "byTotal";
+    private static final String NAME = "byName";
+    private static final String BUDGET = "byBudget";
+    private static final String TOTAL = "byTotal";
 
     @Override
     public List<Faculty> getSortedList(String type, String sortBy, List<Faculty> list) {

@@ -250,7 +250,7 @@ VALUES (DEFAULT, 'viper369', 'MTIzNjk', DEFAULT, 'Андреано', 'Адрио
 INSERT INTO applicant_results
 VALUES (13, 3, 3, 8, 3, 8, 7);
 INSERT INTO applicant
-VALUES (DEFAULT, 'Kriger', 'MTIzNjk', DEFAULT, 'Шульц', 'Кригер', 'borbur4yt15@gmail.com', 'Баден-Баден', 'Вестфалия',
+VALUES (DEFAULT, 'Kriger', 'MTIzNjk', DEFAULT, 'Шульц', 'Кригер', 'therealant@gmail.com', 'Баден-Баден', 'Вестфалия',
         'Секретно', DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO applicant
 VALUES (DEFAULT, 'lokus', 'MTIzNjk', DEFAULT, 'Inhmar', 'Bergman', 'smoker@yahoo.com', 'Usual',
@@ -337,7 +337,21 @@ VALUES (DEFAULT, 'kreofirm', 'MTIzNjk', DEFAULT, 'Kobo', 'Steel', 'jojo@now.com'
         'Fit Left', 'Ikurt', DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO applicant_results
 VALUES (30, 9, 9, 8, 7, 8, 10);
-
+INSERT INTO applicant
+VALUES (DEFAULT, 'pillertman', 'MTIzNjk', DEFAULT, 'Get', 'Ten', 'ten10@now.com', 'Temple',
+        'Theano', 'Private', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO applicant_results
+VALUES (31, 9, 8, 7, 7, 9, 9);
+INSERT INTO applicant
+VALUES (DEFAULT, 'mer', 'MTIzNjk', DEFAULT, 'Post', 'Eleven', 'ten11@now.com', 'Of Elemental',
+        'Theory', 'Public', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO applicant_results
+VALUES (32, 6, 5, 9, 10, 10, 10);
+INSERT INTO applicant
+VALUES (DEFAULT, 'hiper7', 'MTIzNjk', DEFAULT, 'Commit', 'Twelve', 'twelve10@now.com', 'Evil',
+        'Fit Left', 'Tothen', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO applicant_results
+VALUES (33, 10, 9, 11, 11, 10, 10);
 -- -----------------------------------------------------
 -- Staffing applicants' faculty
 -- -----------------------------------------------------
@@ -483,6 +497,22 @@ INSERT INTO applicant_has_faculty
 VALUES (30, 1, 10, 9);
 INSERT INTO applicant_has_faculty
 VALUES (30, 2, 10, 8);
+INSERT INTO applicant_has_faculty
+VALUES (31, 5, 11, 9);
+INSERT INTO applicant_has_faculty
+VALUES (31, 4, 12, 11);
+INSERT INTO applicant_has_faculty
+VALUES (32, 5, 11, 10);
+INSERT INTO applicant_has_faculty
+VALUES (32, 3, 9, 8);
+INSERT INTO applicant_has_faculty
+VALUES (32, 2, 10, 8);
+INSERT INTO applicant_has_faculty
+VALUES (33, 1, 8, 9);
+INSERT INTO applicant_has_faculty
+VALUES (33, 2, 8, 6);
+INSERT INTO applicant_has_faculty
+VALUES (33, 4, 9, 6);
 
 -- -----------------------------------------------------
 -- Show tables

@@ -122,23 +122,32 @@
                                 <i class="material-icons" data-bs-toggle="tooltip" data-bss-tooltip=""
                                    style="color: var(--bs-teal);"
                                    title="<fmt:message key="tooltip.edit_faculty"/>">edit</i></a>
-                                <form method="post" action='<c:url value="/delete" />' style="display:inline;">
+                                <form method="post" action='<c:url value="/delete" />' style="display:inline;"
+                                      onclick="return confirmer();">
                                     <input type="hidden" name="id" value="${faculty.id}">
                                     <input type="submit" value="<fmt:message key="key.delete"/>">
                                 </form>
-
+                                <script>
+                                    function confirmer() {
+                                        if (confirm("<fmt:message key="test.confirm_delete"/>")) {
+                                            return true;
+                                        } else {
+                                            return false;
+                                        }
+                                    }
+                                </script>
                             </td>
-<%--                            <td style="text-align: left;padding-left: 0px;width: 200px;">--%>
-<%--                                <div class="btn-group" role="group">--%>
-<%--                                    <a class="btn" role="button" style="padding-top: 0;padding-left: 0;padding-bottom: 0;">--%>
-<%--                                        <i class="material-icons" data-bs-toggle="tooltip" style="color: var(--bs-teal);" title="Edit faculty">edit</i>--%>
-<%--                                    </a>--%>
-<%--                                    <button class="btn" type="submit" style="padding-top: 0;padding-right: 0;padding-bottom: 0;">--%>
-<%--                                        <i class="material-icons" data-bs-toggle="tooltip" style="color: var(--bs-red);" title="Delete faculty">delete_forever</i>--%>
-<%--                                    </button>--%>
-<%--                                </div>--%>
-<%--                                <a href="/edit"></a><input type="hidden" name="id" value="faculty.id" />--%>
-<%--                            </td>--%>
+                                <%--                            <td style="text-align: left;padding-left: 0px;width: 200px;">--%>
+                                <%--                                <div class="btn-group" role="group">--%>
+                                <%--                                    <a class="btn" role="button" style="padding-top: 0;padding-left: 0;padding-bottom: 0;">--%>
+                                <%--                                        <i class="material-icons" data-bs-toggle="tooltip" style="color: var(--bs-teal);" title="Edit faculty">edit</i>--%>
+                                <%--                                    </a>--%>
+                                <%--                                    <button class="btn" type="submit" style="padding-top: 0;padding-right: 0;padding-bottom: 0;">--%>
+                                <%--                                        <i class="material-icons" data-bs-toggle="tooltip" style="color: var(--bs-red);" title="Delete faculty">delete_forever</i>--%>
+                                <%--                                    </button>--%>
+                                <%--                                </div>--%>
+                                <%--                                <a href="/edit"></a><input type="hidden" name="id" value="faculty.id" />--%>
+                                <%--                            </td>--%>
 
                             <td><a href='<c:url value="/watchlist?id=${faculty.id}" />'
                                    style="text-decoration: none;color: #212529;font-style: italic;"><fmt:message

@@ -15,10 +15,17 @@ import java.util.List;
 
 public class FacultyService extends Service {
 
+    /**
+     * none parametrized constructor for ConnectionPool initialize
+     */
     public FacultyService() {
         setConnectionBuilder(new PoolConnectionBuilder());
     }
 
+    /**
+     * parametrized constructor to create DirectConnection for testing
+     * @param connectionBuilder
+     */
     public FacultyService(DirectConnectionBuilder connectionBuilder) {
         this.connectionBuilder = connectionBuilder;
     }

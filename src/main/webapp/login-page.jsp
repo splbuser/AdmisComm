@@ -62,9 +62,9 @@
                                             style="background: #8dc641;border-radius: 8px;" data-bs-target="Login">Login
                                     </button>
                                 </div>
-
                             </form>
-<%--                            <p class="text-muted">Forgot your password?</p>--%>
+                            <p class="text-muted"><a href="Register" style="text-decoration: none"
+                                                     class="text-muted my-2">Not registered?</a></p>
                             </form>
                         </div>
                     </div>

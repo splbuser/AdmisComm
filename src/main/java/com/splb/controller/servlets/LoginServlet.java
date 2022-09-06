@@ -26,10 +26,7 @@ public class LoginServlet extends HttpServlet {
     public static final String ROLE = "role";
     public static final String ROLE_ADMIN = "ADMIN";
     public static final String ROLE_USER = "USER";
-    public static final String USER = "user";
-    public static final String ID = "id";
     public static final String USER_NAME = "user_name";
-
     public static final String HELLOUSER = "hellouser";
     public static final String RECAPTCHA_RESPONSE = "g-recaptcha-response";
 
@@ -74,8 +71,8 @@ public class LoginServlet extends HttpServlet {
                 validCaptcha = CaptchaVerification.verify(gRecaptchaResponse);
                 if (validCaptcha) {
                     int id = user.getId();
-                    httpSession.setAttribute(USER, user);
-                    httpSession.setAttribute(ID, id);
+                    httpSession.setAttribute(Fields.USER, user);
+                    httpSession.setAttribute(Fields.ID, id);
                     httpSession.setAttribute(USER_NAME, user.getUserName());
                     httpSession.setAttribute(Fields.RESULT_CHECK, asrv.checkSub(id));
                     httpSession.setAttribute(HELLOUSER, String.format("%s %s",

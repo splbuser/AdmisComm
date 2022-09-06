@@ -35,21 +35,16 @@ public class CaptchaVerification {
         }
         try {
             URL verifyUrl = new URL(Fields.SITE_VERIFY_URL);
-
             HttpsURLConnection conn = (HttpsURLConnection) verifyUrl.openConnection();
-
             conn.setRequestMethod(POST);
             conn.setRequestProperty(USER_AGENT, UA_NAME);
             conn.setRequestProperty(ACCEPT_LANGUAGE, LANG);
-
             String postParams = String.format("secret=%s&response=%s",
                     Fields.SECRET_KEY, gRecaptchaResponse);
-
             conn.setDoOutput(true);
 
             OutputStream outStream = conn.getOutputStream();
             outStream.write(postParams.getBytes());
-
             outStream.flush();
             outStream.close();
 

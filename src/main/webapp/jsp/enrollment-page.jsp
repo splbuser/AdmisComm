@@ -15,6 +15,7 @@
     <title><fmt:message key="label.enrollment"/></title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/typicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark.css">
 </head>
@@ -28,39 +29,27 @@
     <h3 class="text-light mb-4" style="font-family: 'Noto Sans', sans-serif;text-align: center;"><fmt:message
             key="label.enrollment"/></h3>
     <div class="card shadow" style="background: rgb(99,99,99);border-radius: 20px;">
-
-        <table>
-            <tr>
-                <th>
-                    <form method="post">
-                        <div class="card-header py-3">
-                            <button class="btn btn-primary" type="submit" style="border-radius: 8px;"><fmt:message
-                                    key="button.get_PDF"/></button>
-                            <input type="hidden" name="action" value="getPDF">
-                        </div>
-                    </form>
-                </th>
-                <th>
-                    <form method="post">
-                        <div class="card-header py-3">
-                            <button class="btn btn-primary" type="submit" style="border-radius: 8px;"><fmt:message
-                                    key="button.get_DOC"/></button>
-                            <input type="hidden" name="action" value="getDOC">
-                        </div>
-                    </form>
-                </th>
-                <th>
-                    <form method="post">
-                        <div class="card-header py-3">
-                            <button class="btn btn-primary" type="submit" style="border-radius: 8px;"><fmt:message
-                                    key="button.notify"/></button>
-                            <input type="hidden" name="action" value="notify">
-                        </div>
-                    </form>
-                </th>
-                <th></th>
-            </tr>
-        </table>
+        <div class="card-header py-3">
+            <div class="btn-group" role="group">
+                <form method="post">
+                    <button class="btn btn-primary" type="submit">DOC</button>
+                    <input type="hidden" name="action" value="getDOC">
+                </form>
+                <form method="post">
+                    <button class="btn btn-success" type="submit">PDF</button>
+                    <input type="hidden" name="action" value="getPDF">
+                </form>
+                <form method="post">
+                    <button class="btn btn-primary" type="submit">XLS</button>
+                    <input type="hidden" name="action" value="getXLS">
+                </form>
+                <form method="post">
+                    <button class="btn btn-light" type="submit"><fmt:message key="button.notify"/><i
+                            class="typcn typcn-mail"></i></button>
+                    <input type="hidden" name="action" value="notify">
+                </form>
+            </div>
+        </div>
         <div class="card-body" style="background: #888888;">
             <div class="row">
                 <div class="col-md-6 text-nowrap">

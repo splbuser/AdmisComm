@@ -11,10 +11,10 @@ import java.util.List;
  */
 public interface FileCreate {
 
-    void createFile() throws FileCreateException;
-
     void setList(List<Enrollment> list);
 
     void setResponse(HttpServletResponse response);
+
+    void createFile() throws FileCreateException;
 
 }
