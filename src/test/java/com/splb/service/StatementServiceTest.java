@@ -5,6 +5,8 @@ import com.splb.model.entity.Faculty;
 import com.splb.model.entity.Statement;
 import com.splb.model.entity.StatementResult;
 import com.splb.service.exceptions.StatementServiceException;
+import com.splb.service.sorting.Sort;
+import com.splb.service.sorting.SortStatementImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
@@ -39,8 +41,10 @@ class StatementServiceTest {
         boolean remove11 = srv.remove(1, 1);
         boolean remove12 = srv.remove(1, 2);
         boolean remove13 = srv.remove(1, 3);
+
         Assert.assertTrue(remove11);
         Assert.assertTrue(remove12);
+
         boolean removeFalse11 = srv.remove(1, 1);
         boolean removeFalse12 = srv.remove(1, 2);
         Assert.assertFalse(removeFalse11);
@@ -52,6 +56,7 @@ class StatementServiceTest {
     void checkTest() throws StatementServiceException {
         boolean check11 = srv.check(1, 1);
         boolean check12 = srv.check(1, 2);
+
         Assert.assertFalse(check11);
         Assert.assertFalse(check12);
     }
@@ -65,6 +70,7 @@ class StatementServiceTest {
         List<Faculty> applicantsList1 = srv.getApplicantsList(2);
         List<Faculty> applicantsList2 = srv.getApplicantsList(3);
         List<Faculty> applicantsList3 = srv.getApplicantsList(5);
+
         Assert.assertEquals(list1.size(), 2);
         Assert.assertEquals(list2.size(), 2);
         Assert.assertEquals(list3.size(), 5);

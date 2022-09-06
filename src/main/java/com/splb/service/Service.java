@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * common superclass for Services classes
+ */
 
 public abstract class Service {
 
@@ -20,6 +23,9 @@ public abstract class Service {
     EnrollmentDAO edao;
     ApplicantResultDAO adao;
 
+    /**
+     * initialize DAOImpl instances
+     */
     {
         udao = UserDAOImpl.getInstance();
         fdao = FacultyDAOImpl.getInstance();
@@ -29,10 +35,19 @@ public abstract class Service {
         log = LogManager.getLogger(getClass().getName());
     }
 
+    /**
+     * common setter for creating connection (pool or direct)
+     * @param connectionBuilder
+     */
     public void setConnectionBuilder(ConnectionBuilder connectionBuilder) {
         this.connectionBuilder = connectionBuilder;
     }
 
+    /**
+     * common getter for connection
+     * @return
+     * @throws SQLException
+     */
     protected Connection getConnection() throws SQLException {
         return connectionBuilder.getConnection();
     }

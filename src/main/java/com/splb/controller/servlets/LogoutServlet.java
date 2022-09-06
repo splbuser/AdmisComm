@@ -1,6 +1,8 @@
 package com.splb.controller.servlets;
 
 import com.splb.controller.pages.Pages;
+import com.splb.model.dao.constant.Fields;
+import com.splb.model.entity.Applicant;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 
@@ -12,9 +14,13 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        if (nonNull(session)) {
+        Applicant user = (Applicant) session.getAttribute(Fields.USER);
+        if (nonNull(user)) {
             session.invalidate();
             getServletContext().getRequestDispatcher(Pages.INDEX)
+                    .forward(request, response);
+        } else {
+            getServletContext().getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
     }

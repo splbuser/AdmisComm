@@ -19,4 +19,15 @@ public abstract class Messages {
     public static final String NO_NEW_REGISTRATIONS_AVAILABLE = "No new registrations available!";
     public static final Object WRONG_CAPTCHA = "Captcha invalid!";
     public static final String CREDENTIAL = "credential";
+    public static final String WRONG_FACULTY = "Incorrect input data. Please try again";
+    public static final String INVALID_LOGIN = "invalid_login";
+    public static final String LOGIN_NOT_UNIQUE = "login_not_unique";
+    public static final String INVALID_EMAIL = "invalid_email";
+    public static final String INVALID_PASSWORD = "invalid_password";
+    public static final String INVALID_REPEAT_PASSWORD = "invalid_repassword";
+    public static final String INVALID_LASTNAME = "invalid_lastname";
+    public static final String INVALID_FIRSTNAME = "invalid_firstname";
+    public static final String INVALID_CITY = "invalid_city";
+    public static final String INVALID_REGION = "invalid_region";
+    public static final String INVALID_EDUC_INST = "invalid_edu_inst";
 }

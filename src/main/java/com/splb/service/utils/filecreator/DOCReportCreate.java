@@ -10,13 +10,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xwpf.usermodel.*;
 
+/**
+ * class for generating DOC-report of enrollment results
+ */
 public class DOCReportCreate implements FileCreate {
 
-    public static final String FILENAME = "enrollment_report.docx";
-    public static final String FACULTY = "Faculty";
-    public static final String APPLICANT = "Applicant";
-    public static final String STATUS = "Enrollment status";
     private static final Logger log = LogManager.getLogger(DOCReportCreate.class);
+    public static final String REPORT = "Automatically generated report";
     private List<Enrollment> list;
     private HttpServletResponse response = null;
 
@@ -40,13 +40,14 @@ public class DOCReportCreate implements FileCreate {
             run.setFontFamily("Arial");
             run.setBold(true);
             run.setFontSize(16);
-            run.setText("Automatically generating reports");
+            run.setText(REPORT);
             XWPFTable table = document.createTable();
             createHeader(table);
             createBody(table);
-            response.setHeader("Content-disposition", "attachment; filename=" + FILENAME);
+            response.setHeader(FileConstants.CONTENT_DISPOSITION,
+                    FileConstants.ATTACHMENT_FILENAME + FileConstants.FILENAME_DOC);
             document.write(out);
-            log.info("{} written successfully", FILENAME);
+            log.info("{} written successfully", FileConstants.FILENAME_DOC);
         } catch (Exception e) {
             throw new FileCreateException(e.getMessage());
         }
@@ -54,9 +55,9 @@ public class DOCReportCreate implements FileCreate {
 
     private void createHeader(XWPFTable table) {
         XWPFTableRow tableRowOne = table.getRow(0);
-        tableRowOne.getCell(0).setText(FACULTY);
-        tableRowOne.addNewTableCell().setText(APPLICANT);
-        tableRowOne.addNewTableCell().setText(STATUS);
+        tableRowOne.getCell(0).setText(FileConstants.FACULTY);
+        tableRowOne.addNewTableCell().setText(FileConstants.APPLICANT);
+        tableRowOne.addNewTableCell().setText(FileConstants.STATUS);
     }
 
     private void createBody(XWPFTable table) {

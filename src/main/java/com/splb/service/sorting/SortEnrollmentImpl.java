@@ -11,9 +11,9 @@ import java.util.List;
  */
 public class SortEnrollmentImpl implements Sort<Enrollment> {
 
-    public static final String LAST_NAME = "byLastName";
-    public static final String FACULTY = "byFaculty";
-    public static final String STATUS = "byStatus";
+   private static final String LAST_NAME = "byLastName";
+   private static final String FACULTY = "byFaculty";
+   private static final String STATUS = "byStatus";
 
     @Override
     public List<Enrollment> getSortedList(String type, String sortBy, List<Enrollment> list) {

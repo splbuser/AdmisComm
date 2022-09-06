@@ -11,9 +11,9 @@ import java.util.List;
  */
 public class SortStatementImpl implements Sort<Statement> {
 
-    public static final String LAST_NAME = "byLastName";
-    public static final String FACULTY = "byFaculty";
-    public static final String TOTAL_SCORE = "byTotalScore";
+   private static final String LAST_NAME = "byLastName";
+   private static final String FACULTY = "byFaculty";
+   private static final String TOTAL_SCORE = "byTotalScore";
 
     @Override
     public List<Statement> getSortedList(String type, String sortBy, List<Statement> list) {

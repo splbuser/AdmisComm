@@ -21,6 +21,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class RegisterServlet extends HttpServlet {
 
@@ -29,31 +31,26 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ApplicantService srv = new ApplicantService();
+        HttpSession httpSession = req.getSession();
         String userName = req.getParameter(Fields.APPLICANT_USER_NAME);
         String password = req.getParameter(Fields.APPLICANT_PASSWORD);
         String rePassword = req.getParameter(Fields.PASSWORD_REPEAT);
         String email = req.getParameter(Fields.APPLICANT_EMAIL);
-        String firstName = req.getParameter(Fields.APPLICANT_FIRST_NAME);
         String lastName = req.getParameter(Fields.APPLICANT_LAST_NAME);
+        String firstName = req.getParameter(Fields.APPLICANT_FIRST_NAME);
         String city = req.getParameter(Fields.APPLICANT_CITY);
         String region = req.getParameter(Fields.APPLICANT_REGION);
         String educationalInstitution = req.getParameter(Fields.APPLICANT_EDUC_INST);
-        HttpSession httpSession = req.getSession();
-        if (DataValidator.validateUserName(userName) ||
-                DataValidator.validatePassword(password) ||
-                DataValidator.validateRePassword(password, rePassword) ||
-                DataValidator.validateEmail(email) ||
-                DataValidator.validateName(firstName) ||
-                DataValidator.validateName(lastName) ||
-                DataValidator.validateName(city) ||
-                DataValidator.validateName(region) ||
-                DataValidator.validateName(educationalInstitution)
-        ) {
-            String encodedPass = PassCrypt.encodeWithoutPadding(password.getBytes());
-            Applicant applicant = new Applicant(0, userName, encodedPass, firstName, lastName,
-                    email, city, region, educationalInstitution);
-            boolean insertResult = false;
-            try {
+        List<String> errorMessages = DataValidator.validateRegistrationForm(userName, password, rePassword, email,
+                lastName, firstName, city, region, educationalInstitution);
+        try {
+            boolean checkUsername = srv.checkUsername(userName);
+            if (errorMessages == null && !checkUsername) {
+                String encodedPass = PassCrypt.encodeWithoutPadding(password.getBytes());
+                Applicant applicant = new Applicant(0, userName, encodedPass, lastName, firstName,
+                        email, city, region, educationalInstitution);
+                boolean insertResult;
+
                 insertResult = srv.add(applicant);
                 if (insertResult) {
                     httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_SUCCESSFUL);
@@ -61,15 +58,22 @@ public class RegisterServlet extends HttpServlet {
                     s.send();
                     resp.sendRedirect("Login");
                 }
-            } catch (ServiceException | SenderException e) {
-                log.error("Error while registration {}", e.getMessage());
-                httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_FAIL);
-                resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
+            } else {
+                String[] inputValues = {userName, null, null, email, lastName, firstName, city, region, educationalInstitution};
+                List<String> validValues = getValidatedValues(inputValues, errorMessages);
+                log.debug(errorMessages);
+                httpSession.setAttribute("validValues", validValues);
+                httpSession.setAttribute("errors", errorMessages);
+                if (errorMessages.get(0) == null && checkUsername) {
+                    log.debug(Messages.LOGIN_NOT_UNIQUE);
+                    httpSession.setAttribute("error", Messages.LOGIN_NOT_UNIQUE);
+                }
+                resp.sendRedirect(getServletContext().getContextPath() + Pages.REGISTER);
             }
-        } else {
-            log.info(Messages.VALIDATION_FAIL);
-            httpSession.setAttribute(Messages.MESSAGE, Messages.VALIDATION_FAIL);
-            resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
+        } catch (ServiceException | SenderException e) {
+            log.error("Error while registration {}", e.getMessage());
+            httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_FAIL);
+            resp.sendRedirect(getServletContext().getContextPath() + Pages.REGISTER);
         }
     }
 
@@ -83,5 +87,16 @@ public class RegisterServlet extends HttpServlet {
             getServletContext().getRequestDispatcher(Pages.INDEX)
                     .forward(req, resp);
         }
+    }
+
+    private List<String> getValidatedValues(String[] input, List<String> errors) {
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] != null) {
+                if (errors.get(i) != null) {
+                    input[i] = null;
+                }
+            }
+        }
+        return Arrays.asList(input);
     }
 }

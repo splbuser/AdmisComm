@@ -1,19 +1,27 @@
 package com.splb.model.dao.implementation;
 
 import com.splb.model.dao.UserDAO;
+import com.splb.model.dao.constant.Fields;
 import com.splb.model.dao.exception.UserDAOException;
 import com.splb.model.entity.Applicant;
+import com.splb.service.sorting.Sort;
+import com.splb.service.sorting.SortApplicantImpl;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 
 import java.sql.Connection;
+import java.util.List;
 
 class UserDAOImplTest {
 
     public static final String USER_NAME = "User123";
     public static final String PASSWORD = "password";
+    private static final String LAST_NAME = "byLastName";
+    private static final String CITY = "byCity";
+    private static final String REGION = "byRegion";
+    private static final String STATUS = "byStatus";
     final static UserDAO dao = UserDAOImpl.getInstance();
     static Connection con;
 
@@ -50,9 +58,21 @@ class UserDAOImplTest {
     }
 
     @Test
-    void findAllApplicantsTest() throws UserDAOException {
-        Assert.assertEquals(dao.findAllApplicants(10, 0, con).size(), 10);
-        Assert.assertEquals(dao.findAllApplicants(5, 0, con).size(), 5);
+    void getAndSortApplicantListTest() throws UserDAOException {
+        Sort<Applicant> sorter = new SortApplicantImpl();
+        List<Applicant> list1 = dao.findAllApplicants(10, 0, con);
+        List<Applicant> list2 = dao.findAllApplicants(5, 0, con);
+        List<Applicant> list3 = dao.findAllApplicants(6, 1, con);
+        List<Applicant> list4 = dao.findAllApplicants(3, 3, con);
+        List<Applicant> sortedList1 = sorter.getSortedList(Fields.ASC, LAST_NAME, list1);
+        List<Applicant> sortedList2 = sorter.getSortedList(Fields.ASC, STATUS, list2);
+        List<Applicant> sortedList3 = sorter.getSortedList(Fields.ASC, CITY, list3);
+        List<Applicant> sortedList4 = sorter.getSortedList("DSC", REGION, list4);
+
+        Assert.assertEquals(sortedList1.size(), 10);
+        Assert.assertEquals(sortedList2.size(), 5);
+        Assert.assertEquals(sortedList3.size(), 6);
+        Assert.assertEquals(sortedList4.size(), 3);
     }
 
     @Test

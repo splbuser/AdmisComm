@@ -11,9 +11,17 @@ import java.sql.SQLException;
 
 public class ApplicantResultService extends Service {
 
+    /**
+     * none parametrized constructor for ConnectionPool initialize
+     */
     public ApplicantResultService() {
         setConnectionBuilder(new PoolConnectionBuilder());
     }
+
+    /**
+     * parametrized constructor to create DirectConnection for testing
+     * @param connectionBuilder
+     */
     public ApplicantResultService(DirectConnectionBuilder connectionBuilder) {
         this.connectionBuilder = connectionBuilder;
     }

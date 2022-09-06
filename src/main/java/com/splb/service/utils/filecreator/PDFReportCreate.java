@@ -21,20 +21,19 @@ import java.util.stream.Stream;
 public class PDFReportCreate implements FileCreate {
 
     private static final Logger log = LogManager.getLogger(PDFReportCreate.class);
-    public static final String FACULTY = "Faculty";
-    public static final String APPLICANT = "Applicant";
-    public static final String STATUS = "Enrollment status";
-    private static final BaseFont baseFont = loadBaseFont("fonts/JetBrainsMono-Regular.ttf");
-    private static final Font font = new Font(baseFont, 13, Font.NORMAL, BaseColor.WHITE);
+    private static final BaseFont BASE_FONT = loadBaseFont(FileConstants.FONT_NAME);
+    private static final Font FONT = new Font(BASE_FONT, 13, Font.NORMAL, BaseColor.WHITE);
     private List<Enrollment> list;
-    private HttpServletResponse response;
+    private HttpServletResponse response = null;
 
-    public void setResponse(HttpServletResponse response) {
-        this.response = response;
-    }
-
+    @Override
     public void setList(List<Enrollment> list) {
         this.list = list;
+    }
+
+    @Override
+    public void setResponse(HttpServletResponse response) {
+        this.response = response;
     }
 
     @Override
@@ -47,6 +46,8 @@ public class PDFReportCreate implements FileCreate {
             addTableHeader(table);
             addRows(table);
             document.add(table);
+            response.setHeader(FileConstants.CONTENT_DISPOSITION,
+                    FileConstants.ATTACHMENT_FILENAME + FileConstants.FILENAME_PDF);
             document.close();
         } catch (DocumentException | IOException e) {
             log.error(e.getMessage());
@@ -55,13 +56,13 @@ public class PDFReportCreate implements FileCreate {
     }
 
     private void addTableHeader(PdfPTable table) {
-        Stream.of(FACULTY, APPLICANT, STATUS)
-                .forEach(columnTitle -> {
+        Stream.of(FileConstants.FACULTY, FileConstants.APPLICANT, FileConstants.STATUS)
+                .forEach(title -> {
                     PdfPCell header = new PdfPCell();
                     header.setBackgroundColor(BaseColor.BLUE);
                     header.setHorizontalAlignment(Element.ALIGN_CENTER);
                     header.setBorderWidth(1);
-                    Phrase phrase = new Phrase(columnTitle, font);
+                    Phrase phrase = new Phrase(title, FONT);
                     header.setPhrase(phrase);
                     table.addCell(header);
                 });
@@ -73,9 +74,9 @@ public class PDFReportCreate implements FileCreate {
             String title2 = String.format("%s %s", el.getApplicant().getLastName(),
                     el.getApplicant().getFirstName());
             String title3 = el.getStatus().toString();
-            Paragraph paragraph1 = new Paragraph(title1, new Font(baseFont, 12));
-            Paragraph paragraph2 = new Paragraph(title2, new Font(baseFont, 12));
-            Paragraph paragraph3 = new Paragraph(title3, new Font(baseFont, 12));
+            Paragraph paragraph1 = new Paragraph(title1, new Font(BASE_FONT, 12));
+            Paragraph paragraph2 = new Paragraph(title2, new Font(BASE_FONT, 12));
+            Paragraph paragraph3 = new Paragraph(title3, new Font(BASE_FONT, 12));
             table.addCell(paragraph1);
             table.addCell(paragraph2);
             table.addCell(paragraph3);
@@ -83,7 +84,7 @@ public class PDFReportCreate implements FileCreate {
     }
 
     private static BaseFont loadBaseFont(String fontName) {
-        BaseFont baseFont= null;
+        BaseFont baseFont = null;
         try {
             baseFont = BaseFont.createFont(fontName, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         } catch (DocumentException | IOException e) {

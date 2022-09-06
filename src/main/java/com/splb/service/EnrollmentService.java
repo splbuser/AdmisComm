@@ -22,10 +22,17 @@ import java.util.*;
 
 public class EnrollmentService extends Service {
 
+    /**
+     * none parametrized constructor for ConnectionPool initialize
+     */
     public EnrollmentService() {
         setConnectionBuilder(new PoolConnectionBuilder());
     }
 
+    /**
+     * parametrized constructor to create DirectConnection for testing
+     * @param connectionBuilder
+     */
     public EnrollmentService(DirectConnectionBuilder connectionBuilder) {
         this.connectionBuilder = connectionBuilder;
     }
@@ -39,6 +46,11 @@ public class EnrollmentService extends Service {
         }
     }
 
+    /**
+     * returns full Enrollment list
+     * @return List<Enrollment>
+     * @throws EnrollmentServiceException
+     */
     public List<Enrollment> getList() throws EnrollmentServiceException {
         try (Connection con = getConnection()) {
             return edao.getEnrollment(con);
@@ -48,6 +60,9 @@ public class EnrollmentService extends Service {
         }
     }
 
+    /**
+     * method returns applicant Enroll Status on demand
+     */
     public static EnrollStatus getStatus(int i) {
         return switch (i) {
             case 0 -> EnrollStatus.NO_ENROLLED;
@@ -58,6 +73,14 @@ public class EnrollmentService extends Service {
         };
     }
 
+    /**
+     * method for sorting enrolment list for displaying
+     * @param session
+     * @param type
+     * @param sortBy
+     * @return List<Enrollment>
+     * @throws EnrollmentServiceException
+     */
     public List<Enrollment> getEnrollmentsForRequest(HttpSession session, String type, String sortBy)
             throws EnrollmentServiceException {
         List<Enrollment> enrollment;
@@ -79,7 +102,7 @@ public class EnrollmentService extends Service {
     }
 
     /**
-     *method generates a report whose format depends on the query
+     * method generates a report whose format depends on the query
      * @param response
      * @param fileType
      * @throws EnrollmentServiceException

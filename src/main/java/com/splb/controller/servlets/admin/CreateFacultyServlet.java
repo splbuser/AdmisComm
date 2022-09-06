@@ -2,6 +2,7 @@ package com.splb.controller.servlets.admin;
 
 import java.io.IOException;
 
+import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Faculty;
@@ -11,11 +12,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import static java.util.Objects.nonNull;
-
 
 /**
  * Servlet for creating a new faculty.
@@ -32,7 +31,7 @@ public class CreateFacultyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                getServletContext().getRequestDispatcher(Pages.FACULTY_CREATE)
+        getServletContext().getRequestDispatcher(Pages.FACULTY_CREATE)
                 .forward(request, response);
     }
 
@@ -40,6 +39,7 @@ public class CreateFacultyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         FacultyService srv = new FacultyService();
+        HttpSession session = request.getSession();
         Faculty faculty = null;
         try {
             String name = request.getParameter("name");
@@ -54,12 +54,11 @@ public class CreateFacultyServlet extends HttpServlet {
                             FacultyDataValidator.validateName(subjectTwo)
             ) {
                 faculty = new Faculty(name, budgetPlaces, totalPlaces, subjectOne, subjectTwo);
-            }
-            if (nonNull(faculty)) {
                 srv.add(faculty);
                 response.sendRedirect(request.getContextPath() + Pages.FACULTY_TABLE);
             } else {
                 log.error("faculty was not added");
+                session.setAttribute(Messages.MESSAGE, Messages.WRONG_FACULTY);
                 response.sendRedirect(request.getContextPath() + Pages.ERROR);
             }
         } catch (Exception e) {

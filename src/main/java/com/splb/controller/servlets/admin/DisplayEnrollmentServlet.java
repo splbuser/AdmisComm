@@ -55,18 +55,21 @@ public class DisplayEnrollmentServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String notify = req.getParameter(Fields.ACTION);
+        String action = req.getParameter(Fields.ACTION);
         ApplicantService asrv = new ApplicantService();
         EnrollmentService esrv = new EnrollmentService();
         try {
-            if (nonNull(notify) && notify.equals("notify")) {
+            if (nonNull(action) && action.equals("notify")) {
                 asrv.notifyUsers();
             }
-            if (nonNull(notify) && notify.equals("getPDF")) {
+            if (nonNull(action) && action.equals("getPDF")) {
                 esrv.getReport(resp, FileType.CREATE_PDF);
             }
-            if (nonNull(notify) && notify.equals("getDOC")) {
+            if (nonNull(action) && action.equals("getDOC")) {
                 esrv.getReport(resp, FileType.CRETE_DOC);
+            }
+            if (nonNull(action) && action.equals("getXLS")) {
+                esrv.getReport(resp, FileType.CRETE_XLS);
             }
         } catch (UserServiceException | EnrollmentServiceException e) {
             log.error(e.getMessage());

@@ -10,13 +10,15 @@ import org.testng.Assert;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class FacultyServiceTest {
 
     public static final String BIOLOGY = "Biology";
     public static final String RENAMED_FIELD = "RenamedField";
     public static final String ENGINEERING = "Engineering";
+    public static final String PHYSICS = "Physics";
+    public static final String FACULTY_TEST = "FacultyTest";
+    public static final String SUBJ_ONE = "Subj1";
+    public static final String SUBJ_TWO = "Subj2";
     static FacultyService srv;
 
     @BeforeEach
@@ -42,16 +44,16 @@ class FacultyServiceTest {
 
     @Test
     void addTest() throws FacultyServiceException {
-      Assert.assertTrue(srv.add(new Faculty("FacultyTest", 2, 3, "Subj1", "Subj2")));
+      Assert.assertTrue(srv.add(new Faculty(FACULTY_TEST, 2, 3, SUBJ_ONE, SUBJ_TWO)));
         Assert.assertThrows(FacultyServiceException.class,
-                () -> srv.add(new Faculty("FacultyTest", 2, 3, "Subj1", "Subj2")));
+                () -> srv.add(new Faculty(FACULTY_TEST, 2, 3, SUBJ_ONE, SUBJ_TWO)));
     }
 
 
     @Test
     void getByNameTest() throws FacultyServiceException {
         Faculty faculty1 = srv.getByName(BIOLOGY);
-        Faculty faculty2 = srv.getByName("Physics");
+        Faculty faculty2 = srv.getByName(PHYSICS);
         Faculty faculty3 = srv.getByName(ENGINEERING);
         Assert.assertEquals(faculty1.getId(), 1);
         Assert.assertEquals(faculty2.getId(), 2);
@@ -64,7 +66,7 @@ class FacultyServiceTest {
         Faculty faculty2 = srv.getById(2);
         Faculty faculty3 = srv.getById(3);
         Assert.assertEquals(faculty1.getName(), BIOLOGY);
-        Assert.assertEquals(faculty2.getName(), "Physics");
+        Assert.assertEquals(faculty2.getName(), PHYSICS);
         Assert.assertEquals(faculty3.getName(), ENGINEERING);
     }
 

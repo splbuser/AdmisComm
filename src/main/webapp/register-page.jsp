@@ -23,27 +23,6 @@
 
 <%@include file="jsp/jspf/user-header.jspf" %>
 
-
-<%--<nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark py-3"--%>
-<%--     style="background: var(--bs-gray-100);border-color: var(--bs-gray-100);font-family: 'Noto Sans', sans-serif;color: #0f0f0f;text-align: center;box-shadow: inset 0px 0px #ffffff;--bs-dark: #0f0f0f;--bs-dark-rgb: 15,15,15;">--%>
-<%--    <div class="container-fluid">--%>
-<%--        <div id="lang-bar" style="width: 100px;">--%>
-<%--            <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"--%>
-<%--                                     style="color: rgb(255,255,255);width: 100px;   text-decoration: none;">Language</a>--%>
-<%--                <div class="dropdown-menu dropdown-menu-start dropdown-menu-dark" style="background: #303030;"><a--%>
-<%--                        class="dropdown-item" href="#" style="color: rgb(255,255,255);"><img src="assets/img/uk.png"--%>
-<%--                                                                                             style="width: 32px;">&nbsp;--%>
-<%--                    Українська</a><a class="dropdown-item" href="#" style="color: rgb(255,255,255);"><img--%>
-<%--                        src="assets/img/en_GB.png" style="width: 32px;">&nbsp;English</a></div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <div class="d-none d-md-block"><a class="btn btn-success" role="button" data-bss-hover-animate="pulse"--%>
-<%--                                          href="index.jsp"--%>
-<%--                                          style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;border-radius: 12px;">Home</a>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</nav>--%>
-
 <body style="background: #212121;">
 <div class="container" style="padding-top: 50px;font-family: 'Noto Sans', sans-serif;">
     <div class="card shadow-lg o-hidden border-0 my-5" data-aos="fade" data-aos-duration="700" data-aos-delay="200"
@@ -60,13 +39,31 @@
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control" type="text"
                                                                           id="userNameInput" placeholder="User name*"
-                                                                          name="user_name" style="border-radius: 8px;"
+                                                                          name="user_name" value="${validValues.get(0)}"
+                                                                          style="border-radius: 8px;"
                                                                           required=""
                                                                           title="Alphanumeric, digits and underscore are allowed">
+                                    <c:if test="${errors.get(0)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(0)}"/></p>
+                                    </c:if>
+                                    <c:if test="${error!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${error}"/></p>
+                                    </c:if>
                                 </div>
                                 <div class="col-sm-6"><input class="form-control" type="email" id="EmailInput"
                                                              placeholder="e-mail*" name="email"
-                                                             style="border-radius: 8px;" required="" title="local-part + @ + domain part"></div>
+                                                             value="${validValues.get(3)}"
+                                                             style="border-radius: 8px;" required=""
+                                                             title="local-part + @ + domain part">
+                                    <c:if test="${errors.get(3)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(3)}"/>
+                                        </p>
+                                    </c:if>
+                                </div>
+
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
@@ -74,31 +71,66 @@
                                                                           placeholder="Password*" name="password"
                                                                           style="border-radius: 8px;" required=""
                                                                           title="4-20 characters password with digits, lowercase or uppercase letter">
+                                    <c:if test="${errors.get(1)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(1)}"/></p>
+                                    </c:if>
                                 </div>
                                 <div class="col-sm-6"><input class="form-control form-control-user" type="password"
                                                              id="RepeatPasswordInput" placeholder="Repeat Password*"
                                                              name="password_repeat" style="border-radius: 8px;"
                                                              required=""
                                                              title="retype password again">
+                                    <c:if test="${errors.get(2)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(2)}"/></p>
+                                    </c:if>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control" type="text"
                                                                           id="firstNameInput" placeholder="First name*"
                                                                           name="first_name" style="border-radius: 8px;"
+                                                                          value="${validValues.get(4)}"
                                                                           required="">
+                                    <c:if test="${errors.get(4)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(4)}"/>
+                                        </p>
+                                    </c:if>
                                 </div>
                                 <div class="col-sm-6"><input class="form-control" type="text" id="lastNameInput-1"
                                                              placeholder="Last name*" name="last_name"
-                                                             style="border-radius: 8px;" required=""></div>
+                                                             value="${validValues.get(5)}"
+                                                             style="border-radius: 8px;" required="">
+                                    <c:if test="${errors.get(5)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(5)}"/>
+                                        </p>
+                                    </c:if>
+                                </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control" type="text"
                                                                           id="cityInput" placeholder="City*" name="city"
-                                                                          style="border-radius: 8px;" required=""></div>
+                                                                          value="${validValues.get(6)}"
+                                                                          style="border-radius: 8px;" required="">
+                                    <c:if test="${errors.get(6)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(6)}"/>
+                                        </p>
+                                    </c:if>
+                                </div>
                                 <div class="col-sm-6"><input class="form-control" type="text" id="regionInput"
                                                              placeholder="Region*" name="region"
-                                                             style="border-radius: 8px;" required=""></div>
+                                                             value="${validValues.get(7)}"
+                                                             style="border-radius: 8px;" required="">
+                                    <c:if test="${errors.get(7)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(7)}"/>
+                                        </p>
+                                    </c:if>
+                                </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0" style="width: 100%;"><input class="form-control"
@@ -106,8 +138,14 @@
                                                                                                id="EducationalinstitutionInput"
                                                                                                placeholder="Full name of the Educational Institution*"
                                                                                                name="educational_institution"
+                                                                                               value="${validValues.get(8)}"
                                                                                                style="border-radius: 8px;"
                                                                                                required="">
+                                    <c:if test="${errors.get(8)!=null}">
+                                        <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
+                                            <fmt:message key="${errors.get(8)}"/>
+                                        </p>
+                                    </c:if>
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -119,12 +157,15 @@
                             </button>
                             <hr>
                         </form>
-                        <div class="text-center"><a class="small" href="forgot-password.html"
-                                                    style="color: rgba(255,255,255,0.5);text-decoration: none;">Forgot
-                            Password?</a></div>
-                        <div class="text-center"><a class="small" href="login"
-                                                    style="color: rgba(255,255,255,0.5);text-decoration: none;">Already
-                            have an account? Login!</a></div>
+                        <c:remove var="errors" scope="session"/>
+                        <c:remove var="error" scope="session"/>
+                        <c:remove var="validValues" scope="session"/>
+                        <%--                        <div class="text-center"><a class="small" href="forgot-password.html"--%>
+                        <%--                                                    style="color: rgba(255,255,255,0.5);text-decoration: none;">Forgot--%>
+                        <%--                            Password?</a></div>--%>
+                        <%--                        <div class="text-center"><a class="small" href="login"--%>
+                        <%--                                                    style="color: rgba(255,255,255,0.5);text-decoration: none;">Already--%>
+                        <%--                            have an account? Login!</a></div>--%>
                     </div>
                 </div>
             </div>

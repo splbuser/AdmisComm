@@ -11,10 +11,10 @@ import java.util.List;
  */
 public class SortApplicantImpl implements Sort<Applicant> {
 
-    public static final String LAST_NAME = "byLastName";
-    public static final String CITY = "byCity";
-    public static final String REGION = "byRegion";
-    public static final String STATUS = "byStatus";
+    private static final String LAST_NAME = "byLastName";
+    private static final String CITY = "byCity";
+    private static final String REGION = "byRegion";
+    private static final String STATUS = "byStatus";
 
     @Override
     public List<Applicant> getSortedList(String type, String sortBy, List<Applicant> list) {
