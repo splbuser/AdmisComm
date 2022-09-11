@@ -109,6 +109,7 @@
 <script src="assets/js/bs-init.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="assets/js/Table.js"></script>
+<script src="assets/js/changeLocale.js"></script>
 </body>
 
 </html>

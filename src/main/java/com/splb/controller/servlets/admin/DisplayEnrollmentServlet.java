@@ -30,21 +30,15 @@ public class DisplayEnrollmentServlet extends HttpServlet {
         String type = request.getParameter(Fields.TYPE);
         String sortBy = request.getParameter(Fields.SORT_BY);
         List<Enrollment> enrollment = new ArrayList<>();
-        List<Applicant> notEnroll = null;
+        List<Applicant> notEnroll = new ArrayList<>();
         EnrollmentService srv = new EnrollmentService();
         ApplicantService asrv = new ApplicantService();
         try {
             enrollment = srv.getEnrollmentsForRequest(session, type, sortBy);
-        } catch (EnrollmentServiceException e) {
-            log.error(e.getMessage());
-            getServletContext().getRequestDispatcher(Pages.ERROR)
-                    .forward(request, response);
-        }
-        try {
             notEnroll = asrv.getNotEnroll();
-        } catch (UserServiceException e) {
+        } catch (EnrollmentServiceException | UserServiceException e) {
             log.error(e.getMessage());
-            getServletContext().getRequestDispatcher(Pages.ERROR)
+            request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
         request.setAttribute("enrollment", enrollment);
@@ -59,17 +53,14 @@ public class DisplayEnrollmentServlet extends HttpServlet {
         ApplicantService asrv = new ApplicantService();
         EnrollmentService esrv = new EnrollmentService();
         try {
-            if (nonNull(action) && action.equals("notify")) {
-                asrv.notifyUsers();
-            }
-            if (nonNull(action) && action.equals("getPDF")) {
-                esrv.getReport(resp, FileType.CREATE_PDF);
-            }
-            if (nonNull(action) && action.equals("getDOC")) {
-                esrv.getReport(resp, FileType.CRETE_DOC);
-            }
-            if (nonNull(action) && action.equals("getXLS")) {
-                esrv.getReport(resp, FileType.CRETE_XLS);
+            if (nonNull(action)) {
+                switch (action) {
+                    case ("notify") -> asrv.notifyUsers();
+                    case ("getDOC") -> esrv.getReport(resp, FileType.CREATE_DOC);
+                    case ("getPDF") -> esrv.getReport(resp, FileType.CREATE_PDF);
+                    case ("getXLS") -> esrv.getReport(resp, FileType.CREATE_XLS);
+                    default -> resp.sendRedirect(req.getContextPath() + Pages.ENROLLMENT);
+                }
             }
         } catch (UserServiceException | EnrollmentServiceException e) {
             log.error(e.getMessage());

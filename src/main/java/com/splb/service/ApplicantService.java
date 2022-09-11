@@ -54,6 +54,20 @@ public class ApplicantService extends Service {
     }
 
     /**
+     * update user info
+     * @param applicant
+     * @return
+     * @throws UserServiceException
+     */
+    public boolean update(Applicant applicant) throws UserServiceException {
+        try (Connection con = getConnection()) {
+            return udao.update(applicant, con);
+        }  catch (SQLException | UserDAOException e) {
+            log.error(e.getMessage());
+            throw new UserServiceException(e.getMessage());
+        }
+    }
+    /**
      * get applicant by ID
      *
      * @param id

@@ -2,15 +2,19 @@
      style="background: var(--bs-gray-100);border-color: var(--bs-gray-100);font-family: 'Noto Sans', sans-serif;color: #0f0f0f;text-align: center;box-shadow: inset 0 0 #ffffff;--bs-dark: #0f0f0f;--bs-dark-rgb: 15,15,15;">
     <div class="container-fluid">
         <div id="lang-bar" style="width: 100px;">
-            <div class="dropdown disabled"><a class="dropdown-toggle disabled" aria-expanded="false" data-bs-toggle="dropdown" href="#"
-                                     style="color: rgb(255,255,255);width: 100px;  text-decoration: none;"><fmt:message
+            <div class="dropdown disabled"><a class="dropdown-toggle disabled" aria-expanded="false"
+                                              data-bs-toggle="dropdown" href="#"
+                                              style="color: rgb(255,255,255);width: 100px;  text-decoration: none;"><fmt:message
                     key="label.language"/></a>
-                <div class="dropdown-menu dropdown-menu-start dropdown-menu-dark disabled" style="background: #303030;"><a
-                        class="dropdown-item" href="#" style="color: rgb(255,255,255);"><img
-                        src="assets/img/uk.png" alt="UA"
-                        style="width: 32px;"><fmt:message key="label.ukr"/></a><a class="dropdown-item" href="#"
-                                                                                  style="color: rgb(255,255,255);"><img
-                        src="assets/img/en_GB.png" alt="EN" style="width: 32px;"><fmt:message key="label.eng"/></a></div>
+                <div class="dropdown-menu dropdown-menu-start dropdown-menu-dark disabled" style="background: #303030;">
+                    <a
+                            class="dropdown-item" href="#" style="color: rgb(255,255,255);" id="ukr"><img
+                            src="assets/img/uk.png" alt="UA"
+                            style="width: 32px;" onClick="window.location.href=window.location.href"><fmt:message
+                            key="label.ukr"/></a><a class="dropdown-item" href="#"
+                                                    style="color: rgb(255,255,255);" id="enr"><img
+                        src="assets/img/en_GB.png" alt="EN" style="width: 32px;"
+                        onClick="window.location.href=window.location.href"><fmt:message key="label.eng"/></a></div>
             </div>
         </div>
         <div>
@@ -21,14 +25,19 @@
                                                                 href="DisplayFaculty"><fmt:message
                             key="label.manage_faculty"/></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link disabled" role="tab"
-                                                                data-bs-toggle="pill" style="color: var(--bs-gray);"><fmt:message
+                                                                data-bs-toggle="pill"
+                                                                style="color: var(--bs-gray);"><fmt:message
                             key="label.manage_applicants"/></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link disabled" role="tab"
                                                                 data-bs-toggle="pill" href="Statement"
-                                                                style="color: var(--bs-gray);" target="_parent"><fmt:message key="label.manage_statement"/></a></li>
+                                                                style="color: var(--bs-gray);"
+                                                                target="_parent"><fmt:message
+                            key="label.manage_statement"/></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link disabled" role="tab"
                                                                 data-bs-toggle="pill" href="Enrollment"
-                                                                style="color: var(--bs-gray);" target="_parent"><fmt:message key="label.enrollment"/></a>
+                                                                style="color: var(--bs-gray);"
+                                                                target="_parent"><fmt:message
+                            key="label.enrollment"/></a>
                     </li>
                 </ul>
             </div>
@@ -40,3 +49,4 @@
         </div>
     </div>
 </nav>
+<script src="assets/js/changeLocale.js"></script>

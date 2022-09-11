@@ -7,9 +7,9 @@ import com.splb.service.utils.filecreator.XLSReportCreate;
 
 public enum FileType {
 
+    CREATE_DOC(new DOCReportCreate()),
     CREATE_PDF(new PDFReportCreate()),
-    CRETE_DOC(new DOCReportCreate()),
-    CRETE_XLS(new XLSReportCreate());
+    CREATE_XLS(new XLSReportCreate());
 
     private final FileCreate fileCreate;
 

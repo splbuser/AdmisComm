@@ -55,6 +55,23 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
+    public boolean update(Applicant applicant, Connection con) throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.UPDATE_USER_INFO)
+        ) {
+            ps.setString(1, applicant.getLastName());
+            ps.setString(2, applicant.getFirstName());
+            ps.setString(3, applicant.getCity());
+            ps.setString(4, applicant.getRegion());
+            ps.setString(5, applicant.getEducationalInstitution());
+            ps.setInt(6, applicant.getId());
+            return ps.executeUpdate() == 1;
+        } catch (SQLException e) {
+            log.error(e.getMessage());
+            throw new UserDAOException("could not update applicant info: " + e.getMessage());
+        }
+    }
+
+    @Override
     public boolean delete(String userName, Connection con) throws UserDAOException {
         try (PreparedStatement ps = con.prepareStatement(SQLQuery.DELETE_USER)) {
             ps.setString(1, userName);
@@ -350,9 +367,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
         int length = 0;
         try (Statement st = con.createStatement();
         ) {
-            ResultSet rs = st.executeQuery(SQLQuery.SELECT_FROM_APPLICANT);
-            while (rs.next()) {
-                length++;
+            ResultSet rs = st.executeQuery(SQLQuery.COUNT_LENGTH);
+            if (rs.next()) {
+                length = rs.getInt(1);
             }
         } catch (SQLException e) {
             log.error(e.getMessage());

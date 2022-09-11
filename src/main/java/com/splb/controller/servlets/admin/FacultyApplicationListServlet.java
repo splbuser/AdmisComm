@@ -42,13 +42,11 @@ public class FacultyApplicationListServlet extends HttpServlet {
             req.setAttribute("applicants", applicantList);
             req.setAttribute("faculty_id", id);
             req.setAttribute("faculty_name", facultyName);
-            getServletContext()
-                    .getRequestDispatcher(Pages.MANAGE_APPLICANTS)
+            req.getRequestDispatcher(Pages.MANAGE_APPLICANTS)
                     .forward(req, resp);
         } catch (Exception e) {
             log.error(e.getMessage());
-            getServletContext()
-                    .getRequestDispatcher(Pages.ERROR)
+            req.getRequestDispatcher(Pages.ERROR)
                     .forward(req, resp);
         }
     }

@@ -32,8 +32,21 @@
     <div class="container">
         <div class="text-center p-4 p-lg-5" style="font-family: 'Noto Sans', sans-serif;"><i
                 class="material-icons fs-1 text-danger border rounded-circle border-4 border-warning">error</i>
-            <p class="font-monospace fs-2 fw-light text-danger mb-2"><fmt:message key="test.error"/></p>
-            <h5 class="font-monospace text-info mb-4"> ${sessionScope.message}</h5>
+            <p class="font-monospace fs-2 fw-light text-danger mb-2"><fmt:message key="text.error"/></p>
+            <c:if test="${empty sessionScope.message}">
+                <c:if test="${requestScope['javax.servlet.error.status_code']==404}">
+                    <c:set var="message" value="not_found_error"/>
+                    <h5 class="font-monospace text-info mb-4"> ${message}</h5>
+                </c:if>
+                <c:if test="${requestScope['javax.servlet.error.status_code']==503}">
+                    <c:set var="message" value="internal_error"/>
+                    <h5 class="font-monospace text-info mb-4"> ${message}</h5>
+                </c:if>
+            </c:if>
+            <c:if test="${not empty sessionScope.message}">
+                <h5 class="font-monospace text-info mb-4"> ${sessionScope.message}</h5>
+            </c:if>
+            <c:remove var="message" scope="session"/>
         </div>
     </div>
 </section>

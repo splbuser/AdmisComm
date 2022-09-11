@@ -46,11 +46,11 @@ public class StatementServlet extends HttpServlet {
             }
         } catch (StatementServiceException e) {
             log.error(MessageFormat.format("could not get statement: {}", e.getMessage()));
-            getServletContext().getRequestDispatcher(Pages.ERROR)
+            request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
         request.setAttribute("list", list);
-        getServletContext().getRequestDispatcher(Pages.STATEMENT_PAGE)
+        request.getRequestDispatcher(Pages.STATEMENT_PAGE)
                 .forward(request, response);
     }
 

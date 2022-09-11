@@ -17,10 +17,10 @@ public class LogoutServlet extends HttpServlet {
         Applicant user = (Applicant) session.getAttribute(Fields.USER);
         if (nonNull(user)) {
             session.invalidate();
-            getServletContext().getRequestDispatcher(Pages.INDEX)
+            request.getRequestDispatcher(Pages.INDEX)
                     .forward(request, response);
         } else {
-            getServletContext().getRequestDispatcher(Pages.ERROR)
+            request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
     }

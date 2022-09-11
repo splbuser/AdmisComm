@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,7 +18,7 @@ import static java.util.Objects.nonNull;
 public class DataValidator {
 
     private static final Logger log = LogManager.getLogger(DataValidator.class);
-    private static final String NAME_REGEX = "[A-Z][a-z]{1,20}";
+    private static final String NAME_REGEX = "[A-ZА-Я][a-zа-яё]{1,20}";
     private static final Pattern NAME_PATTERN = Pattern.compile(NAME_REGEX);
 
     // alphanumeric and underscore are allowed
@@ -77,6 +78,32 @@ public class DataValidator {
         validate[ERROR_REGION] = DataValidator.validateName(region);
         validate[ERROR_EDUC_INST] = DataValidator.validateName(educationalInstitution);
         return createErrorList(validate);
+    }
+
+    public static List<String> validateEditForm(String lastName, String firstName,
+                                                String city, String region, String educationalInstitution) {
+        boolean[] validate = new boolean[CAPACITY];
+        validate[ERROR_LOGIN] = true;
+        validate[ERROR_PASSWORD] = true;
+        validate[ERROR_RE_ENTER_PASSWORD] = true;
+        validate[ERROR_EMAIL] = true;
+        validate[ERROR_LASTNAME] = DataValidator.validateName(lastName);
+        validate[ERROR_FIRSTNAME] = DataValidator.validateName(firstName);
+        validate[ERROR_CITY] = DataValidator.validateName(city);
+        validate[ERROR_REGION] = DataValidator.validateName(region);
+        validate[ERROR_EDUC_INST] = DataValidator.validateName(educationalInstitution);
+        return createErrorList(validate);
+    }
+
+    public static List<String> getValidatedValues(String[] input, List<String> errors) {
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] != null) {
+                if (errors.get(i) != null) {
+                    input[i] = null;
+                }
+            }
+        }
+        return Arrays.asList(input);
     }
 
     private static List<String> createErrorList(boolean[] checks) {

@@ -1,6 +1,7 @@
 package com.splb.controller.filters;
 
 import com.splb.controller.pages.Pages;
+import com.splb.model.entity.Role;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,9 +17,10 @@ import static java.util.Objects.nonNull;
 /**
  * filter for admin access
  */
-@WebFilter(urlPatterns = {"/Reristerforfaculty", "/Submitresult"})
+@WebFilter(filterName = "AdminFilter", urlPatterns = {"/Reristerforfaculty", "/Submitresult"})
 public class AdminFilter implements Filter {
     private static final Logger log = LogManager.getLogger(AdminFilter.class);
+    public static final String ROLE = "role";
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
@@ -26,11 +28,11 @@ public class AdminFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpSession session = request.getSession(false);
 
-        if (nonNull(session) && nonNull(session.getAttribute("role"))) {
-            if (session.getAttribute("role").equals("ADMIN")) {
+        if (nonNull(session) && nonNull(session.getAttribute(ROLE))) {
+            if (session.getAttribute(ROLE).equals(Role.ADMIN)) {
                 log.info("ADMIN should not submit results");
                 response.sendRedirect(request.getContextPath() + Pages.ERROR);
-            } else if (session.getAttribute("role").equals("USER")) {
+            } else if (session.getAttribute(ROLE).equals(Role.USER)) {
                 chain.doFilter(req, res);
             }
         } else {

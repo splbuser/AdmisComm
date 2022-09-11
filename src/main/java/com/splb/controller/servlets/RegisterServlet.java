@@ -21,7 +21,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 public class RegisterServlet extends HttpServlet {
@@ -49,9 +48,7 @@ public class RegisterServlet extends HttpServlet {
                 String encodedPass = PassCrypt.encodeWithoutPadding(password.getBytes());
                 Applicant applicant = new Applicant(0, userName, encodedPass, lastName, firstName,
                         email, city, region, educationalInstitution);
-                boolean insertResult;
-
-                insertResult = srv.add(applicant);
+                boolean insertResult = srv.add(applicant);
                 if (insertResult) {
                     httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_SUCCESSFUL);
                     Sender s = new MailSender(email, MailText.REG_SUBJ.getText(), MailText.REG_BODY.getText());
@@ -60,7 +57,7 @@ public class RegisterServlet extends HttpServlet {
                 }
             } else {
                 String[] inputValues = {userName, null, null, email, lastName, firstName, city, region, educationalInstitution};
-                List<String> validValues = getValidatedValues(inputValues, errorMessages);
+                List<String> validValues = DataValidator.getValidatedValues(inputValues, errorMessages);
                 log.debug(errorMessages);
                 httpSession.setAttribute("validValues", validValues);
                 httpSession.setAttribute("errors", errorMessages);
@@ -81,22 +78,11 @@ public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         if (session.getAttribute(Fields.ID) == null) {
-            getServletContext().getRequestDispatcher(Pages.REGISTER)
+            req.getRequestDispatcher(Pages.REGISTER)
                     .forward(req, resp);
         } else {
-            getServletContext().getRequestDispatcher(Pages.INDEX)
+            req.getRequestDispatcher(Pages.INDEX)
                     .forward(req, resp);
         }
-    }
-
-    private List<String> getValidatedValues(String[] input, List<String> errors) {
-        for (int i = 0; i < input.length; i++) {
-            if (input[i] != null) {
-                if (errors.get(i) != null) {
-                    input[i] = null;
-                }
-            }
-        }
-        return Arrays.asList(input);
     }
 }

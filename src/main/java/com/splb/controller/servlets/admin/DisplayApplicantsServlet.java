@@ -83,7 +83,7 @@ public class DisplayApplicantsServlet extends HttpServlet {
                 }
             } catch (UserServiceException e) {
                 log.error(e.getMessage());
-                getServletContext().getRequestDispatcher(Pages.ERROR)
+                request.getRequestDispatcher(Pages.ERROR)
                         .forward(request, response);
             }
             noOfPages = srv.getPage(limit, listLength);

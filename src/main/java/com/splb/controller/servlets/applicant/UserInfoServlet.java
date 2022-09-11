@@ -42,18 +42,18 @@ public class UserInfoServlet extends HttpServlet {
                 currentUser = usrv.get(id);
                 resultCheck = asrv.checkSub(id);
                 result = asrv.get(id);
-                statement = ssrv.get(id);
                 faculties = usrv.getCustomList(id);
-                enrollment = esrv.get(id);
+                statement = ssrv.get(id);
                 if (statement.isEmpty()) {
                     request.setAttribute("empty_list_msg", Messages.ANY_RESULTS_STATEMENT);
                 }
+                enrollment = esrv.get(id);
                 if (enrollment == null) {
                     request.setAttribute("empty_enroll", Messages.NO_ENROLL);
                 }
             } catch (ServiceException e) {
                 log.error(e.getMessage());
-                getServletContext().getRequestDispatcher(Pages.ERROR)
+               request.getRequestDispatcher(Pages.ERROR)
                         .forward(request, response);
             }
             request.setAttribute("currentUser", currentUser);
@@ -62,10 +62,10 @@ public class UserInfoServlet extends HttpServlet {
             request.setAttribute("faculties", faculties);
             request.setAttribute("statement", statement);
             request.setAttribute("result", result);
-            getServletContext().getRequestDispatcher(Pages.USER_INFO)
+            request.getRequestDispatcher(Pages.USER_INFO)
                     .forward(request, response);
         } else {
-            getServletContext().getRequestDispatcher(Pages.ERROR)
+            request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
     }

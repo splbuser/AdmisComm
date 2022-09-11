@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * filter for unsigned user access
  */
-@WebFilter(urlPatterns = {"/DisplayFaculty", "/DisplayApplicants", "/Statement", "/Enrollment",
+@WebFilter(filterName = "AllUserFilter", urlPatterns = {"/DisplayFaculty", "/DisplayApplicants", "/Statement", "/Enrollment",
         "/create", "/delete", "/edit", "/watchlist", "/blockbusting", "/logout", "/finalize",
         "/Reristerforthisfaculty", "/Userinfo", "/addresult", "/Submitresult", "/Reristerforfaculty", "/user-index.jsp"})
 

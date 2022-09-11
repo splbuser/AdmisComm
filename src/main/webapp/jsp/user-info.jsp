@@ -69,8 +69,6 @@
                                 ${currentUser.educationalInstitution}</p>
                         </div>
                     </div>
-                    <%--                    <input id="ajaxfile" type="file"/> <br/>--%>
-                    <%--                    <button onclick="uploadFile()"> Upload </button>--%>
                     <form method="post" action="upload" enctype="multipart/form-data">
                         <c:if test="${sessionScope.user.uploaded == null}">
                             <input type="file" name="file"/>
@@ -78,7 +76,7 @@
                         </c:if>
                         <c:if test="${sessionScope.user.uploaded != null}">
                             <p style="color: aqua"><a href="/AdmissionsCommittee/images/${sessionScope.user.uploaded}"
-                                                      style="text-decoration: none">
+                                                      style="text-decoration: none" target="_blank">
                                 <fmt:message key="label.upload_suc"/></a></p>
                         </c:if>
                     </form>
@@ -148,22 +146,6 @@
                                 key="label.you_reg_for"/></h5>
                         <c:forEach var="faculties" items="${faculties}">
                             <p class="card-text">${faculties.name}</p>
-                            <%--                        <div class="row">--%>
-                            <%--                            <div class="col-4 text-center">--%>
-                            <%--                                <p>statement.faculty.subjOne</p>--%>
-                            <%--                            </div>--%>
-                            <%--                            <div class="col-2">--%>
-                            <%--                                <p class="text-white-50 justify-content-xl-center"--%>
-                            <%--                                   style="border-radius: 8px;background: #404040;">statement.firstSubject</p>--%>
-                            <%--                            </div>--%>
-                            <%--                            <div class="col-4">--%>
-                            <%--                                <p>statement.faculty.subjTwo</p>--%>
-                            <%--                            </div>--%>
-                            <%--                            <div class="col-2">--%>
-                            <%--                                <p class="text-white-50"--%>
-                            <%--                                   style="border-radius: 8px;background: #404040;">statement.secondSubject</p>--%>
-                            <%--                            </div>--%>
-                            <%--                        </div>--%>
                         </c:forEach>
                     </div>
                 </div>

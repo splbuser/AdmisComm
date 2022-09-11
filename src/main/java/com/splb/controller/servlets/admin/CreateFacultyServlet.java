@@ -31,7 +31,7 @@ public class CreateFacultyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher(Pages.FACULTY_CREATE)
+        request.getRequestDispatcher(Pages.FACULTY_CREATE)
                 .forward(request, response);
     }
 
