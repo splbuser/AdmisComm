@@ -9,7 +9,6 @@ import com.splb.service.exceptions.ApplicantResultServiceException;
 import com.splb.service.exceptions.FacultyServiceException;
 import com.splb.service.utils.GradeValidator;
 import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +16,6 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 
 
-@WebServlet("/Reristerforthisfaculty")
 public class RegisterForSingleFacultyServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(RegisterForSingleFacultyServlet.class);
@@ -29,13 +27,11 @@ public class RegisterForSingleFacultyServlet extends HttpServlet {
             int id = Integer.parseInt(request.getParameter(Fields.ID));
             Faculty faculty = srv.getById(id);
             request.setAttribute(Fields.FACULTY, faculty);
-            getServletContext()
-                    .getRequestDispatcher(Pages.REGISTER_FOR_FACULTY)
+            request.getRequestDispatcher(Pages.REGISTER_FOR_FACULTY)
                     .forward(request, response);
         } catch (FacultyServiceException e) {
             log.error(e.getMessage());
-            getServletContext()
-                    .getRequestDispatcher(Pages.ERROR)
+            request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
     }

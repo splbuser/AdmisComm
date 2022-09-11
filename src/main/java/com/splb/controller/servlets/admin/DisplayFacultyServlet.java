@@ -34,7 +34,8 @@ public class DisplayFacultyServlet extends HttpServlet {
         FacultyService srv = new FacultyService();
         List<Faculty> faculty = new ArrayList<>();
         Faculty getFaculty = null;
-        /* We get a sorted list according to required parameters,
+
+        /* Get a sorted list according to required parameters,
          * first we check request, then session. Everything that
          * comes from the request is thrown into the session, so
          * that the next query will keep the sorting order.

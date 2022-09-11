@@ -1,6 +1,7 @@
 package com.splb.controller.filters;
 
 import com.splb.controller.pages.Pages;
+import com.splb.model.entity.Role;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,9 +17,10 @@ import static java.util.Objects.nonNull;
 /**
  * filter for registered user access
  */
-@WebFilter(urlPatterns = {"/DisplayFaculty", "/DisplayApplicants", "/Statement", "/Enrollment"})
+@WebFilter(filterName = "UserFilter", urlPatterns = {"/DisplayFaculty", "/DisplayApplicants", "/Statement", "/Enrollment"})
 public class UserFilter implements Filter {
     private static final Logger log = LogManager.getLogger(UserFilter.class);
+    public static final String ROLE = "role";
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
@@ -26,11 +28,11 @@ public class UserFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpSession session = request.getSession(false);
 
-        if (nonNull(session) && nonNull(session.getAttribute("role"))) {
-            if (session.getAttribute("role").equals("USER")) {
+        if (nonNull(session) && nonNull(session.getAttribute(ROLE))) {
+            if (session.getAttribute(ROLE).equals(Role.USER)) {
                 log.info("USER access denied");
                 response.sendRedirect(request.getContextPath() + Pages.ERROR);
-            } else if (session.getAttribute("role").equals("ADMIN")) {
+            } else if (session.getAttribute(ROLE).equals(Role.ADMIN)) {
                 chain.doFilter(req, res);
             }
         } else {

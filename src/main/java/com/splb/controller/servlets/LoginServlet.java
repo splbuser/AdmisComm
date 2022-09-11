@@ -4,6 +4,7 @@ import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Applicant;
+import com.splb.model.entity.Role;
 import com.splb.service.ApplicantResultService;
 import com.splb.service.ApplicantService;
 import com.splb.service.exceptions.ApplicantResultServiceException;
@@ -24,8 +25,6 @@ import static java.util.Objects.nonNull;
 public class LoginServlet extends HttpServlet {
     private static final Logger log = LogManager.getLogger(LoginServlet.class);
     public static final String ROLE = "role";
-    public static final String ROLE_ADMIN = "ADMIN";
-    public static final String ROLE_USER = "USER";
     public static final String USER_NAME = "user_name";
     public static final String HELLOUSER = "hellouser";
     public static final String RECAPTCHA_RESPONSE = "g-recaptcha-response";
@@ -53,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher(Pages.LOGIN_PAGE)
+        req.getRequestDispatcher(Pages.LOGIN_PAGE)
                 .forward(req, resp);
     }
 
@@ -95,10 +94,10 @@ public class LoginServlet extends HttpServlet {
     private static void setRole(HttpServletRequest req, HttpServletResponse resp, HttpSession httpSession,
                                 String userName, Applicant user) throws IOException {
         if (user.isAdminStatus()) {
-            httpSession.setAttribute(ROLE, ROLE_ADMIN);
+            httpSession.setAttribute(ROLE, Role.ADMIN);
             resp.sendRedirect(req.getContextPath() + Pages.FACULTY_TABLE);
         } else {
-            httpSession.setAttribute(ROLE, ROLE_USER);
+            httpSession.setAttribute(ROLE, Role.USER);
             resp.sendRedirect(req.getContextPath() + Pages.USER_INDEX);
         }
         log.info("{} log in", userName);

@@ -18,6 +18,16 @@ public interface UserDAO {
      */
     boolean addApplicant(Applicant applicant, Connection con) throws UserDAOException;
 
+
+    /**
+     * update user info
+     * @param applicant
+     * @param con
+     * @return
+     * @throws UserDAOException
+     */
+    boolean update(Applicant applicant, Connection con) throws UserDAOException;
+
     /**
      * delete applicant by username
      * @param userName

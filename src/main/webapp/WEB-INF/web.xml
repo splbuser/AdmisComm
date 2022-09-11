@@ -134,6 +134,22 @@
         <servlet-name>DisplayEnrollmentServlet</servlet-name>
         <url-pattern>/Enrollment</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>RegisterForSingleFacultyServlet</servlet-name>
+        <servlet-class>com.splb.controller.servlets.applicant.RegisterForSingleFacultyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterForSingleFacultyServlet</servlet-name>
+        <url-pattern>/Reristerforthisfaculty</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditProfileServlet</servlet-name>
+        <servlet-class>com.splb.controller.servlets.applicant.EditProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditProfileServlet</servlet-name>
+        <url-pattern>/Editinfo</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>60</session-timeout>

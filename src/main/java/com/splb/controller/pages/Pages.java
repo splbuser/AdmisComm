@@ -11,6 +11,8 @@ public abstract class Pages {
     public static final String REGISTER = "/register-page.jsp";
     public static final String LOGIN = "/Login";
     public static final String USER_INFO = "/jsp/user-info.jsp";
+    public static final String USER_INFO_SHOW = "/Userinfo";
+    public static final String USER_INFO_EDIT = "/jsp/user-info-edit.jsp";
     public static final String MANAGE_APPLICANTS = "/jsp/admin-manage-facultys_applicants.jsp";
     public static final String ERROR = "/error-page.jsp";
     public static final String LOGIN_PAGE = "/login-page.jsp";

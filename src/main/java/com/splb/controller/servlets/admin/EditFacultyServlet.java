@@ -15,13 +15,13 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 
 /**
- *  In doGet method, the servlet receives the id parameter and uses it to retrieve the
- *  corresponding object from the database. If the object is found, it's transferred to
- *  the faculty-edit.jsp page. A form is defined here, which displays editable data in
- *  form fields. When the button is pressed, the data goes back to the EditServlet servlet.
- *  If the object is not found or some error occurred, the page error-page.jsp is returned.
- *  In the doPost method, we receive the sent data and transfer it to the database through
- *  the update() method.
+ * In doGet method, the servlet receives the id parameter and uses it to retrieve the
+ * corresponding object from the database. If the object is found, it's transferred to
+ * the faculty-edit.jsp page. A form is defined here, which displays editable data in
+ * form fields. When the button is pressed, the data goes back to the EditServlet servlet.
+ * If the object is not found or some error occurred, the page error-page.jsp is returned.
+ * In the doPost method, we receive the sent data and transfer it to the database through
+ * the update() method.
  */
 
 public class EditFacultyServlet extends HttpServlet {
@@ -39,18 +39,15 @@ public class EditFacultyServlet extends HttpServlet {
                 id = Integer.parseInt(request.getParameter(Fields.ID));
                 faculty = srv.getById(id);
                 request.setAttribute("faculty", faculty);
-                getServletContext()
-                        .getRequestDispatcher(Pages.EDIT_FACULTY)
+                request.getRequestDispatcher(Pages.EDIT_FACULTY)
                         .forward(request, response);
             } else {
-                getServletContext()
-                        .getRequestDispatcher(Pages.ERROR)
+                request.getRequestDispatcher(Pages.ERROR)
                         .forward(request, response);
             }
         } catch (Exception e) {
             log.error(e.getMessage());
-            getServletContext()
-                    .getRequestDispatcher(Pages.ERROR)
+            request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
     }
@@ -67,12 +64,11 @@ public class EditFacultyServlet extends HttpServlet {
             int bp = Integer.parseInt(request.getParameter(Fields.FACULTY_BUDGET_PLACES));
             String so = request.getParameter(Fields.SUBJECT_ONE);
             String st = request.getParameter(Fields.SUBJECT_TWO);
-            if (
-                    id > 0 &&
-                            FacultyDataValidator.validateName(name) &&
-                            FacultyDataValidator.validateCapacity(bp, tp) &&
-                            FacultyDataValidator.validateName(so) &&
-                            FacultyDataValidator.validateName(st)
+            if (id > 0 &&
+                    FacultyDataValidator.validateName(name) &&
+                    FacultyDataValidator.validateCapacity(bp, tp) &&
+                    FacultyDataValidator.validateName(so) &&
+                    FacultyDataValidator.validateName(st)
             ) {
                 faculty = new Faculty(id, name, bp, tp, so, st);
                 if (srv.update(faculty)) {
@@ -83,13 +79,12 @@ public class EditFacultyServlet extends HttpServlet {
                     response.sendRedirect(request.getContextPath() + Pages.ERROR);
                 }
             } else {
-                response.sendRedirect(request.getContextPath() + Pages.ERROR);
                 log.error("Wrong input data");
+                response.sendRedirect(request.getContextPath() + Pages.ERROR);
             }
         } catch (Exception e) {
-            log.error(e.getMessage());
-            getServletContext().getRequestDispatcher(Pages.ERROR)
-                    .forward(request, response);
+            log.error("Wrong input data");
+            response.sendRedirect(request.getContextPath() + Pages.ERROR);
         }
     }
 }

@@ -35,15 +35,15 @@ public class FacultyRegServlet extends HttpServlet {
                 }
                 request.setAttribute("currentUser", currentUser);
                 request.setAttribute("faculty", faculties);
-                getServletContext().getRequestDispatcher(Pages.REGISTER_FOR_FACULTY)
+                request.getRequestDispatcher(Pages.REGISTER_FOR_FACULTY)
                         .forward(request, response);
             } catch (FacultyServiceException e) {
                 log.error(e.getMessage());
-                getServletContext().getRequestDispatcher(Pages.ERROR)
+                request.getRequestDispatcher(Pages.ERROR)
                         .forward(request, response);
             }
         } else {
-            getServletContext().getRequestDispatcher(Pages.ERROR)
+            request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
     }

@@ -1,89 +1,44 @@
-[DEBUG] 2022-09-05 21:54:36.553 [main] ZipPackage - Save core properties part
-[DEBUG] 2022-09-05 21:54:36.557 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 21:54:36.613 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 21:54:36.617 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 21:54:36.619 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 21:54:36.627 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 21:54:36.628 [main] ZipPackage - Save part 'word/settings.xml'
-[INFO ] 2022-09-05 21:54:36.635 [main] DOCReportCreate - create_table.docx written successfully
-[DEBUG] 2022-09-05 21:54:36.635 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 21:54:36.636 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 21:54:36.637 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 21:54:36.637 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 21:54:36.638 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 21:54:36.639 [main] ZipPackage - Save part 'word/settings.xml'
-[DEBUG] 2022-09-05 21:57:32.800 [main] ZipPackage - Save core properties part
-[DEBUG] 2022-09-05 21:57:32.802 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 21:57:32.850 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 21:57:32.854 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 21:57:32.855 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 21:57:32.861 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 21:57:32.862 [main] ZipPackage - Save part 'word/settings.xml'
-[INFO ] 2022-09-05 21:57:32.869 [main] DOCReportCreate - create_table.docx written successfully
-[DEBUG] 2022-09-05 21:57:32.870 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 21:57:32.871 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 21:57:32.871 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 21:57:32.872 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 21:57:32.872 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 21:57:32.874 [main] ZipPackage - Save part 'word/settings.xml'
-[DEBUG] 2022-09-05 22:16:48.982 [main] ZipPackage - Save core properties part
-[DEBUG] 2022-09-05 22:16:48.983 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 22:16:49.034 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 22:16:49.037 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 22:16:49.039 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 22:16:49.046 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 22:16:49.047 [main] ZipPackage - Save part 'word/settings.xml'
-[DEBUG] 2022-09-05 22:16:49.047 [main] ZipPackage - Save part 'word/styles.xml'
-[DEBUG] 2022-09-05 22:16:49.052 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 22:16:49.053 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 22:16:49.054 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 22:16:49.054 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 22:16:49.055 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 22:16:49.056 [main] ZipPackage - Save part 'word/settings.xml'
-[DEBUG] 2022-09-05 22:16:49.056 [main] ZipPackage - Save part 'word/styles.xml'
-[INFO ] 2022-09-05 22:16:49.058 [main] DOCReportCreate - create_table.docx written successfully
-[DEBUG] 2022-09-05 22:18:32.134 [main] ZipPackage - Save core properties part
-[DEBUG] 2022-09-05 22:18:32.136 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 22:18:32.186 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 22:18:32.189 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 22:18:32.191 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 22:18:32.198 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 22:18:32.199 [main] ZipPackage - Save part 'word/settings.xml'
-[DEBUG] 2022-09-05 22:18:32.199 [main] ZipPackage - Save part 'word/styles.xml'
-[DEBUG] 2022-09-05 22:18:32.206 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 22:18:32.206 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 22:18:32.207 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 22:18:32.207 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 22:18:32.208 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 22:18:32.209 [main] ZipPackage - Save part 'word/settings.xml'
-[DEBUG] 2022-09-05 22:18:32.209 [main] ZipPackage - Save part 'word/styles.xml'
-[INFO ] 2022-09-05 22:18:32.211 [main] DOCReportCreate - create_table.docx written successfully
-[ERROR] 2022-09-05 22:32:11.308 [main] PoolConnectionBuilder - PoolConnectionBuilder error: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
-[DEBUG] 2022-09-05 22:32:33.625 [main] ZipPackage - Save core properties part
-[DEBUG] 2022-09-05 22:32:33.627 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 22:32:33.670 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 22:32:33.673 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 22:32:33.675 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 22:32:33.682 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 22:32:33.683 [main] ZipPackage - Save part 'word/settings.xml'
-[INFO ] 2022-09-05 22:32:33.689 [main] DOCReportCreate - create_table.docx written successfully
-[DEBUG] 2022-09-05 22:32:33.690 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 22:32:33.691 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 22:32:33.691 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 22:32:33.692 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 22:32:33.692 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 22:32:33.693 [main] ZipPackage - Save part 'word/settings.xml'
-[DEBUG] 2022-09-05 22:33:13.855 [main] ZipPackage - Save core properties part
-[DEBUG] 2022-09-05 22:33:13.857 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 22:33:13.897 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 22:33:13.900 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 22:33:13.901 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 22:33:13.907 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 22:33:13.908 [main] ZipPackage - Save part 'word/settings.xml'
-[INFO ] 2022-09-05 22:33:13.914 [main] DOCReportCreate - create_table.docx written successfully
-[DEBUG] 2022-09-05 22:33:13.915 [main] ZipPackage - Save content types part
-[DEBUG] 2022-09-05 22:33:13.916 [main] ZipPackage - Save package relationships
-[DEBUG] 2022-09-05 22:33:13.916 [main] ZipPackage - Save part 'docProps/app.xml'
-[DEBUG] 2022-09-05 22:33:13.917 [main] ZipPackage - Save part 'docProps/core.xml'
-[DEBUG] 2022-09-05 22:33:13.918 [main] ZipPackage - Save part 'word/document.xml'
-[DEBUG] 2022-09-05 22:33:13.918 [main] ZipPackage - Save part 'word/settings.xml'
+[ERROR] 2022-09-06 14:38:15.610 [main] FacultyDAOImpl - Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-06 14:38:15.616 [main] FacultyService - could not add faculty: Duplicate entry 'FacultyTest' for key 'faculty.name_UNIQUE'
+[ERROR] 2022-09-06 14:38:15.757 [main] ApplicantResultDAOImpl - Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-06 14:38:15.757 [main] ApplicantResultService - could not add Applicant's result: Duplicate entry '14' for key 'applicant_results.PRIMARY'
+[ERROR] 2022-09-06 14:38:15.781 [main] ApplicantResultDAOImpl - Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-06 14:38:15.781 [main] ApplicantResultService - could not add result for faculty's subject: Duplicate entry '14-1' for key 'applicant_has_faculty.PRIMARY'
+[INFO ] 2022-09-06 14:38:15.811 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-06 14:38:15.857 [main] FacultyDAOImpl - Duplicate entry 'TestFaculty1' for key 'faculty.name_UNIQUE'
+[INFO ] 2022-09-06 14:38:15.887 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-06 14:38:15.898 [main] ApplicantResultDAOImpl - Duplicate entry '2-1' for key 'applicant_has_faculty.PRIMARY'
+[ERROR] 2022-09-06 14:38:15.933 [main] ApplicantResultDAOImpl - Duplicate entry '15' for key 'applicant_results.PRIMARY'
+[INFO ] 2022-09-06 14:38:15.937 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-06 14:38:16.313 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-06 14:38:16.324 [main] EnrollmentDAOImpl - Duplicate entry '1-8' for key 'enrollment.PRIMARY'
+[INFO ] 2022-09-06 14:38:16.358 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[ERROR] 2022-09-06 14:38:16.410 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.410 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.411 [main] StatementDAOImpl - Duplicate entry '1-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.412 [main] StatementDAOImpl - Duplicate entry '1-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.413 [main] StatementDAOImpl - Duplicate entry '2-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.413 [main] StatementDAOImpl - Duplicate entry '2-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.414 [main] StatementDAOImpl - Duplicate entry '2-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.415 [main] StatementDAOImpl - Duplicate entry '2-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.415 [main] StatementDAOImpl - Duplicate entry '3-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.416 [main] StatementDAOImpl - Duplicate entry '3-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.417 [main] StatementDAOImpl - Duplicate entry '3-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.418 [main] StatementDAOImpl - Duplicate entry '3-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.418 [main] StatementDAOImpl - Duplicate entry '4-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.419 [main] StatementDAOImpl - Duplicate entry '4-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.420 [main] StatementDAOImpl - Duplicate entry '4-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.420 [main] StatementDAOImpl - Duplicate entry '4-5' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.421 [main] StatementDAOImpl - Duplicate entry '5-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.422 [main] StatementDAOImpl - Duplicate entry '5-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.423 [main] StatementDAOImpl - Duplicate entry '5-4' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:16.423 [main] StatementDAOImpl - Duplicate entry '5-5' for key 'statement_app.PRIMARY'
+[INFO ] 2022-09-06 14:38:16.457 [main] DirectConnectionBuilder - connection via DirectCB@Test
+[INFO ] 2022-09-06 14:38:19.187 [main] MailSender - e-mail sent to therealant@gmail.com
+[ERROR] 2022-09-06 14:38:19.272 [main] StatementDAOImpl - Duplicate entry '1-1' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:19.272 [main] StatementService - could not add user to faculty: Duplicate entry '1-1' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:19.277 [main] StatementDAOImpl - Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:19.278 [main] StatementService - could not add user to faculty: Duplicate entry '1-2' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:19.282 [main] StatementDAOImpl - Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[ERROR] 2022-09-06 14:38:19.282 [main] StatementService - could not add user to faculty: Duplicate entry '1-3' for key 'statement_app.PRIMARY'
+[DEBUG] 2022-09-06 14:38:56.237 [main] GradeValidator - could not validate For input string: "f,!,0,50"

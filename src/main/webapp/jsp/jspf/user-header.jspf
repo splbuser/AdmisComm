@@ -6,12 +6,15 @@
                                      style="color: rgb(255,255,255);width: 100px;  text-decoration: none;"><fmt:message
                     key="label.language"/></a>
                 <div class="dropdown-menu dropdown-menu-start dropdown-menu-dark" style="background: #303030;"><a
-                        class="dropdown-item" href="?cookieLocale=uk" style="color: rgb(255,255,255);"><img
-                        src="assets/img/uk.png" alt="UA" style="width: 32px;"><fmt:message key="label.ukr"/></a><a class="dropdown-item"
-                                                                                               href="?cookieLocale=en"
-                                                                                               style="color: rgb(255,255,255);"><img
+                        class="dropdown-item" href="?cookieLocale=uk" style="color: rgb(255,255,255);" id="ukr"><img
+                        src="assets/img/uk.png" alt="UA" style="width: 32px;"
+                        onClick="window.location.href=window.location.href"><fmt:message key="label.ukr"/></a><a
+                        class="dropdown-item"
+                        href="?cookieLocale=en"
+                        style="color: rgb(255,255,255);" id="eng"><img
                         src="assets/img/en_GB.png" alt="EN"
-                        style="width: 32px;"><fmt:message key="label.eng"/></a></div>
+                        style="width: 32px;" onClick="window.location.href=window.location.href"><fmt:message
+                        key="label.eng"/></a></div>
             </div>
         </div>
         <div style="padding-left: 20px;"><a class="btn btn-dark border rounded-circle" role="button"
@@ -29,6 +32,8 @@
                                 class="dropdown-item" href="Userinfo"><em
                                 class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></em><fmt:message
                                 key="text.profile"/></a>
+                            <a class="dropdown-item" href="Editinfo"><i class="far fa-edit fa-sm fa-fw me-2 text-gray-400"></i> <fmt:message
+                                    key="label.profile_edit"/></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="logout"><em
                                     class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></em><fmt:message
@@ -40,3 +45,4 @@
         </ul>
     </div>
 </nav>
+<script src="assets/js/changeLocale.js"></script>

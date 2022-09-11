@@ -6,11 +6,17 @@
                                      style="color: rgb(255,255,255);width: 100px;  text-decoration: none;"><fmt:message
                     key="label.language"/></a>
                 <div class="dropdown-menu dropdown-menu-start dropdown-menu-dark" style="background: #303030;"><a
-                        class="dropdown-item" href="?cookieLocale=uk" style="color: rgb(255,255,255);"><img
+                        class="dropdown-item" href="?cookieLocale=uk" style="color: rgb(255,255,255);" id="ukr"><img
                         src="assets/img/uk.png" alt="UA"
-                        style="width: 32px;"><fmt:message key="label.ukr"/></a><a class="dropdown-item" href="?cookieLocale=en"
-                                     style="color: rgb(255,255,255);"><img
-                        src="assets/img/en_GB.png" alt="EN" style="width: 32px;"><fmt:message key="label.eng"/></a></div>
+                        style="width: 32px;" onClick="refreshPage()"><fmt:message
+                        key="label.ukr"/></a><a class="dropdown-item" href="?cookieLocale=en"
+                                                style="color: rgb(255,255,255);" id="eng"><img
+                        src="assets/img/en_GB.png" alt="EN" style="width: 32px;"
+                        onClick="refreshPage()"><fmt:message key="label.eng"/></a></div>
+                <script>
+                    function refreshPage() {
+                        window.location.reload();
+                    }</script>
             </div>
         </div>
         <div>
@@ -23,15 +29,18 @@
                     ><fmt:message
                             key="label.manage_faculty"/></a>
                     </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link <c:out value="${type == '2' ? 'active': ''}"/>" role="tab"
-                                                                href="DisplayApplicants"
-                                                                style="color: rgb(255,255,255);"><fmt:message
+                    <li class="nav-item" role="presentation"><a
+                            class="nav-link <c:out value="${type == '2' ? 'active': ''}"/>" role="tab"
+                            href="DisplayApplicants"
+                            style="color: rgb(255,255,255);"><fmt:message
                             key="label.manage_applicants"/></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link <c:out value="${type == '3' ? 'active': ''}"/>" role="tab"
-                                                                href="Statement" style="color: rgb(255,255,255);"
+                    <li class="nav-item" role="presentation"><a
+                            class="nav-link <c:out value="${type == '3' ? 'active': ''}"/>" role="tab"
+                            href="Statement" style="color: rgb(255,255,255);"
                     ><fmt:message key="label.manage_statement"/></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link <c:out value="${type == '4' ? 'active': ''}"/>" role="tab"
-                                                                href="Enrollment" style="color: rgb(255,255,255);"
+                    <li class="nav-item" role="presentation"><a
+                            class="nav-link <c:out value="${type == '4' ? 'active': ''}"/>" role="tab"
+                            href="Enrollment" style="color: rgb(255,255,255);"
                     ><fmt:message key="label.enrollment"/></a></li>
                 </ul>
             </div>
@@ -43,3 +52,4 @@
         </div>
     </div>
 </nav>
+<%--<script src="assets/js/changeLocale.js"></script>--%>
