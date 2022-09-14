@@ -50,7 +50,8 @@ public class SetNewPasswordServlet extends HttpServlet {
                 request.getRequestDispatcher(Pages.LOGIN)
                         .forward(request, response);
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error(e.getMessage());
+                response.sendRedirect(Pages.ERROR);
             }
         } else {
             request.setAttribute(Messages.MESSAGE, "Password is invalid. Try again");
