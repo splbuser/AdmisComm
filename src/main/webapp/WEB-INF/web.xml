@@ -150,13 +150,37 @@
         <servlet-name>EditProfileServlet</servlet-name>
         <url-pattern>/Editinfo</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ForgotPassword</servlet-name>
+        <servlet-class>com.splb.controller.servlets.resetpass.ForgotPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForgotPassword</servlet-name>
+        <url-pattern>/forgotPassword</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ValidateOtp</servlet-name>
+        <servlet-class>com.splb.controller.servlets.resetpass.ValidateOtpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ValidateOtp</servlet-name>
+        <url-pattern>/ValidateOtp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>NewPassword</servlet-name>
+        <servlet-class>com.splb.controller.servlets.resetpass.SetNewPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewPassword</servlet-name>
+        <url-pattern>/newPassword</url-pattern>
+    </servlet-mapping>
 
     <session-config>
         <session-timeout>60</session-timeout>
     </session-config>
     <error-page>
         <error-code>404</error-code>
-        <location>/error-page.jsp</location>
+        <location>/error-404.jsp</location>
     </error-page>
     <error-page>
         <error-code>500</error-code>

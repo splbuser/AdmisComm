@@ -17,7 +17,7 @@ import static java.util.Objects.nonNull;
 /**
  * filter for admin access
  */
-@WebFilter(filterName = "AdminFilter", urlPatterns = {"/Reristerforfaculty", "/Submitresult"})
+@WebFilter(filterName = "AdminFilter", urlPatterns = {"/Reristerforfaculty", "/Submitresult", "/user-index.jsp"})
 public class AdminFilter implements Filter {
     private static final Logger log = LogManager.getLogger(AdminFilter.class);
     public static final String ROLE = "role";
@@ -30,8 +30,8 @@ public class AdminFilter implements Filter {
 
         if (nonNull(session) && nonNull(session.getAttribute(ROLE))) {
             if (session.getAttribute(ROLE).equals(Role.ADMIN)) {
-                log.info("ADMIN should not submit results");
-                response.sendRedirect(request.getContextPath() + Pages.ERROR);
+                log.info("ADMIN shall not pass");
+                response.sendRedirect(request.getContextPath() + Pages.FACULTY_TABLE);
             } else if (session.getAttribute(ROLE).equals(Role.USER)) {
                 chain.doFilter(req, res);
             }

@@ -31,7 +31,6 @@
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
                     <h2 style="color: var(--bs-light);"><fmt:message key="label.login"/></h2>
-                    <%--                    <jsp:useBean id="message" scope="session" class="java.lang.String"/>--%>
                     <p class="font-monospace text-danger"
                        style="font-family: 'Noto Sans', sans-serif;">${sessionScope.message}</p>
                 </div>
@@ -63,8 +62,10 @@
                                     </button>
                                 </div>
                             </form>
+                            <p class="text-muted"><a href="forgotPassword" style="text-decoration: none"
+                                                     class="text-muted my-2"><fmt:message key="label.forgot"/></a></p>
                             <p class="text-muted"><a href="Register" style="text-decoration: none"
-                                                     class="text-muted my-2">Not registered?</a></p>
+                                                     class="text-muted my-2"><fmt:message key="label.not_registered"/></a></p>
                             </form>
                         </div>
                     </div>

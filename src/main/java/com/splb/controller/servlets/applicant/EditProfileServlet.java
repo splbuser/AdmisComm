@@ -47,7 +47,7 @@ public class EditProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Applicant user = (Applicant) session.getAttribute("user");
+        Applicant user = (Applicant) session.getAttribute(Fields.USER);
         ApplicantService srv = new ApplicantService();
         Applicant applicant = new Applicant();
         int id = (Integer) session.getAttribute(Fields.ID);

@@ -259,6 +259,22 @@ public class ApplicantService extends Service {
     }
 
     /**
+     * change user password on demand after verification
+     * @param email
+     * @param password
+     * @return 1 if password was changed
+     * @throws UserServiceException
+     */
+    public int changePassword (String email, String password) throws UserServiceException  {
+        try (Connection con = getConnection()) {
+            return udao.changePassword (email, password, con);
+        } catch (UserDAOException | SQLException e) {
+            log.error(e.getMessage());
+            throw new UserServiceException(e.getMessage());
+        }
+    }
+
+    /**
      * returns number of pages for pagination
      *
      * @param limit

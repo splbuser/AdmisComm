@@ -28,7 +28,9 @@ public abstract class Pages {
     public static final String REGISTER_FOR_FACULTY_SRV = "/Reristerforfaculty";
     public static final String ENROLLMENT_PAGE = "/jsp/enrollment-page.jsp";
     public static final String ENROLLMENT = "/Enrollment";
-
+    public static final String FORGOT_PASSWORD = "/forgot-pass-page.jsp";
+    public static final String ENTER_OTP = "/enter-otp-page.jsp";
+    public static final String NEW_PASSWORD = "/reset-pass-page.jsp";
 
     private Pages() {
         throw new IllegalStateException("Utility class");

@@ -350,10 +350,9 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             ps.setInt(1, userId);
             ps.setInt(2, facultyID);
             ResultSet rs = ps.executeQuery();
-
             if (rs.next()) {
                 list[0] = rs.getInt(Fields.FIRST_SUBJ_RESULT);
-                list[1] = rs.getInt("second_subj_result");
+                list[1] = rs.getInt(Fields.SECOND_SUBJ_RESULT);
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
@@ -376,5 +375,18 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
             throw new UserDAOException("could not get applicant's list length: " + e.getMessage());
         }
         return length;
+    }
+
+    @Override
+    public int changePassword(String email, String password, Connection con)
+            throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.UPDATE_PASSWORD)) {
+            ps.setString(1, password);
+            ps.setString(2, email);
+            return ps.executeUpdate();
+        } catch (SQLException e) {
+            log.error(e.getMessage());
+            throw new UserDAOException("could not update password: " + e.getMessage());
+        }
     }
 }

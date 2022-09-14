@@ -17,14 +17,17 @@ import static java.util.Objects.nonNull;
 @WebFilter(filterName = "CookieLocaleFilter", urlPatterns = {"/*"})
 public class CookieLocaleFilter implements Filter {
 
+    public static final String LANG = "lang";
+
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
         if (nonNull(req.getParameter(Fields.LOCALE))) {
-            Cookie cookie = new Cookie("lang", req.getParameter(Fields.LOCALE));
+            Cookie cookie = new Cookie(LANG, req.getParameter(Fields.LOCALE));
             res.addCookie(cookie);
+//            res.sendRedirect(res.encodeRedirectURL(req.getRequestURI()));
         }
         chain.doFilter(request, response);
     }

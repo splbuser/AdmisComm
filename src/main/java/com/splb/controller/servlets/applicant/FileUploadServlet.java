@@ -1,6 +1,7 @@
 package com.splb.controller.servlets.applicant;
 
 import com.splb.controller.pages.Pages;
+import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Applicant;
 import com.splb.service.ApplicantService;
 import com.splb.service.exceptions.UserServiceException;
@@ -27,7 +28,7 @@ public class FileUploadServlet extends HttpServlet {
             throws ServletException, IOException {
         ApplicantService srv = new ApplicantService();
         HttpSession session = request.getSession();
-        Applicant user = (Applicant) session.getAttribute("user");
+        Applicant user = (Applicant) session.getAttribute(Fields.USER);
         String username = user.getUserName();
         int id = user.getId();
         String uploadPath = getServletContext().getRealPath("") + UPLOAD_DIRECTORY;

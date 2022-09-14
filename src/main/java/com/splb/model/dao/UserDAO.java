@@ -169,4 +169,13 @@ public interface UserDAO {
      */
     int getLength(Connection con) throws UserDAOException;
 
+    /**
+     * change user password on demand after verification
+     * @param email
+     * @param password
+     * @param con
+     * @return 1 if password was changed
+     * @throws UserDAOException
+     */
+    int changePassword(String email, String password, Connection con) throws UserDAOException;
 }

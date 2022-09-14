@@ -51,13 +51,15 @@ public class LoginServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         req.getRequestDispatcher(Pages.LOGIN_PAGE)
                 .forward(req, resp);
     }
 
     private void doLogin(HttpServletRequest req, HttpServletResponse resp,
-                         HttpSession httpSession, String userName, Applicant user) throws IOException, ApplicantResultServiceException {
+                         HttpSession httpSession, String userName, Applicant user)
+            throws IOException, ApplicantResultServiceException {
         boolean validCaptcha = false;
         ApplicantResultService asrv = new ApplicantResultService();
         if (nonNull(user)) {

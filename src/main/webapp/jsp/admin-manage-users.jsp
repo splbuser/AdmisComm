@@ -34,7 +34,6 @@
         <div class="card-body" style="background: #888888;">
             <div class="row">
                 <div class="col-md-6 text-nowrap">
-
                     <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" aria-expanded="false"
@@ -148,10 +147,10 @@
                     <jsp:useBean id="applicants" scope="request" type="java.util.List"/>
                     <c:forEach var="applicants" items="${applicants}">
                         <tr>
-                            <td><i class="typcn typcn-user"></i>${applicants.userName}</td>
+                            <td><em class="typcn typcn-user"></em>${applicants.userName}</td>
                             <td>${applicants.firstName}</td>
                             <td>${applicants.lastName}</td>
-                            <td><i class="typcn typcn-mail"></i>${applicants.email}</td>
+                            <td><em class="typcn typcn-mail"></em>${applicants.email}</td>
                             <td>${applicants.city}</td>
                             <td>${applicants.region}</td>
                             <td>${applicants.educationalInstitution}</td>

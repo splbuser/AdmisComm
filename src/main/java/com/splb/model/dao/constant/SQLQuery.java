@@ -1,7 +1,7 @@
 package com.splb.model.dao.constant;
 
 /**
- * utility class for store SQL query
+ * utility class for SQL query storage
  */
 public abstract class SQLQuery {
 
@@ -15,6 +15,7 @@ public abstract class SQLQuery {
     public static final String BLOCK_USER_BY_ID = "UPDATE applicant SET block_status = ? WHERE id = ?";
     public static final String UPD_USER_ENROLL_STATUS = "UPDATE applicant SET enroll_status = ? WHERE id = ?";
     public static final String UPDATE_USER_INFO = "UPDATE applicant SET last_name=?, first_name=?, city=?, region = ?, educational_institution = ? WHERE id=?";
+    public static final String UPDATE_PASSWORD = "UPDATE applicant SET password=? WHERE email=?";
     public static final String GET_NOT_ENROLLMENT = "SELECT * FROM applicant WHERE enroll_status=0";
     public static final String DELETE_USER = "DELETE FROM applicant WHERE user_name=?";
     public static final String APP_UPLOADED = "UPDATE applicant SET upload_status = ? WHERE id = ?";
