@@ -62,8 +62,11 @@ public abstract class Fields {
     public static final String BUDGET = "budget";
     public static final String CONTRACT = "contract";
     public static final String FIRST_SUBJ_RESULT = "first_subj_result";
+    public static final String SECOND_SUBJ_RESULT = "second_subj_result";
     public static final String RESULT_CHECK = "resultCheck";
     public static final String USER = "user";
+    public static final String STATUS = "status";
+    public static final String OTP = "otp";
 
     private Fields() {
         throw new IllegalStateException("Utility class");

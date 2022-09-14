@@ -32,7 +32,7 @@
                                 class="dropdown-item" href="Userinfo"><em
                                 class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></em><fmt:message
                                 key="text.profile"/></a>
-                            <a class="dropdown-item" href="Editinfo"><i class="far fa-edit fa-sm fa-fw me-2 text-gray-400"></i> <fmt:message
+                            <a class="dropdown-item" href="Editinfo"><em class="far fa-edit fa-sm fa-fw me-2 text-gray-400"></em> <fmt:message
                                     key="label.profile_edit"/></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="logout"><em

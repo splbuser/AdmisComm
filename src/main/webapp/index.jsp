@@ -15,6 +15,7 @@
     <title><fmt:message key="label.homepage"/></title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -25,6 +26,7 @@
 <body style="background: #212121;opacity: 1;margin: 65px;">
 <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark py-3"
      style="background: var(--bs-gray-100);border-color: var(--bs-gray-100);font-family: 'Noto Sans', sans-serif;color: #0f0f0f;text-align: center;box-shadow: inset 0 0 #ffffff;--bs-dark: #0f0f0f;--bs-dark-rgb: 15,15,15;">
+<%--        <% String userName = (String) session.getAttribute("user_name"); %>--%>
     <div class="container-fluid">
         <div id="lang-bar" style="width: 100px;">
             <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"
@@ -47,14 +49,15 @@
                                                               data-aos-delay="50"
                                                               style="font-family: 'Noto Sans', sans-serif;"><fmt:message
                 key="label.project"/></span></a>
-
-        <%@ page import="java.lang.String" %>
-        <% String userName = (String) session.getAttribute("user_name"); %>
+        <%--        <%@ page import="java.lang.String" %>--%>
         <% if (session.getAttribute("user_name") != null) { %>
-        <div class="d-none d-md-block"><a class="btn btn-outline-primary" role="button" data-bss-hover-animate="pulse"
-                                          href="logout"
-                                          style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;"><fmt:message
-                key="label.logout"/></a>
+
+        <div class="d-none d-md-block">
+            <a class="btn btn-dark border rounded-circle" role="button" href="user-index.jsp"><i class="icon-home"></i></a>
+            <a class="btn btn-outline-primary" role="button" data-bss-hover-animate="pulse"
+               href="logout"
+               style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;"><fmt:message
+                    key="label.logout"/></a>
         </div>
         <% } else {%>
         <div class="d-none d-md-block"><a class="btn btn-light me-2" role="button" data-bss-hover-animate="pulse"
@@ -109,7 +112,6 @@
 <script src="assets/js/bs-init.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="assets/js/Table.js"></script>
-<script src="assets/js/changeLocale.js"></script>
 </body>
 
 </html>

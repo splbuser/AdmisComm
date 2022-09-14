@@ -187,7 +187,7 @@ VALUES (DEFAULT, 'Economics', 2, 4, 'Economics', 'Math');
 -- `city` `region` `educational_institution` `block_status` `enroll_status`
 -- -----------------------------------------------------
 INSERT INTO applicant
-VALUES (DEFAULT, 'super_admin', 'MTIzNjk', TRUE, 'not available', 'not available', 'borbur4yt@gmail.com',
+VALUES (DEFAULT, 'super_admin', 'MTIzNjk', TRUE, 'not available', 'not available', 'therea1ant@gmail.com',
         'not available', 'not available', 'not available High Scool', DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO applicant
 VALUES (DEFAULT, 'Boniadi99', 'MTIzNjk', DEFAULT, 'Boniadi', 'Deninio', 'borbur4yt1@gmail.com', 'Celebrimbor', 'West',

@@ -15,7 +15,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Error</title>
-
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -23,21 +22,18 @@
     <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark.css">
-
 </head>
 
 <body style="background: #212121;">
+
 <%@include file="jsp/jspf/user-header.jspf" %>
+
 <section class="py-4 py-xl-5">
     <div class="container">
         <div class="text-center p-4 p-lg-5" style="font-family: 'Noto Sans', sans-serif;">
             <em class="material-icons fs-1 text-danger border rounded-circle border-4 border-warning">error</em>
-            <p class="font-monospace fs-2 fw-light text-danger mb-2"><fmt:message key="text.error"/></p>
-            <c:if test="${not empty sessionScope.message}">
-                <h5 class="font-monospace text-info mb-4"> ${sessionScope.message}</h5>
-            </c:if>
-            <c:remove var="message" scope="session"/>
-        </div>
+            <p class="font-monospace fs-2 fw-light text-danger mb-2">Error 404 Not Found</p>
+                    </div>
     </div>
 </section>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>

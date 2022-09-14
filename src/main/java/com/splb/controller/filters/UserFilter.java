@@ -31,7 +31,7 @@ public class UserFilter implements Filter {
         if (nonNull(session) && nonNull(session.getAttribute(ROLE))) {
             if (session.getAttribute(ROLE).equals(Role.USER)) {
                 log.info("USER access denied");
-                response.sendRedirect(request.getContextPath() + Pages.ERROR);
+                response.sendRedirect(request.getContextPath() + Pages.USER_INDEX);
             } else if (session.getAttribute(ROLE).equals(Role.ADMIN)) {
                 chain.doFilter(req, res);
             }

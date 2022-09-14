@@ -38,7 +38,7 @@ public class EditFacultyServlet extends HttpServlet {
             if (Integer.parseInt(request.getParameter(Fields.ID)) != 0) {
                 id = Integer.parseInt(request.getParameter(Fields.ID));
                 faculty = srv.getById(id);
-                request.setAttribute("faculty", faculty);
+                request.setAttribute(Fields.FACULTY, faculty);
                 request.getRequestDispatcher(Pages.EDIT_FACULTY)
                         .forward(request, response);
             } else {

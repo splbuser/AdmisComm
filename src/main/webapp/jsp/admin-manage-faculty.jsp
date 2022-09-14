@@ -116,12 +116,11 @@
                             <td>${faculty.name}</td>
                             <td>${faculty.budgetPlaces}</td>
                             <td>${faculty.totalPlaces}</td>
-
                             <td style="text-align: left;padding-left: 0px;width: 200px;"><a
                                     href='<c:url value="/edit?id=${faculty.id}" />'>
-                                <i class="material-icons" data-bs-toggle="tooltip" data-bss-tooltip=""
+                                <em class="material-icons" data-bs-toggle="tooltip" data-bss-tooltip=""
                                    style="color: var(--bs-teal);"
-                                   title="<fmt:message key="tooltip.edit_faculty"/>">edit</i></a>
+                                   title="<fmt:message key="tooltip.edit_faculty"/>">edit</em></a>
                                 <form method="post" action='<c:url value="/delete" />' style="display:inline;"
                                       onclick="return confirmer();">
                                     <input type="hidden" name="id" value="${faculty.id}">

@@ -25,7 +25,7 @@ public class FacultyRegServlet extends HttpServlet {
         FacultyService srv = new FacultyService();
         List<Faculty> faculties;
         HttpSession session = request.getSession();
-        Integer id = (Integer) session.getAttribute(Fields.ID); // user id
+        Integer id = (Integer) session.getAttribute(Fields.ID);
         if (nonNull(id)) {
             try {
                 faculties = srv.getListForRegister(id);
