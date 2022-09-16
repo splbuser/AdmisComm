@@ -26,7 +26,7 @@
 <body style="background: #212121;opacity: 1;margin: 65px;">
 <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark py-3"
      style="background: var(--bs-gray-100);border-color: var(--bs-gray-100);font-family: 'Noto Sans', sans-serif;color: #0f0f0f;text-align: center;box-shadow: inset 0 0 #ffffff;--bs-dark: #0f0f0f;--bs-dark-rgb: 15,15,15;">
-<%--        <% String userName = (String) session.getAttribute("user_name"); %>--%>
+    <%--        <% String userName = (String) session.getAttribute("user_name"); %>--%>
     <div class="container-fluid">
         <div id="lang-bar" style="width: 100px;">
             <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"
@@ -43,32 +43,33 @@
             </div>
         </div>
         <a class="navbar-brand d-flex align-items-center"
-           style="margin: 0;height: 55px;padding: 0 0;"><span class="fs-2 fw-lighter"
-                                                              data-aos="fade"
-                                                              data-aos-duration="1500"
-                                                              data-aos-delay="50"
+           style="margin: 0;height: 55px;padding: 0 0;"><span class="fs-2 fw-lighter" data-aos="fade"
+                                                              data-aos-duration="1500" data-aos-delay="50"
                                                               style="font-family: 'Noto Sans', sans-serif;"><fmt:message
                 key="label.project"/></span></a>
         <%--        <%@ page import="java.lang.String" %>--%>
-        <% if (session.getAttribute("user_name") != null) { %>
-
-        <div class="d-none d-md-block">
-            <a class="btn btn-dark border rounded-circle" role="button" href="user-index.jsp"><i class="icon-home"></i></a>
-            <a class="btn btn-outline-primary" role="button" data-bss-hover-animate="pulse"
-               href="logout"
-               style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;"><fmt:message
-                    key="label.logout"/></a>
-        </div>
-        <% } else {%>
-        <div class="d-none d-md-block"><a class="btn btn-light me-2" role="button" data-bss-hover-animate="pulse"
-                                          href="Register"
-                                          style="font-family: 'Noto Sans', sans-serif;width: 100px; text-align: center"><fmt:message
-                key="label.register"/></a><a
-                class="btn btn-primary" role="button" data-bss-hover-animate="pulse" href="Login"
-                style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;"><fmt:message
-                key="label.login"/></a></div>
-        <% } %>
-
+        <%--        <% if (session.getAttribute("user") != null) { %>--%>
+        <c:if test="${sessionScope.user != null}">
+            <div class="d-none d-md-block">
+                <a class="btn btn-dark border rounded-circle" role="button" href="user-index.jsp"><i
+                        class="icon-home"></i></a>
+                <a class="btn btn-outline-primary" role="button" data-bss-hover-animate="pulse"
+                   href="logout"
+                   style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;"><fmt:message
+                        key="label.logout"/></a>
+            </div>
+        </c:if>
+        <c:if test="${sessionScope.user == null}">
+            <%--        <% } else {%>--%>
+            <div class="d-none d-md-block"><a class="btn btn-light me-2" role="button" data-bss-hover-animate="pulse"
+                                              href="Register"
+                                              style="font-family: 'Noto Sans', sans-serif;width: 100px; text-align: center"><fmt:message
+                    key="label.register"/></a><a
+                    class="btn btn-primary" role="button" data-bss-hover-animate="pulse" href="Login"
+                    style="transform: perspective(0px);font-family: 'Noto Sans', sans-serif;width: 100px;"><fmt:message
+                    key="label.login"/></a></div>
+            <%--        <% } %>--%>
+        </c:if>
     </div>
 </nav>
 <div class="container-fluid py-4 py-xl-5"

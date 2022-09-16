@@ -149,6 +149,19 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
+    public boolean getByEmail(String email, Connection con) throws UserDAOException {
+        try (PreparedStatement ps = con.prepareStatement(SQLQuery.SEARCH_BY_EMAIL);
+        ) {
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            log.error(e.getMessage());
+            throw new UserDAOException("could not check applicant: " + e.getMessage());
+        }
+    }
+
+    @Override
     public List<Applicant> findAllApplicants(int limit, int offset, Connection con) throws UserDAOException {
         List<Applicant> applicants = new ArrayList<>();
         ApplicantResultDAOImpl dao = ApplicantResultDAOImpl.getInstance();

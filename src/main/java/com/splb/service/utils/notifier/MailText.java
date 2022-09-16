@@ -3,7 +3,8 @@ package com.splb.service.utils.notifier;
 public enum MailText {
 
     REG_SUBJ("Registration successful!"),
-    REG_BODY("Log in into site and follow applicant's guide"),
+    REG_BODY("Log in into site and follow applicant's guide."+
+            "Your username: [%s] \t You password: [%s]"),
     ENROLL_SUBJ("Enrollment committed"),
     ENROLL_BODY("Hello. We are pleased to inform you that following the results of enrollment, " +
             "your results helped you get a %s place at the %s faculty."),

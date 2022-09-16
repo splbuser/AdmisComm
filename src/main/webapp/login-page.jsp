@@ -33,6 +33,7 @@
                     <h2 style="color: var(--bs-light);"><fmt:message key="label.login"/></h2>
                     <p class="font-monospace text-danger"
                        style="font-family: 'Noto Sans', sans-serif;">${sessionScope.message}</p>
+                    <c:remove var="message" scope="session"/>
                 </div>
             </div>
             <div class="row d-flex justify-content-center" style="margin: 1px;height: 400px;width: 1200px;">
@@ -58,7 +59,7 @@
                                     <div class="g-recaptcha" data-theme="dark"
                                          data-sitekey="6Lc9jLUhAAAAADD3kaZmCDm2jArFWMExCcUJZoBh"></div>
                                     <button class="btn btn-primary d-block w-100" type="submit"
-                                            style="background: #8dc641;border-radius: 8px;" data-bs-target="Login">Login
+                                            style="background: #8dc641;border-radius: 8px;" data-bs-target="Login"><fmt:message key="label.login"/>
                                     </button>
                                 </div>
                             </form>
@@ -66,7 +67,6 @@
                                                      class="text-muted my-2"><fmt:message key="label.forgot"/></a></p>
                             <p class="text-muted"><a href="Register" style="text-decoration: none"
                                                      class="text-muted my-2"><fmt:message key="label.not_registered"/></a></p>
-                            </form>
                         </div>
                     </div>
                 </div>

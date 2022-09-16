@@ -30,4 +30,5 @@ public abstract class Messages {
     public static final String INVALID_CITY = "invalid_city";
     public static final String INVALID_REGION = "invalid_region";
     public static final String INVALID_EDUC_INST = "invalid_edu_inst";
+    public static final String TRY_ANOTHER_ONE = "Password you entered is invalid. Try another one";
 }

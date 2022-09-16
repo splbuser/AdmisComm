@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
         if (nonNull(user)) {
             if (user.isBlockStatus()) {
                 httpSession.setAttribute(Messages.MESSAGE, Messages.ADMINISTRATOR_BLOCKED_YOU);
-                resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
+                resp.sendRedirect(req.getContextPath() + Pages.LOGIN);
             } else {
                 String gRecaptchaResponse = req.getParameter(RECAPTCHA_RESPONSE);
                 log.info("gRecaptchaResponse={}", gRecaptchaResponse);

@@ -22,7 +22,7 @@ public class DataValidator {
     private static final Pattern NAME_PATTERN = Pattern.compile(NAME_REGEX);
 
     // alphanumeric and underscore are allowed
-    private static final String USERNAME_REGEX = "^[a-zA-Z0-9_]{2,7}$";
+    private static final String USERNAME_REGEX = "^[a-zA-Z0-9_]{2,20}$";
 
     private static final Pattern USERNAME_PATTERN =
             Pattern.compile(USERNAME_REGEX);
@@ -33,9 +33,9 @@ public class DataValidator {
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile(EMAIL_REGEX, Pattern.CASE_INSENSITIVE);
 
-    // 4-20 characters password with digits, lowercase or uppercase letter
+    // Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters
     private static final String PASSWORD_REGEX =
-            "(?=[a-zA-Z0-9]*[A-Z])[a-zA-Z0-9]{4,20}";
+            "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}";
 
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile(PASSWORD_REGEX);

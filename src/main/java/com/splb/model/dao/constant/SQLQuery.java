@@ -8,6 +8,7 @@ public abstract class SQLQuery {
     public static final String FIND_APPLICANT_BT_ID = "SELECT * FROM applicant WHERE id=?";
     public static final String FIND_APPLICANT_BY_USERNAME = "SELECT * FROM applicant WHERE user_name=?";
     public static final String SEARCH_APPLICANT = "SELECT * FROM applicant WHERE first_name=? or last_name=? or user_name=?";
+    public static final String SEARCH_BY_EMAIL = "SELECT * FROM applicant WHERE email=?";
     public static final String FIND_ALL_APPLICANTS = "SELECT * FROM applicant WHERE admin_status = 0 ORDER BY id  LIMIT ? OFFSET ?";
     public static final String BLOCK_CHECK_USER = "SELECT block_status FROM applicant WHERE id=?";
     public static final String GET_USER_BY_LOGIN = "SELECT * FROM applicant WHERE user_name = ? AND password = ?";

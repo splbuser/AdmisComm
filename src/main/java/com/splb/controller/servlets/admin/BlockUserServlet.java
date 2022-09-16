@@ -22,13 +22,13 @@ public class BlockUserServlet extends HttpServlet {
         ApplicantService srv = new ApplicantService();
         try {
             int id = Integer.parseInt(request.getParameter(Fields.ID));
-            boolean blockStatus = Boolean.parseBoolean(request.getParameter("status"));
+            boolean blockStatus = Boolean.parseBoolean(request.getParameter(Fields.STATUS));
             if (blockStatus) {
                 srv.unblock(id);
             } else {
                 srv.block(id);
             }
-            response.sendRedirect(request.getContextPath() + Pages.APPLICANT_TABLE);
+            response.sendRedirect(request.getHeader("referer"));
         } catch (Exception e) {
             log.error(e.getMessage());
             response.sendRedirect(request.getContextPath() + Pages.ERROR);

@@ -4,6 +4,7 @@ import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.service.ApplicantService;
+import com.splb.service.utils.DataValidator;
 import com.splb.service.utils.PassCrypt;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -36,7 +37,9 @@ public class SetNewPasswordServlet extends HttpServlet {
         String email = (String) session.getAttribute(Fields.APPLICANT_EMAIL);
         String newPass = request.getParameter(Fields.APPLICANT_PASSWORD);
         String rePass = request.getParameter(CONF_PASSWORD);
-        if (nonNull(newPass) && nonNull(rePass) && newPass.equals(rePass)) {
+        if (nonNull(newPass) && nonNull(rePass) &&
+                DataValidator.validatePassword(newPass) &&
+                newPass.equals(rePass)) {
             try {
                 String encodedPass = PassCrypt.encodeWithoutPadding(newPass.getBytes());
                 int i = srv.changePassword(email, encodedPass);
@@ -50,10 +53,11 @@ public class SetNewPasswordServlet extends HttpServlet {
                 request.getRequestDispatcher(Pages.LOGIN)
                         .forward(request, response);
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error(e.getMessage());
+                response.sendRedirect(Pages.ERROR);
             }
         } else {
-            request.setAttribute(Messages.MESSAGE, "Password is invalid. Try again");
+            request.setAttribute(Messages.MESSAGE, Messages.TRY_ANOTHER_ONE);
             request.getRequestDispatcher(Pages.NEW_PASSWORD).forward(request, response);
         }
     }
