@@ -1,5 +1,6 @@
 package com.splb.controller.servlets.applicant;
 
+import com.mysql.cj.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Applicant;
@@ -9,10 +10,15 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import javax.annotation.Nonnull;
 import java.io.*;
 
-@WebServlet(name = "FileUploadServlet", urlPatterns = {"/upload"})
+import static java.util.Objects.nonNull;
+
+//@WebServlet(name = "FileUploadServlet", urlPatterns = {"/upload"})
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024,
         maxFileSize = 1024 * 1024 * 10,
@@ -21,6 +27,7 @@ import java.io.*;
 
 public class FileUploadServlet extends HttpServlet {
 
+    private static final Logger log = LogManager.getLogger(FileUploadServlet.class);
     private static final String UPLOAD_DIRECTORY = "images";
 
     @Override
@@ -35,6 +42,7 @@ public class FileUploadServlet extends HttpServlet {
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) uploadDir.mkdir();
         Part filePart = request.getPart("file");
+
         String extension = filePart.getSubmittedFileName()
                 .substring(filePart.getSubmittedFileName().length() - 4);
         for (Part part : request.getParts()) {
@@ -44,8 +52,11 @@ public class FileUploadServlet extends HttpServlet {
             srv.upload(id, String.format("%s_%d%s", username, id, extension));
             user.setUploaded(String.format("%s_%d%s", username, id, extension));
         } catch (UserServiceException e) {
+            log.error(e.getMessage());
+            session.setAttribute("message", "Wrong input file");
             response.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
         }
-        response.sendRedirect(getServletContext().getContextPath() + "/Userinfo");
+        response.sendRedirect(getServletContext().getContextPath() + Pages.USER_INFO_SHOW);
+
     }
 }

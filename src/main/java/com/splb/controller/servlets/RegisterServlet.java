@@ -26,6 +26,7 @@ import java.util.List;
 public class RegisterServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(RegisterServlet.class);
+    public static final String LOGIN = "Login";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -51,9 +52,10 @@ public class RegisterServlet extends HttpServlet {
                 boolean insertResult = srv.add(applicant);
                 if (insertResult) {
                     httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_SUCCESSFUL);
-                    Sender s = new MailSender(email, MailText.REG_SUBJ.getText(), MailText.REG_BODY.getText());
+                    Sender s = new MailSender(email, MailText.REG_SUBJ.getText(),
+                            String.format(MailText.REG_BODY.getText(), userName, password));
                     s.send();
-                    resp.sendRedirect("Login");
+                    resp.sendRedirect(LOGIN);
                 }
             } else {
                 String[] inputValues = {userName, null, null, email, lastName, firstName, city, region, educationalInstitution};

@@ -71,13 +71,18 @@
                     </div>
                     <form method="post" action="upload" enctype="multipart/form-data">
                         <c:if test="${sessionScope.user.uploaded == null}">
-                            <input type="file" name="file"/>
-                            <input type="submit" value="<fmt:message key="label.upload"/>"/>
+                            <label for="upload" class="btn btn-light" style="border-radius: 19px 0 0 19px;">
+                                <fmt:message key="button.attach"/>
+                            </label>
+                            <input type="file" id="upload" name="file" hidden/>
+                            <input type="submit" value="<fmt:message key="label.upload"/>"
+                                   class="btn btn-light" style="border-radius: 0 19px 19px 0;"/>
                         </c:if>
                         <c:if test="${sessionScope.user.uploaded != null}">
-                            <p style="color: aqua"><a href="/AdmissionsCommittee/images/${sessionScope.user.uploaded}"
-                                                      style="text-decoration: none" target="_blank">
-                                <fmt:message key="label.upload_suc"/></a></p>
+                            <p style=" color: aqua">
+                                <a href="/AdmissionsCommittee/images/${sessionScope.user.uploaded}"
+                                   style="text-decoration: none" target="_blank">
+                                    <fmt:message key="label.upload_suc"/></a></p>
                         </c:if>
                     </form>
                 </div>

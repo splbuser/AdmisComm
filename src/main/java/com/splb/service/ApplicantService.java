@@ -100,6 +100,20 @@ public class ApplicantService extends Service {
     }
 
     /**
+     * check if required email exists in database
+     * @param email
+     * @throws UserServiceException
+     */
+    public boolean checkEmail(String email) throws UserServiceException {
+        try (Connection con = getConnection()) {
+            return udao.getByEmail(email, con);
+        } catch (UserDAOException | SQLException e) {
+            log.error(e.getMessage());
+            throw new UserServiceException(e.getMessage());
+        }
+    }
+
+    /**
      * check username uniqueness
      * @param login
      * @return

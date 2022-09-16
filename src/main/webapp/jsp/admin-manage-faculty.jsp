@@ -92,7 +92,6 @@
                                     placeholder="<fmt:message key="label.search"/>"
                                     name="search" style="background: rgb(166,166,166);">
                         </label>
-                            <%--                            <button class="btn btn-primary" type="submit" style="border-radius: 8px;">Search</button>--%>
                         </form>
                     </div>
                 </div>
@@ -116,38 +115,32 @@
                             <td>${faculty.name}</td>
                             <td>${faculty.budgetPlaces}</td>
                             <td>${faculty.totalPlaces}</td>
-                            <td style="text-align: left;padding-left: 0px;width: 200px;"><a
-                                    href='<c:url value="/edit?id=${faculty.id}" />'>
-                                <em class="material-icons" data-bs-toggle="tooltip" data-bss-tooltip=""
-                                   style="color: var(--bs-teal);"
-                                   title="<fmt:message key="tooltip.edit_faculty"/>">edit</em></a>
-                                <form method="post" action='<c:url value="/delete" />' style="display:inline;"
-                                      onclick="return confirmer();">
-                                    <input type="hidden" name="id" value="${faculty.id}">
-                                    <input type="submit" value="<fmt:message key="key.delete"/>">
-                                </form>
-                                <script>
-                                    function confirmer() {
-                                        if (confirm("<fmt:message key="test.confirm_delete"/>")) {
-                                            return true;
-                                        } else {
-                                            return false;
-                                        }
-                                    }
-                                </script>
-                            </td>
-                                <%--                            <td style="text-align: left;padding-left: 0px;width: 200px;">--%>
-                                <%--                                <div class="btn-group" role="group">--%>
-                                <%--                                    <a class="btn" role="button" style="padding-top: 0;padding-left: 0;padding-bottom: 0;">--%>
-                                <%--                                        <i class="material-icons" data-bs-toggle="tooltip" style="color: var(--bs-teal);" title="Edit faculty">edit</i>--%>
-                                <%--                                    </a>--%>
-                                <%--                                    <button class="btn" type="submit" style="padding-top: 0;padding-right: 0;padding-bottom: 0;">--%>
-                                <%--                                        <i class="material-icons" data-bs-toggle="tooltip" style="color: var(--bs-red);" title="Delete faculty">delete_forever</i>--%>
-                                <%--                                    </button>--%>
-                                <%--                                </div>--%>
-                                <%--                                <a href="/edit"></a><input type="hidden" name="id" value="faculty.id" />--%>
-                                <%--                            </td>--%>
+                            <td>
+                                <div class="btn-group" role="group" style="height: 35px;">
 
+                                    <a class="btn" role="button" href='<c:url value="/edit?id=${faculty.id}" />'>
+                                        <em class="material-icons" data-bs-toggle="tooltip"
+                                            style="color: var(--bs-teal);"
+                                            title="<fmt:message key="tooltip.edit_faculty"/>">edit</em></a>
+                                    <form method="post" action='<c:url value="/delete" />' style="display:inline;"
+                                          onclick="return confirmer();">
+                                        <button class="btn" type="submit">
+                                            <em class="material-icons" data-bs-toggle="tooltip"
+                                                style="color: var(--bs-red);"
+                                                title="Delete faculty">delete_forever</em></button>
+                                        <input type="hidden" name="id" value="${faculty.id}">
+                                    </form>
+                                    <script>
+                                        function confirmer() {
+                                            if (confirm("<fmt:message key="test.confirm_delete"/>")) {
+                                                return true;
+                                            } else {
+                                                return false;
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </td>
                             <td><a href='<c:url value="/watchlist?id=${faculty.id}" />'
                                    style="text-decoration: none;color: #212529;font-style: italic;"><fmt:message
                                     key="label.watch_list"/></a></td>

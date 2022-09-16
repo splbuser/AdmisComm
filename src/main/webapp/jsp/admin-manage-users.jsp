@@ -63,8 +63,7 @@
                                         <fmt:message key="label.city"/>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-dark"
-                                         style="border-radius: 8px;min-width: 60px;"><a class="dropdown-item"
-                                                                                        href="?type=ASC&sortBy=byCity"><fmt:message
+                                         style="border-radius: 8px;min-width: 60px;"><a class="dropdown-item" href="?type=ASC&sortBy=byCity"><fmt:message
                                             key="label.sort_up"/></a><a
                                             class="dropdown-item" href="?type=DSC&sortBy=byCity"><fmt:message
                                             key="label.sort_down"/></a></div>
@@ -138,7 +137,7 @@
                         <th><fmt:message key="label.city"/></th>
                         <th><fmt:message key="label.region"/></th>
                         <th><fmt:message key="label.educ_inst"/></th>
-                       <th <%-- onclick="sortTable(0)"--%>><fmt:message key="label.enroll_status"/></th>
+                        <th><fmt:message key="label.enroll_status"/></th>
                         <th><fmt:message key="label.block_status"/></th>
                         <th><fmt:message key="label.manage"/></th>
                     </tr>
@@ -147,7 +146,13 @@
                     <jsp:useBean id="applicants" scope="request" type="java.util.List"/>
                     <c:forEach var="applicants" items="${applicants}">
                         <tr>
-                            <td><em class="typcn typcn-user"></em>${applicants.userName}</td>
+                            <td><em class="typcn typcn-user"></em>${applicants.userName}
+                                <c:if test="${applicants.uploaded != null}">
+                                    <a href="/AdmissionsCommittee/images/${applicants.uploaded}"
+                                       style="text-decoration: none" target="_blank">
+                                        <em class="typcn typcn-attachment"></em></a>
+                                </c:if>
+                            </td>
                             <td>${applicants.firstName}</td>
                             <td>${applicants.lastName}</td>
                             <td><em class="typcn typcn-mail"></em>${applicants.email}</td>
@@ -165,24 +170,39 @@
                                         key="label.no_partic"/></c:if>
                             </td>
                             <td>
-                                <c:set value="${applicants.blockStatus}" var="block"/>
-                                <c:out value="${block == true ? 'X': ' '}"/>
+                                <c:if test="${applicants.blockStatus == true}"><em
+                                        class="typcn typcn-lock-closed fs-6"></em></c:if>
                             </td>
-                            <td>
-                                <div style="text-align: center;">
-
-                                    <form method="post" action='<c:url value="${'/blockbusting'}" />'
-                                          style="display:inline;">
-                                        <input type="hidden" name="id" value="${applicants.id}">
-                                        <input type="hidden" name="status" value="${applicants.blockStatus}">
-                                        <c:if test="${not block}"> <input type="submit"
-                                                                          value="<fmt:message key="label.block"/>"></c:if>
-                                        <c:if test="${block}"> <input type="submit"
-                                                                      value="<fmt:message key="label.unblock"/>"></c:if>
-
-                                    </form>
-                                </div>
+                            <td class="text-center">
+                                <form method="post" action="blockbusting">
+                                    <c:if test="${applicants.blockStatus == false}">
+                                        <button class="btn btn-danger" type="submit">
+                                            <i class="typcn typcn-lock-closed"></i>
+                                        </button>
+                                    </c:if>
+                                    <c:if test="${applicants.blockStatus == true}">
+                                        <button class="btn btn-warning" type="submit">
+                                            <i class="typcn typcn-lock-open"></i>
+                                        </button>
+                                    </c:if>
+                                    <input type="hidden" name="id" value="${applicants.id}">
+                                    <input type="hidden" name="status" value="${applicants.blockStatus}">
+                                </form>
                             </td>
+                                <%--                                                                <div style="text-align: center;">--%>
+                                <%--                                                                    <c:set value="${applicants.blockStatus}" var="block"/>--%>
+                                <%--                                                                    <form method="post" action='<c:url value="${'/blockbusting'}" />'--%>
+                                <%--                                                                          style="display:inline;">--%>
+                                <%--                                                                        <input type="hidden" name="id" value="${applicants.id}">--%>
+                                <%--                                                                        <input type="hidden" name="status" value="${applicants.blockStatus}">--%>
+                                <%--                                                                        <c:if test="${not block}"> <input type="submit"--%>
+                                <%--                                                                                                          value="<fmt:message key="label.block"/>"></c:if>--%>
+                                <%--                                                                        <c:if test="${block}"> <input type="submit"--%>
+                                <%--                                                                                                      value="<fmt:message key="label.unblock"/>"></c:if>--%>
+                                <%--                                                                    </form>--%>
+                                <%--                                                                </div>--%>
+
+                                <%--                                                            </td>--%>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -195,7 +215,7 @@
                         <th><strong><fmt:message key="label.city"/></strong></th>
                         <th><strong><fmt:message key="label.region"/></strong></th>
                         <th><strong><fmt:message key="label.educ_inst"/></strong></th>
-                        <th>Enroll status</th>
+                        <th><strong><fmt:message key="label.enroll_status"/></strong></th>
                         <th><strong><fmt:message key="label.block_status"/></strong></th>
                         <th><strong><fmt:message key="label.manage"/></strong></th>
                     </tr>
@@ -235,7 +255,6 @@
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
 <script src="assets/js/Table.js"></script>
-<script src="assets/js/sort.js"></script>
 </body>
 
 </html>

@@ -70,7 +70,8 @@
                                                                           type="password" id="PasswordInput"
                                                                           placeholder="Password*" name="password"
                                                                           style="border-radius: 8px;" required=""
-                                                                          title="4-20 characters password with digits, lowercase or uppercase letter">
+                                                                          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                                          title='<fmt:message key="text.pass_pattern"/>'>
                                     <c:if test="${errors.get(1)!=null}">
                                         <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
                                             <fmt:message key="${errors.get(1)}"/></p>
@@ -80,6 +81,7 @@
                                                              id="RepeatPasswordInput" placeholder="Repeat Password*"
                                                              name="password_repeat" style="border-radius: 8px;"
                                                              required=""
+                                                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                                              title="retype password again">
                                     <c:if test="${errors.get(2)!=null}">
                                         <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -160,12 +162,12 @@
                         <c:remove var="errors" scope="session"/>
                         <c:remove var="error" scope="session"/>
                         <c:remove var="validValues" scope="session"/>
-                        <%--                        <div class="text-center"><a class="small" href="forgot-password.html"--%>
-                        <%--                                                    style="color: rgba(255,255,255,0.5);text-decoration: none;">Forgot--%>
-                        <%--                            Password?</a></div>--%>
-                        <%--                        <div class="text-center"><a class="small" href="login"--%>
-                        <%--                                                    style="color: rgba(255,255,255,0.5);text-decoration: none;">Already--%>
-                        <%--                            have an account? Login!</a></div>--%>
+                        <div class="text-center"><a class="small" href="forgotPassword"
+                                                    style="color: rgba(255,255,255,0.5);text-decoration: none;"><fmt:message
+                                key="label.forgot"/></a></div>
+                        <div class="text-center"><a class="small" href="login"
+                                                    style="color: rgba(255,255,255,0.5);text-decoration: none;"><fmt:message
+                                key="label.login_now"/></a></div>
                     </div>
                 </div>
             </div>

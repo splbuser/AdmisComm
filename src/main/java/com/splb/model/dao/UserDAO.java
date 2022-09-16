@@ -61,6 +61,14 @@ public interface UserDAO {
      */
     boolean checkApplicant(String name, Connection con) throws UserDAOException;
 
+    /**
+     * check if required email exists in database
+     * @param email
+     * @param con
+     * @throws UserDAOException
+     */
+    boolean getByEmail(String email, Connection con) throws UserDAOException;
+
 
     /**
      * returns list of applicants with limit and offset for pagination

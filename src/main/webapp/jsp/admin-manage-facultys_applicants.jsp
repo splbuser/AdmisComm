@@ -48,12 +48,12 @@
                 <table class="table my-0" id="dataTable">
                     <thead>
                     <tr>
-                        <th><fmt:message key="label.user_name"/></th>
+                        <%--                        <th><fmt:message key="label.user_name"/></th>--%>
                         <th><fmt:message key="label.first_name"/></th>
                         <th><fmt:message key="label.last_name"/></th>
                         <th><fmt:message key="label.email"/></th>
-                        <th><fmt:message key="label.city"/></th>
-                        <th><fmt:message key="label.region"/></th>
+                        <%--                        <th><fmt:message key="label.city"/></th>--%>
+                        <%--                        <th><fmt:message key="label.region"/></th>--%>
                         <th><fmt:message key="label.enroll_status"/></th>
                         <th><fmt:message key="label.appl_status"/></th>
                         <th><fmt:message key="label.manage"/></th>
@@ -64,12 +64,12 @@
                     <%--                    <jsp:useBean id="faculty_id" scope="request" type="java.lang.Integer"/>--%>
                     <c:forEach var="applicants" items="${applicants}">
                         <tr>
-                            <td><i class="typcn typcn-user"></i>${applicants.userName}</td>
+                                <%--                            <td><i class="typcn typcn-user"></i>${applicants.userName}</td>--%>
                             <td>${applicants.firstName}</td>
                             <td>${applicants.lastName}</td>
                             <td><i class="typcn typcn-mail"></i>${applicants.email}</td>
-                            <td>${applicants.city}</td>
-                            <td>${applicants.region}</td>
+                                <%--                            <td>${applicants.city}</td>--%>
+                                <%--                            <td>${applicants.region}</td>--%>
                             <td>
                                 <c:if test="${applicants.enrollStatus == 0}"><fmt:message
                                         key="label.no_enroll"/></c:if>
@@ -80,35 +80,45 @@
                                 <c:if test="${applicants.enrollStatus == 4}"><fmt:message
                                         key="label.no_partic"/></c:if>
                             </td>
-                            <td>
-                                <c:set value="${applicants.statementStatus}" var="added"/>
-                                <c:out value="${added == true ? 'OK': ' '}"/>
+                            <td class="text-center">
+                                <c:if test="${applicants.statementStatus == true}">
+                                    <%--                                <c:out value="${added == true ? 'OK': ' '}"/>--%>
+                                    <em class="typcn typcn-plus-outline"></em>
+                                </c:if>
                             </td>
-                            <td>
-                                <div style="text-align: center;">
-                                    <form method="post" action='<c:url value="${'/addresult'}" />'
-                                          style="display:inline;">
-                                        <input type="hidden" name="user_id" value="${applicants.id}">
-                                        <input type="hidden" name="faculty_id" value="${requestScope.faculty_id}">
-                                        <input type="hidden" name="boolStatus" value="${added}">
-                                        <c:if test="${not added}"> <input type="submit"
-                                                                          value="<fmt:message key="label.add_result"/>"></c:if>
-                                        <c:if test="${added}"> <input type="submit"
-                                                                      value="<fmt:message key="label.remove_result"/>"></c:if>
-                                    </form>
-                                </div>
+                            <td class="text-center">
+                                <c:set value="${applicants.statementStatus}" var="added"/>
+                                <form method="post" action="addresult" style="display:inline;">
+                                    <c:if test="${applicants.statementStatus == false}">
+                                        <button class="btn btn-info" type="submit">
+                                            <em class="typcn typcn-user-add"></em>
+                                        </button>
+                                    </c:if>
+                                    <c:if test="${applicants.statementStatus == true}">
+                                        <button class="btn btn-danger" type="submit">
+                                            <em class="typcn typcn-user-delete"></em></button>
+                                        </button>
+                                    </c:if>
+                                    <input type="hidden" name="user_id" value="${applicants.id}">
+                                    <input type="hidden" name="faculty_id" value="${requestScope.faculty_id}">
+                                    <input type="hidden" name="boolStatus" value="${added}">
+                                        <%--                                    <c:if test="${not added}"> <input type="submit"--%>
+                                        <%--                                                                      value="<fmt:message key="label.add_result"/>"></c:if>--%>
+                                        <%--                                    <c:if test="${added}"> <input type="submit"--%>
+                                        <%--                                                                  value="<fmt:message key="label.remove_result"/>"></c:if>--%>
+                                </form>
                             </td>
                         </tr>
                     </c:forEach>
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th><strong><fmt:message key="label.user_name"/></strong></th>
+                        <%--                        <th><strong><fmt:message key="label.user_name"/></strong></th>--%>
                         <th><strong><fmt:message key="label.first_name"/></strong></th>
                         <th><strong><fmt:message key="label.last_name"/></strong></th>
                         <th><strong><fmt:message key="label.email"/></strong></th>
-                        <th><strong><fmt:message key="label.city"/></strong></th>
-                        <th><strong><fmt:message key="label.region"/></strong></th>
+                        <%--                        <th><strong><fmt:message key="label.city"/></strong></th>--%>
+                        <%--                        <th><strong><fmt:message key="label.region"/></strong></th>--%>
                         <th><fmt:message key="label.enroll_status"/></th>
                         <th><strong><fmt:message key="label.appl_status"/></strong></th>
                         <th><strong><fmt:message key="label.manage"/></strong></th>

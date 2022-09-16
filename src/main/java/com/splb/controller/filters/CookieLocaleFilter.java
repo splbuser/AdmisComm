@@ -27,7 +27,7 @@ public class CookieLocaleFilter implements Filter {
         if (nonNull(req.getParameter(Fields.LOCALE))) {
             Cookie cookie = new Cookie(LANG, req.getParameter(Fields.LOCALE));
             res.addCookie(cookie);
-//            res.sendRedirect(res.encodeRedirectURL(req.getRequestURI()));
+//            res.sendRedirect(req.getHeader("referer"));
         }
         chain.doFilter(request, response);
     }
