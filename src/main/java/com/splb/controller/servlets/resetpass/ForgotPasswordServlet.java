@@ -4,8 +4,8 @@ import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.service.ApplicantService;
-import com.splb.service.Service;
 import com.splb.service.exceptions.UserServiceException;
+import com.splb.service.utils.DataValidator;
 import com.splb.service.utils.notifier.MailSender;
 import com.splb.service.utils.notifier.MailText;
 import com.splb.service.utils.notifier.Sender;
@@ -29,40 +29,42 @@ import static java.util.Objects.nonNull;
 public class ForgotPasswordServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(ForgotPasswordServlet.class);
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        ApplicantService srv = new ApplicantService();
-        String email = request.getParameter(Fields.APPLICANT_EMAIL);
-        int rValue = 0;
-        try {
-            if (nonNull(email) && !email.isEmpty() && srv.checkEmail(email)) {
-                Random rand = SecureRandom.getInstanceStrong();
-                rValue = Math.abs(rand.nextInt());
-                Sender s = new MailSender(email, MailText.RES_PASS_SUBJ.getText(),
-                        String.format(MailText.RES_PASS_BODY.getText(), rValue));
-                s.send();
-                log.info("restore password sent to {} ", email);
-                session.setAttribute(Fields.OTP, rValue);
-                session.setAttribute(Fields.APPLICANT_EMAIL, email);
-                request.setAttribute(Messages.MESSAGE, "OTP sent to your e-mail");
-                request.getRequestDispatcher(Pages.ENTER_OTP).forward(request, response);
-            } else {
-                session.setAttribute(Messages.MESSAGE, "Sorry, we can't find your profile");
-                response.sendRedirect(request.getContextPath() + "/forgotPassword" );
-            }
-        } catch (SenderException | NoSuchAlgorithmException | UserServiceException e) {
-            log.error(e.getMessage());
-            response.sendRedirect(Pages.ERROR);
-        }
-
-    }
+    public static final String MESSAGE = "restore password sent to {} ";
+    public static final String OTP_SENT = "OTP sent to your e-mail";
+    public static final String SORRY = "Sorry, we can't find your profile";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(Pages.FORGOT_PASSWORD).forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        String email = request.getParameter(Fields.APPLICANT_EMAIL);
+        try {
+            if (nonNull(email) && DataValidator.validateEmail(email)
+                    && new ApplicantService().checkEmail(email)) {
+                Random rand = SecureRandom.getInstanceStrong();
+                int rValue = Math.abs(rand.nextInt());
+                Sender s = new MailSender(email, MailText.RES_PASS_SUBJ.getText(),
+                        String.format(MailText.RES_PASS_BODY.getText(), rValue));
+                s.send();
+                log.info(MESSAGE, email);
+                session.setAttribute(Fields.OTP, rValue);
+                session.setAttribute(Fields.APPLICANT_EMAIL, email);
+                request.setAttribute(Messages.MESSAGE, OTP_SENT);
+                request.getRequestDispatcher(Pages.ENTER_OTP).forward(request, response);
+            } else {
+                session.setAttribute(Messages.MESSAGE, SORRY);
+                response.sendRedirect(request.getContextPath() + Pages.FORGOT_PASSWORD_SRV);
+            }
+        } catch (SenderException | NoSuchAlgorithmException | UserServiceException e) {
+            log.error(e.getMessage());
+            response.sendRedirect(request.getContextPath() + Pages.ERROR);
+        }
+
     }
 }

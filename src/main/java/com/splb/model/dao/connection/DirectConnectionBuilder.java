@@ -11,9 +11,9 @@ import java.sql.SQLException;
  * for @test purpose only
  */
 public class DirectConnectionBuilder implements ConnectionBuilder {
-    public static final String URI_ALT = "jdbc:mysql://localhost:3306/admissionscommitteetest";
-    public static final String USER = "root";
-    public static final String PASSWORD = "128500";
+    private static final String URI_ALT = "jdbc:mysql://localhost:3306/admissionscommitteetest";
+    private static final String USER = "root";
+    private static final String PASSWORD = "test";
 
     @Override
     public Connection getConnection() throws SQLException {

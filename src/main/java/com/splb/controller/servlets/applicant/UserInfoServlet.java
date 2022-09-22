@@ -22,48 +22,46 @@ import static java.util.Objects.nonNull;
 public class UserInfoServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(UserInfoServlet.class);
+    public static final String EMPTY_LIST_MSG = "empty_list_msg";
+    public static final String EMPTY_ENROLL = "empty_enroll";
+    public static final String CURRENT_USER = "currentUser";
+    public static final String RESULT_CHECK = "resultCheck";
+    public static final String ENROLLMENT = "enrollment";
+    public static final String FACULTIES = "faculties";
+    public static final String STATEMENT = "statement";
+    public static final String RESULT = "result";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Integer id = (Integer) session.getAttribute(Fields.ID);
-        Applicant currentUser = null;
-        ApplicantResult result = null;
-        List<StatementResult> statement = null;
-        List<Faculty> faculties = null;
-        Enrollment enrollment = null;
-        ApplicantService usrv = new ApplicantService();
-        ApplicantResultService asrv = new ApplicantResultService();
-        StatementService ssrv = new StatementService();
-        EnrollmentService esrv = new EnrollmentService();
         if (nonNull(id)) {
-            boolean resultCheck = false;
             try {
-                currentUser = usrv.get(id);
-                resultCheck = asrv.checkSub(id);
-                result = asrv.get(id);
-                faculties = usrv.getCustomList(id);
-                statement = ssrv.get(id);
+                Applicant currentUser = new ApplicantService().get(id);
+                boolean resultCheck = new ApplicantResultService().checkSub(id);
+                ApplicantResult result = new ApplicantResultService().get(id);
+                List<Faculty> faculties = new ApplicantService().getCustomList(id);
+                List<StatementResult> statement = new StatementService().get(id);
                 if (statement.isEmpty()) {
-                    request.setAttribute("empty_list_msg", Messages.ANY_RESULTS_STATEMENT);
+                    request.setAttribute(EMPTY_LIST_MSG, Messages.ANY_RESULTS_STATEMENT);
                 }
-                enrollment = esrv.get(id);
+                Enrollment enrollment = new EnrollmentService().get(id);
                 if (enrollment == null) {
-                    request.setAttribute("empty_enroll", Messages.NO_ENROLL);
+                    request.setAttribute(EMPTY_ENROLL, Messages.NO_ENROLL);
                 }
+                request.setAttribute(CURRENT_USER, currentUser);
+                request.setAttribute(RESULT_CHECK, resultCheck);
+                request.setAttribute(ENROLLMENT, enrollment);
+                request.setAttribute(FACULTIES, faculties);
+                request.setAttribute(STATEMENT, statement);
+                request.setAttribute(RESULT, result);
+                request.getRequestDispatcher(Pages.USER_INFO)
+                        .forward(request, response);
             } catch (ServiceException e) {
                 log.error(e.getMessage());
-               request.getRequestDispatcher(Pages.ERROR)
+                request.getRequestDispatcher(Pages.ERROR)
                         .forward(request, response);
             }
-            request.setAttribute("currentUser", currentUser);
-            request.setAttribute("resultCheck", resultCheck);
-            request.setAttribute("enrollment", enrollment);
-            request.setAttribute("faculties", faculties);
-            request.setAttribute("statement", statement);
-            request.setAttribute("result", result);
-            request.getRequestDispatcher(Pages.USER_INFO)
-                    .forward(request, response);
         } else {
             request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);

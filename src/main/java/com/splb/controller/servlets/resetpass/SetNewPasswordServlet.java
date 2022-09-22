@@ -6,6 +6,9 @@ import com.splb.model.dao.constant.Fields;
 import com.splb.service.ApplicantService;
 import com.splb.service.utils.DataValidator;
 import com.splb.service.utils.PassCrypt;
+import com.splb.service.utils.notifier.MailSender;
+import com.splb.service.utils.notifier.MailText;
+import com.splb.service.utils.notifier.Sender;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,7 +35,6 @@ public class SetNewPasswordServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ApplicantService srv = new ApplicantService();
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute(Fields.APPLICANT_EMAIL);
         String newPass = request.getParameter(Fields.APPLICANT_PASSWORD);
@@ -42,10 +44,13 @@ public class SetNewPasswordServlet extends HttpServlet {
                 newPass.equals(rePass)) {
             try {
                 String encodedPass = PassCrypt.encodeWithoutPadding(newPass.getBytes());
-                int i = srv.changePassword(email, encodedPass);
+                int i = new ApplicantService().changePassword(email, encodedPass);
                 if (i > 0) {
                     session.setAttribute(Messages.MESSAGE, SUCCESS);
                     log.info(SUCCESS);
+                    Sender s = new MailSender(email, MailText.RES_PASS_SUC_SUBJ.getText(),
+                            String.format(MailText.RES_PASS_SUC_BODY.getText(), newPass));
+                    s.send();
                 } else {
                     session.setAttribute(Messages.MESSAGE, FAILED);
                     log.info(FAILED);

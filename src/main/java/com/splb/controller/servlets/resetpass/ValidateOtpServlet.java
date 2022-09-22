@@ -16,6 +16,8 @@ public class ValidateOtpServlet extends HttpServlet {
 
     @Serial
     private static final long serialVersionUID = 1L;
+    public static final String SUCCESS = "success";
+    public static final String WRONG_OTP = "Wrong otp";
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -26,11 +28,11 @@ public class ValidateOtpServlet extends HttpServlet {
         int otp = (int) session.getAttribute(Fields.OTP);
         if (value == otp) {
             request.setAttribute(Fields.APPLICANT_EMAIL, email);
-            request.setAttribute(Fields.STATUS, "success");
+            request.setAttribute(Fields.STATUS, SUCCESS);
             request.getRequestDispatcher(Pages.NEW_PASSWORD)
                     .forward(request, response);
         } else {
-            request.setAttribute(Messages.MESSAGE, "Wrong otp");
+            request.setAttribute(Messages.MESSAGE, WRONG_OTP);
             request.getRequestDispatcher(Pages.ENTER_OTP)
                     .forward(request, response);
         }

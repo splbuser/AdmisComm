@@ -1,18 +1,22 @@
 package com.splb.controller.servlets.admin;
 
+import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Faculty;
 import com.splb.service.FacultyService;
+import com.splb.service.exceptions.FacultyServiceException;
 import com.splb.service.utils.FacultyDataValidator;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * In doGet method, the servlet receives the id parameter and uses it to retrieve the
@@ -27,17 +31,15 @@ import java.io.IOException;
 public class EditFacultyServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(EditFacultyServlet.class);
+    public static final String PREVIOUS_FACULTY_NAME = "faculty_name";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        FacultyService srv = new FacultyService();
-        Faculty faculty;
-        int id;
         try {
             if (Integer.parseInt(request.getParameter(Fields.ID)) != 0) {
-                id = Integer.parseInt(request.getParameter(Fields.ID));
-                faculty = srv.getById(id);
+                int id = Integer.parseInt(request.getParameter(Fields.ID));
+                Faculty faculty = new FacultyService().getById(id);
                 request.setAttribute(Fields.FACULTY, faculty);
                 request.getRequestDispatcher(Pages.EDIT_FACULTY)
                         .forward(request, response);
@@ -55,35 +57,46 @@ public class EditFacultyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        FacultyService srv = new FacultyService();
-        Faculty faculty;
+        HttpSession session = request.getSession();
+        int id = Integer.parseInt(request.getParameter(Fields.ID));
+        String prevName = request.getParameter(PREVIOUS_FACULTY_NAME);
+        String name = request.getParameter(Fields.FACULTY_NAME);
+        int bp = Integer.parseInt(request.getParameter(Fields.FACULTY_BUDGET_PLACES));
+        int tp = Integer.parseInt(request.getParameter(Fields.FACULTY_TOTAL_PLACES));
+        String so = request.getParameter(Fields.SUBJECT_ONE);
+        String st = request.getParameter(Fields.SUBJECT_TWO);
+        List<String> errorMessages = FacultyDataValidator.validateForm(name, bp, tp, so, st);
+        boolean checkName  = false;
+        if (!name.equals(prevName)) {
+            try {
+                checkName = new FacultyService().checkByName(name);
+            } catch (FacultyServiceException e) {
+                log.error(e.getMessage());
+                response.sendRedirect(request.getContextPath() + Pages.EDIT_ID + id);
+            }
+        }
         try {
-            int id = Integer.parseInt(request.getParameter(Fields.ID));
-            String name = request.getParameter(Fields.FACULTY_NAME);
-            int tp = Integer.parseInt(request.getParameter(Fields.FACULTY_TOTAL_PLACES));
-            int bp = Integer.parseInt(request.getParameter(Fields.FACULTY_BUDGET_PLACES));
-            String so = request.getParameter(Fields.SUBJECT_ONE);
-            String st = request.getParameter(Fields.SUBJECT_TWO);
-            if (id > 0 &&
-                    FacultyDataValidator.validateName(name) &&
-                    FacultyDataValidator.validateCapacity(bp, tp) &&
-                    FacultyDataValidator.validateName(so) &&
-                    FacultyDataValidator.validateName(st)
+            if (id > 0 && errorMessages == null && !checkName
             ) {
-                faculty = new Faculty(id, name, bp, tp, so, st);
-                if (srv.update(faculty)) {
+                boolean update = new FacultyService().update(new Faculty(id, name, bp, tp, so, st));
+                if (update) {
                     log.info("Faculty info updated successfully");
                     response.sendRedirect(request.getContextPath() + Pages.FACULTY_TABLE);
                 } else {
                     log.error("Error while updating");
                     response.sendRedirect(request.getContextPath() + Pages.ERROR);
                 }
+            } else if (errorMessages == null && checkName) {
+                log.debug(Messages.FNAME_NOT_UNIQUE);
+                session.setAttribute(Messages.ERROR, Messages.FNAME_NOT_UNIQUE);
+                response.sendRedirect(request.getContextPath() + Pages.EDIT_ID + id);
             } else {
-                log.error("Wrong input data");
-                response.sendRedirect(request.getContextPath() + Pages.ERROR);
+                log.debug(errorMessages);
+                session.setAttribute(Messages.ERRORS, errorMessages);
+                response.sendRedirect(request.getContextPath() + Pages.EDIT_ID + id);
             }
         } catch (Exception e) {
-            log.error("Wrong input data");
+            log.error(e.getMessage());
             response.sendRedirect(request.getContextPath() + Pages.ERROR);
         }
     }

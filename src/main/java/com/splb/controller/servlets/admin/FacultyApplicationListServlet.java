@@ -14,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 
 import static java.util.Objects.nonNull;
@@ -25,10 +26,11 @@ import static java.util.Objects.nonNull;
 public class FacultyApplicationListServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(FacultyApplicationListServlet.class);
+    public static final String APPLICANTS = "applicants";
+    public static final String FACULTY_NAME = "faculty_name";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         FacultyService fsrv = new FacultyService();
         StatementService ssrv = new StatementService();
         try {
@@ -39,9 +41,10 @@ public class FacultyApplicationListServlet extends HttpServlet {
             ) {
                 a.setStatementStatus(ssrv.check(id, Math.toIntExact(a.getId())));
             }
-            req.setAttribute("applicants", applicantList);
-            req.setAttribute("faculty_id", id);
-            req.setAttribute("faculty_name", facultyName);
+            applicantList.sort(Comparator.comparing(Applicant::getScore).reversed());
+            req.setAttribute(APPLICANTS, applicantList);
+            req.setAttribute(Fields.FACULTY_ID, id);
+            req.setAttribute(FACULTY_NAME, facultyName);
             req.getRequestDispatcher(Pages.MANAGE_APPLICANTS)
                     .forward(req, resp);
         } catch (Exception e) {
@@ -53,12 +56,11 @@ public class FacultyApplicationListServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StatementService srv = new StatementService();
         String action = req.getParameter(Fields.ACTION);
         String facultyId = req.getParameter(Fields.FACULTY_ID);
         try {
             if (nonNull(action) && nonNull(facultyId) && action.equals(Fields.ADDALL)) {
-                srv.addEmAll(Integer.parseInt(facultyId));
+                new StatementService().addEmAll(Integer.parseInt(facultyId));
             }
         } catch (Exception e) {
             log.error(e.getMessage());

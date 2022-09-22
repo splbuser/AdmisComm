@@ -15,6 +15,7 @@ import java.io.IOException;
 public class BlockUserServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(BlockUserServlet.class);
+    public static final String REFERER = "referer";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -28,7 +29,7 @@ public class BlockUserServlet extends HttpServlet {
             } else {
                 srv.block(id);
             }
-            response.sendRedirect(request.getHeader("referer"));
+            response.sendRedirect(request.getHeader(REFERER));
         } catch (Exception e) {
             log.error(e.getMessage());
             response.sendRedirect(request.getContextPath() + Pages.ERROR);

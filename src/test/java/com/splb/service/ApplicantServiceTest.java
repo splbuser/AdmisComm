@@ -31,13 +31,29 @@ class ApplicantServiceTest {
     }
 
     @Test
-    void addTest() throws UserServiceException {
+    void addUpdateTest() throws UserServiceException {
         Applicant applicant = new Applicant(1, USERNAME, PASSWORD, "FirstName",
                 "LastName", "any22@mail.com", "City", "Region", "HighSchool");
         Assert.assertTrue(srv.add(applicant));
         Assert.assertFalse(srv.add(applicant));
-//        Assert.assertThrows(UserServiceException.class,
-//                () -> srv.add(applicant));
+        applicant.setFirstName("NameUpdated");
+        applicant.setLastName("LastNameUpdated");
+        applicant.setRegion("RegionUpdated");
+        boolean upload1 = srv.upload(1, "image1.jpg");
+        boolean upload2 = srv.upload(2, "image2.jpg");
+        boolean reUpload2 = srv.upload(2, "image2.jpg");
+        boolean block = srv.block(1);
+        boolean reBlock = srv.block(1);
+        boolean unBlock = srv.unblock(1);
+        boolean reUnBlock = srv.unblock(1);
+        Assert.assertTrue(srv.update(applicant));
+        Assert.assertTrue(upload1);
+        Assert.assertTrue(upload2);
+        Assert.assertTrue(reUpload2);
+        Assert.assertTrue(block);
+        Assert.assertFalse(reBlock);
+        Assert.assertTrue(unBlock);
+        Assert.assertFalse(reUnBlock);
     }
 
     @Test
@@ -58,10 +74,18 @@ class ApplicantServiceTest {
         String name2 = "aramayo";
         String nameFalse1 = "uuu1";
         String nameFalse2 = "Jerebco";
+        String mail1 = "any22@mail.com";
+        String mail2 = "2any2@mail.com";
+        String mail3 = "@";
         Assert.assertTrue(srv.check(name1));
         Assert.assertTrue(srv.check(name2));
         Assert.assertFalse(srv.check(nameFalse1));
         Assert.assertFalse(srv.check(nameFalse2));
+        Assert.assertTrue(srv.checkUsername(name2));
+        Assert.assertFalse(srv.checkUsername(nameFalse1));
+        Assert.assertTrue(srv.checkEmail(mail1));
+        Assert.assertFalse(srv.checkEmail(mail2));
+        Assert.assertFalse(srv.checkEmail(mail3));
     }
 
     @Test
@@ -73,6 +97,10 @@ class ApplicantServiceTest {
         all = srv.getAll(10, 0);
         Assert.assertEquals(all.size(), 10);
         customList = srv.getCustomList(2);
+        int length = srv.length();
+        List<Applicant> notEnroll = srv.getNotEnroll();
         Assert.assertEquals(customList.size(), 3);
+        Assert.assertEquals(length, 15);
+        Assert.assertEquals(notEnroll.size(), 16);
     }
 }

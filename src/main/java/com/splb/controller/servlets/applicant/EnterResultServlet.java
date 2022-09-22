@@ -22,10 +22,10 @@ import java.io.IOException;
 public class EnterResultServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(EnterResultServlet.class);
+    public static final String RESULT_CHECK = "resultCheck";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ApplicantResultService srv = new ApplicantResultService();
         HttpSession session = req.getSession();
         if (GradeValidator.validateGrades(new String[]
                 {
@@ -44,11 +44,12 @@ public class EnterResultServlet extends HttpServlet {
             int eng = Integer.parseInt(req.getParameter(Fields.RESULT_ENGLISH));
             int lit = Integer.parseInt(req.getParameter(Fields.RESULT_LITERATURE));
             int his = Integer.parseInt(req.getParameter(Fields.RESULT_HISTORY));
-            ApplicantResult applicantResult = new ApplicantResult(id, alg, bio, che, eng, lit, his);
             try {
-                if (srv.insert(applicantResult)) {
+                boolean insert = new ApplicantResultService()
+                        .insert(new ApplicantResult(id, alg, bio, che, eng, lit, his));
+                if (insert) {
                     session.setAttribute(Messages.MESSAGE, Messages.BEEN_APPLIED);
-                    session.setAttribute("resultCheck", true);
+                    session.setAttribute(RESULT_CHECK, true);
                     resp.sendRedirect(req.getContextPath() + Pages.USER_INDEX);
                 } else {
                     resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
@@ -69,7 +70,7 @@ public class EnterResultServlet extends HttpServlet {
         HttpSession session = req.getSession();
         boolean check = (Boolean) session.getAttribute(Fields.RESULT_CHECK);
         if (!check) {
-           req .getRequestDispatcher(Pages.ENTER_RESULT)
+            req.getRequestDispatcher(Pages.ENTER_RESULT)
                     .forward(req, resp);
         } else {
             req.getRequestDispatcher(Pages.USER_INDEX)

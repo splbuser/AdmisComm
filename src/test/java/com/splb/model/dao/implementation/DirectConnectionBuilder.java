@@ -12,7 +12,7 @@ public class DirectConnectionBuilder implements ConnectionBuilder {
     private final Logger log = LogManager.getLogger(com.splb.model.dao.connection.DirectConnectionBuilder.class);
     public static final String URI_ALT = "jdbc:mysql://localhost:3306/admissionscommitteetest";
     public static final String USER = "root";
-    public static final String PASSWORD = "128500";
+    public static final String PASSWORD = "test";
 
     @Override
     public Connection getConnection() throws SQLException {

@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark.css">
+
+    <style>
+        input:invalid {
+            border: red solid 3px;
+        }
+    </style>
 </head>
 
 <%@include file="jsp/jspf/user-header.jspf" %>
@@ -33,15 +39,18 @@
                 <div class="col-lg-7" style="width: 945.906px;">
                     <div class="p-5" style="font-family: 'Noto Sans', sans-serif;">
                         <div class="text-center" style="color: rgb(255,255,255);">
-                            <h4 class="text-light mb-4" style="color: rgb(255,255,255);">Step 1. Create an Account!</h4>
+                            <h4 class="text-light mb-4" style="color: rgb(255,255,255);">
+                                <fmt:message key="text.register_step1"/></h4>
                         </div>
                         <form class="user" action="Register" method="post">
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control" type="text"
-                                                                          id="userNameInput" placeholder="User name*"
+                                                                          id="userNameInput"
+                                                                          placeholder='<fmt:message key="label.user_name"/>*'
                                                                           name="user_name" value="${validValues.get(0)}"
-                                                                          style="border-radius: 8px;"
-                                                                          required=""
+                                                                          style="border-radius: 8px;" required=""
+                                                                          autocomplete="off"
+                                                                          pattern="^[a-zA-Z0-9_]{2,20}$"
                                                                           title="Alphanumeric, digits and underscore are allowed">
                                     <c:if test="${errors.get(0)!=null}">
                                         <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -68,8 +77,10 @@
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
                                                                           type="password" id="PasswordInput"
-                                                                          placeholder="Password*" name="password"
+                                                                          placeholder='<fmt:message key="text.pass"/>*'
+                                                                          name="password"
                                                                           style="border-radius: 8px;" required=""
+                                                                          autocomplete="off"
                                                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                                                           title='<fmt:message key="text.pass_pattern"/>'>
                                     <c:if test="${errors.get(1)!=null}">
@@ -78,11 +89,21 @@
                                     </c:if>
                                 </div>
                                 <div class="col-sm-6"><input class="form-control form-control-user" type="password"
-                                                             id="RepeatPasswordInput" placeholder="Repeat Password*"
+                                                             id="RepeatPasswordInput"
+                                                             placeholder='<fmt:message key="text.conf_pass"/>*'
                                                              name="password_repeat" style="border-radius: 8px;"
-                                                             required=""
+                                                             required="" oninput="check(this)"
                                                              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                                              title="retype password again">
+                                    <script type='text/javascript'>
+                                        function check(input) {
+                                            if (input.value !== document.getElementById('PasswordInput').value) {
+                                                input.setCustomValidity('Password Must be Matching.');
+                                            } else {
+                                                input.setCustomValidity('');
+                                            }
+                                        }
+                                    </script>
                                     <c:if test="${errors.get(2)!=null}">
                                         <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
                                             <fmt:message key="${errors.get(2)}"/></p>
@@ -91,8 +112,10 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control" type="text"
-                                                                          id="firstNameInput" placeholder="First name*"
+                                                                          id="firstNameInput"
+                                                                          placeholder='<fmt:message key="label.first_name"/>*'
                                                                           name="first_name" style="border-radius: 8px;"
+                                                                          pattern="[A-ZА-Я][a-zа-яё]{1,20}"
                                                                           value="${validValues.get(4)}"
                                                                           required="">
                                     <c:if test="${errors.get(4)!=null}">
@@ -102,8 +125,10 @@
                                     </c:if>
                                 </div>
                                 <div class="col-sm-6"><input class="form-control" type="text" id="lastNameInput-1"
-                                                             placeholder="Last name*" name="last_name"
+                                                             placeholder='<fmt:message key="label.last_name"/>*'
+                                                             name="last_name"
                                                              value="${validValues.get(5)}"
+                                                             pattern="[A-ZА-Я][a-zа-яё]{1,20}"
                                                              style="border-radius: 8px;" required="">
                                     <c:if test="${errors.get(5)!=null}">
                                         <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -114,8 +139,11 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control" type="text"
-                                                                          id="cityInput" placeholder="City*" name="city"
+                                                                          id="cityInput"
+                                                                          placeholder='<fmt:message key="label.city"/>*'
+                                                                          name="city"
                                                                           value="${validValues.get(6)}"
+                                                                          pattern="[A-ZА-Я][a-zа-яё]{1,20}"
                                                                           style="border-radius: 8px;" required="">
                                     <c:if test="${errors.get(6)!=null}">
                                         <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -124,8 +152,10 @@
                                     </c:if>
                                 </div>
                                 <div class="col-sm-6"><input class="form-control" type="text" id="regionInput"
-                                                             placeholder="Region*" name="region"
+                                                             placeholder='<fmt:message key="label.region"/>*'
+                                                             name="region"
                                                              value="${validValues.get(7)}"
+                                                             pattern="[A-ZА-Я][a-zа-яё]{1,20}"
                                                              style="border-radius: 8px;" required="">
                                     <c:if test="${errors.get(7)!=null}">
                                         <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -138,10 +168,11 @@
                                 <div class="col-sm-6 mb-3 mb-sm-0" style="width: 100%;"><input class="form-control"
                                                                                                type="text"
                                                                                                id="EducationalinstitutionInput"
-                                                                                               placeholder="Full name of the Educational Institution*"
+                                                                                               placeholder='<fmt:message key="label.educ_inst"/>*'
                                                                                                name="educational_institution"
                                                                                                value="${validValues.get(8)}"
                                                                                                style="border-radius: 8px;"
+                                                                                               pattern="[A-ZА-Я][a-zа-яё]{1,30}"
                                                                                                required="">
                                     <c:if test="${errors.get(8)!=null}">
                                         <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -151,11 +182,13 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <p class="text-light" style="font-family: 'Noto Sans', sans-serif;font-style: italic;">*
-                                    All fields must be completed.</p>
+                                <p class="text-light" style="font-family: 'Noto Sans', sans-serif;font-style: italic;">
+                                    <fmt:message key="label.all_fields"/>
+                                </p>
                             </div>
                             <button class="btn btn-primary d-block btn-user w-100" type="submit"
-                                    style="border-radius: 8px;" data-bs-target="Register">Register Account
+                                    style="border-radius: 8px;" data-bs-target="Register"><fmt:message
+                                    key="label.register"/>
                             </button>
                             <hr>
                         </form>
@@ -165,7 +198,7 @@
                         <div class="text-center"><a class="small" href="forgotPassword"
                                                     style="color: rgba(255,255,255,0.5);text-decoration: none;"><fmt:message
                                 key="label.forgot"/></a></div>
-                        <div class="text-center"><a class="small" href="login"
+                        <div class="text-center"><a class="small" href="Login"
                                                     style="color: rgba(255,255,255,0.5);text-decoration: none;"><fmt:message
                                 key="label.login_now"/></a></div>
                     </div>

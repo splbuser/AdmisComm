@@ -1,6 +1,6 @@
 package com.splb.controller.servlets.applicant;
 
-import com.mysql.cj.Messages;
+import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Applicant;
@@ -29,11 +29,12 @@ public class FileUploadServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(FileUploadServlet.class);
     private static final String UPLOAD_DIRECTORY = "images";
+    public static final String FILE = "file";
+    public static final String WRONG_INPUT_FILE = "Wrong input file";
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ApplicantService srv = new ApplicantService();
         HttpSession session = request.getSession();
         Applicant user = (Applicant) session.getAttribute(Fields.USER);
         String username = user.getUserName();
@@ -41,7 +42,7 @@ public class FileUploadServlet extends HttpServlet {
         String uploadPath = getServletContext().getRealPath("") + UPLOAD_DIRECTORY;
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) uploadDir.mkdir();
-        Part filePart = request.getPart("file");
+        Part filePart = request.getPart(FILE);
 
         String extension = filePart.getSubmittedFileName()
                 .substring(filePart.getSubmittedFileName().length() - 4);
@@ -49,11 +50,11 @@ public class FileUploadServlet extends HttpServlet {
             part.write(String.format("%s%s%s_%d%s", uploadPath, File.separator, username, id, extension));
         }
         try {
-            srv.upload(id, String.format("%s_%d%s", username, id, extension));
+            new ApplicantService().upload(id, String.format("%s_%d%s", username, id, extension));
             user.setUploaded(String.format("%s_%d%s", username, id, extension));
         } catch (UserServiceException e) {
             log.error(e.getMessage());
-            session.setAttribute("message", "Wrong input file");
+            session.setAttribute(Messages.MESSAGE, WRONG_INPUT_FILE);
             response.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
         }
         response.sendRedirect(getServletContext().getContextPath() + Pages.USER_INFO_SHOW);

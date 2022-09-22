@@ -23,7 +23,7 @@ public class UserListener implements HttpSessionListener {
 
     @Override
     public void sessionCreated(HttpSessionEvent event) {
-        log.info("SessionCounter_Created");
+        log.info("UserListener init");
         HttpSession session = event.getSession();
         sessions.add(session.getId());
         session.setAttribute(COUNTER, getActiveSessionNumber());

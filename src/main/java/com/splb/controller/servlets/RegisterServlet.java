@@ -47,9 +47,8 @@ public class RegisterServlet extends HttpServlet {
             boolean checkUsername = srv.checkUsername(userName);
             if (errorMessages == null && !checkUsername) {
                 String encodedPass = PassCrypt.encodeWithoutPadding(password.getBytes());
-                Applicant applicant = new Applicant(0, userName, encodedPass, lastName, firstName,
-                        email, city, region, educationalInstitution);
-                boolean insertResult = srv.add(applicant);
+                boolean insertResult = srv.add(new Applicant(0, userName, encodedPass, lastName, firstName,
+                        email, city, region, educationalInstitution));
                 if (insertResult) {
                     httpSession.setAttribute(Messages.MESSAGE, Messages.REGISTRATION_SUCCESSFUL);
                     Sender s = new MailSender(email, MailText.REG_SUBJ.getText(),
@@ -61,11 +60,11 @@ public class RegisterServlet extends HttpServlet {
                 String[] inputValues = {userName, null, null, email, lastName, firstName, city, region, educationalInstitution};
                 List<String> validValues = DataValidator.getValidatedValues(inputValues, errorMessages);
                 log.debug(errorMessages);
-                httpSession.setAttribute("validValues", validValues);
-                httpSession.setAttribute("errors", errorMessages);
+                httpSession.setAttribute(Fields.VALID_VALUES, validValues);
+                httpSession.setAttribute(Messages.ERRORS, errorMessages);
                 if (errorMessages.get(0) == null && checkUsername) {
                     log.debug(Messages.LOGIN_NOT_UNIQUE);
-                    httpSession.setAttribute("error", Messages.LOGIN_NOT_UNIQUE);
+                    httpSession.setAttribute(Messages.ERROR, Messages.LOGIN_NOT_UNIQUE);
                 }
                 resp.sendRedirect(getServletContext().getContextPath() + Pages.REGISTER);
             }

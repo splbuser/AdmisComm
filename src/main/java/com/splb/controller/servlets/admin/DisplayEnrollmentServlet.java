@@ -23,42 +23,43 @@ import static java.util.Objects.nonNull;
 public class DisplayEnrollmentServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(DisplayEnrollmentServlet.class);
+    public static final String ENROLLMENT = "enrollment";
+    public static final String NOT_ENROLL = "not_enroll";
+    public static final String NOTIFY = "notify";
+    public static final String GET_DOC = "getDOC";
+    public static final String GET_PDF = "getPDF";
+    public static final String GET_XLS = "getXLS";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String type = request.getParameter(Fields.TYPE);
         String sortBy = request.getParameter(Fields.SORT_BY);
-        List<Enrollment> enrollment = new ArrayList<>();
-        List<Applicant> notEnroll = new ArrayList<>();
-        EnrollmentService srv = new EnrollmentService();
-        ApplicantService asrv = new ApplicantService();
         try {
-            enrollment = srv.getEnrollmentsForRequest(session, type, sortBy);
-            notEnroll = asrv.getNotEnroll();
+            List<Enrollment> enrollment = new EnrollmentService().getEnrollmentsForRequest(session, type, sortBy);
+            List<Applicant>  notEnroll = new ApplicantService().getNotEnroll();
+            request.setAttribute(ENROLLMENT, enrollment);
+            request.setAttribute(NOT_ENROLL, notEnroll);
+            request.getRequestDispatcher(Pages.ENROLLMENT_PAGE)
+                    .forward(request, response);
         } catch (EnrollmentServiceException | UserServiceException e) {
             log.error(e.getMessage());
             request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
-        request.setAttribute("enrollment", enrollment);
-        request.setAttribute("not_enroll", notEnroll);
-        request.getRequestDispatcher(Pages.ENROLLMENT_PAGE)
-                .forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter(Fields.ACTION);
-        ApplicantService asrv = new ApplicantService();
-        EnrollmentService esrv = new EnrollmentService();
+        EnrollmentService srv = new EnrollmentService();
         try {
             if (nonNull(action)) {
                 switch (action) {
-                    case ("notify") -> asrv.notifyUsers();
-                    case ("getDOC") -> esrv.getReport(resp, FileType.CREATE_DOC);
-                    case ("getPDF") -> esrv.getReport(resp, FileType.CREATE_PDF);
-                    case ("getXLS") -> esrv.getReport(resp, FileType.CREATE_XLS);
+                    case NOTIFY -> new ApplicantService().notifyUsers();
+                    case GET_DOC -> srv.getReport(resp, FileType.CREATE_DOC);
+                    case GET_PDF -> srv.getReport(resp, FileType.CREATE_PDF);
+                    case GET_XLS -> srv.getReport(resp, FileType.CREATE_XLS);
                     default -> resp.sendRedirect(req.getContextPath() + Pages.ENROLLMENT);
                 }
             }
