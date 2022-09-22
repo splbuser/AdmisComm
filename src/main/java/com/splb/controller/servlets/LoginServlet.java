@@ -30,15 +30,21 @@ public class LoginServlet extends HttpServlet {
     public static final String RECAPTCHA_RESPONSE = "g-recaptcha-response";
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        req.getRequestDispatcher(Pages.LOGIN_PAGE)
+                .forward(req, resp);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ApplicantService srv = new ApplicantService();
         HttpSession httpSession = req.getSession();
         String userName = req.getParameter(Fields.APPLICANT_USER_NAME);
         String pass = req.getParameter(Fields.APPLICANT_PASSWORD);
         try {
             if (nonNull(userName) && nonNull(pass)) {
                 String password = PassCrypt.encodeWithoutPadding(pass.getBytes());
-                Applicant user = srv.login(userName, password);
+                Applicant user = new ApplicantService().login(userName, password);
                 doLogin(req, resp, httpSession, userName, user);
             } else {
                 httpSession.setAttribute(Messages.CREDENTIAL, Messages.NULL);
@@ -46,22 +52,13 @@ public class LoginServlet extends HttpServlet {
             }
         } catch (Exception e) {
             log.error("Login error: {}", e.getMessage());
-            resp.sendRedirect(getServletContext().getContextPath() + Pages.ERROR);
+            resp.sendRedirect(req.getContextPath() + Pages.ERROR);
         }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        req.getRequestDispatcher(Pages.LOGIN_PAGE)
-                .forward(req, resp);
     }
 
     private void doLogin(HttpServletRequest req, HttpServletResponse resp,
                          HttpSession httpSession, String userName, Applicant user)
             throws IOException, ApplicantResultServiceException {
-        boolean validCaptcha = false;
-        ApplicantResultService asrv = new ApplicantResultService();
         if (nonNull(user)) {
             if (user.isBlockStatus()) {
                 httpSession.setAttribute(Messages.MESSAGE, Messages.ADMINISTRATOR_BLOCKED_YOU);
@@ -69,16 +66,17 @@ public class LoginServlet extends HttpServlet {
             } else {
                 String gRecaptchaResponse = req.getParameter(RECAPTCHA_RESPONSE);
                 log.info("gRecaptchaResponse={}", gRecaptchaResponse);
-                validCaptcha = CaptchaVerification.verify(gRecaptchaResponse);
+                boolean validCaptcha = CaptchaVerification.verify(gRecaptchaResponse);
                 if (validCaptcha) {
                     int id = user.getId();
                     httpSession.setAttribute(Fields.USER, user);
                     httpSession.setAttribute(Fields.ID, id);
                     httpSession.setAttribute(USER_NAME, user.getUserName());
-                    httpSession.setAttribute(Fields.RESULT_CHECK, asrv.checkSub(id));
+                    httpSession.setAttribute(Fields.RESULT_CHECK, new ApplicantResultService().checkSub(id));
                     httpSession.setAttribute(HELLOUSER, String.format("%s %s",
                             user.getFirstName(), user.getLastName()));
-                    setRole(req, resp, httpSession, userName, user);
+                    setRole(req, resp, httpSession, user);
+                    log.info("{} log in", userName);
                     if (nonNull(httpSession.getAttribute(Messages.MESSAGE))) {
                         httpSession.removeAttribute(Messages.MESSAGE);
                     }
@@ -94,7 +92,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     private static void setRole(HttpServletRequest req, HttpServletResponse resp, HttpSession httpSession,
-                                String userName, Applicant user) throws IOException {
+                                Applicant user) throws IOException {
         if (user.isAdminStatus()) {
             httpSession.setAttribute(ROLE, Role.ADMIN);
             resp.sendRedirect(req.getContextPath() + Pages.FACULTY_TABLE);
@@ -102,6 +100,6 @@ public class LoginServlet extends HttpServlet {
             httpSession.setAttribute(ROLE, Role.USER);
             resp.sendRedirect(req.getContextPath() + Pages.USER_INDEX);
         }
-        log.info("{} log in", userName);
+
     }
 }

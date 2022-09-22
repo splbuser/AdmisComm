@@ -12,8 +12,10 @@ public enum MailText {
     DEFAULT("Hello. You were registered in the admissions committee system, but you never made your choice."),
 
     RES_PASS_SUBJ("Password change request"),
+    RES_PASS_SUC_SUBJ("Password changed"),
     RES_PASS_BODY("Here is your verification code %d. " +
-            "Enter it in the form on our website to change your password.");
+            "Enter it in the form on our website to change your password."),
+    RES_PASS_SUC_BODY("Password changed successfully. Your new password: %s");
 
     private final String text;
 

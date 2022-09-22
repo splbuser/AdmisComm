@@ -2,10 +2,14 @@ package com.splb.service;
 
 import com.splb.model.dao.connection.DirectConnectionBuilder;
 import com.splb.model.dao.connection.PoolConnectionBuilder;
+import com.splb.model.dao.exception.ApplicantResultDAOException;
 import com.splb.model.dao.exception.FacultyDAOException;
 import com.splb.model.dao.exception.UserDAOException;
+import com.splb.model.dao.implementation.ApplicantResultDAOImpl;
+import com.splb.model.dao.implementation.FacultyDAOImpl;
 import com.splb.model.entity.Applicant;
 import com.splb.model.entity.Faculty;
+import com.splb.service.exceptions.ApplicantResultServiceException;
 import com.splb.service.exceptions.FacultyServiceException;
 
 import java.sql.Connection;
@@ -63,8 +67,15 @@ public class FacultyService extends Service {
         try (Connection con = getConnection()) {
             List<Applicant> applicants = fdao.getApplicantsForFaculty(facultyId, con);
             applicants.removeIf(Applicant::isBlockStatus);
+            applicants.removeIf(a -> a.getEnrollStatus() == 1);
+            applicants.removeIf(a -> a.getEnrollStatus() == 2);
+            for (Applicant a : applicants) {
+                int sum = ApplicantResultDAOImpl.getInstance().getResultSum(a.getId(), con);
+                int sum1 = FacultyDAOImpl.getInstance().getSum(a.getId(), facultyId, con);
+                a.setScore(sum + sum1);
+            }
             return applicants;
-        } catch (SQLException | FacultyDAOException e) {
+        } catch (SQLException | FacultyDAOException | ApplicantResultDAOException e) {
             log.error(e.getMessage());
             throw new FacultyServiceException(e.getMessage());
         }

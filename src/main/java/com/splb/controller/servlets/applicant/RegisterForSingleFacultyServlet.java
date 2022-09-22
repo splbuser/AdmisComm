@@ -22,10 +22,9 @@ public class RegisterForSingleFacultyServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        FacultyService srv = new FacultyService();
         try {
             int id = Integer.parseInt(request.getParameter(Fields.ID));
-            Faculty faculty = srv.getById(id);
+            Faculty faculty = new FacultyService().getById(id);
             request.setAttribute(Fields.FACULTY, faculty);
             request.getRequestDispatcher(Pages.REGISTER_FOR_FACULTY)
                     .forward(request, response);
@@ -38,7 +37,6 @@ public class RegisterForSingleFacultyServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ApplicantResultService srv = new ApplicantResultService();
         if (GradeValidator.validateGrades(new String[]{
                 req.getParameter(Fields.SUBJ_ONE), req.getParameter(Fields.SUBJ_TWO)
         })) {
@@ -48,7 +46,8 @@ public class RegisterForSingleFacultyServlet extends HttpServlet {
             int facultyId = Integer.parseInt(req.getParameter(Fields.FACULTY_ID));
             if (userId != 0 && facultyId != 0) {
                 try {
-                    if (srv.addFResult(userId, subjOne, subjTwo, facultyId)) {
+                    boolean addFResult = new ApplicantResultService().addFResult(userId, subjOne, subjTwo, facultyId);
+                    if (addFResult) {
                         resp.sendRedirect(req.getContextPath() + Pages.REGISTER_FOR_FACULTY_SRV);
                     } else {
                         resp.sendRedirect(req.getContextPath() + Pages.ERROR);

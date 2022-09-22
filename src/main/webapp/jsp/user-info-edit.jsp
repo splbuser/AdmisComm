@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark.css">
+
+    <style>
+        input:invalid {
+            border: red solid 3px;
+        }
+    </style>
 </head>
 
 <body style="background: #212121;">
@@ -50,8 +56,8 @@
                             <div class="col-6">
                                 <input type="text" id="lastname" name="last_name"
                                        class="text-center text-white-50" style="border-radius: 8px;background: #404040;"
-                                       value="${userinfo.lastName}"
-                                       required="" minlength="1" maxlength="32">
+                                       value="${userinfo.lastName}" pattern="[A-ZА-Я][a-zа-яё]{1,20}"
+                                       required="" minlength="1" maxlength="20">
                             </div>
                             <c:if test="${errors.get(5)!=null}">
                                 <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -66,8 +72,8 @@
                             <div class="col-6">
                                 <input type="text" id="firstname" name="first_name"
                                        class="text-center text-white-50" style="border-radius: 8px;background: #404040;"
-                                       value="${userinfo.firstName}"
-                                       required="" minlength="1" maxlength="32">
+                                       value="${userinfo.firstName}" pattern="[A-ZА-Я][a-zа-яё]{1,20}"
+                                       required="" minlength="1" maxlength="20">
                             </div>
                             <c:if test="${errors.get(4)!=null}">
                                 <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -83,7 +89,7 @@
                                 <input type="text" id="city" name="city"
                                        class="text-center text-white-50" style="border-radius: 8px;background: #404040;"
                                        value="${userinfo.city}"
-                                       required="" minlength="1" maxlength="32">
+                                       required="" minlength="1" maxlength="20">
                             </div>
                             <c:if test="${errors.get(6)!=null}">
                                 <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -98,8 +104,8 @@
                             <div class="col-6">
                                 <input type="text" id="region" name="region"
                                        class="text-center text-white-50" style="border-radius: 8px;background: #404040;"
-                                       value="${userinfo.region}"
-                                       required="" minlength="1" maxlength="32">
+                                       value="${userinfo.region}" pattern="[A-ZА-Я][a-zа-яё]{1,20}"
+                                       required="" minlength="1" maxlength="20">
                             </div>
                             <c:if test="${errors.get(7)!=null}">
                                 <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">
@@ -114,8 +120,8 @@
                             <div class="col-6">
                                 <input type="text" id="educationalInstitution" name="educational_institution"
                                        class="text-center text-white-50" style="border-radius: 8px;background: #404040;"
-                                       value="${userinfo.educationalInstitution}"
-                                       required="" minlength="1" maxlength="32">
+                                       value="${userinfo.educationalInstitution}" pattern="[A-ZА-Я][a-zа-яё]{1,20}"
+                                       required="" minlength="1" maxlength="30">
                             </div>
                             <c:if test="${errors.get(8)!=null}">
                                 <p class="small" style="color: rgba(255,29,48,0.8);text-decoration: none;">

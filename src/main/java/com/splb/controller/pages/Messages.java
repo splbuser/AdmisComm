@@ -31,4 +31,11 @@ public abstract class Messages {
     public static final String INVALID_REGION = "invalid_region";
     public static final String INVALID_EDUC_INST = "invalid_edu_inst";
     public static final String TRY_ANOTHER_ONE = "Password you entered is invalid. Try another one";
+    public static final String INVALID_FNAME = "invalid_faculty_name";
+    public static final String FNAME_NOT_UNIQUE = "fname_not_unique";
+    public static final String INVALID_PLACES = "invalid_places_number";
+    public static final String INVALID_FSUBJ = "invalid_first_sname";
+    public static final String INVALID_SSUBG = "invalid_second_sname";
+    public static final String ERROR = "error";
+    public static final String ERRORS = "errors";
 }

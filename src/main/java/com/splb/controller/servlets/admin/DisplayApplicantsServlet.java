@@ -23,6 +23,11 @@ import static java.util.Objects.nonNull;
 public class DisplayApplicantsServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(DisplayApplicantsServlet.class);
+    public static final String APPLICANTS = "applicants";
+    public static final String LIST_LENGTH = "listLength";
+    public static final String NO_OF_PAGES = "noOfPages";
+    public static final String CURRENT_PAGE = "currentPage";
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -60,10 +65,10 @@ public class DisplayApplicantsServlet extends HttpServlet {
                 }
                 noOfPages = srv.getPage(limit, listLength);
 
-                request.setAttribute("applicants", applicants);
-                request.setAttribute("listLength", listLength);
-                request.setAttribute("noOfPages", noOfPages);
-                request.setAttribute("currentPage", page);
+                request.setAttribute(APPLICANTS, applicants);
+                request.setAttribute(LIST_LENGTH, listLength);
+                request.setAttribute(NO_OF_PAGES, noOfPages);
+                request.setAttribute(CURRENT_PAGE, page);
                 request.getRequestDispatcher(Pages.MANAGE_USERS)
                         .forward(request, response);
             } catch (UserServiceException e) {
@@ -87,10 +92,10 @@ public class DisplayApplicantsServlet extends HttpServlet {
                         .forward(request, response);
             }
             noOfPages = srv.getPage(limit, listLength);
-            request.setAttribute("applicants", applicants);
-            request.setAttribute("listLength", listLength);
-            request.setAttribute("noOfPages", noOfPages);
-            request.setAttribute("currentPage", page);
+            request.setAttribute(APPLICANTS, applicants);
+            request.setAttribute(LIST_LENGTH, listLength);
+            request.setAttribute(NO_OF_PAGES, noOfPages);
+            request.setAttribute(CURRENT_PAGE, page);
             request.getRequestDispatcher(Pages.MANAGE_USERS)
                     .forward(request, response);
         }

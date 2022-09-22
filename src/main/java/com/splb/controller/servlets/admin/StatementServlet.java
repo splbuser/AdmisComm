@@ -20,6 +20,7 @@ import static java.util.Objects.nonNull;
 public class StatementServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(StatementServlet.class);
+    public static final String LIST = "list";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,18 +50,17 @@ public class StatementServlet extends HttpServlet {
             request.getRequestDispatcher(Pages.ERROR)
                     .forward(request, response);
         }
-        request.setAttribute("list", list);
+        request.setAttribute(LIST, list);
         request.getRequestDispatcher(Pages.STATEMENT_PAGE)
                 .forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StatementService srv = new StatementService();
         String action = req.getParameter(Fields.ACTION);
         try {
             if (nonNull(action) && action.equals(Fields.FINALIZE)) {
-                srv.finalizeStatement();
+                new StatementService().finalizeStatement();
             }
         } catch (Exception e) {
             log.error(e.getMessage());

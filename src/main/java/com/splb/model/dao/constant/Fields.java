@@ -67,6 +67,7 @@ public abstract class Fields {
     public static final String USER = "user";
     public static final String STATUS = "status";
     public static final String OTP = "otp";
+    public static final String VALID_VALUES = "validValues";
 
     private Fields() {
         throw new IllegalStateException("Utility class");

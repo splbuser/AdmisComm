@@ -1,12 +1,16 @@
 package com.splb.controller.servlets.admin;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.LongStream;
 
 import com.splb.controller.pages.Messages;
 import com.splb.controller.pages.Pages;
 import com.splb.model.dao.constant.Fields;
 import com.splb.model.entity.Faculty;
 import com.splb.service.FacultyService;
+import com.splb.service.utils.DataValidator;
 import com.splb.service.utils.FacultyDataValidator;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -28,38 +32,43 @@ import org.apache.logging.log4j.Logger;
 public class CreateFacultyServlet extends HttpServlet {
     private static final Logger log = LogManager.getLogger(CreateFacultyServlet.class);
 
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        request.getRequestDispatcher(Pages.FACULTY_CREATE)
-                .forward(request, response);
+        req.getRequestDispatcher(Pages.FACULTY_CREATE)
+                .forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        FacultyService srv = new FacultyService();
         HttpSession session = request.getSession();
-        Faculty faculty = null;
+        String name = request.getParameter(Fields.FACULTY_NAME);
+        int budgetPlaces = Integer.parseInt(request.getParameter(Fields.FACULTY_BUDGET_PLACES));
+        int totalPlaces = Integer.parseInt(request.getParameter(Fields.FACULTY_TOTAL_PLACES));
+        String subjectOne = request.getParameter(Fields.SUBJECT_ONE);
+        String subjectTwo = request.getParameter(Fields.SUBJECT_TWO);
+        List<String> errorMessages = FacultyDataValidator.validateForm(name, budgetPlaces,
+                totalPlaces, subjectOne, subjectTwo);
         try {
-            String name = request.getParameter("name");
-            int budgetPlaces = Integer.parseInt(request.getParameter(Fields.FACULTY_BUDGET_PLACES));
-            int totalPlaces = Integer.parseInt(request.getParameter(Fields.FACULTY_TOTAL_PLACES));
-            String subjectOne = request.getParameter(Fields.SUBJECT_ONE);
-            String subjectTwo = request.getParameter(Fields.SUBJECT_TWO);
-            if (
-                    FacultyDataValidator.validateName(name) &&
-                            FacultyDataValidator.validateCapacity(budgetPlaces, totalPlaces) &&
-                            FacultyDataValidator.validateName(subjectOne) &&
-                            FacultyDataValidator.validateName(subjectTwo)
-            ) {
-                faculty = new Faculty(name, budgetPlaces, totalPlaces, subjectOne, subjectTwo);
-                srv.add(faculty);
+            boolean checkName = new FacultyService().checkByName(name);
+            if (errorMessages == null && !checkName) {
+                new FacultyService().add(new Faculty(name, budgetPlaces, totalPlaces, subjectOne, subjectTwo));
                 response.sendRedirect(request.getContextPath() + Pages.FACULTY_TABLE);
+            } else if (errorMessages == null && checkName) {
+                List<String> validValues = Arrays.asList(null, null, subjectOne, subjectTwo);
+                log.debug(Messages.FNAME_NOT_UNIQUE);
+                session.setAttribute(Fields.VALID_VALUES, validValues);
+                session.setAttribute(Messages.ERROR, Messages.FNAME_NOT_UNIQUE);
+                response.sendRedirect(request.getContextPath() + Pages.CREATE);
             } else {
-                log.error("faculty was not added");
-                session.setAttribute(Messages.MESSAGE, Messages.WRONG_FACULTY);
-                response.sendRedirect(request.getContextPath() + Pages.ERROR);
+                String[] inputValues = {name, null, subjectOne, subjectTwo};
+                List<String> validValues = FacultyDataValidator.getValidatedValues(inputValues, errorMessages);
+                log.debug(errorMessages);
+                session.setAttribute(Fields.VALID_VALUES, validValues);
+                session.setAttribute(Messages.ERRORS, errorMessages);
+                response.sendRedirect(request.getContextPath() + Pages.CREATE);
             }
         } catch (Exception e) {
             log.error(e.getMessage());

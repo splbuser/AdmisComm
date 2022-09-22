@@ -5,7 +5,6 @@ import com.splb.model.entity.EnrollStatus;
 import com.splb.model.entity.Enrollment;
 import com.splb.service.exceptions.EnrollmentServiceException;
 import com.splb.service.exceptions.StatementServiceException;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

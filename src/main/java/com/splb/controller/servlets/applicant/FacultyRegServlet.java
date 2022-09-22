@@ -19,22 +19,20 @@ import static java.util.Objects.nonNull;
 
 public class FacultyRegServlet extends HttpServlet {
     private static final Logger log = LogManager.getLogger(FacultyRegServlet.class);
+    public static final String STEP_3 = "step3";
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Applicant currentUser = new Applicant();
-        FacultyService srv = new FacultyService();
-        List<Faculty> faculties;
         HttpSession session = request.getSession();
         Integer id = (Integer) session.getAttribute(Fields.ID);
         if (nonNull(id)) {
             try {
-                faculties = srv.getListForRegister(id);
+                List<Faculty> faculties = new FacultyService().getListForRegister(id);
                 if (faculties.isEmpty()) {
-                    session.setAttribute("step3", true);
+                    session.setAttribute(STEP_3, true);
                     request.setAttribute(Messages.MESSAGE, Messages.NO_NEW_REGISTRATIONS_AVAILABLE);
                 }
-                request.setAttribute("currentUser", currentUser);
-                request.setAttribute("faculty", faculties);
+                request.setAttribute(Fields.FACULTY, faculties);
                 request.getRequestDispatcher(Pages.REGISTER_FOR_FACULTY)
                         .forward(request, response);
             } catch (FacultyServiceException e) {
